@@ -5,12 +5,17 @@ import jinja2
 import os
 
 async def main():
+    cd = os.getcwd()
     app = aiohttp.web.Application(client_max_size=67108864)
 
-    for route_file in os.listdir(path='./routes'):
+    os.chdir('routes')
+
+    for route_file in os.listdir():
         if route_file.endswith('.py') and route_file != 'example.py':
             route = __import__(route_file.replace('.py', ''))
             route.setup(app)
+
+    os.chdir(cd)
 
     aiohttp_jinja2.setup(app, loader=jinja2.FileSystemLoader('src/pages'))  # load templates/pages
 
