@@ -12,7 +12,7 @@ async def main():
 
     aiohttp_jinja2.setup(app, loader=jinja2.FileSystemLoader('src/pages'))  # load templates/pages
 
-    await aiohttp.web.run_app(app)
+    return app
 
 if __name__ == '__main__':
-    asyncio.get_event_loop().run_until_complete(main())
+    aiohttp.web.run_app(asyncio.get_event_loop().run_until_complete(main()))
