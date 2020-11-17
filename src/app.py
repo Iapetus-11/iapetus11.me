@@ -15,7 +15,7 @@ async def main():
     app = aiohttp.web.Application(client_max_size=67108864)
 
     # add static files dir
-    app.add_routes([aiohttp.web.static('/', 'public')])
+    app.add_routes([aiohttp.web.static('/static', 'public/static')])
 
     # Load / use routes
     # app.add_routes(route_example.router)
