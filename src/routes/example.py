@@ -7,5 +7,5 @@ router = aiohttp.web.RouteTableDef()
 async def hello(req: aiohttp.web.Request):
     return aiohttp.web.Response(status=200)
 
-def setup(app)
+def setup(app):
     app.add_routes(router)
