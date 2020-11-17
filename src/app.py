@@ -3,7 +3,7 @@ import aiohttp
 import asyncio
 import jinja2
 
-import routes.example as EXAMPLE_ROUTE
+import routes.example.router as EXAMPLE_ROUTE
 
 async def main():
     app = aiohttp.web.Application(client_max_size=67108864)
