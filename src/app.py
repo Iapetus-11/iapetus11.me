@@ -11,7 +11,8 @@ async def main():
     app.add_routes(EXAMPLE_ROUTE.router)
 
     aiohttp_jinja2.setup(app, loader=jinja2.FileSystemLoader('src/pages'))  # load templates/pages
-    aiohttp.web.run_app(app)
+
+    await aiohttp.web.run_app(app)
 
 if __name__ == '__main__':
     asyncio.get_event_loop().run_until_complete(main())
