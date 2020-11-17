@@ -2,6 +2,10 @@ import aiohttp_jinja2
 import aiohttp
 import asyncio
 import jinja2
+import os
+
+if not os.getcwd().endswith('src'):
+    os.chdir('src')
 
 # Routes
 # import routes.example as route_example
