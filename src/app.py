@@ -10,6 +10,9 @@ import routes.index as route_index
 async def main():
     app = aiohttp.web.Application(client_max_size=67108864)
 
+    # add static files dir
+    app.add_routes([aiohtt.web.static('/static', 'static')])
+
     # Load / use routes
     # app.add_routes(route_example.router)
     app.add_routes(route_index.router)
