@@ -1,1 +1,1 @@
-npx tailwindcss build src/styles.css -o output.css
+npx tailwindcss build src/static/styles.css -o output.css
