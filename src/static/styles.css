@@ -3,3 +3,16 @@ body {
   background-color: #21252B;
   color: white;
 }
+
+nav {
+	font-size: 1.25em;
+	font-weight: bold;
+	text-align: center;
+	border-radius: 20px;
+	border-top: 0px solid #FFFFFF;
+	border-bottom: .075em solid #FFFFFF;
+	border-radius: 2em;
+	list-style-type: none;
+	margin: 0.1em;
+	padding: 0.1em;
+}​​
