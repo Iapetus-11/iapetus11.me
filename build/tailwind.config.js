@@ -5,7 +5,11 @@ module.exports = {
   },
   purge: [],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        aqua: '#77d5af'
+      }
+    },
   },
   variants: {},
   plugins: [],
