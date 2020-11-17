@@ -3,10 +3,12 @@ import aiohttp
 import asyncio
 import jinja2
 
+import routes.example as EXAMPLE_ROUTE
+
 async def main():
     app = aiohttp.web.Application(client_max_size=67108864)
 
-    app.add_routes(router)
+    app.add_routes(EXAMPLE_ROUTE)
 
     aiohttp_jinja2.setup(app, loader=jinja2.FileSystemLoader('src/pages'))  # load templates/pages
     aiohttp.web.run_app(app)
