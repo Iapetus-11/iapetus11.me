@@ -1,1 +1,1 @@
-npx tailwindcss build src/static/styles-conf.css -o src/static/styles.css
+npx tailwindcss build src/static/build.css -o src/static/styles.css
