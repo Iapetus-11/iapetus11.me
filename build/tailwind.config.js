@@ -5,9 +5,10 @@ module.exports = {
   },
   purge: [],
   theme: {
-    extend: {},
-    colors: {
-      aqua: '#77d5af'
+    extend: {
+      colors: {
+        aqua: '#77d5af'
+      },
     },
   },
   variants: {},
