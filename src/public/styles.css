@@ -22509,7 +22509,7 @@ video {
 }
 
 ::-webkit-scrollbar-corner {
-  background: transparent;
+  background: inherit;
 }
 
 @media (min-width: 640px) {
