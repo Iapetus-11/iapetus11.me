@@ -1,6 +1,51 @@
 
+/* Tailwind stuff*/
 @tailwind base;
 
 @tailwind components;
 
 @tailwind utilities;
+
+
+/* Custom scrollbar css */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-button {
+  width: 18px;
+  height: 18px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #a1a1a1;
+  border: 0px none #ffffff;
+  border-radius: 55px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a1a1a1;
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: #3b3b3b;
+}
+
+::-webkit-scrollbar-track {
+  background: #666666;
+  border: 0px none #ffffff;
+  border-radius: 50px;
+}
+
+::-webkit-scrollbar-track:hover {
+  background: #666666;
+}
+
+::-webkit-scrollbar-track:active {
+  background: #4b4b4b;
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
