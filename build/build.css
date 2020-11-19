@@ -11,7 +11,7 @@
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
-  background: transparent;
+  background: #23272A;
 }
 
 ::-webkit-scrollbar-button {
