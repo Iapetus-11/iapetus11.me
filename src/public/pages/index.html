@@ -17,7 +17,7 @@
 
   <body class="select-none bg-gradient-to-r from-dark-dark via-dark-normal via-dark-light via-dark-normal to-dark-dark">
     <div class="container mx-auto" id="parallax">
-      <div data-relative-input="true" md:id="parallax2" md:data-depth="0.05" md:style="pointer-events:auto;">
+      <div data-relative-input="true" id="parallax2" data-depth="0.15" style="pointer-events:auto;">
         <div class="p-2 md:p-20"></div>
 
         <div class="flex flex-grow flex-row flex-wrap justify-center items-center pb-24">
@@ -26,19 +26,19 @@
           </div>
           <div class="w-auto md:w-1/4 -ml-5 md:mr-48">
             <div class="pl-10 md:pl-24 w-48 md:w-64">
-              <div class="px-5 md:py-3" data-depth="0.2">
+              <div class="px-5 md:py-3">
                 <a href="https://github.com/Iapetus-11" target="_blank" class="block text-sm text-center px-5 py-3 leading-none border rounded text-white border-white hover:border-transparent hover:text-dark-dark hover:bg-aqua-dark mt-4 lg:mt-0 duration-100">
                   GITHUB
                 </a>
               </div>
 
-              <div class="px-5 md:py-3" data-depth="0.2">
+              <div class="px-5 md:py-3">
                 <a href="https://discord.gg/VtE3rtV" target="_blank" class="block text-sm text-center px-5 py-3 leading-none border rounded text-white border-white hover:border-transparent hover:text-dark-dark hover:bg-aqua-dark mt-4 lg:mt-0 duration-100">
                   DISCORD
                 </a>
               </div>
 
-              <div class="px-5 md:py-3" data-depth="0.2">
+              <div class="px-5 md:py-3">
                 <a href="https://pypi.org/user/Iapetus11/" target="_blank" class="block text-sm text-center px-5 py-3 leading-none border rounded text-white border-white hover:border-transparent hover:text-dark-dark hover:bg-aqua-dark mt-4 lg:mt-0 duration-100">
                   PYPI
                 </a>
@@ -77,9 +77,7 @@
     </div>
 
     <script>
-      var scene = document.getElementById('parallax');
-      var child = document.getElementById('parallax2');
-      var parallaxInstance = new Parallax(scene, child);
+      new Parallax(document.getElementById('parallax'), document.getElementById('parallax2'));
     </script>
   </body>
 </html>
