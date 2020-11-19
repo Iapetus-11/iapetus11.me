@@ -15,6 +15,7 @@ module.exports = {
           normal: '#5DA9E9'
         },
         dark: {
+          light: '#43474D',
           normal: '#2C2F33',
           dark: '#23272A'
         }
