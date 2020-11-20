@@ -108,6 +108,14 @@
           discordButton.innerHTML = discordButton.getAttribute('text-original');
         } else {
           discordButton.innerHTML = discordButton.getAttribute('text-swap');
+          // add it to their clipboard
+          navigator.permissions.query({name: 'clipboard-write'})
+          .then(res => {
+            if (res.state == 'granted' || res.state == 'prompt') {
+              navigator.clipboard.writeText('Iapetus11#6821')
+              .then(() => {});
+            }
+          });
         }
       }, false);
     </script>
