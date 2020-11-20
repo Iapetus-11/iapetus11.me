@@ -685,6 +685,10 @@ video {
   display: table;
 }
 
+.contents {
+  display: contents;
+}
+
 .hidden {
   display: none;
 }
@@ -719,6 +723,10 @@ video {
 
 .order-last {
   order: 9999;
+}
+
+.font-mono {
+  font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
 .font-semibold {
@@ -762,8 +770,9 @@ video {
   max-width: 20rem;
 }
 
-.p-1 {
-  padding: 0.25rem;
+.py-1 {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
 }
 
 .py-3 {
@@ -1055,10 +1064,6 @@ video {
     margin-left: 12rem;
   }
 
-  .md\:p-20 {
-    padding: 5rem;
-  }
-
   .md\:px-0 {
     padding-left: 0;
     padding-right: 0;
@@ -1067,6 +1072,11 @@ video {
   .md\:py-3 {
     padding-top: 0.75rem;
     padding-bottom: 0.75rem;
+  }
+
+  .md\:py-20 {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
   }
 
   .md\:pb-3 {
