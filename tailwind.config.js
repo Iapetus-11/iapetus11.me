@@ -3,10 +3,10 @@ module.exports = {
     // removeDeprecatedGapUtilities: true,
     // purgeLayersByDefault: true,
   },
-  purge: [
+  purge: {
     enabled: true,
-    './src/**/*.html'
-  ],
+    content: ['./src/**/*.html']
+  },
   theme: {
     extend: {
       colors: {
