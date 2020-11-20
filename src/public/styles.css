@@ -673,6 +673,10 @@ video {
   border-width: 1px;
 }
 
+.cursor-pointer {
+  cursor: pointer;
+}
+
 .block {
   display: block;
 }
@@ -922,26 +926,6 @@ video {
     -webkit-animation-timing-function: cubic-bezier(0,0,0.2,1);
             animation-timing-function: cubic-bezier(0,0,0.2,1);
   }
-}
-
-/* Custom css for text swapping */
-
-#discord {
-  position: relative;
-}
-
-#discord-checkbox {
-  display: none;
-}
-
-#discord-checkbox:checked + #discord:after {
-  content: "Iapetus11#6821";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: transparent;
 }
 
 /* Custom scrollbar css */
