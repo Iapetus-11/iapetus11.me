@@ -7,12 +7,18 @@ import os
 if not os.getcwd().endswith('src'):
     os.chdir('src')
 
+# Custom middleware
+from errors import ErrorHandler
+
 # Routes
 # import routes.example as route_example
 import routes.index as route_index
 
 async def main():
     app = aiohttp.web.Application(client_max_size=67108864)
+
+    # Load custom middleware
+    ErrorHandler(app)
 
     # Load / use routes
     # app.add_routes(route_example.router)
