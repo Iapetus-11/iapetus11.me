@@ -13,6 +13,8 @@ from errors import ErrorHandler
 # Routes
 # import routes.example as route_example
 import routes.index as route_index
+import routes.notfound as route_notfound
+import routes.error as route_error
 
 async def main():
     app = aiohttp.web.Application(client_max_size=67108864)
@@ -23,6 +25,8 @@ async def main():
     # Load / use routes
     # app.add_routes(route_example.router)
     app.add_routes(route_index.router)
+    app.add_routes(route_notfound.router)
+    app.add_routes(route_error.router)
 
     # add static files dir
     app.add_routes([aiohttp.web.static('/', 'public/')])
