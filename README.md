@@ -1,4 +1,4 @@
-# [iapetus11.xyz](https://iapetus11.xyz)
+# [iapetus11.me](https://iapetus11.me)
 *My personal portfolio / general purpose website*
 
 * Site was built in Python with a combination of aiohttp, jinja, and tailwindcss
