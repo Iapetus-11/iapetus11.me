@@ -13,6 +13,8 @@ from errors import add_error_handler
 # Routes
 # import routes.example as route_example
 import routes.index as route_index
+import routes.mcinator as route_mcinator
+
 import routes.notfound as route_notfound
 import routes.error as route_error
 
@@ -24,11 +26,14 @@ async def main():
 
     # Load / use routes
     # app.add_routes(route_example.router)
-    app.add_routes(route_index.router)
-    app.add_routes(route_notfound.router)
-    app.add_routes(route_error.router)
+    app.add_routes(route_index.router)  # Home page
+    app.add_routes(route_mcinator.router)  # Minecraftinator page
 
-    # add static files dir
+    # Error routes
+    app.add_routes(route_notfound.router)  # 404
+    app.add_routes(route_error.router)  # 500
+
+    # Add static files dir
     app.add_routes([aiohttp.web.static('/', 'public/')])
 
     aiohttp_jinja2.setup(app, loader=jinja2.FileSystemLoader('public/pages'))  # load templates/pages
