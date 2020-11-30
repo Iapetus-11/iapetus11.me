@@ -1301,12 +1301,4 @@ video {
       max-width: 1280px;
     }
   }
-
-  .xl\:-mt-12 {
-    margin-top: -3rem;
-  }
-
-  .xl\:-ml-64 {
-    margin-left: -16rem;
-  }
 }
