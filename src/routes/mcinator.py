@@ -23,7 +23,7 @@ palette_map = {k: im_from_bytes(base64.b64decode(v)) for k, v in data['palette']
 xi = data['dims'][0]
 yi = data['dims'][1]
 
-def convert(source_bytes, max_dim=1920, detailed=True):
+def blockinate(source_bytes, max_dim=1920, detailed=True):
     source = im_from_bytes(source_bytes)
 
     sw = source.shape[1]
@@ -108,7 +108,8 @@ async def mcinator_upload(req: aiohttp.web.Request):
 
     if image:
         image_bytes = image.file.read()
+        mc_image_bytes = blockinate(image_bytes)[1].tobytes()
 
-
+        return {'img_data': base64.b64encode(mc_image_bytes)}
 
     return {}
