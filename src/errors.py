@@ -5,7 +5,7 @@ import aiohttp
 def add_error_handler(app):
 
     @aiohttp.web.middleware
-    async def error_handler(self, req, handler):
+    async def error_handler(req, handler):
         try:
             return await handler(req)
         except Exception as e:
