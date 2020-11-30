@@ -117,7 +117,7 @@ async def mcinator_upload(req: aiohttp.web.Request):
 
         print(image_b64)
 
-        return {'img_data': 'data:image/png;base64' + image_b64}
+        return {'img_data': 'data:image/png;base64,' + image_b64}
 
     print('noimage')
 
