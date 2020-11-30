@@ -23,7 +23,7 @@ palette_map = {k: im_from_bytes(base64.b64decode(v)) for k, v in data['palette']
 xi = data['dims'][0]
 yi = data['dims'][1]
 
-def blockinate(source_bytes, max_dim=1920, detailed=True):
+def blockinate(source_bytes, max_dim=1600, detailed=True):
     source = im_from_bytes(source_bytes)
 
     sw = source.shape[1]
