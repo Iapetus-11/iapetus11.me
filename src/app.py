@@ -7,7 +7,7 @@ import os
 if not os.getcwd().endswith('src'):
     os.chdir('src')
 
-# Custom middleware
+# Load custom middleware
 from errors import add_error_handler
 
 # Routes
