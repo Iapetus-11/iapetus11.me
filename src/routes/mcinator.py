@@ -112,6 +112,6 @@ async def mcinator_upload(req: aiohttp.web.Request):
         mc_image_bytes = blockinate(image_bytes)[1].tobytes()
         image_b64 = base64.b64encode(mc_image_bytes).decode('utf-8')
 
-        return {'img_data': 'data:image/png;base64,' + image_b64}
+        return {'display': 'flex', 'img_data': 'data:image/png;base64,' + image_b64}
 
-    return {}
+    return {'display': 'hidden', 'img_data': None}
