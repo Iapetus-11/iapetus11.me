@@ -12,7 +12,7 @@ def im_from_bytes(bytes):
 def draw_image(canvas, img, x, y):
     canvas[y:y+img.shape[0], x:x+img.shape[1]] = img
 
-with open('src/block_palette.json', 'r') as d:
+with open('block_palette.json', 'r') as d:
     data = json.load(d)
 
 palette_bi = dict([(tuple(entry[0]), entry[1]) for entry in data['bi']])
@@ -103,13 +103,22 @@ async def mcinator(req: aiohttp.web.Request):
 @router.post('/mcinator')
 @aiohttp_jinja2.template('mcinator.html')
 async def mcinator_upload(req: aiohttp.web.Request):
+    print('gottit?')
+
     post_data = await req.post()
     image = post_data.get('image')
+
+    print(image)
 
     if image:
         image_bytes = image.file.read()
         mc_image_bytes = blockinate(image_bytes)[1].tobytes()
+        image_b64 = base64.b64encode(mc_image_bytes)
 
-        return {'img_data': base64.b64encode(mc_image_bytes)}
+        print(image_b64)
+
+        return {'img_data': image_b64}
+
+    print('noimage')
 
     return {}
