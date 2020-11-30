@@ -28,10 +28,28 @@
   <body class="select-none bg-gradient-to-r from-dark-dark via-dark-normal via-dark-light via-dark-normal to-dark-dark">
     <div class="container mx-auto py-1 md:py-20 md:duration-100" id="parallax">
       <div data-relative-input="true" id="parallax2" data-depth="0.15" style="pointer-events:auto;">
-        <form action="/" method="POST" enctype="multipart/form-data">
-          <input type="file" name="image" accept="image/png, image/jpeg">
-          <input type="submit">
-        </form>
+        <div class="flex flex-grow flex-row place-content-center py-48 md:py-64">
+          <form action="/mcinator" method="POST" enctype="multipart/form-data">
+            <div class="flex flex-col py-3">
+              <label class="w-56 flex flex-row items-center px-4 py-3 bg-dark-light text-white rounded-lg shadow-lg tracking-wide uppercase border border-dark-dark cursor-pointer hover:bg-aqua-dark duration-100">
+                <div class="pl-3">
+                  <svg class="w-8 h-8" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                      <path d="M16.88 9.1A4 4 0 0 1 16 17H5a5 5 0 0 1-1-9.9V7a3 3 0 0 1 4.52-2.59A4.98 4.98 0 0 1 17 8c0 .38-.04.74-.12 1.1zM11 11h3l-4-4-4 4h3v3h2v-3z">
+                  </svg>
+                </div>
+                <input type="file" class="hidden" accept="image/png, image/jpeg">
+                <span class="text-base pl-4">Select Image</span>
+              </label>
+            </div>
+
+            <div class="flex flex-col py-3">
+              <label class="w-56 flex flex-col items-center px-4 py-3 bg-dark-light text-white rounded-lg shadow-lg tracking-wide uppercase border border-dark-dark cursor-pointer hover:bg-aqua-dark duration-100">
+                <span class="text-base leading-normal">Upload</span>
+                <input type="submit" name="submit" class="hidden">
+              </label>
+            </div>
+          </form>
+        </div>
       </div>
     </div>
 
