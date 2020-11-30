@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <title>404 Not Found</title>
+
+    <link rel="icon" type="image/png" href="images/petus-circle.png">
+    <link rel="stylesheet" href="styles.css">
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="title" content="Oops...">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Parallax -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+  </head>
+
+  <body class="select-none bg-gradient-to-r from-dark-dark via-dark-normal via-dark-light via-dark-normal to-dark-dark">
+    <div class="container mx-auto py-1 md:py-20 md:duration-100" id="parallax">
+      <div data-relative-input="true" id="parallax2" data-depth="0.15" style="pointer-events:auto;">
+        <div class="flex flex-grow flex-row justify-center">
+          <span class="text-8xl text-white font-semibold">
+            500
+          </span>
+        </div>
+
+        <div class="flex flex-grow flex-row justify-center">
+          <span class="text-2xl text-white font-semibold">
+            Something went wrong...
+          </span>
+        </div>
+
+        <div class="flex flex-grow flex-row justify-center">
+          <div class="px-5 py-6 md:transform md:hover:scale-110 md:duration-100">
+            <a href="javascript:history.back()" class="block text-sm text-center px-5 py-3 leading-none border rounded text-white border-white hover:border-transparent hover:text-dark-dark hover:bg-aqua-dark mt-4 lg:mt-0 duration-100 md:hover:shadow-md">
+              GO BACK
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // code for parallax effects
+      var parallax = new Parallax(document.getElementById('parallax'), document.getElementById('parallax2'));
+    </script>
+  </body>
+</html>
