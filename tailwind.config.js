@@ -23,10 +23,10 @@ module.exports = {
           dark: '#23272A'
         }
       },
-    },
-    fontSize: {
-      '7xl': '4.5rem',
-      '8xl': '6rem'
+      fontSize: {
+        '7xl': '4.5rem',
+        '8xl': '6rem'
+      }
     }
   },
   variants: {
