@@ -8,7 +8,7 @@ if not os.getcwd().endswith('src'):
     os.chdir('src')
 
 # Custom middleware
-from errors import ErrorHandler
+from errors import add_error_handler
 
 # Routes
 # import routes.example as route_example
@@ -20,7 +20,7 @@ async def main():
     app = aiohttp.web.Application(client_max_size=67108864)
 
     # Load custom middleware
-    ErrorHandler(app)
+    add_error_handler(app)  # for handling 404 and 500 class errors
 
     # Load / use routes
     # app.add_routes(route_example.router)
