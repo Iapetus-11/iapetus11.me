@@ -29,6 +29,10 @@
     <div class="container mx-auto py-1 md:py-20 md:duration-100" id="parallax">
       <div data-relative-input="true" id="parallax2" data-depth="0.15" style="pointer-events:auto;">
         <div class="flex flex-grow flex-col place-content-center py-48 md:py-64">
+          <div class="flex flex-row flex-grow place-content-center pb-12">
+            <h1 class="text-5xl text-white font-semibold">Minecraftinator</h1>
+          </div>
+
           <div class="flex flex-row flex-grow place-content-center">
             <form action="/mcinator" method="POST" enctype="multipart/form-data">
               <div class="flex flex-col py-3">
@@ -52,8 +56,8 @@
             </form>
           </div>
 
-          <div class="{{display}} flex-row flex-grow place-content-center">
-            <img src={{img_data}}>
+          <div class="{{display}} flex-row flex-grow place-content-center pt-16">
+            <img src={{img_data}} class="object-scale-down max-w-2xl mx-h-xl">
           </div>
         </div>
       </div>
