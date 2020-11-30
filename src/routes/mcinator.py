@@ -98,7 +98,7 @@ router = aiohttp.web.RouteTableDef()
 @router.get('/mcinator')
 @aiohttp_jinja2.template('mcinator.html')
 async def mcinator(req: aiohttp.web.Request):
-    return {}
+    return {'display': 'hidden', 'img_data': None}
 
 @router.post('/mcinator')
 @aiohttp_jinja2.template('mcinator.html')
