@@ -818,10 +818,6 @@ video {
   max-width: 20rem;
 }
 
-.max-w-2xl {
-  max-width: 42rem;
-}
-
 .object-scale-down {
   -o-object-fit: scale-down;
      object-fit: scale-down;
@@ -958,6 +954,10 @@ video {
 
 .w-auto {
   width: auto;
+}
+
+.w-2\/3 {
+  width: 66.666667%;
 }
 
 .duration-100 {
