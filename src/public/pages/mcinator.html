@@ -41,7 +41,7 @@
             <h1 class="text-4xl md:text-5xl text-white font-semibold">Minecraftinator</h1>
           </div>
 
-          <div class="flex flex-row flex-grow place-content-center">
+          <div class="flex flex-col flex-grow items-center">
             <form action="/mcinator" method="POST" enctype="multipart/form-data">
               <div class="flex flex-col py-3">
                 <label class="w-56 flex flex-row items-center px-4 py-3 bg-dark-light text-white rounded-lg shadow-lg tracking-wide uppercase border border-dark-dark cursor-pointer hover:bg-aqua-dark duration-100">
@@ -62,10 +62,8 @@
                 </label>
               </div>
             </form>
-          </div>
 
-          <div class="{{display}} flex-row flex-grow place-content-center pt-16">
-            <img src={{img_data}} class="object-scale-down w-2/3 h-1/4">
+            <img src={{img_data}} class="object-scale-down w-2/3 h-1/4 pt-16">
           </div>
         </div>
       </div>
