@@ -7,12 +7,6 @@
 @tailwind utilities;
 
 /* Make page fade in on load */
-body {
-  animation: fadeInAnimation ease .75s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
-}
-
 @keyframes fadeInAnimation {
   0% {
     opacity: 0;
@@ -20,6 +14,68 @@ body {
   100% {
     opacity: 1;
    }
+}
+
+body {
+  animation: fadeInAnimation ease .75s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+#fade-in-1 {
+  animation: fadeInAnimation ease .5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-delay: 1s;
+}
+
+#fade-in-2 {
+  animation: fadeInAnimation ease .5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-delay: 1.25s;
+}
+
+#fade-in-3 {
+  animation: fadeInAnimation ease .5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-delay: 1.5s;
+}
+
+#fade-in-4 {
+  animation: fadeInAnimation ease .5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-delay: 1.75s;
+}
+
+#fade-in-5 {
+  animation: fadeInAnimation ease .5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-delay: 2s;
+}
+
+#fade-in-6 {
+  animation: fadeInAnimation ease .5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-delay: 2.25s;
+}
+
+#fade-in-7 {
+  animation: fadeInAnimation ease .5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-delay: 2.5s;
+}
+
+#fade-in-8 {
+  animation: fadeInAnimation ease .5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-delay: 2.75s;
 }
 
 /* Custom scrollbar CSS */
