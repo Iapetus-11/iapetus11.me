@@ -32,47 +32,63 @@ body {
   animation-fill-mode: forwards;
 }
 
-.thing-badge {
+.fin {
   opacity: 0;
   animation: fadeInAnimationSemi ease .5s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
 }
 
-.fade-in-0 {
+.fin-0 {
+  animation-delay: .2s;
+}
+
+.fin-1 {
   animation-delay: .3s;
 }
 
-.fade-in-1 {
+.fin-2 {
   animation-delay: .4s;
 }
 
-.fade-in-2 {
+.fin-3 {
   animation-delay: .5s;
 }
 
-.fade-in-3 {
+.fin-4 {
   animation-delay: .6s;
 }
 
-.fade-in-4 {
+.fin-5 {
   animation-delay: .7s;
 }
 
-.fade-in-5 {
+.fin-6 {
   animation-delay: .8s;
 }
 
-.fade-in-6 {
+.fin-7 {
   animation-delay: .9s;
 }
 
-.fade-in-7 {
+.fin-8 {
   animation-delay: 1s;
 }
 
-.fade-in-8 {
+.fin-9 {
   animation-delay: 1.1s;
+}
+
+.fin-10 {
+  animation-delay: 1.2s;
+}
+
+.fin-11 {
+  animation-delay: 1.3s;
+}
+
+.fin-12 {
+  animation-delay: 1.4s;
 }
 
 /* Custom scrollbar CSS */
