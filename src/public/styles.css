@@ -32231,7 +32231,38 @@ video {
           animation: bounce 1s infinite;
 }
 
-/* Custom scrollbar css */
+/* Make page fade in on load */
+
+body {
+  -webkit-animation: fadeInAnimation ease 1s;
+          animation: fadeInAnimation ease 1s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Custom scrollbar CSS */
 
 ::-webkit-scrollbar {
   width: 6px;
