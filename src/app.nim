@@ -28,6 +28,7 @@ var app = newApp(
 
 # register error handlers
 app.registerErrorHandler(Http404, routes.error404Page)
+app.registerErrorHandler(Http500, routes.error500Page)
 
 # serve public directory
 app.use(staticFileMiddleware("/public"))
