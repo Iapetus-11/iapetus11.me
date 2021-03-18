@@ -32231,31 +32231,53 @@ video {
           animation: bounce 1s infinite;
 }
 
+/* stuff for fading stuff in and out */
+
+@-webkit-keyframes fadeInAnimationFull {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInAnimationFull {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeInAnimationSemi {
+  0% {
+    opacity: .1;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInAnimationSemi {
+  0% {
+    opacity: .1;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
 /* Make page fade in on load */
 
-@-webkit-keyframes fadeInAnimation {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes fadeInAnimation {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
 body {
-  -webkit-animation: fadeInAnimation ease .75s;
-          animation: fadeInAnimation ease .75s;
+  -webkit-animation: fadeInAnimationFull ease .75s;
+          animation: fadeInAnimationFull ease .75s;
   -webkit-animation-iteration-count: 1;
           animation-iteration-count: 1;
   -webkit-animation-fill-mode: forwards;
@@ -32263,8 +32285,69 @@ body {
 }
 
 #fade-in-1 {
-  -webkit-animation: fadeInAnimation ease .5s;
-          animation: fadeInAnimation ease .5s;
+  opacity: 0;
+  -webkit-animation: fadeInAnimationSemi ease .5s;
+          animation: fadeInAnimationSemi ease .5s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-delay: .5s;
+          animation-delay: .5s;
+}
+
+#fade-in-2 {
+  opacity: 0;
+  -webkit-animation: fadeInAnimationSemi ease .5s;
+          animation: fadeInAnimationSemi ease .5s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-delay: .6s;
+          animation-delay: .6s;
+}
+
+#fade-in-3 {
+  opacity: 0;
+  -webkit-animation: fadeInAnimationSemi ease .5s;
+          animation: fadeInAnimationSemi ease .5s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-delay: .7s;
+          animation-delay: .7s;
+}
+
+#fade-in-4 {
+  opacity: 0;
+  -webkit-animation: fadeInAnimationSemi ease .5s;
+          animation: fadeInAnimationSemi ease .5s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-delay: .8s;
+          animation-delay: .8s;
+}
+
+#fade-in-5 {
+  opacity: 0;
+  -webkit-animation: fadeInAnimationSemi ease .5s;
+          animation: fadeInAnimationSemi ease .5s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-delay: .9s;
+          animation-delay: .9s;
+}
+
+#fade-in-6 {
+  opacity: 0;
+  -webkit-animation: fadeInAnimationSemi ease .5s;
+          animation: fadeInAnimationSemi ease .5s;
   -webkit-animation-iteration-count: 1;
           animation-iteration-count: 1;
   -webkit-animation-fill-mode: forwards;
@@ -32273,81 +32356,28 @@ body {
           animation-delay: 1s;
 }
 
-#fade-in-2 {
-  -webkit-animation: fadeInAnimation ease .5s;
-          animation: fadeInAnimation ease .5s;
-  -webkit-animation-iteration-count: 1;
-          animation-iteration-count: 1;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-  -webkit-animation-delay: 1.25s;
-          animation-delay: 1.25s;
-}
-
-#fade-in-3 {
-  -webkit-animation: fadeInAnimation ease .5s;
-          animation: fadeInAnimation ease .5s;
-  -webkit-animation-iteration-count: 1;
-          animation-iteration-count: 1;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-  -webkit-animation-delay: 1.5s;
-          animation-delay: 1.5s;
-}
-
-#fade-in-4 {
-  -webkit-animation: fadeInAnimation ease .5s;
-          animation: fadeInAnimation ease .5s;
-  -webkit-animation-iteration-count: 1;
-          animation-iteration-count: 1;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-  -webkit-animation-delay: 1.75s;
-          animation-delay: 1.75s;
-}
-
-#fade-in-5 {
-  -webkit-animation: fadeInAnimation ease .5s;
-          animation: fadeInAnimation ease .5s;
-  -webkit-animation-iteration-count: 1;
-          animation-iteration-count: 1;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-  -webkit-animation-delay: 2s;
-          animation-delay: 2s;
-}
-
-#fade-in-6 {
-  -webkit-animation: fadeInAnimation ease .5s;
-          animation: fadeInAnimation ease .5s;
-  -webkit-animation-iteration-count: 1;
-          animation-iteration-count: 1;
-  -webkit-animation-fill-mode: forwards;
-          animation-fill-mode: forwards;
-  -webkit-animation-delay: 2.25s;
-          animation-delay: 2.25s;
-}
-
 #fade-in-7 {
-  -webkit-animation: fadeInAnimation ease .5s;
-          animation: fadeInAnimation ease .5s;
+  opacity: 0;
+  -webkit-animation: fadeInAnimationSemi ease .5s;
+          animation: fadeInAnimationSemi ease .5s;
   -webkit-animation-iteration-count: 1;
           animation-iteration-count: 1;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
-  -webkit-animation-delay: 2.5s;
-          animation-delay: 2.5s;
+  -webkit-animation-delay: 1.1s;
+          animation-delay: 1.1s;
 }
 
 #fade-in-8 {
-  -webkit-animation: fadeInAnimation ease .5s;
-          animation: fadeInAnimation ease .5s;
+  opacity: 0;
+  -webkit-animation: fadeInAnimationSemi ease .5s;
+          animation: fadeInAnimationSemi ease .5s;
   -webkit-animation-iteration-count: 1;
           animation-iteration-count: 1;
   -webkit-animation-fill-mode: forwards;
           animation-fill-mode: forwards;
-  -webkit-animation-delay: 2.75s;
-          animation-delay: 2.75s;
+  -webkit-animation-delay: 1.2s;
+          animation-delay: 1.2s;
 }
 
 /* Custom scrollbar CSS */

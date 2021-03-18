@@ -6,8 +6,8 @@
 
 @tailwind utilities;
 
-/* Make page fade in on load */
-@keyframes fadeInAnimation {
+/* stuff for fading stuff in and out */
+@keyframes fadeInAnimationFull {
   0% {
     opacity: 0;
   }
@@ -16,66 +16,84 @@
    }
 }
 
+@keyframes fadeInAnimationSemi {
+  0% {
+    opacity: .1;
+  }
+  100% {
+    opacity: 1;
+   }
+}
+
+/* Make page fade in on load */
 body {
-  animation: fadeInAnimation ease .75s;
+  animation: fadeInAnimationFull ease .75s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
 }
 
 #fade-in-1 {
-  animation: fadeInAnimation ease .5s;
+  opacity: 0;
+  animation: fadeInAnimationSemi ease .5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-delay: .5s;
+}
+
+#fade-in-2 {
+  opacity: 0;
+  animation: fadeInAnimationSemi ease .5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-delay: .6s;
+}
+
+#fade-in-3 {
+  opacity: 0;
+  animation: fadeInAnimationSemi ease .5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-delay: .7s;
+}
+
+#fade-in-4 {
+  opacity: 0;
+  animation: fadeInAnimationSemi ease .5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-delay: .8s;
+}
+
+#fade-in-5 {
+  opacity: 0;
+  animation: fadeInAnimationSemi ease .5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-delay: .9s;
+}
+
+#fade-in-6 {
+  opacity: 0;
+  animation: fadeInAnimationSemi ease .5s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
   animation-delay: 1s;
 }
 
-#fade-in-2 {
-  animation: fadeInAnimation ease .5s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
-  animation-delay: 1.25s;
-}
-
-#fade-in-3 {
-  animation: fadeInAnimation ease .5s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
-  animation-delay: 1.5s;
-}
-
-#fade-in-4 {
-  animation: fadeInAnimation ease .5s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
-  animation-delay: 1.75s;
-}
-
-#fade-in-5 {
-  animation: fadeInAnimation ease .5s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
-  animation-delay: 2s;
-}
-
-#fade-in-6 {
-  animation: fadeInAnimation ease .5s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
-  animation-delay: 2.25s;
-}
-
 #fade-in-7 {
-  animation: fadeInAnimation ease .5s;
+  opacity: 0;
+  animation: fadeInAnimationSemi ease .5s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
-  animation-delay: 2.5s;
+  animation-delay: 1.1s;
 }
 
 #fade-in-8 {
-  animation: fadeInAnimation ease .5s;
+  opacity: 0;
+  animation: fadeInAnimationSemi ease .5s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
-  animation-delay: 2.75s;
+  animation-delay: 1.2s;
 }
 
 /* Custom scrollbar CSS */
