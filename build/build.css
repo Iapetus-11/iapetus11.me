@@ -32,75 +32,45 @@ body {
   animation-fill-mode: forwards;
 }
 
-#fade-in-0 {
+.thing-badge {
   opacity: 0;
-  animation: fadeInAnimationSemi ease .5s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
+}
+
+.fade-in-0 {
   animation-delay: .4s;
 }
 
-#fade-in-1 {
-  opacity: 0;
-  animation: fadeInAnimationSemi ease .5s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
+.fade-in-1 {
   animation-delay: .5s;
 }
 
-#fade-in-2 {
-  opacity: 0;
-  animation: fadeInAnimationSemi ease .5s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
+.fade-in-2 {
   animation-delay: .6s;
 }
 
-#fade-in-3 {
-  opacity: 0;
-  animation: fadeInAnimationSemi ease .5s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
+.fade-in-3 {
   animation-delay: .7s;
 }
 
-#fade-in-4 {
-  opacity: 0;
-  animation: fadeInAnimationSemi ease .5s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
+.fade-in-4 {
   animation-delay: .8s;
 }
 
-#fade-in-5 {
-  opacity: 0;
-  animation: fadeInAnimationSemi ease .5s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
+.fade-in-5 {
   animation-delay: .9s;
 }
 
-#fade-in-6 {
-  opacity: 0;
-  animation: fadeInAnimationSemi ease .5s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
+.fade-in-6 {
   animation-delay: 1s;
 }
 
-#fade-in-7 {
-  opacity: 0;
-  animation: fadeInAnimationSemi ease .5s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
+.fade-in-7 {
   animation-delay: 1.1s;
 }
 
-#fade-in-8 {
-  opacity: 0;
-  animation: fadeInAnimationSemi ease .5s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
+.fade-in-8 {
   animation-delay: 1.2s;
 }
 
