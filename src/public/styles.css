@@ -32295,48 +32295,48 @@ body {
 }
 
 .fade-in-0 {
+  -webkit-animation-delay: .3s;
+          animation-delay: .3s;
+}
+
+.fade-in-1 {
   -webkit-animation-delay: .4s;
           animation-delay: .4s;
 }
 
-.fade-in-1 {
+.fade-in-2 {
   -webkit-animation-delay: .5s;
           animation-delay: .5s;
 }
 
-.fade-in-2 {
+.fade-in-3 {
   -webkit-animation-delay: .6s;
           animation-delay: .6s;
 }
 
-.fade-in-3 {
+.fade-in-4 {
   -webkit-animation-delay: .7s;
           animation-delay: .7s;
 }
 
-.fade-in-4 {
+.fade-in-5 {
   -webkit-animation-delay: .8s;
           animation-delay: .8s;
 }
 
-.fade-in-5 {
+.fade-in-6 {
   -webkit-animation-delay: .9s;
           animation-delay: .9s;
 }
 
-.fade-in-6 {
+.fade-in-7 {
   -webkit-animation-delay: 1s;
           animation-delay: 1s;
 }
 
-.fade-in-7 {
+.fade-in-8 {
   -webkit-animation-delay: 1.1s;
           animation-delay: 1.1s;
-}
-
-.fade-in-8 {
-  -webkit-animation-delay: 1.2s;
-          animation-delay: 1.2s;
 }
 
 /* Custom scrollbar CSS */
