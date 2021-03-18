@@ -32233,9 +32233,9 @@ video {
 
 /* stuff for fading stuff in and out */
 
-@-webkit-keyframes fadeInAnimationFull {
+@-webkit-keyframes fadeInAnimation {
   0% {
-    opacity: 0;
+    opacity: .05;
   }
 
   100% {
@@ -32243,29 +32243,9 @@ video {
   }
 }
 
-@keyframes fadeInAnimationFull {
+@keyframes fadeInAnimation {
   0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
-@-webkit-keyframes fadeInAnimationSemi {
-  0% {
-    opacity: .1;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes fadeInAnimationSemi {
-  0% {
-    opacity: .1;
+    opacity: .05;
   }
 
   100% {
@@ -32276,8 +32256,8 @@ video {
 /* Make page fade in on load */
 
 body {
-  -webkit-animation: fadeInAnimationFull ease .75s;
-          animation: fadeInAnimationFull ease .75s;
+  -webkit-animation: fadeInAnimation ease .75s;
+          animation: fadeInAnimation ease .75s;
   -webkit-animation-iteration-count: 1;
           animation-iteration-count: 1;
   -webkit-animation-fill-mode: forwards;
@@ -32286,8 +32266,8 @@ body {
 
 .fin {
   opacity: 0;
-  -webkit-animation: fadeInAnimationSemi ease .5s;
-          animation: fadeInAnimationSemi ease .5s;
+  -webkit-animation: fadeInAnimation ease .5s;
+          animation: fadeInAnimation ease .5s;
   -webkit-animation-iteration-count: 1;
           animation-iteration-count: 1;
   -webkit-animation-fill-mode: forwards;

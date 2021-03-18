@@ -7,18 +7,9 @@
 @tailwind utilities;
 
 /* stuff for fading stuff in and out */
-@keyframes fadeInAnimationFull {
+@keyframes fadeInAnimation {
   0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-   }
-}
-
-@keyframes fadeInAnimationSemi {
-  0% {
-    opacity: .1;
+    opacity: .05;
   }
   100% {
     opacity: 1;
@@ -27,14 +18,14 @@
 
 /* Make page fade in on load */
 body {
-  animation: fadeInAnimationFull ease .75s;
+  animation: fadeInAnimation ease .75s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
 }
 
 .fin {
   opacity: 0;
-  animation: fadeInAnimationSemi ease .5s;
+  animation: fadeInAnimation ease .5s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
 }
