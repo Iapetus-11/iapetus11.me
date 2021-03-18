@@ -32284,6 +32284,18 @@ body {
           animation-fill-mode: forwards;
 }
 
+#fade-in-0 {
+  opacity: 0;
+  -webkit-animation: fadeInAnimationSemi ease .5s;
+          animation: fadeInAnimationSemi ease .5s;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-delay: .4s;
+          animation-delay: .4s;
+}
+
 #fade-in-1 {
   opacity: 0;
   -webkit-animation: fadeInAnimationSemi ease .5s;
