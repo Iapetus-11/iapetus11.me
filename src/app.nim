@@ -35,5 +35,6 @@ app.use(staticFileMiddleware("/public"))
 
 # add routes
 app.addRoute("/", routes.indexPage)
+app.addRoute("/projects", routes.projectsPage)
 
 app.run()
