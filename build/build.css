@@ -34,6 +34,7 @@ body {
 
 .thing-badge {
   opacity: 0;
+  animation: fadeInAnimationSemi ease .5s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
 }

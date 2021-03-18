@@ -32286,6 +32286,8 @@ body {
 
 .thing-badge {
   opacity: 0;
+  -webkit-animation: fadeInAnimationSemi ease .5s;
+          animation: fadeInAnimationSemi ease .5s;
   -webkit-animation-iteration-count: 1;
           animation-iteration-count: 1;
   -webkit-animation-fill-mode: forwards;
