@@ -2,8 +2,12 @@ import prologue/middlewares/staticfile
 import prologue
 import os
 
+import /routes
+
+# allow running from above the src directory
 setCurrentDir(getAppDir())
 
+# create settings, should be loaded from a .env in the future
 let settings = newSettings(
   appName = "iapetus11.me",
   debug = true,
@@ -12,14 +16,20 @@ let settings = newSettings(
   secretKey = "bruh"
 )
 
+# called on startup
 proc startup() =
   echo "Server started!"
 
+# create app instance
 var app = newApp(
   settings = settings,
   startup = @[initEvent(startup)]
 )
 
+# serve public directory
 app.use(staticFileMiddleware("/public"))
+
+# add routes
+app.addRoute("/", routes.indexPage)
 
 app.run()
