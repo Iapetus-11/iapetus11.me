@@ -27,11 +27,37 @@
   </head>
 
   <body class="select-none bg-gradient-to-r from-dark-dark via-dark-normal via-dark-light via-dark-normal to-dark-dark">
-    <div class="flex flex-row flex-wrap md:flex-nowrap justify-center items-center py-10 md:pt-44 md:-space-x-44 md:-ml-20">
+    <div class="flex flex-row flex-wrap md:flex-nowrap justify-center items-center py-4 md:pt-44 md:-space-x-44 md:-ml-20">
 
-      <!-- profile picture, name, and bio -->
-      <div class="flex flex-col space-y-3 px-3 md:px-0 md:items-center pb-5">
-        <img src="public/images/petus-circle.png" draggable="false" class="fin fin-0 w-1/3 pb-6 self-center">
+      <!-- profile picture, mobile nav, name, and bio -->
+      <div class="flex flex-col space-y-3 px-3 md:px-0 md:items-center">
+        <!-- mobile pfp and nav buttons on either side of pfp -->
+        <div class="flex md:hidden flex-row items-center justify-center space-x-4 text-base text-white text-center">
+          <div class="flex flex-col space-y-2">
+            <div class="fin fin-1 py-1 px-4 hover:bg-aqua-dark transform duration-100 md:hover:scale-110 border hover:border-opacity-0 border-white rounded-md">
+              <a href="/projects">Projects</a>
+            </div>
+
+            <div class="fin fin-1 py-1 px-4 hover:bg-aqua-dark transform duration-100 md:hover:scale-110 border hover:border-opacity-0 border-white rounded-md">
+              <a href="https://github.com/Iapetus-11">GitHub</a>
+            </div>
+          </div>
+
+          <img src="public/images/petus-circle.png" draggable="false" class="fin fin-0 w-1/3 py-6 self-center">
+
+          <div class="flex flex-col space-y-2">
+            <div class="fin fin-2 py-1 px-4 hover:bg-aqua-dark transform duration-100 md:hover:scale-110 border hover:border-opacity-0 border-white rounded-md">
+              <a href="https://discord.com/users/536986067140608041">Discord</a>
+            </div>
+
+            <div class="fin fin-3 py-1 px-4 hover:bg-aqua-dark transform duration-100 md:hover:scale-110 border hover:border-opacity-0 border-white rounded-md">
+              <a href="mailto:iapetus011@gmail.com?subject=Hello There&body=General Kenobiiiiiiiii!">Email</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- desktop pfp -->
+        <img src="public/images/petus-circle.png" draggable="false" class="hidden md:flex fin fin-0 w-1/3 pb-6 self-center">
 
         <h1 class="fin fin-1 text-3xl text-right text-aqua-normal font-semibold w-full max-w-sm">Milo <span class="text-white">/</span> Iapetus11</h1>
 
@@ -41,11 +67,11 @@
         </span>
       </div>
 
-      <!-- nav and lists -->
+      <!-- desktop nav and lists -->
       <div class="flex flex-col items-center md:items-start space-y-7">
-        <!-- cool links -->
-        <div class="flex flex-col items-center md:items-start">
-          <div class="flex flex-row flex-wrap justify-start text-lg text-white space-x-2 md:space-x-4 space-y-2 max-w-xl">
+        <!-- cool links for desktop -->
+        <div class="hidden md:flex flex-col items-start">
+          <div class="flex flex-row flex-wrap justify-start text-lg text-white space-x-4 space-y-1 max-w-xl">
             <div class="w-0 p-0 -m-2 md:m-0"></div> <!-- for some reason, size of next div is fucked if I don't do this -->
 
             <div class="fin fin-1 py-1 px-4 hover:bg-aqua-dark transform duration-100 md:hover:scale-110 border hover:border-opacity-0 border-white rounded-md">
