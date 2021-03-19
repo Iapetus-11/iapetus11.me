@@ -32236,7 +32236,7 @@ video {
 @-webkit-keyframes fadeIntroduction {
   0% {
     opacity: .05;
-    transform: scale(.9);
+    transform: scale(.8);
   }
 
   100% {
@@ -32248,7 +32248,7 @@ video {
 @keyframes fadeIntroduction {
   0% {
     opacity: .05;
-    transform: scale(.9);
+    transform: scale(.8);
   }
 
   100% {
