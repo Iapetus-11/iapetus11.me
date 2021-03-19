@@ -32241,7 +32241,7 @@ video {
 
   50% {
     opacity: .5;
-    transform: scale(1.025);
+    transform: scale(1.0125);
   }
 
   100% {
@@ -32258,7 +32258,7 @@ video {
 
   50% {
     opacity: .5;
-    transform: scale(1.025);
+    transform: scale(1.0125);
   }
 
   100% {
