@@ -13,11 +13,6 @@
     transform: scale(.9);
   }
 
-  50% {
-    opacity: .5;
-    transform: scale(1.0125);
-  }
-
   100% {
     opacity: 1;
     transform: scale(1);

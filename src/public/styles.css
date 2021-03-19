@@ -32239,11 +32239,6 @@ video {
     transform: scale(.9);
   }
 
-  50% {
-    opacity: .5;
-    transform: scale(1.0125);
-  }
-
   100% {
     opacity: 1;
     transform: scale(1);
@@ -32254,11 +32249,6 @@ video {
   0% {
     opacity: .05;
     transform: scale(.9);
-  }
-
-  50% {
-    opacity: .5;
-    transform: scale(1.0125);
   }
 
   100% {
