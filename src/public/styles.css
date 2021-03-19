@@ -32233,31 +32233,45 @@ video {
 
 /* stuff for fading stuff in and out */
 
-@-webkit-keyframes fadeInAnimation {
+@-webkit-keyframes fadeIntroduction {
   0% {
     opacity: .05;
+    transform: scale(.9);
+  }
+
+  50% {
+    opacity: .5;
+    transform: scale(1.025);
   }
 
   100% {
     opacity: 1;
+    transform: scale(1);
   }
 }
 
-@keyframes fadeInAnimation {
+@keyframes fadeIntroduction {
   0% {
     opacity: .05;
+    transform: scale(.9);
+  }
+
+  50% {
+    opacity: .5;
+    transform: scale(1.025);
   }
 
   100% {
     opacity: 1;
+    transform: scale(1);
   }
 }
 
 /* Make page fade in on load */
 
 body {
-  -webkit-animation: fadeInAnimation ease .75s;
-          animation: fadeInAnimation ease .75s;
+  -webkit-animation: fadeIntroduction ease .75s;
+          animation: fadeIntroduction ease .75s;
   -webkit-animation-iteration-count: 1;
           animation-iteration-count: 1;
   -webkit-animation-fill-mode: forwards;
@@ -32266,8 +32280,8 @@ body {
 
 .fin {
   opacity: 0;
-  -webkit-animation: fadeInAnimation ease .5s;
-          animation: fadeInAnimation ease .5s;
+  -webkit-animation: fadeIntroduction ease .5s;
+          animation: fadeIntroduction ease .5s;
   -webkit-animation-iteration-count: 1;
           animation-iteration-count: 1;
   -webkit-animation-fill-mode: forwards;

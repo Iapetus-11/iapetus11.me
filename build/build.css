@@ -7,25 +7,33 @@
 @tailwind utilities;
 
 /* stuff for fading stuff in and out */
-@keyframes fadeInAnimation {
+@keyframes fadeIntroduction {
   0% {
     opacity: .05;
+    transform: scale(.9);
   }
+
+  50% {
+    opacity: .5;
+    transform: scale(1.025);
+  }
+
   100% {
     opacity: 1;
+    transform: scale(1);
    }
 }
 
 /* Make page fade in on load */
 body {
-  animation: fadeInAnimation ease .75s;
+  animation: fadeIntroduction ease .75s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
 }
 
 .fin {
   opacity: 0;
-  animation: fadeInAnimation ease .5s;
+  animation: fadeIntroduction ease .5s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
 }
