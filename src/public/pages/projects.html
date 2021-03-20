@@ -25,26 +25,44 @@
   </head>
 
   <body class="select-none bg-gradient-to-r from-dark-dark via-dark-normal via-dark-light via-dark-normal to-dark-dark">
-    <div class="flex flex-col p-16 items-start space-y-10">
-      <div class="flex flex-row flex-wrap items-center text-lg text-white space-x-8 space-y-1 max-w-xl">
-        <div class="w-0 p-0 -m-2 md:m-0"></div> <!-- for some reason, size of next item is fucked if I don't do this -->
+    <div class="flex flex-row flex-wrap-reverse items-center justify-center text-lg text-white space-x-8 px-16 py-0 md:py-10 space-y-8 md:space-y-0">
+      <div class="w-0 p-0 -m-2 md:m-0"></div> <!-- for some reason, size of next item is fucked if I don't do this -->
 
-        <a href="/" class="fin fin-1 py-1 px-4 hover:bg-aqua-dark transform duration-100 md:hover:scale-110 border hover:border-opacity-0 border-white rounded-md">
-          <i class="fas fa-chevron-left font-normal"></i> &ZeroWidthSpace; Home
-        </a>
+      <a href="/" class="fin fin-1 py-1 px-4 hover:bg-aqua-dark transform duration-100 md:hover:scale-110 border hover:border-opacity-0 border-white rounded-md">
+        <i class="fas fa-chevron-left font-normal"></i> &ZeroWidthSpace; Home
+      </a>
 
-        <span class="fin fin-0 text-6xl text-white text-left font-semibold md:pb-1">Projects</span>
+      <span class="fin fin-0 text-6xl text-white text-left font-semibold md:pb-1">Projects</span>
+    </div>
+
+    <div class="flex flex-row flex-wrap items-center justify-center px-10 md:space-x-36 py-16 md:py-0 space-y-8 md:space-y-0">
+      <div class="fin fin-2 flex flex-row flex-nowrap items-center bg-black bg-opacity-30 rounded-md p-9 max-w-md">
+        <div class="flex flex-col flex-nowrap">
+          <span class="text-3xl text-aqua-normal text-left font-semibold pb-1 float-right">Villager Bot</span>
+          <span class="text-base text-white text-left">A Minecraft-themed utility, moderation, and economy Discord bot currently used by around twenty-thousand people.</span>
+        </div>
+
+        <img src="public/images/villager-bot.png" draggable="false" class="w-1/3 rounded-full">
       </div>
 
-      <div class="flex flex-row flex-wrap items-center justify-between">
-        <div class="fin fin-2 flex flex-row flex-nowrap items-center bg-black bg-opacity-30 rounded-md p-9 max-w-md">
-          <div class="flex flex-col flex-nowrap">
-            <span class="text-3xl text-aqua-normal text-left font-semibold pb-1 float-right">Villager Bot</span>
-            <span class="text-base text-white text-left">A Minecraft-themed utility, moderation, and economy Discord bot currently used by around twenty-thousand people.</span>
-          </div>
-
-          <img src="public/images/villager-bot.png" draggable="false" class="w-1/3 rounded-full">
+      <div class="fin fin-2 flex flex-row flex-nowrap items-center bg-black bg-opacity-30 rounded-md p-9 max-w-md">
+        <div class="flex flex-col flex-nowrap">
+          <span class="text-3xl text-aqua-normal text-left font-semibold pb-1 float-right">To-ASCII</span>
+          <span class="text-base text-white text-left">A Python library and command line tool which can convert images, gifs, videos, and even live video from to ASCII art!</span>
         </div>
+
+        <img src="public/images/asciirickrollfoot.png" draggable="false" class="w-1/3 rounded-full">
+      </div>
+    </div>
+
+    <div class="flex flex-row flex-wrap items-center justify-center px-10 md:space-x-36 py-16 space-y-8 md:space-y-0">
+      <div class="fin fin-2 flex flex-row flex-nowrap items-center bg-black bg-opacity-30 rounded-md p-9 max-w-md">
+        <div class="flex flex-col flex-nowrap">
+          <span class="text-3xl text-aqua-normal text-left font-semibold pb-1 float-right">PyMine</span>
+          <span class="text-base text-white text-left">A fast, flexible, and moddable Minecraft server software written in Python. </span>
+        </div>
+
+        <img src="public/images/emerald.png" draggable="false" class="w-1/3 rounded-full">
       </div>
     </div>
   </body>
