@@ -12,7 +12,7 @@ let settings = newSettings(
   appName = "iapetus11.me",
   debug = true,
   address = "0.0.0.0",
-  port = Port(8080),
+  port = Port(80),
   secretKey = "bruh"
 )
 
