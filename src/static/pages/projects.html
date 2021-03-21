@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <title>Projects</title>
+
+    <link rel="icon" type="image/png" href="/static/images/petus-circle.png">
+    <link rel="stylesheet" href="/static/styles.css">
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- font awesome -->
+    <script src="https://kit.fontawesome.com/8b5bae0343.js" crossorigin="anonymous"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M8S3S585E2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-M8S3S585E2');
+    </script>
+  </head>
+
+  <body class="select-none bg-gradient-to-r from-dark-dark via-dark-normal via-dark-light via-dark-normal to-dark-dark">
+    <!-- home page button and projects title -->
+    <div class="flex flex-row flex-wrap-reverse items-center justify-center text-lg text-white space-x-0 md:space-x-8 px-16 pt-4 md:pt-16 space-y-8 md:space-y-0">
+      <div class="w-0 p-0 -m-2 md:m-0"></div> <!-- for some reason, size of next item is fucked if I don't do this -->
+
+      <a href="/" class="fin fin-1 py-1 px-4 hover:bg-aqua-dark transform duration-100 md:hover:scale-110 border hover:border-opacity-0 border-white rounded-md">
+        <i class="fas fa-chevron-left font-normal"></i> &ZeroWidthSpace; Home
+      </a>
+
+      <span class="fin fin-1 text-6xl text-white text-left font-semibold md:pb-1">Projects</span>
+    </div>
+
+    <!-- column containing projects -->
+    <div class="flex flex-col items-center justify-center px-8 py-16 space-y-16">
+      <!-- first row -->
+      <div class="flex flex-row flex-wrap items-center justify-center lg:space-x-16 space-y-16 md:space-y-0">
+        <!-- Villager Bot -->
+        <a href="https://github.com/Iapetus-11/Villager-Bot" target="_blank" class="fin fin-2 transition hover:bg-opacity-20 flex flex-row flex-nowrap items-center bg-black bg-opacity-30 rounded-md p-9 max-w-md">
+          <div class="flex flex-col flex-nowrap">
+            <span class="text-3xl text-aqua-normal text-left font-semibold pb-1 float-right">Villager Bot</span>
+            <span class="text-base text-white text-left">A Minecraft-themed utility, moderation, and economy Discord bot currently used by around twenty-thousand people.</span>
+          </div>
+
+          <img src="static/images/villager-bot.png" draggable="false" class="w-1/3 rounded-full">
+        </a>
+
+        <!-- To Ascii -->
+        <a href="https://github.com/Iapetus-11/To-ASCII" target="_blank" class="fin fin-3 transition hover:bg-opacity-20 flex flex-row flex-nowrap items-center bg-black bg-opacity-30 rounded-md p-9 max-w-md">
+          <div class="flex flex-col flex-nowrap">
+            <span class="text-3xl text-aqua-normal text-left font-semibold pb-1 float-right">To-ASCII</span>
+            <span class="text-base text-white text-left">A Python library and command line tool which can convert images, gifs, videos, and even live video from to ASCII art.</span>
+          </div>
+
+          <img src="static/images/asciirickrollfoot.png" draggable="false" class="w-1/3 rounded-full">
+        </a>
+      </div>
+
+      <!-- second row -->
+      <div class="flex flex-row flex-wrap items-center justify-center lg:space-x-16 space-y-16 md:space-y-0">
+        <!-- Classy-JSON -->
+        <a href="https://github.com/Iapetus-11/iapetus11.me" target="_blank" class="fin fin-5 transition hover:bg-opacity-20 flex flex-row flex-nowrap items-center bg-black bg-opacity-30 rounded-md p-9 max-w-md">
+          <div class="flex flex-col flex-nowrap">
+            <span class="text-3xl text-aqua-normal text-left font-semibold pb-1 float-right">This Site</span>
+            <span class="text-base text-white text-left">Created with Nim, TailwindCSS, and html, and is a testimonial to my flexibility and fast learning as a developer.</span>
+          </div>
+
+          <img src="static/images/petus-circle.png" draggable="false" class="w-1/3 rounded-full">
+        </a>
+
+        <!-- PyMine -->
+        <a href="https://github.com/py-mine/PyMine" target="_blank" class="fin fin-4 transition hover:bg-opacity-20 flex flex-row flex-nowrap items-center bg-black bg-opacity-30 rounded-md p-9 max-w-md">
+          <div class="flex flex-col flex-nowrap">
+            <span class="text-3xl text-aqua-normal text-left font-semibold pb-1 float-right">PyMine</span>
+            <span class="text-base text-white text-left">A fast, flexible, and moddable Minecraft server software written in Python. </span>
+          </div>
+
+          <img src="static/images/emerald.png" draggable="false" class="w-1/3 rounded-full">
+        </a>
+      </div>
+
+      <div class="text-lg text-white text-center">
+        <a href="https://github.com/search?o=desc&q=user%3AIapetus-11&s=stars&type=Repositories" target="_blank" class="fin fin-1 py-2 px-4 hover:bg-aqua-dark transform duration-100 md:hover:scale-110 border hover:border-opacity-0 border-white rounded-md">
+          See More &ZeroWidthSpace; <i class="fas fa-chevron-right font-normal"></i>
+        </a>
+      </div>
+    </div>
+  </body>
+</html>

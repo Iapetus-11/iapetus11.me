@@ -6,7 +6,86 @@
 
 @tailwind utilities;
 
-/* Custom scrollbar css */
+/* stuff for fading stuff in and out */
+@keyframes fadeIntroduction {
+  0% {
+    opacity: .05;
+    transform: scale(.9);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+   }
+}
+
+/* Make page fade in on load */
+body {
+  animation: fadeIntroduction ease .75s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+.fin {
+  opacity: 0;
+  animation: fadeIntroduction ease .5s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+.fin-0 {
+  animation-delay: .2s;
+}
+
+.fin-1 {
+  animation-delay: .3s;
+}
+
+.fin-2 {
+  animation-delay: .4s;
+}
+
+.fin-3 {
+  animation-delay: .5s;
+}
+
+.fin-4 {
+  animation-delay: .6s;
+}
+
+.fin-5 {
+  animation-delay: .7s;
+}
+
+.fin-6 {
+  animation-delay: .8s;
+}
+
+.fin-7 {
+  animation-delay: .9s;
+}
+
+.fin-8 {
+  animation-delay: 1s;
+}
+
+.fin-9 {
+  animation-delay: 1.1s;
+}
+
+.fin-10 {
+  animation-delay: 1.2s;
+}
+
+.fin-11 {
+  animation-delay: 1.3s;
+}
+
+.fin-12 {
+  animation-delay: 1.4s;
+}
+
+/* Custom scrollbar CSS */
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;

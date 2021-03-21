@@ -1,3 +1,6 @@
 __pycache__
 .env
 *.pyc
+
+src/app
+src/app.exe
