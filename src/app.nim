@@ -12,8 +12,7 @@ let settings = newSettings(
   appName = "iapetus11.me",
   debug = true,
   address = "0.0.0.0",
-  port = Port(80),
-  secretKey = "bruh"
+  port = Port(80)
 )
 
 # called on startup
