@@ -7,12 +7,14 @@ import /routes
 # allow running from above the src directory
 setCurrentDir(getAppDir())
 
-# create settings, should be loaded from a .env in the future
+# load .env file
+let env = loadPrologueEnv(".env")
+
+# create settings
 let settings = newSettings(
-  appName = "iapetus11.me",
-  debug = true,
-  address = "0.0.0.0",
-  port = Port(80)
+  debug = env.getOrDefault("debug", true),
+  address = env.getOrDefault("address", "0.0.0.0"),
+  port = Port(env.getOrDefault("port", 8080))
 )
 
 # called on startup
