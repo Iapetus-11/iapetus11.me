@@ -8,7 +8,7 @@ import /routes
 setCurrentDir(getAppDir())
 
 # load .env file
-let env = loadPrologueEnv(".env")
+let env = loadPrologueEnv("../.env")
 
 # create settings
 let settings = newSettings(
