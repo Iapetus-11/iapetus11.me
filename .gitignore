@@ -4,3 +4,4 @@ __pycache__
 
 src/app
 src/app.exe
+.env
