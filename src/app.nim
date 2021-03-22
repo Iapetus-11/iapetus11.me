@@ -7,14 +7,11 @@ import /routes
 # allow running from above the src directory
 setCurrentDir(getAppDir())
 
-# load .env file
-let env = loadPrologueEnv("../.env")
-
 # create settings
 let settings = newSettings(
-  debug = env.getOrDefault("debug", true),
-  address = env.getOrDefault("address", "0.0.0.0"),
-  port = Port(env.getOrDefault("port", 8080))
+  debug = false,
+  address = "0.0.0.0",
+  port = Port(80)
 )
 
 # called on startup
