@@ -18,13 +18,13 @@ proc projectsPage*(ctx: Context) {.async.} =
 proc error404Page*(ctx: Context) {.async.} =
   let file = openAsync("static/pages/404.html")
 
-  resp await file.readAll()
+  resp await file.readAll(), Http404
 
   file.close()
 
 proc error500Page*(ctx: Context) {.async.} =
   let file = openAsync("static/pages/500.html")
 
-  resp await file.readAll()
+  resp await file.readAll(), Http500
 
   file.close()
