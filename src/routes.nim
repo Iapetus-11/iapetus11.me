@@ -2,13 +2,29 @@ import asyncfile
 import prologue
 
 proc indexPage*(ctx: Context) {.async.} =
-  await ctx.staticFileResponse("static/pages/index.html", "static")
+  let file = openAsync("static/pages/index.html")
+
+  resp await file.readAll()
+
+  file.close()
 
 proc projectsPage*(ctx: Context) {.async.} =
-  await ctx.staticFileResponse("static/pages/projects.html", "static")
+  let file = openAsync("static/pages/projects.html")
+
+  resp await file.readAll()
+
+  file.close()
 
 proc error404Page*(ctx: Context) {.async.} =
-  await ctx.staticFileResponse("static/pages/404.html", "static")
+  let file = openAsync("static/pages/404.html")
+
+  resp await file.readAll()
+
+  file.close()
 
 proc error500Page*(ctx: Context) {.async.} =
-  await ctx.staticFileResponse("static/pages/500.html", "static")
+  let file = openAsync("static/pages/500.html")
+
+  resp await file.readAll()
+
+  file.close()
