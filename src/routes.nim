@@ -1,4 +1,3 @@
-import asyncfile
 import prologue
 
 proc indexPage*(ctx: Context) {.async.} =
