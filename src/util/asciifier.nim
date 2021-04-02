@@ -22,11 +22,11 @@ proc asciify(image: PNGResult, palette: string): StringStream =
     let luminosity = calculateLuminosity(r, g, b, a)
     result.write(palette.getAsciiValue(luminosity))
 
-    if i mod image.width == 0:
+    if i mod image.width == image.width - 1:
       result.write('\n')
 
 when isMainModule:
-  let image = loadPNG32("src/static/images/emeraldore.png")
+  let image = loadPNG32("src/static/images/petus.png")
 
   let asciiTextStream = asciify(image, " `-~+#@")
   asciiTextStream.setPosition(0)
