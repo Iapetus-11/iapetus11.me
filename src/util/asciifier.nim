@@ -1,7 +1,7 @@
 import imageman
 import math
 
-proc scaleDownToMax(image: Image, maxDim: int): Image =
+proc scaleDownToMax*(image: Image, maxDim: int): Image =
   if image.width > image.height:
     return image.resizedNN(maxDim, (image.height / image.width) * maxDim)
   elif image.width < image.height:
@@ -9,7 +9,7 @@ proc scaleDownToMax(image: Image, maxDim: int): Image =
   else:
     return image.resizedNN(maxDim, maxDim)
 
-proc stretchWidth(image: Image, factor: float): Image =
+proc stretchWidth*(image: Image, factor: float): Image =
   return image.resizedNN(image.width * factor, image.height)
 
 proc asciifyPixel(palette: string, p: ColorRGBF): char =
@@ -18,12 +18,15 @@ proc asciifyPixel(palette: string, p: ColorRGBF): char =
 
   return palette[index]
 
-proc asciify(image: Image, palette: string): string =
+proc asciify*(image: Image, palette: string): string =
   for i, p in image.data:
     if i mod image.width == 0:
       result &= '\n'
 
     result &= palette.asciifyPixel(p)
+
+proc loadImage*(data: string): Image =
+  return readImage[ColorRGBF](data)
 
 when isMainModule:
   let image = loadImage[ColorRGBF]("src/static/images/petus-circle.png")
