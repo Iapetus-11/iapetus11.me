@@ -18,14 +18,14 @@ proc asciifyPixel(palette: string, p: ColorRGBF): char =
 
   return palette[index]
 
-proc asciify*(image: Image, palette: string): string =
+proc asciify*(image: Image[ColorRGBF], palette: string): string =
   for i, p in image.data:
     if i mod image.width == 0:
       result &= '\n'
 
     result &= palette.asciifyPixel(p)
 
-proc loadImage*(data: string): Image =
+proc loadImage*(data: string): Image[ColorRGBF] =
   return readImage[ColorRGBF](data)
 
 when isMainModule:
