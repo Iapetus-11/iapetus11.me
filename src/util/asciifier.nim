@@ -1,4 +1,5 @@
 import imageman
+import streams
 import math
 
 proc scaleDownToMax*(image: Image, maxDim: int): Image =
@@ -24,9 +25,6 @@ proc asciify*(image: Image[ColorRGBF], palette: string): string =
       result &= '\n'
 
     result &= palette.asciifyPixel(p)
-
-proc loadImage*(data: string): Image[ColorRGBF] =
-  return readImage[ColorRGBF](data)
 
 when isMainModule:
   let image = loadImage[ColorRGBF]("src/static/images/petus-circle.png")
