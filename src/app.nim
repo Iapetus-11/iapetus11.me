@@ -35,7 +35,7 @@ app.registerErrorHandler(Http500, routes.error500Page)
 app.use(staticFileMiddleware("/static"))
 
 # add routes
-app.addRoute("/", routes.indexPage)
-app.addRoute("/projects", routes.projectsPage)
+app.addRoute("/", routes.indexPage, HttpGet)
+app.addRoute("/projects", routes.projectsPage, HttpGet)
 
 app.run()
