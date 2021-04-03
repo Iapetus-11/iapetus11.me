@@ -1,12 +1,11 @@
 import imageman
-import streams
 import math
 
 proc scaleDownToMax*(image: Image, maxDim: int): Image =
   if image.width > image.height:
-    return image.resizedNN(maxDim, (image.height / image.width) * maxDim)
+    return image.resizedNN(maxDim, ((image.height.float / image.width.float) * maxDim.float).int)
   elif image.width < image.height:
-    return image.resizedNN((image.width / image.height) * maxDim, maxDim)
+    return image.resizedNN(((image.width.float / image.height.float) * maxDim.float).int, maxDim)
   else:
     return image.resizedNN(maxDim, maxDim)
 
