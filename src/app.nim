@@ -37,5 +37,7 @@ app.use(staticFileMiddleware("/static"))
 # add routes
 app.addRoute("/", routes.indexPage, HttpGet)
 app.addRoute("/projects", routes.projectsPage, HttpGet)
+app.addRoute("/asciifier", routes.asciifierPageGet, HttpGet)
+app.addRoute("/asciifier", routes.asciifierPagePost, HttpPost)
 
 app.run()
