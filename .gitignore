@@ -1,4 +1,8 @@
-src/app
-src/app.exe
 .env
 src/static/styles.css
+
+src/app
+src/app.exe
+
+src/util/asciifier
+src/util/asciifier.exe
