@@ -10,7 +10,7 @@ proc scaleDownToMax*(image: Image, maxDim: int): Image =
     return image.resizedNN(maxDim, maxDim)
 
 proc stretchWidth*(image: Image, factor: float): Image =
-  return image.resizedNN(image.width * factor, image.height)
+  return image.resizedNN((image.width.float * factor.float).int, image.height)
 
 proc asciifyPixel(palette: string, p: ColorRGBF): char =
   let lumi = 0.2126 * p.r + 0.7152 * p.g + 0.0722 * p.b
