@@ -11,6 +11,10 @@ def page_root():
 def page_projects():
     return app.send_static_file("pages/projects.html")
 
+@app.route("/amogus")
+def page_amogus():
+    return app.send_static_file("pages/amogus.html")
+
 @app.errorhandler(404)
 def page_404(e):
     return app.send_static_file("pages/404.html")
