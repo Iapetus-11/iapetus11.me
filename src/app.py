@@ -19,6 +19,11 @@ def page_amogus():
     return app.send_static_file("pages/amogus.html")
 
 
+@app.route("/asteroids")
+def page_asteroids_game():
+    return app.send_static_file("pages/asteroids.html")
+
+
 @app.errorhandler(404)
 def page_404(e):
     return app.send_static_file("pages/404.html")
