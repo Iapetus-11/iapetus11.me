@@ -9,8 +9,10 @@ from fastapi.staticfiles import StaticFiles
 import traceback
 import logging
 
+
 def format_exception(e: Exception) -> str:
     return "".join(traceback.format_exception(type(e), e, e.__traceback__, 4))
+
 
 app = FastAPI(
     title="iapetus11.me",
@@ -70,20 +72,22 @@ async def req_validation_exception_handler(req: Request, e: Exception) -> JSONRe
 
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
+
 @app.get("/")
 async def page_index():
     return FileResponse("static/pages/index.html")
+
 
 @app.get("/projects")
 async def page_projects():
     return FileResponse("static/pages/projects.html")
 
+
 @app.get("/amogus")
 async def page_amogus():
     return FileResponse("static/pages/amogus.html")
 
+
 @app.get("/asteroids")
 async def page_asteroids():
     return FileResponse("static/pages/asteroids.html")
-
-
