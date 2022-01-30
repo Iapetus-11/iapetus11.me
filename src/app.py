@@ -1,39 +1,89 @@
-from flask import Flask
+from typing import Union
+from fastapi.responses import JSONResponse, FileResponse, StreamingResponse
+from starlette.exceptions import HTTPException as StarletteHTTPException
+from fastapi import FastAPI, Query, Request, HTTPException
+from fastapi.exceptions import RequestValidationError
+from starlette.middleware.cors import CORSMiddleware
+from starlette.middleware import Middleware
+from fastapi.staticfiles import StaticFiles
 import traceback
+import logging
 
-app = Flask(__name__, static_url_path="/static", static_folder="static")
+def format_exception(e: Exception) -> str:
+    return "".join(traceback.format_exception(type(e), e, e.__traceback__, 4))
 
+app = FastAPI(
+    title="iapetus11.me",
+    version="1.0.0",
+    middleware=[
+        Middleware(
+            CORSMiddleware,
+            allow_origins=[
+                "http://localhost",
+                "https://iapetus11.me",
+            ],
+            allow_credentials=True,
+            allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+            allow_headers=["*", "Authorization"],
+            expose_headers=["*", "Authorization"],
+        )
+    ],
+    docs_url=None,
+    redoc_url=None,
+)
 
-@app.route("/")
-def page_root():
-    return app.send_static_file("pages/index.html")
-
-
-@app.route("/projects")
-def page_projects():
-    return app.send_static_file("pages/projects.html")
-
-
-@app.route("/amogus")
-def page_amogus():
-    return app.send_static_file("pages/amogus.html")
-
-
-@app.route("/asteroids")
-def page_asteroids_game():
-    return app.send_static_file("pages/asteroids.html")
-
-
-@app.errorhandler(404)
-def page_404(e):
-    return app.send_static_file("pages/404.html")
-
-
-@app.errorhandler(500)
-def page_500(e):
-    print("".join(traceback.format_exception(type(e), e, e.__traceback__, 4)))
-    return app.send_static_file("pages/500.html")
+logger = logging.getLogger("main")
 
 
-if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=80)
+def log_exception(e: Exception) -> None:
+    """Logs a nicely formatted exception"""
+
+    if isinstance(e, (HTTPException, StarletteHTTPException)):
+        return
+
+    traceback_lines = format_exception(e).strip("\n").split("\n")
+
+    for line in traceback_lines:
+        logger.error(line)
+
+
+@app.exception_handler(StarletteHTTPException)
+async def http_exception_handler(req: Request, e: StarletteHTTPException) -> Union[JSONResponse, FileResponse]:
+    log_exception(e)
+
+    if e.status_code == 404:
+        return FileResponse("static/pages/404.html", status_code=404)
+
+    return JSONResponse(status_code=e.status_code, content={"detail": e.detail})
+
+
+@app.exception_handler(Exception)
+async def general_exception_handler(req: Request, e: Exception) -> FileResponse:
+    log_exception(e)
+    return FileResponse("static/pages/500.html", status_code=500)
+
+
+@app.exception_handler(RequestValidationError)
+async def req_validation_exception_handler(req: Request, e: Exception) -> JSONResponse:
+    return JSONResponse(status_code=422, content={"detail": e.errors()})
+
+
+app.mount("/static", StaticFiles(directory="static"), name="static")
+
+@app.get("/")
+async def page_index():
+    return FileResponse("static/pages/index.html")
+
+@app.get("/projects")
+async def page_projects():
+    return FileResponse("static/pages/projects.html")
+
+@app.get("/amogus")
+async def page_amogus():
+    return FileResponse("static/pages/amogus.html")
+
+@app.get("/asteroids")
+async def page_asteroids():
+    return FileResponse("static/pages/asteroids.html")
+
+
