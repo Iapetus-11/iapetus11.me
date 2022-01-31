@@ -83,6 +83,11 @@ async def page_projects():
     return FileResponse("static/pages/projects.html")
 
 
+@app.get("/hackathons")
+async def page_hackathons():
+    return FileResponse("static/pages/hackathons.html")
+
+
 @app.get("/amogus")
 async def page_amogus():
     return FileResponse("static/pages/amogus.html")
