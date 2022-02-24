@@ -101,4 +101,4 @@ async def page_asteroids():
 
 @app.get("/s/{slug}")
 async def shortcut(slug: str):
-    return RedirectResponse(f"https://api.iapetus11.me/{slug}")
+    return RedirectResponse(f"https://api.iapetus11.me/s/{slug}")
