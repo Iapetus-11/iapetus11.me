@@ -1,13 +1,15 @@
-from typing import Union
-from fastapi.responses import JSONResponse, FileResponse, StreamingResponse
-from starlette.exceptions import HTTPException as StarletteHTTPException
-from fastapi import FastAPI, Query, Request, HTTPException
-from fastapi.exceptions import RequestValidationError
-from starlette.middleware.cors import CORSMiddleware
-from starlette.middleware import Middleware
-from fastapi.staticfiles import StaticFiles
-import traceback
 import logging
+import traceback
+from typing import Union
+
+import aiohttp
+from fastapi import FastAPI, HTTPException, Request
+from fastapi.exceptions import RequestValidationError
+from fastapi.responses import FileResponse, JSONResponse, RedirectResponse
+from fastapi.staticfiles import StaticFiles
+from starlette.exceptions import HTTPException as StarletteHTTPException
+from starlette.middleware import Middleware
+from starlette.middleware.cors import CORSMiddleware
 
 
 def format_exception(e: Exception) -> str:
@@ -35,6 +37,8 @@ app = FastAPI(
 )
 
 logger = logging.getLogger("main")
+
+http = aiohttp.ClientSession()
 
 
 def log_exception(e: Exception) -> None:
@@ -96,3 +100,8 @@ async def page_amogus():
 @app.get("/asteroids")
 async def page_asteroids():
     return FileResponse("static/pages/asteroids.html")
+
+
+@app.get("/s/{slug}")
+async def shortcut(slug: str):
+    return RedirectResponse(f"https://api.iapetus11.me/{slug}")
