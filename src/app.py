@@ -2,7 +2,6 @@ import logging
 import traceback
 from typing import Union
 
-import aiohttp
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.exceptions import RequestValidationError
 from fastapi.responses import FileResponse, JSONResponse, RedirectResponse
@@ -37,8 +36,6 @@ app = FastAPI(
 )
 
 logger = logging.getLogger("main")
-
-http = aiohttp.ClientSession()
 
 
 def log_exception(e: Exception) -> None:
