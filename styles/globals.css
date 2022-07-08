@@ -14,13 +14,6 @@
      }
   }
   
-  /* Make page fade in on load */
-  main {
-    animation: fadeIntroduction ease .75s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
-  }
-  
   .fin {
     opacity: 0;
     animation: fadeIntroduction ease .5s;
