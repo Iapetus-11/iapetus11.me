@@ -31,7 +31,7 @@ export default function Projects() {
 
       {/* column containing projects */}
       <div className="flex flex-col items-center justify-center px-8 py-16 space-y-16">
-        { chunkedProjects.map((ps, i) => <ProjectsRow projects={ps} key={i} />) }
+        { chunkedProjects?.map((ps, i) => <ProjectsRow projects={ps} key={i} />) }
       </div>
     </Default>
   )

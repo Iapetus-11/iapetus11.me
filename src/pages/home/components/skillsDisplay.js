@@ -8,7 +8,7 @@ export default function SkillsDisplay(props) {
       <div className="flex flex-row flex-wrap items-center justify-center md:items-start md:justify-start text-base md:text-lg text-white space-x-2 space-y-2 max-w-xl">
         <div className="fin fin-2 w-0 p-0 -m-2 md:m-0"></div> {/* for some reason, size of next div is fucked if I don't do this */}
 
-        {props.skills.map((s, i) => (<SkillCard idx={i} name={s.name} icon={s.icon} key={i} />))}
+        {props.skills?.map((s, i) => (<SkillCard idx={i} name={s.name} icon={s.icon} key={i} />))}
       </div>
     </div>
   )
