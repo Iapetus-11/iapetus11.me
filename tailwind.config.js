@@ -1,12 +1,8 @@
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-  future: {
-    // removeDeprecatedGapUtilities: true,
-    // purgeLayersByDefault: true,
-  },
-  purge: {
-    enabled: true,
-    content: ['./src/**/*.html']
-  },
+  content: [
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
   theme: {
     extend: {
       colors: {
@@ -18,7 +14,7 @@ module.exports = {
           normal: '#5DA9E9'
         },
         dark: {
-          light: '#43474D',
+          light: '#303036',
           normal: '#2C2F33',
           dark: '#23272A'
         }
@@ -27,12 +23,7 @@ module.exports = {
         '7xl': '4.5rem',
         '8xl': '6rem'
       }
-    }
-  },
-  variants: {
-    extend: {
-      //display: ['group-hover', 'group-focus']=
-    }
+    },
   },
   plugins: [],
 }
