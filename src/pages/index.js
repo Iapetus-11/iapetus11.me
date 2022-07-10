@@ -9,7 +9,7 @@ export default function Home() {
     <Default>
       <div className="flex flex-row flex-wrap md:flex-nowrap items-center w-full h-full self-center">
         {/* profile picture, mobile nav, name, and bio */}
-        <div className="flex flex-col space-y-3 px-3 md:px-0 md:items-center lg:w-2/3">
+        <div className="flex flex-col space-y-3 px-3 md:px-0 md:items-center lg:w-2/3 -ml-0 md:-ml-16 lg:-ml-32">
           {/* mobile pfp and nav buttons on either side of pfp */}
           <div className="flex md:hidden flex-row items-center justify-center space-x-4 text-base text-white text-center self-center pr-6 md:pr-0">
             <div className="flex flex-col space-y-2">
