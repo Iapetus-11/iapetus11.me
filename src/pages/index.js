@@ -1,8 +1,8 @@
-import Default from '../ui/default'
-import SkillsDisplay from './home/components/skillsDisplay'
+import Default from "../ui/default";
+import SkillsDisplay from "./home/components/skillsDisplay";
 import skills from "../lib/data/skills";
-import NavButton from '../ui/navButton';
-import IconNavButton from '../ui/iconNavButton';
+import NavButton from "../ui/navButton";
+import IconNavButton from "../ui/iconNavButton";
 
 export default function Home() {
   return (
@@ -14,18 +14,43 @@ export default function Home() {
           <div className="flex md:hidden flex-row items-center justify-center space-x-6 text-base text-white text-center self-center">
             <div className="flex flex-col space-y-0">
               <div className="flex flex-row space-x-4">
-                <IconNavButton href="https://github.com/Iapetus-11" icon="fab fa-github" idx="1" fixWidth={true} />
-                <IconNavButton href="https://www.linkedin.com/in/milo-weinberg/" icon="fab fa-linkedin" idx="2" fixWidth={true} />
+                <IconNavButton
+                  href="https://github.com/Iapetus-11"
+                  icon="fab fa-github"
+                  idx="1"
+                  fixWidth={true}
+                />
+                <IconNavButton
+                  href="https://www.linkedin.com/in/milo-weinberg/"
+                  icon="fab fa-linkedin"
+                  idx="2"
+                  fixWidth={true}
+                />
               </div>
               <div className="flex flex-row space-x-4">
-                <IconNavButton href="https://discord.bio/p/Iapetus11" icon="fab fa-discord" idx="2" fixWidth={true} />
-                <IconNavButton href="https://twitter.com/iapetus_11" icon="fab fa-twitter" idx="3" fixWidth={true} />
+                <IconNavButton
+                  href="https://discord.bio/p/Iapetus11"
+                  icon="fab fa-discord"
+                  idx="2"
+                  fixWidth={true}
+                />
+                <IconNavButton
+                  href="https://twitter.com/iapetus_11"
+                  icon="fab fa-twitter"
+                  idx="3"
+                  fixWidth={true}
+                />
               </div>
             </div>
 
-            {/* eslint-disable-next-line @next/next/no-img-element */ }
-            <img src="/images/petus-circle.png" draggable="false" className="fin fin-0 w-1/3 py-6 self-center" alt="Iapetus11's profile picture" />
-            
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/images/petus-circle.png"
+              draggable="false"
+              className="fin fin-0 w-1/3 py-6 self-center"
+              alt="Iapetus11's profile picture"
+            />
+
             <div className="flex flex-col space-y-2">
               <NavButton name="Projects" href="/projects" idx="3" />
               <NavButton name="Friends" href="/friends" idx="4" />
@@ -33,13 +58,22 @@ export default function Home() {
           </div>
 
           {/* desktop pfp */}
-          {/* eslint-disable-next-line @next/next/no-img-element */ }
-          <img src="/images/petus-circle.png" className="hidden md:flex fin fin-0 w-1/3 pb-6 self-center" draggable="false" alt="Iapetus11's profile picture" />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/images/petus-circle.png"
+            className="hidden md:flex fin fin-0 w-1/3 pb-6 self-center"
+            draggable="false"
+            alt="Iapetus11's profile picture"
+          />
 
-          <h1 className="fin fin-1 text-3xl text-center text-aqua-normal font-semibold w-full max-w-sm self-center">Milo <span className="text-white">/</span> Iapetus11</h1>
+          <h1 className="fin fin-1 text-3xl text-center text-aqua-normal font-semibold w-full max-w-sm self-center">
+            Milo <span className="text-white">/</span> Iapetus11
+          </h1>
 
           <span className="fin fin-2 text-lg text-left text-white font-semibold max-w-md self-center text-center">
-            Hey! I&lsquo;m Milo, an 18 year-old student and full-stack developer who&lsquo;s been programming for 6+ years and loves to learn new things!</span>
+            Hey! I&lsquo;m Milo, an 18 year-old student and full-stack developer who&lsquo;s been
+            programming for 6+ years and loves to learn new things!
+          </span>
         </div>
 
         {/* desktop nav and lists */}
@@ -47,7 +81,11 @@ export default function Home() {
           <div className="hidden md:flex flex-col-reverse md:flex-row md:space-x-6 md:mr-auto pt-5 self-center">
             <div className="flex flex-row space-x-4 self-center md:pl-6">
               <IconNavButton href="https://github.com/Iapetus-11" icon="fab fa-github" idx="1" />
-              <IconNavButton href="https://www.linkedin.com/in/milo-weinberg/" icon="fab fa-linkedin" idx="2" />
+              <IconNavButton
+                href="https://www.linkedin.com/in/milo-weinberg/"
+                icon="fab fa-linkedin"
+                idx="2"
+              />
               <IconNavButton href="https://discord.bio/p/Iapetus11" icon="fab fa-discord" idx="3" />
               <IconNavButton href="https://twitter.com/iapetus_11" icon="fab fa-twitter" idx="4" />
             </div>
@@ -66,5 +104,5 @@ export default function Home() {
         </div>
       </div>
     </Default>
-  )
+  );
 }

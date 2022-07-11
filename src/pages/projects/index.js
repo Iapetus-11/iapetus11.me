@@ -9,7 +9,9 @@ const chunkedProjects = chunkArray(projects, 2);
 export default function Projects() {
   return (
     <DesignatedPage title="Projects">
-      {chunkedProjects?.map((ps, i) => <ProjectsRow projects={ps} key={i} />)}
+      {chunkedProjects?.map((ps, i) => (
+        <ProjectsRow projects={ps} key={i} />
+      ))}
     </DesignatedPage>
-  )
+  );
 }

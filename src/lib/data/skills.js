@@ -22,8 +22,8 @@ const languages = [
   {
     name: "Java",
     icon: "fab fa-java",
-  }
-]
+  },
+];
 
 const other = [
   {
@@ -68,13 +68,13 @@ const other = [
   },
   {
     name: "Ubuntu",
-    icon: "fab fa-ubuntu"
-  }
-]
+    icon: "fab fa-ubuntu",
+  },
+];
 
 const skills = {
   languages: languages,
   other: other,
-}
+};
 
-export default skills
+export default skills;
