@@ -11,7 +11,7 @@ export default function Home() {
         {/* profile picture, mobile nav, name, and bio */}
         <div className="flex flex-col space-y-3 px-3 md:px-0 md:items-center lg:w-2/3 -ml-0 md:-ml-16 lg:-ml-32">
           {/* mobile pfp and nav buttons on either side of pfp */}
-          <div className="flex md:hidden flex-row items-center justify-center space-x-6 text-base text-white text-center self-center">
+          <div className="flex md:hidden flex-row items-center justify-center space-x-6 self-center">
             <div className="flex flex-col space-y-0">
               <div className="flex flex-row space-x-4">
                 <IconNavButton
