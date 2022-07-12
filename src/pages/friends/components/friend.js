@@ -12,7 +12,7 @@ export default function Friend({ name, username, url, content, idx }) {
           <span className="text-white text-lg">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              className="w-16 h-16 rounded-full float-left m-3"
+              className="w-[5rem] rounded-full float-left mr-3 mt-1"
               src={`https://avatars.githubusercontent.com/${username}`}
               alt={`${name}'s avatar`}
             />

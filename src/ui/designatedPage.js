@@ -32,7 +32,7 @@ export default function DesignatedPage({ title, children }) {
         </div>
       </div>
 
-      <div className="flex flex-col items-center justify-center px-8 py-16 space-y-16">
+      <div className="flex flex-col items-center justify-center px-8 pb-16 pt-8 md:py-16 space-y-16">
         {children}
       </div>
     </Default>
