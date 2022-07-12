@@ -3,7 +3,7 @@ export default function Project({ name, description, href, image, idx }) {
     <a
       href={href}
       target="_blank"
-      className={`fin fin-${idx} transition hover:bg-opacity-20 flex flex-row flex-nowrap items-center bg-black bg-opacity-30 rounded-md p-9 max-w-lg md:space-x-4`}
+      className={`fin fin-${idx} transition hover:bg-opacity-20 flex flex-row flex-nowrap items-center bg-black bg-opacity-30 rounded-2xl p-9 max-w-lg md:space-x-4`}
       rel="noreferrer"
     >
       <div className="flex flex-col flex-nowrap">
