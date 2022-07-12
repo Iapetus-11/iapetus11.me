@@ -11,6 +11,7 @@ export default function Default(props) {
 
         <meta name="title" content="Iapetus-11" />
         <meta name="keywords" content="iapetus11, iapetus-11, milo, weinberg, milo weinberg" />
+        <meta name="description" content={aboutMe} />
 
         {/* meta for embeds in discord and facebook */}
         <meta property="og:type" content="website" />
