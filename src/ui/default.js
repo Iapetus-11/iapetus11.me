@@ -15,20 +15,14 @@ export default function Default(props) {
         {/* meta for embeds in discord and facebook */}
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Milo / Iapetus11" />
-        <meta
-          property="og:description"
-          content={aboutMe}
-        />
+        <meta property="og:description" content={aboutMe} />
         <meta property="og:url" content="https://iapetus11.me/" />
         <meta property="og:image" content="https://iapetus11.me/static/images/petus-circle.png" />
 
         {/* meta for embeds in twitter */}
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:title" content="Milo / Iapetus11" />
-        <meta
-          name="twitter:description"
-          content={aboutMe}
-        />
+        <meta name="twitter:description" content={aboutMe} />
         <meta name="twitter:url" content="https://iapetus11.me/" />
         <meta name="twitter:image" content="https://iapetus11.me/static/images/petus-circle.png" />
       </Head>
