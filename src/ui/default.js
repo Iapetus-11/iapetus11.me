@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Script from "next/script";
+import aboutMe from "../lib/data/aboutMe";
 
 export default function Default(props) {
   return (
@@ -16,7 +17,7 @@ export default function Default(props) {
         <meta property="og:title" content="Milo / Iapetus11" />
         <meta
           property="og:description"
-          content="A personal/portfolio site for (and by) Milo / Iapetus11"
+          content={aboutMe}
         />
         <meta property="og:url" content="https://iapetus11.me/" />
         <meta property="og:image" content="https://iapetus11.me/static/images/petus-circle.png" />
@@ -26,7 +27,7 @@ export default function Default(props) {
         <meta name="twitter:title" content="Milo / Iapetus11" />
         <meta
           name="twitter:description"
-          content="A personal/portfolio site for (and by) Milo / Iapetus11"
+          content={aboutMe}
         />
         <meta name="twitter:url" content="https://iapetus11.me/" />
         <meta name="twitter:image" content="https://iapetus11.me/static/images/petus-circle.png" />

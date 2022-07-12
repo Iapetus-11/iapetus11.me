@@ -3,6 +3,7 @@ import SkillsDisplay from "./home/components/skillsDisplay";
 import skills from "../lib/data/skills";
 import NavButton from "../ui/navButton";
 import IconNavButton from "../ui/iconNavButton";
+import aboutMe from "../lib/data/aboutMe";
 
 export default function Home() {
   return (
@@ -71,8 +72,7 @@ export default function Home() {
           </h1>
 
           <span className="fin fin-2 text-lg text-left text-white font-semibold max-w-md self-center text-center">
-            Hey! I&lsquo;m Milo, an 18 year-old student and full-stack developer who&lsquo;s been
-            programming for 6+ years and loves to learn new things!
+            {aboutMe}
           </span>
         </div>
 
