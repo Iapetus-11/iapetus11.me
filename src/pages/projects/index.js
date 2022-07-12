@@ -8,7 +8,16 @@ export default function Projects({ projectRows }) {
   return (
     <DesignatedPage title="Projects">
       <span className="fin fin-1 text-center text-white text-lg italic -my-4 md:-my-8 md:px-48">
-        These are just a few of my many projects, I urge you to check out <a href="https://github.com/Iapetus-11" target="_blank" rel="noreferrer" className="text-cornflower-normal">my GitHub account</a> as well!
+        These are just a few of my many projects, I urge you to check out{" "}
+        <a
+          href="https://github.com/Iapetus-11"
+          target="_blank"
+          rel="noreferrer"
+          className="text-cornflower-normal"
+        >
+          my GitHub account
+        </a>{" "}
+        as well!
       </span>
 
       {projectRows?.map((ps, i) => (
@@ -21,7 +30,7 @@ export default function Projects({ projectRows }) {
 export function getStaticProps(context) {
   return {
     props: {
-      projectRows: chunkArray(projects, 2)
-    }
-  }
+      projectRows: chunkArray(projects, 2),
+    },
+  };
 }

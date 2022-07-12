@@ -10,12 +10,17 @@ export default function Project({ name, description, href, image, idx }) {
         <span className="text-base text-white text-left">
           {/* project icon on desktop/md+ */}
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={image} draggable="false" className="w-1/6 rounded-full flex md:hidden float-left mr-2 mt-1 -ml-2" alt="" />
+          <img
+            src={image}
+            draggable="false"
+            className="w-1/6 rounded-full flex md:hidden float-left mr-2 mt-1 -ml-2"
+            alt=""
+          />
 
           <span className="text-xl md:text-3xl text-aqua-normal text-left font-semibold">
             {name}
           </span>
-          
+
           {/* little spacer, a litttttle more than a <br> */}
           <div className="pb-1" />
 
