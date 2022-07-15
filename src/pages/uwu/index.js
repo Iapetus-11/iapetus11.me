@@ -2,7 +2,7 @@ import Default from "../../ui/default";
 
 export default function Uwu() {
   return (
-    <Default title="  🥺" description="👉👈">
+    <Default title={"\u200B \u200B 🥺"} description="👉👈">
       <div className="flex flex-col w-full h-full justify-center text-center">
         <span className="text-9xl text-center">🥺</span>
 
