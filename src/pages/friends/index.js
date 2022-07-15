@@ -16,7 +16,7 @@ export default function Friends() {
   return (
     <DesignatedPage title="Friends">
       <span className="fin fin-1 text-center text-white text-lg italic -my-4 md:-my-8 md:px-48">
-        Here are friends who I have helped, tutored, or worked with. This page is automatically
+        Here are friends who I have worked with, mentored, or otherwise significantly helped. This page is automatically
         generated from{" "}
         <a
           href="https://github.com/Iapetus-11/recommendations"
