@@ -25,5 +25,5 @@ export default function Uwu() {
         </div>
       </div>
     </Default>
-  )
+  );
 }
