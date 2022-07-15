@@ -2,7 +2,7 @@ import Head from "next/head";
 import Script from "next/script";
 import aboutMe from "../lib/data/aboutMe";
 
-export default function Default({children, title, description}) {
+export default function Default({ children, title, description }) {
   title = title ?? "Milo Weinberg";
   description = description ?? aboutMe;
 
