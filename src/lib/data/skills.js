@@ -70,6 +70,10 @@ const other = [
     name: "Ubuntu",
     icon: "fab fa-ubuntu",
   },
+  {
+    name: "Stripe",
+    icon: "fab fa-stripe-s"
+  }
 ];
 
 const skills = {
