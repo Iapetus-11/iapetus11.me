@@ -72,8 +72,8 @@ const other = [
   },
   {
     name: "Stripe",
-    icon: "fab fa-stripe-s"
-  }
+    icon: "fab fa-stripe-s",
+  },
 ];
 
 const skills = {
