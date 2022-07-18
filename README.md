@@ -3,4 +3,4 @@
 _My personal / portfolio website_
 
 - Built in JavaScript using Next.js
-- To build and run, run `yarn build` and then `yarn start`
+- To build and run, install dependencies with `yarn`, then run `yarn build` and then `yarn start`
