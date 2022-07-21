@@ -24,7 +24,7 @@ const projects = [
     name: "To-ASCII",
     description:
       "A Python library and command line tool which can convert images, gifs, videos, and even live video from to ASCII art.",
-    image: "/images/asciirickrollfoot.png",
+    image: "/images/ascii-me.png",
     href: "https://github.com/Iapetus-11/To-ASCII",
   },
   {
