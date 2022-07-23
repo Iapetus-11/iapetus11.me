@@ -9,7 +9,7 @@ const projects = [
   {
     name: "api.iapetus11.me",
     description:
-      "An API written in C# utilizing Asp.Net and Entity Framework, used by Villager Bot and other developers.",
+      "An API written in C# utilizing Asp.Net and Entity Framework, used by Villager Bot and other projects.",
     image: "/images/petus-circle.png",
     href: "https://github.com/Iapetus-11/api.iapetus11.me",
   },
