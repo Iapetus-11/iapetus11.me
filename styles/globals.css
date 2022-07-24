@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  a {
+    @apply text-cornflower-normal hover:text-cornflower-light transition;
+  }
+}
+
 @keyframes fadeIntroduction {
     0% {
       opacity: .05;

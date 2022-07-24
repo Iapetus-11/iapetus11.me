@@ -1,17 +1,13 @@
-import DesignatedPage from "../../ui/designatedPage";
+import DesignatedPage from "../../components/designatedPage";
 
-import { getRecommendations } from "../../api/github/recommendations";
+import getRecommendations from "../../api/github/recommendations";
 import Friend from "./components/friend";
 import { useEffect, useState } from "react";
 
 export default function Friends() {
   const [friends, setFriends] = useState([]);
 
-  useEffect(() => {
-    getRecommendations().then((f) => {
-      setFriends(f);
-    });
-  }, []);
+  useEffect(() => {getRecommendations().then(setFriends)});
 
   return (
     <DesignatedPage title="Friends">
@@ -22,7 +18,6 @@ export default function Friends() {
           href="https://github.com/Iapetus-11/recommendations"
           target="_blank"
           rel="noreferrer"
-          className="text-cornflower-normal"
         >
           this GitHub repository
         </a>

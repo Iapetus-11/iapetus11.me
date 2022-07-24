@@ -1,8 +1,8 @@
-import Default from "../ui/default";
+import Default from "../components/default";
 import SkillsDisplay from "./home/components/skillsDisplay";
 import skills from "../lib/data/skills";
-import NavButton from "../ui/navButton";
-import IconNavButton from "../ui/iconNavButton";
+import NavButton from "../components/navButton";
+import IconNavButton from "../components/iconNavButton";
 import aboutMe from "../lib/data/aboutMe";
 
 export default function Home() {

@@ -1,4 +1,4 @@
-import Default from "../../ui/default";
+import Default from "../../components/default";
 
 export default function Uwu() {
   return (

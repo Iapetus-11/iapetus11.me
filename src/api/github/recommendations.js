@@ -1,5 +1,6 @@
+import getRepoReadMe from "./getRepoReadme";
+
 /**
- *
  * @param {String} text
  * @returns {Array.<{name: String, username: String, url: String, content: String}>}
  */
@@ -27,15 +28,13 @@ function parseRecommendations(text) {
   return out;
 }
 
-export function getRecommendations() {
+/**
+ * @returns {Promise<Array.<{name: String, username: String, url: String, content: String}>>}
+ */
+export default function getRecommendations() {
   return new Promise((resolve, reject) => {
-    fetch("https://raw.githubusercontent.com/Iapetus-11/recommendations/main/README.md")
-      .then((res) => {
-        res
-          .text()
-          .then((text) => resolve(parseRecommendations(text)))
-          .catch((e) => reject(e));
-      })
-      .catch((e) => reject(e));
+    getRepoReadMe("Iapetus-11/recommendations")
+    .then(text => resolve(parseRecommendations(text)))
+    .catch(reject)
   });
 }

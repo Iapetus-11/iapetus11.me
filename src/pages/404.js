@@ -1,5 +1,5 @@
-import Default from "../ui/default";
-import NavButton from "../ui/navButton";
+import Default from "../components/default";
+import NavButton from "../components/navButton";
 
 export default function PageNotFound() {
   return (

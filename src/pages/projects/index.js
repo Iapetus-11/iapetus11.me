@@ -1,5 +1,5 @@
 import ProjectsRow from "./components/projectsRow";
-import DesignatedPage from "../../ui/designatedPage";
+import DesignatedPage from "../../components/designatedPage";
 
 import chunkArray from "../../lib/chunkArray";
 import projects from "../../lib/data/projects";
