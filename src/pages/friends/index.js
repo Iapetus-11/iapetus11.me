@@ -7,18 +7,16 @@ import { useEffect, useState } from "react";
 export default function Friends() {
   const [friends, setFriends] = useState([]);
 
-  useEffect(() => {getRecommendations().then(setFriends)});
+  useEffect(() => {
+    getRecommendations().then(setFriends);
+  });
 
   return (
     <DesignatedPage title="Friends">
       <span className="fin fin-1 text-center text-white text-lg italic -my-4 md:-my-8 md:px-48">
         Here are friends who I have worked with, mentored, or otherwise significantly helped. This
         page is automatically generated from{" "}
-        <a
-          href="https://github.com/Iapetus-11/recommendations"
-          target="_blank"
-          rel="noreferrer"
-        >
+        <a href="https://github.com/Iapetus-11/recommendations" target="_blank" rel="noreferrer">
           this GitHub repository
         </a>
         .

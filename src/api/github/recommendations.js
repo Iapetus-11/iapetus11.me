@@ -34,7 +34,7 @@ function parseRecommendations(text) {
 export default function getRecommendations() {
   return new Promise((resolve, reject) => {
     getRepoReadMe("Iapetus-11/recommendations")
-    .then(text => resolve(parseRecommendations(text)))
-    .catch(reject)
+      .then((text) => resolve(parseRecommendations(text)))
+      .catch(reject);
   });
 }
