@@ -1,4 +1,4 @@
-import getRepoReadMe from "./getRepoReadme";
+import getRepoReadMe from "./getRepoReadMe";
 
 /**
  * @param {String} text
