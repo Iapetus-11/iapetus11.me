@@ -74,6 +74,10 @@ const other = [
     name: "Stripe",
     icon: "fab fa-stripe-s",
   },
+  {
+    name: "Docker",
+    icon: "fab fa-docker"
+  }
 ];
 
 const skills = {
