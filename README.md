@@ -1,6 +1,9 @@
 # [iapetus11.me](https://iapetus11.me)
 
-_My personal / portfolio website_
+- My personal / portfolio website
+- Currently deployed on my Raspberry Pi
 
-- Built in JavaScript using Next.js
-- To build and run, install dependencies with `yarn`, then run `yarn build` and then `yarn start`
+## Technologies
+
+- [Next.js](https://nextjs.org/)
+- [TailWindCSS](https://tailwindcss.com/)
