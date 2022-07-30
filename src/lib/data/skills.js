@@ -76,8 +76,8 @@ const other = [
   },
   {
     name: "Docker",
-    icon: "fab fa-docker"
-  }
+    icon: "fab fa-docker",
+  },
 ];
 
 const skills = {
