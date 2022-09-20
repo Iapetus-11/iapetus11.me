@@ -30,7 +30,7 @@ export default function Home() {
               </div>
               <div className="flex flex-row space-x-4">
                 <IconNavButton
-                  href="https://discord.bio/p/Iapetus11"
+                  href="https://dsc.bio/iapetus11"
                   icon="fab fa-discord"
                   idx="2"
                   fixWidth={true}
@@ -86,7 +86,7 @@ export default function Home() {
                 icon="fab fa-linkedin"
                 idx="2"
               />
-              <IconNavButton href="https://discord.bio/p/Iapetus11" icon="fab fa-discord" idx="3" />
+              <IconNavButton href="https://dsc.bio/iapetus11" icon="fab fa-discord" idx="3" />
               <IconNavButton href="https://twitter.com/iapetus_11" icon="fab fa-twitter" idx="4" />
             </div>
 
