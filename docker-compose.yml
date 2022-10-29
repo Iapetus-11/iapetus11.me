@@ -1,0 +1,9 @@
+version: "3.7"
+services:
+  site:
+    build:
+      dockerfile: "./Dockerfile"
+      context: "."
+    ports:
+      - "7387:7387"
+    restart: on-failure
