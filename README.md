@@ -7,3 +7,6 @@
 - [TypeScript](https://www.typescriptlang.org/)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Docker](https://docker.com/)
+
+
+- [Previously written in Next.js](https://github.com/Iapetus-11/iapetus11.me/tree/main)
