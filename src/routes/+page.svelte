@@ -4,6 +4,7 @@
     import petusPng from '$lib/images/petus.png';
     import SkillsDisplay from './SkillsDisplay.svelte';
     import Navigation from '$lib/components/Navigation.svelte';
+    import MobileNavigation from './MobileNavigation.svelte';
 </script>
 
 <CustomHead />
@@ -13,13 +14,13 @@
 	       lg:gap-24 xl:gap-40"
 >
     <div class="flex flex-col space-y-5 sm:w-2/5 items-center">
-        <Navigation mobile>
+        <MobileNavigation>
             <img
                 src={petusPng}
                 alt="Iapetus11's Lightbulb"
-                class="fin fin-0 shadow-md rounded-full shadow w-full col-span-3"
+                class="fin fin-0 shadow-md rounded-full shadow w-full"
             />
-        </Navigation>
+        </MobileNavigation>
 
         <div class="flex flex-col space-y-2 font-semibold">
             <h3 class="text-3xl text-aqua-normal text-center fin fin-1">
@@ -31,7 +32,7 @@
     </div>
 
     <div class="flex flex-col sm:w-3/5 gap-6">
-        <Navigation mobile={false} />
+        <Navigation class="hidden sm:flex" />
         <SkillsDisplay title="Programming Languages" skills={skills.languages} />
         <SkillsDisplay title="Technologies / Tools" skills={skills.other} />
     </div>
