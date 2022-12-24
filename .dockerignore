@@ -1,8 +1,0 @@
-.node_modules
-.next
-.swc
-.vscode
-.eslintrc.json
-.docker-compose.yml
-Dockerfile
-README.md

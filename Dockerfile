@@ -1,15 +1,26 @@
-FROM node:16-alpine
-WORKDIR /app
+FROM node:18-alpine AS build
 
-# install deps
-ADD package.json .
-ADD yarn.lock .
+WORKDIR /iapetus11.me
+
+# install dependencies
+ADD package.json yarn.lock ./
 RUN yarn
 
-# build
-ADD . /app
+# copy remaining files and build
+COPY . .
 RUN yarn build
 
-# run
-ENV PORT=7387
-CMD ["yarn", "start"]
+FROM node:18-alpine AS deploy
+
+WORKDIR /iapetus11.me
+
+RUN rm -rf ./*
+
+# copy over necessary files from build stage
+COPY --from=build /iapetus11.me/package.json .
+COPY --from=build /iapetus11.me/build .
+
+# install prod dependencies
+RUN yarn --prod
+
+CMD ["node", "index.js"]

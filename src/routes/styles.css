@@ -1,0 +1,140 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    a {
+        @apply text-cornflower-normal hover:text-cornflower-light transition;
+    }
+}
+
+@keyframes fadeIntroduction {
+    0% {
+        opacity: 0.05;
+        transform: scale(0.9);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.fin {
+    opacity: 0;
+    animation: fadeIntroduction ease 0.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+.fin-0 {
+    animation-delay: 0.2s;
+}
+
+.fin-1 {
+    animation-delay: 0.25s;
+}
+
+.fin-2 {
+    animation-delay: 0.3s;
+}
+
+.fin-3 {
+    animation-delay: 0.35s;
+}
+
+.fin-4 {
+    animation-delay: 0.4s;
+}
+
+.fin-5 {
+    animation-delay: 0.45s;
+}
+
+.fin-6 {
+    animation-delay: 0.5s;
+}
+
+.fin-7 {
+    animation-delay: 0.55s;
+}
+
+.fin-8 {
+    animation-delay: 0.6s;
+}
+
+.fin-9 {
+    animation-delay: 0.65s;
+}
+
+.fin-10 {
+    animation-delay: 0.7s;
+}
+
+.fin-11 {
+    animation-delay: 0.75s;
+}
+
+.fin-12 {
+    animation-delay: 0.8s;
+}
+
+.fin-13 {
+    animation-delay: 0.85s;
+}
+
+.fin-14 {
+    animation-delay: 0.9s;
+}
+
+.fin-15 {
+    animation-delay: 0.95s;
+}
+
+.fin-14 {
+    animation-delay: 1s;
+}
+
+/* Custom scrollbar CSS */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+    background: #23272a;
+}
+
+::-webkit-scrollbar-button {
+    width: 18px;
+    height: 18px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #a1a1a1;
+    border: 1px solid #4b4b4b;
+    border-radius: 69px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #a1a1a1;
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: #3b3b3b;
+}
+
+::-webkit-scrollbar-track {
+    background: #666666;
+    border: 1px solid #4b4b4b;
+    border-radius: 45px;
+}
+
+::-webkit-scrollbar-track:hover {
+    background: #666666;
+}
+
+::-webkit-scrollbar-track:active {
+    background: #4b4b4b;
+}
+
+::-webkit-scrollbar-corner {
+    background: transparent;
+}

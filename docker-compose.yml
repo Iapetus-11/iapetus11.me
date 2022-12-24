@@ -5,5 +5,9 @@ services:
       dockerfile: "./Dockerfile"
       context: "."
     ports:
-      - "7387:7387"
-    restart: on-failure
+      - "7387:3000"
+    volumes:
+      - type: bind
+        source: ./.env
+        target: /iapetus11.me/.env
+    init: true
