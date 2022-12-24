@@ -25,6 +25,11 @@ import {
 import svelteIconSvg from '$lib/images/svelte-icon.svg';
 import djangoIconSvg from '$lib/images/django-icon.svg';
 import petusPng from '$lib/images/petus.png';
+import minecraftGlobalPaddedPng from '$lib/images/minecraft-global-padded.png';
+import asciiMePng from '$lib/images/ascii-me.png';
+import fractalColoredIterative from '$lib/images/fractal_colored_iterative_1.png';
+import nimsnakePng from '$lib/images/nimsnake.png';
+import villagerBotPng from '$lib/images/villager-bot.png';
 
 export const aboutMe =
     "Hey! I'm Milo, a 19 year-old full-stack developer who's been programming for 6+ years and loves to learn new " +
@@ -134,7 +139,7 @@ export const projects = [
         name: 'Villager Bot',
         description:
             'A Minecraft-themed utility, moderation, and economy Discord bot used by tens of thousands.',
-        image: '/images/villager-bot.png',
+        image: villagerBotPng,
         href: 'https://villagerbot.com/',
     },
     {
@@ -148,27 +153,27 @@ export const projects = [
         name: 'fractals',
         description:
             'A website that generates fractals adjustable by the user, created during CUHackit 2022 with my group.',
-        image: '/images/fractal_colored_iterative_1.png',
+        image: fractalColoredIterative,
         href: 'https://fractals.iapetus11.me/',
     },
     {
         name: 'To-ASCII',
         description:
             'A Python library and command line tool which can convert images, gifs, videos, and even live video from to ASCII art.',
-        image: '/images/ascii-me.png',
+        image: asciiMePng,
         href: 'https://github.com/Iapetus-11/To-ASCII/',
     },
     {
         name: 'Snake',
         description: 'The snake game written in Nim using a wrapper for the SFML graphics library.',
-        image: '/images/nimsnake.png',
+        image: nimsnakePng,
         href: 'https://github.com/Iapetus-11/snake/',
     },
     {
         name: 'minecraft\u200B.global',
         description:
             'An advanced Minecraft server list created with Next.js, TailwindCSS, Asp.Net, and TypeScript.',
-        image: '/images/minecraft-global-bordered.png',
+        image: minecraftGlobalPaddedPng,
         href: 'https://minecraft.global/',
     },
 ];
