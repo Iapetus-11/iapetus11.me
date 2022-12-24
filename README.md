@@ -1,9 +1,9 @@
 # [iapetus11.me](https://iapetus11.me)
-
-- My personal / portfolio website
-- Currently deployed on my Raspberry Pi
+*My personal / portfolio website*
 
 ## Technologies
 
-- [Next.js](https://nextjs.org/)
-- [TailWindCSS](https://tailwindcss.com/)
+- [SvelteKit](https://kit.svelte.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Docker](https://docker.com/)
