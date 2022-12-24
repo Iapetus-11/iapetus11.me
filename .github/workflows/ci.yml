@@ -1,0 +1,38 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+    types: [opened]
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: setup node 18
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: load cached node_modules
+        id: cached-npm-dependencies
+        uses: actions/cache@v2
+        with:
+          path: ./node_modules
+          key: venv-${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
+
+      - name: install dependencies
+        working-directory: ./frontend
+        run: yarn
+
+      - name: prettier fix
+        working-directory: ./frontend
+        run: yarn format
+
+      - name: auto commit
+        if: github.ref != 'refs/heads/main'
+        uses: stefanzweifel/git-auto-commit-action@v4.15.4
+        with:
+          commit_message: format / fix code
