@@ -14,7 +14,7 @@
     target="_blank"
 >
     <div class="hidden md:flex items-center">
-        <img src={image} alt={name} class="rounded-full shadow" />
+        <img src={image} alt={name} class="rounded-full shadow w-full" />
     </div>
 
     <span class="md:col-span-2 my-auto">

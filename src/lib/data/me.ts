@@ -30,6 +30,8 @@ import asciiMePng from '$lib/images/ascii-me.png';
 import fractalColoredIterative from '$lib/images/fractal_colored_iterative_1.png';
 import nimsnakePng from '$lib/images/nimsnake.png';
 import villagerBotPng from '$lib/images/villager-bot.png';
+import emojiLeaderboardExamplePng from '$lib/images/emoji-leaderboard-example.png';
+import quake3BotWebp from '$lib/images/quake-3-bot.webp';
 
 export const aboutMe =
     "Hey! I'm Milo, a 19 year-old full-stack developer who's been programming for 6+ years and loves to learn new " +
@@ -140,40 +142,53 @@ export const projects = [
         description:
             'A Minecraft-themed utility, moderation, and economy Discord bot used by tens of thousands.',
         image: villagerBotPng,
-        href: 'https://villagerbot.com/',
+        href: 'https://villagerbot.com',
     },
     {
         name: 'api.iapetus11.me',
         description:
             'An API written in C# utilizing Asp.Net and Entity Framework, used by Villager Bot and other projects.',
         image: petusPng,
-        href: 'https://github.com/Iapetus-11/api.iapetus11.me/',
+        href: 'https://github.com/Iapetus-11/api.iapetus11.me',
     },
     {
         name: 'fractals',
         description:
             'A website that generates fractals adjustable by the user, created during CUHackit 2022 with my group.',
         image: fractalColoredIterative,
-        href: 'https://fractals.iapetus11.me/',
+        href: 'https://fractals.iapetus11.me',
     },
     {
         name: 'To-ASCII',
         description:
             'A Python library and command line tool which can convert images, gifs, videos, and even live video from to ASCII art.',
         image: asciiMePng,
-        href: 'https://github.com/Iapetus-11/To-ASCII/',
+        href: 'https://ascii.iapetus11.me',
     },
     {
         name: 'Snake',
         description: 'The snake game written in Nim using a wrapper for the SFML graphics library.',
         image: nimsnakePng,
-        href: 'https://github.com/Iapetus-11/snake/',
+        href: 'https://github.com/Iapetus-11/snake',
     },
     {
         name: 'minecraft\u200B.global',
         description:
             'An advanced Minecraft server list created with Next.js, TailwindCSS, Asp.Net, and TypeScript.',
         image: minecraftGlobalPaddedPng,
-        href: 'https://minecraft.global/',
+        href: 'https://minecraft.global',
+    },
+    {
+        name: 'Slack Leaderboard',
+        description:
+            'A Slack bot which tracks emoji use and displays it on a frontend built with SvelteKit.',
+        image: emojiLeaderboardExamplePng,
+        href: 'https://github.com/Iapetus-11/slack-leaderboard',
+    },
+    {
+        name: 'Quake III Bot',
+        description: 'A Discord bot which facilitates the management of Quake III servers via RCON',
+        image: quake3BotWebp,
+        href: 'https://github.com/Iapetus-11/quake3-bot',
     },
 ];
