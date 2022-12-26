@@ -9,7 +9,7 @@
 </script>
 
 <a
-    class="fin p-3 md:p-6 lg:p-8 bg-dark-super hover:bg-opacity-80 transition rounded-xl !text-white {$$props.class}"
+    class="fin p-6 lg:p-8 bg-dark-super hover:bg-opacity-80 transition rounded-xl !text-white {$$props.class}"
     style="animation-delay:{0.2 + idx * 0.05}s;"
     href={url}
     target="_blank"

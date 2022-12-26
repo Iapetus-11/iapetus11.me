@@ -7,7 +7,7 @@
 
 <CustomHead {title} />
 
-<div class="flex flex-col my-4 mx-3 md:my-12 md:w-4/5 md:mx-auto">
+<div class="flex flex-col my-4 mx-3 md:my-12 md:w-11/12 xl:w-4/5 md:mx-auto">
     <div
         class="flex flex-col-reverse sm:flex-row justify-between w-full items-center sm:items-start mb-6 lg:mb-12"
     >

@@ -186,11 +186,11 @@ export const projects = [
         href: 'https://minecraft.global',
     },
     {
-        name: 'Slack Leaderboard',
+        name: 'Emoji Leaderboard',
         description:
             'A Slack bot which tracks emoji use and displays it on a frontend built with SvelteKit.',
         image: emojiLeaderboardExamplePng,
-        href: 'https://github.com/Iapetus-11/slack-leaderboard',
+        href: 'https://github.com/Iapetus-11/slack-emoji-leaderboard',
     },
     {
         name: 'Quake III Bot',

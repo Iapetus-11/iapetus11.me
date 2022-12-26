@@ -23,7 +23,7 @@
             alt={name}
             class="md:hidden flex rounded-full shadow w-1/6 float-left mr-3 mt-1"
         />
-        <span class="text-aqua-normal text-3xl font-semibold whitespace-nowrap">{name}</span>
+        <span class="text-aqua-normal text-3xl font-semibold">{name}</span>
         <br />
         <span class="text-white">{description}</span>
     </span>
