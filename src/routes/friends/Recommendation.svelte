@@ -22,5 +22,5 @@
     />
 
     <span class="text-aqua-normal text-3xl">{name}</span>
-    <SvelteMarkdown class="h-fit" source={content} />
+    <SvelteMarkdown source={content} />
 </a>
