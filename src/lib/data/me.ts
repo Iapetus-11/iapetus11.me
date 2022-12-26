@@ -33,9 +33,16 @@ import villagerBotPng from '$lib/images/villager-bot.png';
 import emojiLeaderboardExamplePng from '$lib/images/emoji-leaderboard-example.png';
 import quake3BotWebp from '$lib/images/quake-3-bot.webp';
 
+function calculateYearsElapsed(since: Date): number {
+    return new Date(new Date().getTime() - since.getTime()).getFullYear() - 1970;
+}
+
+const aliveForYears = calculateYearsElapsed(new Date('August, 2003'));
+const programmingForYears = calculateYearsElapsed(new Date('August, 2016'));
+
 export const aboutMe =
-    "Hey! I'm Milo, a 19 year-old full-stack developer who's been programming for 6+ years and loves to learn new " +
-    'things!';
+    `Hey! I'm Milo, a ${aliveForYears} year-old full-stack developer who's been programming for ` +
+    `${programmingForYears}+ years and loves to learn new things!`;
 
 const languages = [
     {
