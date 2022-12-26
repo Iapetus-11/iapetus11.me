@@ -16,7 +16,7 @@
 
     <div class="flex gap-4">
         {#each pages.filter((p) => p.href !== $page.route.id) as page, idx}
-            <NavButton {...page} {idx} />
+            <NavButton {...page} idx={idx + externalPages.length} />
         {/each}
     </div>
 </div>
