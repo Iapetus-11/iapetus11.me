@@ -37,8 +37,8 @@ function calculateYearsElapsed(since: Date): number {
     return new Date(new Date().getTime() - since.getTime()).getFullYear() - 1970;
 }
 
-const aliveForYears = calculateYearsElapsed(new Date('August, 2003'));
-const programmingForYears = calculateYearsElapsed(new Date('August, 2016'));
+const aliveForYears = calculateYearsElapsed(new Date('9/1/2003'));
+const programmingForYears = calculateYearsElapsed(new Date('8/1/2016'));
 
 export const aboutMe =
     `Hey! I'm Milo, a ${aliveForYears} year-old full-stack developer who's been programming for ` +
