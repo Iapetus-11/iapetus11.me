@@ -18,12 +18,12 @@
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content="https://iapetus11.me/" />
-    <meta property="og:image" content="https://iapetus11.me/static/images/petus-circle.png" />
+    <meta property="og:image" content="https://iapetus11.me/favicon.png" />
 
     <!-- meta for embeds in twitter -->
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:url" content="https://iapetus11.me/" />
-    <meta name="twitter:image" content="https://iapetus11.me/static/images/petus-circle.png" />
+    <meta name="twitter:image" content="https://iapetus11.me/favicon.png" />
 </svelte:head>
