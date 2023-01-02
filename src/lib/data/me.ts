@@ -32,6 +32,7 @@ import nimsnakePng from '$lib/images/nimsnake.png';
 import villagerBotPng from '$lib/images/villager-bot.png';
 import emojiLeaderboardExamplePng from '$lib/images/emoji-leaderboard-example.png';
 import quake3BotWebp from '$lib/images/quake-3-bot.webp';
+import postmanIconSvg from '$lib/images/postman-icon.svg';
 
 function calculateYearsElapsed(since: Date): number {
     return new Date(new Date().getTime() - since.getTime()).getFullYear() - 1970;
@@ -135,6 +136,10 @@ const other = [
     {
         name: 'Docker',
         icon: faDocker,
+    },
+    {
+        name: 'Postman',
+        customIcon: postmanIconSvg,
     },
 ];
 
