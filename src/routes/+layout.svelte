@@ -1,5 +1,5 @@
 <script lang="ts">
-    import './styles.css';
+    import '../app.css';
     import Analytics from '$lib/components/Analytics.svelte';
 </script>
 

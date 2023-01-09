@@ -39,62 +39,6 @@
     animation-delay: 0.3s;
 }
 
-.fin-3 {
-    animation-delay: 0.35s;
-}
-
-.fin-4 {
-    animation-delay: 0.4s;
-}
-
-.fin-5 {
-    animation-delay: 0.45s;
-}
-
-.fin-6 {
-    animation-delay: 0.5s;
-}
-
-.fin-7 {
-    animation-delay: 0.55s;
-}
-
-.fin-8 {
-    animation-delay: 0.6s;
-}
-
-.fin-9 {
-    animation-delay: 0.65s;
-}
-
-.fin-10 {
-    animation-delay: 0.7s;
-}
-
-.fin-11 {
-    animation-delay: 0.75s;
-}
-
-.fin-12 {
-    animation-delay: 0.8s;
-}
-
-.fin-13 {
-    animation-delay: 0.85s;
-}
-
-.fin-14 {
-    animation-delay: 0.9s;
-}
-
-.fin-15 {
-    animation-delay: 0.95s;
-}
-
-.fin-14 {
-    animation-delay: 1s;
-}
-
 /* Custom scrollbar CSS */
 ::-webkit-scrollbar {
     width: 6px;
