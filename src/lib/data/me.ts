@@ -166,9 +166,9 @@ export const projects = [
     {
         name: 'fractals',
         description:
-            'A website that generates fractals adjustable by the user, created during CUHackit 2022 with my group.',
+            'Fractal generation from adjustable parameters, originally created during CUHackit 2022 but since redone.',
         image: fractalColoredIterative,
-        href: 'https://fractals.iapetus11.me',
+        href: '/fractals',
     },
     {
         name: 'To-ASCII',

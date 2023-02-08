@@ -11,7 +11,7 @@
            hover:bg-opacity-80 transition rounded-xl {$$props.class}"
     style="animation-delay:{0.2 + idx * 0.05}s;"
     {href}
-    target="_blank"
+    target={href.startsWith('/') ? '_self' : '_blank'}
 >
     <div class="hidden md:flex items-center">
         <img src={image} alt={name} class="rounded-full shadow w-full" />

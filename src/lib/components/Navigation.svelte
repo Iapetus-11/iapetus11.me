@@ -6,12 +6,7 @@
 
     export let fill: boolean = false;
 
-    let filteredPages = pages.filter((p) => p.href !== $page.route.id);
-
-    // quick fix for fractals page
-    if (!pages.map((p) => p.href).includes($page.route.id)) {
-        filteredPages = [pages[0]];
-    }
+    let filteredPages = pages.filter((p) => p.href !== $page.route.id).slice(0, 2);
 </script>
 
 <div class="flex p-4 items-center {$$props.class} {fill ? 'justify-between' : 'gap-6'}">
