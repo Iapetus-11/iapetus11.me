@@ -1,11 +1,10 @@
-import { PUBLIC_API_URL } from '$env/static/public';
 import type { PageLoad } from './$types';
 import { DEFAULT_FRACTAL } from '$lib/api/api.iapetus11.me/fractals';
 import { redirect } from '@sveltejs/kit';
 
 export const ssr = false;
 
-export const load = (async ({ fetch, url }) => {
+export const load = (async ({ url }) => {
     // Add missing fractal settings to query params
     const queryParamKeys = Array.from(url.searchParams.keys());
     if (
@@ -21,8 +20,4 @@ export const load = (async ({ fetch, url }) => {
 
         throw redirect(307, `fractals/?${url.searchParams}`);
     }
-
-    return {
-        fractalImage: await (await fetch(`${PUBLIC_API_URL}/fractals/?${url.searchParams}`)).blob(),
-    };
 }) satisfies PageLoad;
