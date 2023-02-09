@@ -1,108 +1,53 @@
 <script lang="ts">
     import { PUBLIC_API_URL } from '$env/static/public';
-    import { goto } from '$app/navigation';
-    import { page } from '$app/stores';
-    import { onMount } from 'svelte';
     import Fa from 'svelte-fa';
     import { faCheckCircle, faClipboard, faHouse } from '@fortawesome/free-solid-svg-icons';
     import DesignatedPage from '$lib/components/DesignatedPage.svelte';
-
-    interface Fractal {
-        resolution: number;
-        variation: string;
-        colorA: string;
-        colorB: string;
-        coloring: string;
-        iterTransformX: number;
-        iterTransformY: number;
-        xShift: number;
-        transform: number;
-        iterations: number;
-        mirrored: boolean;
-        blur: null | number;
-        sharpen: null | number;
-    }
+    import {
+        DEFAULT_FRACTAL,
+        COLORING_STRATEGY_LABELS,
+        EXAMPLES,
+        VARIATIONS,
+    } from '$lib/api/api.iapetus11.me/fractals';
+    import { navigating, page } from '$app/stores';
+    import { goto } from '$app/navigation';
+    import { onMount } from 'svelte';
 
     const BUTTON_CLASSES =
         'flex fin py-2 px-2 sm:px-4 hover:bg-aqua-dark transform duration-100 border hover:border-opacity-0 ' +
         'border-white rounded-md h-8 sm:h-10 justify-center text-white w-full';
 
-    const EXAMPLES = [
-        'resolution=2048&variation=Spherical&colorA=%234466ee&colorB=%2300ff00&coloring=Experimental&iterTransformX=0.625&iterTransformY=0.4375&transform=0.4375&iterations=642300&mirrored=true&xShift=-0.3125&blur=1',
-        'resolution=2048&variation=Spherical&colorA=%237300ff&colorB=%2300ff6e&coloring=Experimental&iterTransformX=0.125&iterTransformY=1&transform=0.3125&iterations=841300&mirrored=true&xShift=-0.1875&blur=1',
-        'resolution=2048&variation=Tangent&colorA=%235252ff&colorB=%23ff0000&coloring=Experimental&iterTransformX=0.875&iterTransformY=0.4375&transform=0.5625&iterations=766400&mirrored=true',
-        'resolution=1792&variation=Tangent&colorA=%23ff0000&colorB=%23d6d9ff&coloring=Experimental&iterTransformX=0.96875&iterTransformY=0.8125&xShift=0.0625&transform=0.5625&iterations=1144900&mirrored=true&blur=3&sharpen=4',
-        'resolution=2048&variation=Tangent&colorA=%23007bff&colorB=%238cff00&coloring=Experimental&iterTransformX=0.875&iterTransformY=0.0625&transform=0.875&iterations=741000&mirrored=true&xShift=-0.3125&blur=1',
-        'resolution=2048&variation=Tangent&colorA=%23ff0000&colorB=%238cff00&coloring=Experimental&iterTransformX=0.75&iterTransformY=0.0625&transform=1&iterations=766400&mirrored=true&blur=1&sharpen=1',
-        'resolution=1792&variation=RadTan&colorA=%230000FF&colorB=%23FF0000&coloring=Experimental&iterTransformX=0.875&iterTransformY=0.5&transform=0.75&iterations=2982800&mirrored=true&xShift=0',
-        'resolution=2048&variation=Bubble&colorA=%237300ff&colorB=%2300ff6e&coloring=Experimental&iterTransformX=0.78125&iterTransformY=0.59375&transform=0.90625&iterations=841300&mirrored=true&xShift=0&blur=1',
-        'resolution=1024&variation=Diamond&colorA=%23002aff&colorB=%2300ff11&coloring=Experimental&iterTransformX=0.59375&iterTransformY=0.28125&xShift=0&transform=0.90625&iterations=189800&mirrored=true&sharpen=1&blur=1',
-    ];
+    export let data: { fractalImage: Blob };
 
-    const VARIATIONS = [
-        'Spherical',
-        'Tangent',
-        'Cross',
-        'RadTan',
-        'Horseshoe',
-        'Linear',
-        'Sine',
-        'Bubble',
-        'Tangle',
-        'Diamond',
-    ];
-    const COLORING_STRATEGIES = [
-        ['Experimental', 'Experimental'],
-        ['Gradient', 'Gradient'],
-        ['Sharp Gradient', 'SigmoidGradient'],
-    ];
+    let fractalUrl;
+    $: fractalUrl = URL.createObjectURL(data.fractalImage);
 
-    const DEFAULT_FRACTAL: Fractal = {
-        resolution: 1024,
-        variation: VARIATIONS[0],
-        colorA: '#0000FF',
-        colorB: '#FF0000',
-        coloring: COLORING_STRATEGIES[0][1],
-        iterTransformX: 0.5,
-        iterTransformY: 0.5,
-        xShift: 0,
-        transform: 0.5,
-        iterations: 500000,
-        mirrored: true,
-        blur: null,
-        sharpen: null,
-    };
+    let fractal = Object.fromEntries(
+        Object.entries(DEFAULT_FRACTAL).map(([k, v]) => [k, $page.url.searchParams.get(k) || v])
+    );
 
-    function loadParams(): Fractal {
-        return Object.fromEntries(
-            Object.entries(DEFAULT_FRACTAL as Object).map(([k, v]) => {
-                return [k, $page.url.searchParams.get(k) || v];
-            })
-        ) as Fractal;
+    function updateParams() {
+        const url = new URL($page.url);
+
+        Object.entries(fractal).forEach(([k, v]) => {
+            if (v === undefined) url.searchParams.delete(k);
+            else url.searchParams.set(k, `${v}`);
+        });
+
+        goto(url);
     }
-
-    let fractal = loadParams();
 
     let linkCopying = false;
 
-    let fractalImageUrl;
-    $: fractalImageUrl = `${PUBLIC_API_URL}/fractals/?${$page.url.searchParams}`;
-
-    function updateParams() {
-        Object.entries(fractal as Object).forEach(([key, value]) => {
-            if (value === null) $page.url.searchParams.delete(key);
-            else $page.url.searchParams.set(key, `${value}`);
-        });
-
-        goto(`?${$page.url.searchParams.toString()}`);
-    }
-
-    onMount(updateParams);
+    onMount(() => console.log('hi'));
 </script>
 
 <DesignatedPage title="Fractals">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 justify-between">
-        <img alt="fractal" src={fractalImageUrl} class="lg:order-2 rounded-lg shadow-xl w-full" />
+        <div class="lg:order-2">
+            <img alt="fractal" src={fractalUrl} class="rounded-lg shadow-xl w-full" />
+            <p>Loading...</p>
+        </div>
 
         <div class="flex flex-col w-full gap-1.5 lg:gap-2 text-sm">
             <div class="flex gap-1.5 lg:gap-2">
@@ -124,14 +69,7 @@
                     <span class="self-center">{linkCopying ? 'Copied!' : 'Copy Link'}</span>
                 </button>
 
-                <button
-                    type="button"
-                    class={BUTTON_CLASSES}
-                    on:click={() => {
-                        fractal = DEFAULT_FRACTAL;
-                        updateParams();
-                    }}
-                >
+                <button type="button" class={BUTTON_CLASSES} on:click={() => goto('/fractals')}>
                     <Fa icon={faHouse} fw class="self-center mr-1" />
                     <span class="self-center">Reset</span>
                 </button>
@@ -188,7 +126,7 @@
                     id="fractal-coloring-select"
                     class="text-black"
                 >
-                    {#each COLORING_STRATEGIES as [name, coloringStrategy]}
+                    {#each COLORING_STRATEGY_LABELS as [name, coloringStrategy]}
                         <option value={coloringStrategy}>{name}</option>
                     {/each}
                 </select>
@@ -341,10 +279,7 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1.5 lg:gap-2 mt-4">
                 {#each EXAMPLES as example}
-                    <a
-                        href="?{example}"
-                        on:click={() => setTimeout(() => (fractal = loadParams()))}
-                    >
+                    <a href="?{example}">
                         <img
                             src={`${PUBLIC_API_URL}/fractals/?${example}`}
                             alt="fractal example"
