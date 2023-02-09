@@ -1,3 +1,5 @@
+import { PUBLIC_API_URL } from '$env/static/public';
+
 export const EXAMPLES = [
     'resolution=2048&variation=Spherical&colorA=%234466ee&colorB=%2300ff00&coloring=Experimental&iterTransformX=0.625&iterTransformY=0.4375&transform=0.4375&iterations=642300&mirrored=true&xShift=-0.3125&blur=1',
     'resolution=2048&variation=Spherical&colorA=%237300ff&colorB=%2300ff6e&coloring=Experimental&iterTransformX=0.125&iterTransformY=1&transform=0.3125&iterations=841300&mirrored=true&xShift=-0.1875&blur=1',
@@ -22,10 +24,10 @@ export const VARIATIONS = [
     'Tangle',
     'Diamond',
 ] as const;
-type FractalVariation = typeof VARIATIONS[number];
+export type FractalVariation = typeof VARIATIONS[number];
 
 export const COLORING_STRATEGIES = ['Experimental', 'Gradient', 'SigmoidGradient'] as const;
-type ColoringStrategy = typeof COLORING_STRATEGIES[number];
+export type ColoringStrategy = typeof COLORING_STRATEGIES[number];
 
 export const COLORING_STRATEGY_LABELS = ['Experimental', 'Gradient', 'Sharp Gradient'].map(
     (v, i) => [v, COLORING_STRATEGIES[i]]
@@ -62,3 +64,14 @@ export const DEFAULT_FRACTAL: Fractal = {
     blur: undefined,
     sharpen: undefined,
 };
+
+export async function getFractal(fractal: Fractal, signal: AbortSignal): Promise<Blob> {
+    // Create query param string and filter out undefined params
+    const queryParams = new URLSearchParams(
+        Object.entries(fractal).filter(([k, v]) => v !== undefined)
+    ).toString();
+
+    return await fetch(`${PUBLIC_API_URL}/fractals/?${queryParams}`, {
+        signal,
+    }).then((res) => res.blob());
+}

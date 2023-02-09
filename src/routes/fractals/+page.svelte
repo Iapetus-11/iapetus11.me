@@ -13,7 +13,9 @@
         COLORING_STRATEGY_LABELS,
         EXAMPLES,
         VARIATIONS,
+        getFractal,
     } from '$lib/api/api.iapetus11.me/fractals';
+    import type { Fractal } from '$lib/api/api.iapetus11.me/fractals';
     import { page } from '$app/stores';
     import { goto } from '$app/navigation';
     import { onMount } from 'svelte';
@@ -22,21 +24,19 @@
         'flex fin py-2 px-2 sm:px-4 hover:bg-aqua-dark transform duration-100 border hover:border-opacity-0 ' +
         'border-white rounded-md h-8 sm:h-10 justify-center text-white w-full';
 
-    export let data: { fractalImage: Blob };
-
     let fractalUrl: string;
     let abortController: AbortController | null = null;
     let loading = true;
     let delayedLoadingTimeout = null;
 
-    let fractalParams = Object.fromEntries(
+    let fractal = Object.fromEntries(
         Object.entries(DEFAULT_FRACTAL).map(([k, v]) => [k, $page.url.searchParams.get(k) || v])
-    );
+    ) as Fractal;
 
     async function updateQueryParams() {
         const url = new URL($page.url);
 
-        Object.entries(fractalParams).forEach(([k, v]) => {
+        Object.entries(fractal).forEach(([k, v]) => {
             if (v === undefined) url.searchParams.delete(k);
             else url.searchParams.set(k, `${v}`);
         });
@@ -53,12 +53,7 @@
             abortController?.abort();
             abortController = new AbortController();
 
-            const fractalBlob = await fetch(
-                `${PUBLIC_API_URL}/fractals/?${$page.url.searchParams}`,
-                {
-                    signal: abortController.signal,
-                }
-            ).then((res) => res.blob());
+            const fractalBlob = await getFractal(fractal, abortController.signal);
 
             fractalUrl = URL.createObjectURL(fractalBlob);
         } catch (error) {
@@ -105,7 +100,14 @@
                     <span class="self-center">{linkCopying ? 'Copied!' : 'Copy Link'}</span>
                 </button>
 
-                <button type="button" class={BUTTON_CLASSES} on:click={() => goto('/fractals')}>
+                <button
+                    type="button"
+                    class={BUTTON_CLASSES}
+                    on:click={() => {
+                        fractal = { ...DEFAULT_FRACTAL };
+                        load();
+                    }}
+                >
                     <Fa icon={faHouse} fw class="self-center mr-1" />
                     <span class="self-center">Reset</span>
                 </button>
@@ -121,7 +123,7 @@
                 </label>
 
                 <input
-                    bind:value={fractalParams.resolution}
+                    bind:value={fractal.resolution}
                     on:change={load}
                     class="col-span-10 sm:col-span-11"
                     id="fractal-resolution-slider"
@@ -132,7 +134,7 @@
                 />
 
                 <input
-                    bind:checked={fractalParams.mirrored}
+                    bind:checked={fractal.mirrored}
                     on:change={load}
                     class="col-span-2 sm:col-span-1"
                     id="fractal-mirror-input"
@@ -146,7 +148,7 @@
                 <label for="fractal-coloring-select">Coloring Mode</label>
 
                 <select
-                    bind:value={fractalParams.variation}
+                    bind:value={fractal.variation}
                     on:change={load}
                     id="fractal-variation-select"
                     class="text-black"
@@ -157,7 +159,7 @@
                 </select>
 
                 <select
-                    bind:value={fractalParams.coloring}
+                    bind:value={fractal.coloring}
                     on:change={load}
                     id="fractal-coloring-select"
                     class="text-black"
@@ -174,7 +176,7 @@
                 <label for="fractal-color-b-input">Secondary Color</label>
 
                 <input
-                    bind:value={fractalParams.colorA}
+                    bind:value={fractal.colorA}
                     on:change={load}
                     class="w-full"
                     id="fractal-color-a-input"
@@ -182,7 +184,7 @@
                 />
 
                 <input
-                    bind:value={fractalParams.colorB}
+                    bind:value={fractal.colorB}
                     on:change={load}
                     class="w-full"
                     id="fractal-color-b-input"
@@ -192,7 +194,7 @@
 
             <label for="fractal-iter-transform-x-input">Iterative X Transform</label>
             <input
-                bind:value={fractalParams.iterTransformX}
+                bind:value={fractal.iterTransformX}
                 on:change={load}
                 id="fractal-iter-transform-x-input"
                 type="range"
@@ -203,7 +205,7 @@
 
             <label for="fractal-iter-transform-y-input">Iterative Y Transform</label>
             <input
-                bind:value={fractalParams.iterTransformY}
+                bind:value={fractal.iterTransformY}
                 on:change={load}
                 id="fractal-iter-transform-y-input"
                 type="range"
@@ -214,7 +216,7 @@
 
             <label for="fractal-iter-transform-input">Transform</label>
             <input
-                bind:value={fractalParams.transform}
+                bind:value={fractal.transform}
                 on:change={load}
                 id="fractal-iter-transform-input"
                 type="range"
@@ -225,7 +227,7 @@
 
             <label for="fractal-x-shift-input">X Axis Shift</label>
             <input
-                bind:value={fractalParams.xShift}
+                bind:value={fractal.xShift}
                 on:change={load}
                 id="fractal-x-shift-input"
                 type="range"
@@ -236,7 +238,7 @@
 
             <label for="fractal-iterations-input">Iterations</label>
             <input
-                bind:value={fractalParams.iterations}
+                bind:value={fractal.iterations}
                 on:change={load}
                 id="fractal-iterations-input"
                 type="range"
@@ -253,11 +255,11 @@
                 <input
                     id="fractal-blur-input"
                     type="range"
-                    value={fractalParams.blur || 0}
+                    value={fractal.blur || 0}
                     min={0}
                     max={4}
                     on:change={(event) => {
-                        fractalParams.blur = parseInt(event.target.value) || null;
+                        fractal.blur = parseInt(event.target.value) || undefined;
                         load();
                     }}
                 />
@@ -265,11 +267,11 @@
                 <input
                     id="fractal-sharpen-input"
                     type="range"
-                    value={fractalParams.sharpen || 0}
+                    value={fractal.sharpen || 0}
                     min={0}
                     max={4}
                     on:change={(event) => {
-                        fractalParams.sharpen = parseInt(event.target.value) || null;
+                        fractal.sharpen = parseInt(event.target.value) || undefined;
                         load();
                     }}
                 />
@@ -315,13 +317,18 @@
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1.5 lg:gap-2 mt-4">
                 {#each EXAMPLES as example}
-                    <a href="?{example}">
+                    <button
+                        on:click={() => {
+                            fractal = Object.fromEntries(new URLSearchParams(example).entries());
+                            load();
+                        }}
+                    >
                         <img
                             src={`${PUBLIC_API_URL}/fractals/?${example}`}
                             alt="fractal example"
                             class="rounded-lg shadow-xl"
                         />
-                    </a>
+                    </button>
                 {/each}
             </div>
         </div>
