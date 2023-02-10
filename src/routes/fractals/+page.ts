@@ -18,6 +18,6 @@ export const load = (async ({ url }) => {
             else url.searchParams.set(k, `${v}`);
         });
 
-        throw redirect(307, `fractals/?${url.searchParams}`);
+        throw redirect(307, `/fractals/?${url.searchParams}`);
     }
 }) satisfies PageLoad;
