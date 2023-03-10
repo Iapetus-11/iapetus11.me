@@ -1,6 +1,6 @@
 <script lang="ts">
     import { PUBLIC_API_URL } from '$env/static/public';
-    import Fa from 'svelte-fa';
+    import Fa from 'svelte-fa/src/fa.svelte';
     import {
         faCheckCircle,
         faCircleNotch,
@@ -73,8 +73,11 @@
 <DesignatedPage title="Fractals">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 justify-between">
         {#if !fractalUrl || loading}
-            <div class="lg:order-2 self-center py-10 pb-12 lg:pt-0">
-                <Fa icon={faCircleNotch} class="animate-spin text-8xl text-gray-500 mx-auto" />
+            <div class="lg:order-2 flex self-center h-[93.5vw] lg:h-auto">
+                <Fa
+                    icon={faCircleNotch}
+                    class="animate-spin self-center text-8xl text-gray-500 mx-auto"
+                />
             </div>
         {:else}
             <img alt="fractal" src={fractalUrl} class="lg:order-2 rounded-lg shadow-xl w-full" />
