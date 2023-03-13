@@ -1,9 +1,3 @@
-<script>
-    import CustomHead from '$lib/components/CustomHead.svelte';
-</script>
-
-<CustomHead title={'\u200B \u200B 🥺'} description="👉👈" />
-
 <div class="flex flex-col h-screen justify-center text-center">
     <span class="text-9xl text-center">🥺</span>
 
