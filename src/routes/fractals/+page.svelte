@@ -70,7 +70,7 @@
     onMount(load);
 </script>
 
-<DesignatedPage title="Fractals">
+<DesignatedPage>
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 justify-between">
         {#if !fractalUrl || loading}
             <div class="lg:order-2 flex self-center h-[93.5vw] lg:h-auto">
@@ -327,7 +327,7 @@
                         }}
                     >
                         <img
-                            src={`${PUBLIC_API_URL}/fractals/?${example}`}
+                            src="{PUBLIC_API_URL}/fractals/?{example}"
                             alt="fractal example"
                             class="rounded-lg shadow-xl"
                         />
