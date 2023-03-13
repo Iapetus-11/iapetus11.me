@@ -22,7 +22,7 @@
     }
 </script>
 
-<DesignatedPage title="Friends">
+<DesignatedPage>
     <p class="fin fin-0 md:mx-12 lg:mx-32 italic text-center text-lg md:-mt-8 mb-12">
         Here are friends who I have worked with, mentored, or otherwise significantly helped in the
         realm of technology. This page is automatically generated from <a
