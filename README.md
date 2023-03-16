@@ -9,4 +9,3 @@
 - [TypeScript](https://www.typescriptlang.org/)
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Docker](https://docker.com/)
-- [TypeScript](https://www.typescriptlang.org/)
