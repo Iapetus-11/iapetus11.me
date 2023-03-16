@@ -310,6 +310,12 @@
                     Patrick Smathers</a
                 >. Without them, this page would not be possible.
             </p>
+            <p class="text-sm">
+                Fractal images generated are licensed under a
+                <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">
+                    Creative Commons Attribution-ShareAlike 4.0 International License</a
+                >.
+            </p>
         </div>
 
         <div class="order-3 mt-4 lg:col-span-2">
