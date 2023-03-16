@@ -33,7 +33,7 @@ export const load = (async ({ url }) => {
             title: 'Milo Weinberg | Fractals',
             name: 'Fractals',
             embedTitle: isDefault
-                ? undefined
+                ? 'Fractals'
                 : `${queryParams.get('variation')} Fractal ${hash33Hex(
                       JSON.stringify(
                           Object.keys(DEFAULT_FRACTAL).map((k) => [k, queryParams.get(k)])
