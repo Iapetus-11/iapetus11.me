@@ -24,13 +24,21 @@ export const load = (async ({ url }) => {
         throw redirect(307, `/fractals/?${queryParams}`);
     }
 
+    const isDefault = Object.entries(DEFAULT_FRACTAL).every(
+        ([k, v]) => queryParams.get(k) === `${v}` || v === undefined
+    );
+
     return {
         meta: {
             title: 'Milo Weinberg | Fractals',
             name: 'Fractals',
-            embedTitle: `${queryParams.get('variation')} Fractal ${hash33Hex(
-                JSON.stringify(Object.keys(DEFAULT_FRACTAL).map((k) => [k, queryParams.get(k)]))
-            )}`,
+            embedTitle: isDefault
+                ? undefined
+                : `${queryParams.get('variation')} Fractal ${hash33Hex(
+                      JSON.stringify(
+                          Object.keys(DEFAULT_FRACTAL).map((k) => [k, queryParams.get(k)])
+                      )
+                  )}`,
             embedColor: blendHexColors(queryParams.get('colorA')!, queryParams.get('colorB')!, 0.5),
             description: null,
             url: url.toString(),
