@@ -1,9 +1,10 @@
 <script lang="ts">
-    import { page } from '$app/stores'
+    import {PUBLIC_GTAG_ID} from '$env/static/public';
+    import {page} from '$app/stores'
 
     $: {
         if (typeof gtag !== 'undefined') {
-            gtag('config', 'G-TR4CC4XSDZ', {
+            gtag('config', PUBLIC_GTAG_ID, {
                 page_title: document.title,
                 page_path: $page.url.pathname,
             });
@@ -12,8 +13,8 @@
 </script>
 
 <svelte:head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TR4CC4XSDZ" />
-    <script>
+    {@html `<script async src="https://www.googletagmanager.com/gtag/js?id=${PUBLIC_GTAG_ID}" />` }
+    {@html `<script>
         window.dataLayer = window.dataLayer || [];
 
         function gtag() {
@@ -21,6 +22,6 @@
         }
 
         gtag('js', new Date());
-        gtag('config', 'G-TR4CC4XSDZ');
-    </script>
+        gtag('config', '${PUBLIC_GTAG_ID}');
+    </script>`}
 </svelte:head>
