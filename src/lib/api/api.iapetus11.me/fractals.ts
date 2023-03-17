@@ -9,7 +9,10 @@ export const EXAMPLES = [
     'resolution=2048&variation=Tangent&colorA=%23ff0000&colorB=%238cff00&coloring=Experimental&iterTransformX=0.75&iterTransformY=0.0625&transform=1&iterations=766400&mirrored=true&blur=1&sharpen=1',
     'resolution=1792&variation=RadTan&colorA=%230000FF&colorB=%23FF0000&coloring=Experimental&iterTransformX=0.875&iterTransformY=0.5&transform=0.75&iterations=2982800&mirrored=true&xShift=0',
     'resolution=2048&variation=Bubble&colorA=%237300ff&colorB=%2300ff6e&coloring=Experimental&iterTransformX=0.78125&iterTransformY=0.59375&transform=0.90625&iterations=841300&mirrored=true&xShift=0&blur=1',
-    'resolution=1024&variation=Diamond&colorA=%23002aff&colorB=%2300ff11&coloring=Experimental&iterTransformX=0.59375&iterTransformY=0.28125&xShift=0&transform=0.90625&iterations=189800&mirrored=true&sharpen=1&blur=1',
+    'resolution=1280&variation=Diamond&colorA=%23002aff&colorB=%2300ff11&coloring=Experimental&iterTransformX=0.59375&iterTransformY=0.65625&xShift=0&transform=0.90625&iterations=1050700&mirrored=true',
+    'resolution=2048&variation=Cross&colorA=%23270094&colorB=%2337ff00&coloring=Experimental&iterTransformX=0.6875&iterTransformY=1&xShift=-1&transform=0.78125&iterations=2331500&mirrored=true',
+    'resolution=1792&variation=RadTan&colorA=%23ffa200&colorB=%23ff0000&coloring=Experimental&iterTransformX=1&iterTransformY=0.1875&xShift=-1&transform=0.8125&iterations=3989200&mirrored=true',
+    'resolution=2048&variation=Spherical&colorA=%23600094&colorB=%23fbff00&coloring=Experimental&iterTransformX=0.6875&iterTransformY=1&xShift=-1&transform=0.78125&iterations=2331500&mirrored=true',
 ];
 
 export const VARIATIONS = [
