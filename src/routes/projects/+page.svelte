@@ -1,7 +1,7 @@
 <script lang="ts">
     import { projects } from '$lib/data/me.ts';
-    import DesignatedPage from '$lib/components/DesignatedPage.svelte';
 
+    import DesignatedPage from '$lib/components/DesignatedPage.svelte';
     import ProjectCard from './ProjectCard.svelte';
 </script>
 

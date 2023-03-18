@@ -1,6 +1,5 @@
 <script lang="ts">
     import DesignatedPage from '$lib/components/DesignatedPage.svelte';
-
     import Recommendation from './Recommendation.svelte';
 
     export let data;

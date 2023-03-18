@@ -1,5 +1,5 @@
 <script lang="ts">
-    import Fa from 'svelte-fa';
+    import Fa from 'svelte-fa/src/fa.svelte';
 
     export let href: string;
     export let icon: object;

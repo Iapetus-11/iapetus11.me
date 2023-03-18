@@ -37,6 +37,7 @@
 		"singleQuote": true,
 		"trailingComma": "es5",
 		"printWidth": 100,
+		"bracketSpacing": true,
 		"plugins": [
 			"prettier-plugin-svelte"
 		],

@@ -1,6 +1,6 @@
 <script lang="ts">
-    import {PUBLIC_GTAG_ID} from '$env/static/public';
-    import {page} from '$app/stores'
+    import { PUBLIC_GTAG_ID } from '$env/static/public';
+    import { page } from '$app/stores'
 
     $: {
         if (typeof gtag !== 'undefined') {
