@@ -3,5 +3,5 @@
 </script>
 
 <svelte:head>
-    {@html `<script async defer src='https://analytics.umami.is/script.js' data-website-id='${PUBLIC_UNAMI_ID}' />`}
+    {@html `<script async defer data-website-id="${PUBLIC_UNAMI_ID}" src="https://analytics.umami.is/script.js"></script>`}
 </svelte:head>
