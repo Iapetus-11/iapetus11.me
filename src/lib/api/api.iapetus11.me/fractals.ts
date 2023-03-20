@@ -12,7 +12,7 @@ export const EXAMPLES = [
     'resolution=1280&variation=Diamond&colorA=%23002aff&colorB=%2300ff11&coloring=Experimental&iterTransformX=0.59375&iterTransformY=0.65625&xShift=0&transform=0.90625&iterations=1050700&mirrored=true',
     'resolution=2048&variation=Cross&colorA=%23270094&colorB=%2337ff00&coloring=Experimental&iterTransformX=0.6875&iterTransformY=1&xShift=-1&transform=0.78125&iterations=2331500&mirrored=true',
     'resolution=1792&variation=RadTan&colorA=%23ffa200&colorB=%23ff0000&coloring=Experimental&iterTransformX=1&iterTransformY=0.1875&xShift=-1&transform=0.8125&iterations=3989200&mirrored=true',
-    'resolution=2048&variation=Spherical&colorA=%23600094&colorB=%23fbff00&coloring=Experimental&iterTransformX=0.6875&iterTransformY=1&xShift=-1&transform=0.78125&iterations=2331500&mirrored=true',
+    'resolution=2048&variation=Spherical&colorA=%237400b3&colorB=%23ffbb00&coloring=Experimental&iterTransformX=0.6875&iterTransformY=1&xShift=-1&transform=0.78125&iterations=2331500&mirrored=true',
 ];
 
 export const VARIATIONS = [
