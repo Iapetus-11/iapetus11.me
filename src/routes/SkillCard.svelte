@@ -14,7 +14,7 @@
 </script>
 
 <div
-    class={`fin py-2 px-2.5 bg-dark-super rounded-md flex flex-row items-center space-x-1`}
+    class="fin py-2 px-2.5 bg-dark-super rounded-md flex flex-row items-center space-x-1"
     style="animation-delay:{0.2 + idx * 0.05}s;"
 >
     {#if icon}
@@ -22,5 +22,5 @@
     {:else}
         <img src={customIcon} alt={name} class="max-h-5 w-5 mx-0.5" style={scaleStyle} />
     {/if}
-    <span>{name}</span>
+    <span class="text-sm md:text-lg">{name}</span>
 </div>
