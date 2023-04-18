@@ -33,6 +33,7 @@ import villagerBotPng from '$lib/images/villager-bot.png';
 import emojiLeaderboardExamplePng from '$lib/images/emoji-leaderboard-example.png';
 import quake3BotWebp from '$lib/images/quake-3-bot.webp';
 import postmanIconSvg from '$lib/images/postman-icon.svg';
+import typeScriptIconSvg from '$lib/images/typescript.svg';
 
 function calculateYearsElapsed(since: Date): number {
     return new Date(new Date().getTime() - since.getTime()).getFullYear() - 1970;
@@ -61,6 +62,11 @@ const languages = [
     {
         name: 'JavaScript',
         icon: faJs,
+    },
+    {
+        name: 'TypeScript',
+        customIcon: typeScriptIconSvg,
+        customScale: 0.8,
     },
     {
         name: 'Nim',
@@ -164,7 +170,7 @@ export const projects = [
         href: 'https://github.com/Iapetus-11/api.iapetus11.me',
     },
     {
-        name: 'fractals',
+        name: 'Fractals',
         description:
             'Fractal generation from adjustable parameters, originally created during CUHackit 2022 but since redone.',
         image: fractalColoredIterative,

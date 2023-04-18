@@ -4,7 +4,13 @@
     export let name: string;
     export let icon: object | undefined = undefined;
     export let customIcon: object | undefined = undefined;
+    export let customScale: number | undefined = undefined;
     export let idx: number;
+
+    let scaleStyle = '';
+    $: {
+        scaleStyle = customScale === undefined ? '' : `transform: scale(${customScale});`;
+    }
 </script>
 
 <div
@@ -14,7 +20,7 @@
     {#if icon}
         <Fa class="text-aqua-normal" {icon} fw />
     {:else}
-        <img src={customIcon} alt={name} class="max-h-5 w-5 mx-0.5" />
+        <img src={customIcon} alt={name} class="max-h-5 w-5 mx-0.5" style={scaleStyle} />
     {/if}
     <span>{name}</span>
 </div>
