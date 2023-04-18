@@ -340,6 +340,7 @@
                             src="{PUBLIC_API_URL}/fractals/?{example}"
                             alt="fractal example"
                             class="rounded-lg shadow-xl"
+                            fetchpriority="low"
                         />
                     </button>
                 {/each}
