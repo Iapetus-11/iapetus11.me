@@ -34,6 +34,7 @@ import emojiLeaderboardExamplePng from '$lib/images/emoji-leaderboard-example.pn
 import quake3BotWebp from '$lib/images/quake-3-bot.webp';
 import postmanIconSvg from '$lib/images/postman-icon.svg';
 import typeScriptIconSvg from '$lib/images/typescript.svg';
+import butterflyMx444IconPng from '$lib/images/butterflymx-444.png';
 
 function calculateYearsElapsed(since: Date): number {
     return new Date(new Date().getTime() - since.getTime()).getFullYear() - 1970;
@@ -208,5 +209,12 @@ export const projects = [
         description: 'A Discord bot which facilitates the management of Quake III servers via RCON',
         image: quake3BotWebp,
         href: 'https://github.com/Iapetus-11/quake3-bot',
+    },
+    {
+        name: 'ButterflyMX 444',
+        description:
+            'A web app which allows users to open apartments using ButterflyMX using a reverse engineered API wrapper',
+        image: butterflyMx444IconPng,
+        href: 'https://github.com/Iapetus-11/ButterflyMX-444',
     },
 ];
