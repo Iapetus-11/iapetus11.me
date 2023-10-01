@@ -6,6 +6,12 @@
     a {
         @apply text-cornflower-normal hover:text-cornflower-light transition;
     }
+
+    .rescale-linear {
+        image-rendering: pixelated;
+        image-rendering: -moz-crisp-edges;
+        image-rendering: crisp-edges;;
+    }
 }
 
 @keyframes fadeIntroduction {

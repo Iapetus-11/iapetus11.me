@@ -4,6 +4,7 @@
     export let image: string;
     export let href: string;
     export let idx: number;
+    export let pixelated = false;
 </script>
 
 <a
@@ -14,14 +15,19 @@
     target={href.startsWith('/') ? '_self' : '_blank'}
 >
     <div class="hidden md:flex items-center">
-        <img src={image} alt={name} class="rounded-full shadow w-full" />
+        <img
+            src={image}
+            alt={name}
+            class="rounded-full shadow w-full {pixelated ? 'rescale-linear' : ''}"
+        />
     </div>
 
     <span class="md:col-span-2 my-auto">
         <img
             src={image}
             alt={name}
-            class="md:hidden flex rounded-full shadow w-1/6 float-left mr-3 mt-1"
+            class="md:hidden flex rounded-full shadow w-1/6 float-left mr-3 mt-1
+                   {pixelated ? 'rescale-linear' : ''}"
         />
         <span class="text-aqua-normal text-3xl font-semibold">{name}</span>
         <br />

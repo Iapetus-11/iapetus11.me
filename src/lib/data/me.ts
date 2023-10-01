@@ -35,6 +35,7 @@ import quake3BotWebp from '$lib/images/quake-3-bot.webp';
 import postmanIconSvg from '$lib/images/postman-icon.svg';
 import typeScriptIconSvg from '$lib/images/typescript.svg';
 import butterflyMx444IconPng from '$lib/images/butterflymx-444.png';
+import miloMinecraftHeadWebp from '$lib/images/milo-minecraft-head.webp';
 
 function calculateYearsElapsed(since: Date): number {
     return new Date(new Date().getTime() - since.getTime()).getFullYear() - 1970;
@@ -216,5 +217,13 @@ export const projects = [
             'A web app which allows users to open apartments using ButterflyMX using a reverse engineered API wrapper',
         image: butterflyMx444IconPng,
         href: 'https://github.com/Iapetus-11/ButterflyMX-444',
+    },
+    {
+        name: 'Skin Renderer',
+        description:
+            'A microservice written in Elixir + Phoenix to render Minecraft skins (currently just renders heads)',
+        image: miloMinecraftHeadWebp,
+        href: 'https://github.com/Iapetus-11/minecraft-skins',
+        pixelated: true,
     },
 ];
