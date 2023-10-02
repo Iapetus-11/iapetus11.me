@@ -165,11 +165,11 @@ export const projects = [
         href: 'https://villagerbot.com',
     },
     {
-        name: 'api.iapetus11.me',
+        name: 'To-ASCII',
         description:
-            'An API written in C# utilizing Asp.Net and Entity Framework, used by Villager Bot and other projects.',
-        image: petusPng,
-        href: 'https://github.com/Iapetus-11/api.iapetus11.me',
+            'A Python library and command line tool which can convert images, gifs, videos, and even live video from to ASCII art.',
+        image: asciiMePng,
+        href: 'https://ascii.iapetus11.me',
     },
     {
         name: 'Fractals',
@@ -179,24 +179,24 @@ export const projects = [
         href: '/fractals',
     },
     {
-        name: 'To-ASCII',
+        name: 'minecraft\u200B.global',
         description:
-            'A Python library and command line tool which can convert images, gifs, videos, and even live video from to ASCII art.',
-        image: asciiMePng,
-        href: 'https://ascii.iapetus11.me',
+            'An advanced Minecraft server list created with Next.js, TailwindCSS, Asp.Net, and TypeScript.',
+        image: minecraftGlobalPaddedPng,
+        href: 'https://minecraft.global',
+    },
+    {
+        name: 'api.iapetus11.me',
+        description:
+            'An API written in C# utilizing Asp.Net and Entity Framework, used by Villager Bot and other projects.',
+        image: petusPng,
+        href: 'https://github.com/Iapetus-11/api.iapetus11.me',
     },
     {
         name: 'Snake',
         description: 'The snake game written in Nim using a wrapper for the SFML graphics library.',
         image: nimsnakePng,
         href: 'https://github.com/Iapetus-11/snake',
-    },
-    {
-        name: 'minecraft\u200B.global',
-        description:
-            'An advanced Minecraft server list created with Next.js, TailwindCSS, Asp.Net, and TypeScript.',
-        image: minecraftGlobalPaddedPng,
-        href: 'https://minecraft.global',
     },
     {
         name: 'Emoji Leaderboard',
