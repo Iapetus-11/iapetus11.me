@@ -2,13 +2,10 @@ FROM node:18-alpine AS build
 
 WORKDIR /iapetus11.me
 
-# install dependencies
-ADD package.json yarn.lock ./
-RUN yarn
-
-# copy remaining files and build
 COPY . .
-RUN yarn build
+RUN npm i
+RUN npm run sync
+RUN npm run build
 
 FROM node:18-alpine AS deploy
 
@@ -21,6 +18,6 @@ COPY --from=build /iapetus11.me/package.json .
 COPY --from=build /iapetus11.me/build .
 
 # install prod dependencies
-RUN yarn --prod
+RUN npm i --omit=dev --omit:optional
 
 CMD ["node", "index.js"]

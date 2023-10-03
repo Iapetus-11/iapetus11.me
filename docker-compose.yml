@@ -1,8 +1,8 @@
 version: "3.7"
 services:
   site:
+    container_name: "iapetus11.me"
     build:
-      dockerfile: "./Dockerfile"
       context: "."
     ports:
       - "7387:3000"
