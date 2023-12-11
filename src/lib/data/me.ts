@@ -20,6 +20,7 @@ import {
     faTableColumns,
     faTerminal,
     faLayerGroup,
+    faFileLines,
 } from '@fortawesome/free-solid-svg-icons';
 
 import svelteIconSvg from '$lib/images/svelte-icon.svg';
@@ -82,10 +83,6 @@ const languages = [
 
 const other = [
     {
-        name: 'GitHub',
-        icon: faGithub,
-    },
-    {
         name: 'Git',
         icon: faCodeBranch,
     },
@@ -100,10 +97,6 @@ const other = [
     {
         name: 'Asp.Net',
         icon: faDiagramProject,
-    },
-    {
-        name: 'Next.js',
-        icon: faReact,
     },
     {
         name: 'Vue',
@@ -122,14 +115,6 @@ const other = [
         icon: faTableColumns,
     },
     {
-        name: 'AWS',
-        icon: faAws,
-    },
-    {
-        name: 'SSH',
-        icon: faTerminal,
-    },
-    {
         name: 'NGINX',
         icon: faLayerGroup,
     },
@@ -146,8 +131,8 @@ const other = [
         icon: faDocker,
     },
     {
-        name: 'Postman',
-        customIcon: postmanIconSvg,
+        name: 'Sentry',
+        icon: faFileLines,
     },
 ];
 
