@@ -15,7 +15,7 @@
             <img
                 src={petusPng}
                 alt="Iapetus11's Lightbulb"
-                class="fin fin-0 shadow-md rounded-full shadow w-full"
+                class="fin fin-0 shadow-md rounded-full w-full max-w-md"
             />
         </MobileNavigation>
 
