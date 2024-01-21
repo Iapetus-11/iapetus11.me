@@ -27,10 +27,10 @@ export const VARIATIONS = [
     'Tangle',
     'Diamond',
 ] as const;
-export type FractalVariation = typeof VARIATIONS[number];
+export type FractalVariation = (typeof VARIATIONS)[number];
 
 export const COLORING_STRATEGIES = ['Experimental', 'Gradient', 'SigmoidGradient'] as const;
-export type ColoringStrategy = typeof COLORING_STRATEGIES[number];
+export type ColoringStrategy = (typeof COLORING_STRATEGIES)[number];
 
 export const COLORING_STRATEGY_LABELS = ['Experimental', 'Gradient', 'Sharp Gradient'].map(
     (v, i) => [v, COLORING_STRATEGIES[i]]
