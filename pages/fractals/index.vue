@@ -1,7 +1,8 @@
 <script setup lang="ts">
     import {
         COLORING_STRATEGY_LABELS,
-        DEFAULT_FRACTAL, EXAMPLES,
+        DEFAULT_FRACTAL,
+        EXAMPLES,
         type Fractal,
         FRACTAL_PARSER,
         VARIATIONS,
@@ -88,7 +89,7 @@
 </script>
 
 <template>
-    <div class="grid grid-cols-1 justify-between gap-4 text-white lg:grid-cols-2 lg:-mx-6">
+    <div class="grid grid-cols-1 justify-between gap-4 text-white lg:-mx-6 lg:grid-cols-2">
         <!-- Fractal display / loading -->
         <div class="flex aspect-square w-full items-center justify-center lg:order-2">
             <FontAwesomeIcon
@@ -335,16 +336,12 @@
 
         <div class="order-3 mt-4 lg:col-span-2">
             <h2 class="text-5xl">Gallery</h2>
-            <p class="text-sm italic mt-1 ml-1">
+            <p class="ml-1 mt-1 text-sm italic">
                 Clicking any of these images will load their parameters in above.
             </p>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1.5 lg:gap-2 mt-4">
-                <button
-                    v-for="example in EXAMPLES"
-                    :key="example"
-                    type="button"
-                >
+            <div class="mt-4 grid grid-cols-1 gap-1.5 md:grid-cols-2 lg:grid-cols-3 lg:gap-2">
+                <button v-for="example in EXAMPLES" :key="example" type="button">
                     <NuxtImg
                         :src="`${API_BASE_URL}/fractals/?${example}`"
                         alt="fractal example"

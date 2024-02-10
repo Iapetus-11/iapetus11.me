@@ -1,7 +1,6 @@
 <script setup lang="ts">
     import { parseReferrals, sortReferrals } from '~/pages/referrals/referrals';
     import Referral from '~/pages/referrals/Referral.vue';
-    import Project from '~/pages/projects/Project.vue';
 
     definePageMeta({
         title: 'Referrals',

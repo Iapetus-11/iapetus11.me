@@ -1,7 +1,9 @@
 <script setup lang="ts">
     const route = useRoute();
 
-    const title = computed<string>(() => (route.meta.title as string | undefined) ?? 'Milo Weinberg');
+    const title = computed<string>(
+        () => (route.meta.title as string | undefined) ?? 'Milo Weinberg'
+    );
 
     useHead({
         title: title.value,

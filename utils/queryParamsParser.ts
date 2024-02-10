@@ -1,6 +1,3 @@
-import { COLORING_STRATEGIES, VARIATIONS } from '~/pages/fractals/fractals';
-import type { Fractal } from '~/pages/fractals/fractals';
-
 export function getNum(value: string | undefined): number | undefined {
     const parsed = Number(value);
     if (!isNaN(parsed)) {
