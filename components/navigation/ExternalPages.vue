@@ -25,7 +25,7 @@
     <NuxtLink
         v-for="(page, idx) in EXTERNAL_PAGES"
         :key="page.href"
-        class="cursor-pointer text-2xl text-white transition-all hover:text-aqua-normal"
+        class="cursor-pointer text-2xl text-white transition-all hover:text-aqua-normal animate-fade-in"
         :class="$attrs.class"
         :style="`animation-delay: ${idx * 75 + (animationDelay ?? 0)}ms`"
     >
