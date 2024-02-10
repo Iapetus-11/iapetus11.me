@@ -19,7 +19,7 @@
 </script>
 
 <template>
-    <div class="mb-6 mt-2 flex gap-x-20 lg:gap-x-32 gap-y-3 max-md:flex-col">
+    <div class="mb-6 mt-2 flex gap-x-20 gap-y-3 max-md:flex-col lg:gap-x-32">
         <!-- Mobile navigation -->
         <div class="grid grid-cols-7 items-center gap-6 p-4 md:hidden">
             <div class="col-span-2 mx-auto grid grid-cols-2 gap-4">
@@ -40,13 +40,21 @@
                 src="petus.png"
                 alt="Iapetus11's Profile Picture"
                 preload
-                class="mb-10 rounded-full max-md:hidden"
+                class="animate-fade-in mb-10 rounded-full max-md:hidden"
             />
 
-            <span class="mb-3 text-3xl font-semibold text-aqua-normal">
+            <span
+                class="animate-fade-in mb-3 text-3xl font-semibold text-aqua-normal"
+                style="animation-delay: 50ms"
+            >
                 Milo <span class="text-white">/</span> Iapetus11
             </span>
-            <p class="text-lg font-medium text-gray-100 max-md:text-center lg:-mx-4">{{ ABOUT_ME }}</p>
+            <p
+                class="animate-fade-in text-lg font-medium text-gray-100 max-md:text-center lg:-mx-4"
+                style="animation-delay: 100ms"
+            >
+                {{ ABOUT_ME }}
+            </p>
         </div>
 
         <!-- Desktop navigation -->
@@ -56,18 +64,21 @@
             <!-- Skill sections and cards -->
             <div v-for="{ title, items } in SKILLS" :key="title">
                 <h3
-                    class="mb-2.5 ml-1.5 text-2xl font-semibold text-aqua-normal max-md:text-center"
+                    class="animate-fade-in mb-2.5 ml-1.5 text-2xl font-semibold text-aqua-normal max-md:text-center"
                 >
                     {{ title }}
                 </h3>
 
-                <div class="flex flex-wrap gap-2 max-md:justify-center animate-fade-in">
+                <div class="animate-fade-in flex flex-wrap gap-2 max-md:justify-center">
                     <Skill
                         v-for="(item, idx) in items"
                         :key="item.name"
                         v-bind="item"
                         class="animate-fade-in"
-                        :style="{ 'animation-delay': `${(idx + 1) * 30}ms`, 'animation-fill-mode': 'both' }"
+                        :style="{
+                            'animation-delay': `${(idx + 1) * 25}ms`,
+                            'animation-fill-mode': 'both',
+                        }"
                     />
                 </div>
             </div>

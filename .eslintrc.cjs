@@ -5,7 +5,7 @@ module.exports = {
         'vue/multi-word-component-names': 0,
         'vue/singleline-html-element-content-newline': 0,
         'sort-imports': ['error', { ignoreCase: true }],
-        'vue/html-indent': ['error', 4],
+        'vue/html-indent': ['warn', 4],
         'vue/html-quotes': ['error', 'double'],
         indent: ['error', 4],
         semi: ['error', 'always'],
@@ -21,6 +21,8 @@ module.exports = {
         ],
         'vue/no-multiple-template-root': 0,
         'vue/max-attributes-per-line': 0,
+        'vue/html-self-closing': 0,
+        'vue/html-closing-bracket-newline': 0,
     },
     overrides: [
         {

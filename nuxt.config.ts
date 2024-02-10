@@ -15,4 +15,9 @@ export default defineNuxtConfig({
     image: {
         dir: 'assets/images',
     },
+    runtimeConfig: {
+        public: {
+            API_BASE_URL: process.env.API_BASE_URL ?? '',
+        },
+    },
 });

@@ -5,6 +5,10 @@
 </script>
 
 <script setup lang="ts">
+    defineProps<{
+        animationDelay?: number;
+    }>();
+
     const PAGES = [
         { href: '/', name: 'Home' },
         { href: '/projects', name: 'Projects' },
@@ -14,11 +18,12 @@
 
 <template>
     <NuxtLink
-        v-for="page in PAGES.filter((p) => p.href !== $route.path)"
+        v-for="(page, idx) in PAGES.filter((p) => p.href !== $route.path).slice(0, 2)"
         :key="page.href"
         :href="page.href"
-        class="flex h-9 items-center justify-center rounded-md border border-white px-3 py-2 text-white transition-all hover:border-opacity-0 hover:bg-aqua-dark sm:h-10 sm:px-4"
+        class="animate-fade-in button"
         :class="$attrs.class"
+        :style="`animation-delay: ${idx * 75 + (animationDelay ?? 0)}ms`"
     >
         {{ page.name }}
     </NuxtLink>

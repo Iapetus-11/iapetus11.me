@@ -32,21 +32,6 @@ export default {
                 '7xl': '4.5rem',
                 '8xl': '6rem',
             },
-            keyframes: {
-                fade: {
-                    '0%': {
-                        transform: 'scale(0.9)',
-                        opacity: '0',
-                    },
-                    '100%': {
-                        transform: 'scale(1.0)',
-                        opacity: '1',
-                    }
-                }
-            },
-            animation: {
-                'fade-in': 'fade 200ms linear 1'
-            }
         },
     },
     plugins: [],

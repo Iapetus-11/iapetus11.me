@@ -14,7 +14,7 @@
             :src="image"
             :alt="name"
             preload
-            class="flex w-full h-full max-h-32 max-w-32 rounded-full shadow"
+            class="flex h-full max-h-32 w-full max-w-32 rounded-full shadow"
         />
 
         <div class="w-2/3">

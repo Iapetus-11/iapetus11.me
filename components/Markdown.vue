@@ -80,7 +80,7 @@
                 postProcessNodes(container.value);
             }
         },
-        { immediate: true },
+        { immediate: true }
     );
 
     onBeforeUnmount(() => destructNodes(container.value!));

@@ -21,7 +21,9 @@
                 :alt="`${name}'s avatar`"
             />
 
-            <h3 class="block py-1 text-2xl font-semibold text-aqua-normal sm:text-3xl">{{ name }}</h3>
+            <h3 class="block py-1 text-2xl font-semibold text-aqua-normal sm:text-3xl">
+                {{ name }}
+            </h3>
             <div>
                 <Markdown :content="content" class="text-white" />
             </div>

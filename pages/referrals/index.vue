@@ -1,6 +1,7 @@
 <script setup lang="ts">
     import { parseReferrals, sortReferrals } from '~/pages/referrals/referrals';
     import Referral from '~/pages/referrals/Referral.vue';
+    import Project from '~/pages/projects/Project.vue';
 
     definePageMeta({
         title: 'Referrals',
@@ -12,22 +13,27 @@
             transform(data: string) {
                 return sortReferrals(parseReferrals(data));
             },
-        },
+        }
     );
 </script>
 
 <template>
-    <div v-if="referrals !== null" class="grid grid-cols-1 gap-4 sm:gap-7 md:grid-cols-2 md:gap-10">
+    <div
+        v-if="referrals !== null"
+        class="grid grid-cols-1 gap-4 sm:gap-6 md:gap-8 lg:grid-cols-2 lg:max-xl:-mx-10"
+    >
         <Referral
             v-for="(referral, idx) in referrals"
             :key="referral.name"
             v-bind="referral"
+            class="animate-fade-in"
             :class="{
                 'md:!col-span-2':
                     referral.content.length > 200 ||
                     referrals[idx - 1]?.content?.length > 200 ||
                     !referrals[idx + 1],
             }"
+            :style="`animation-delay: ${idx * 75}ms`"
         />
     </div>
 </template>
