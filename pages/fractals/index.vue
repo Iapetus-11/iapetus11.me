@@ -342,7 +342,7 @@
 
             <div class="mt-4 grid grid-cols-1 gap-1.5 md:grid-cols-2 lg:grid-cols-3 lg:gap-2">
                 <button v-for="example in EXAMPLES" :key="example" type="button">
-                    <NuxtImg
+                    <img
                         :src="`${API_BASE_URL}/fractals/?${example}`"
                         alt="fractal example"
                         class="rounded-lg shadow-xl"

@@ -27,7 +27,7 @@
             </div>
 
             <div class="col-span-3">
-                <NuxtImg src="petus.png" preload class="rounded-full" />
+                <img src="~/assets/images/petus.png" preload class="rounded-full" />
             </div>
 
             <div class="col-span-2 mx-auto flex flex-col gap-4">
@@ -36,10 +36,9 @@
         </div>
 
         <div class="flex flex-col items-center justify-center">
-            <NuxtImg
-                src="petus.png"
+            <img
+                src="~/assets/images/petus.png"
                 alt="Iapetus11's Profile Picture"
-                preload
                 class="animate-fade-in mb-10 rounded-full max-md:hidden"
             />
 

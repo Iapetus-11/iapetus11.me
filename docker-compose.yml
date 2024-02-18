@@ -1,0 +1,19 @@
+version: '3.7'
+services:
+    site:
+        container_name: 'iapetus11.me'
+        build:
+            context: '.'
+        ports:
+            - '7387:3000'
+        volumes:
+            - type: bind
+              source: ./.env
+              target: /iapetus11.me/.env
+        init: true
+#    healthcheck:
+#      test: ["CMD", "curl", "-f", "http://localhost:3000"]
+#      interval: 5m
+#      timeout: 10s
+#      retries: 2
+#      start_period: 10se

@@ -10,10 +10,9 @@
         :target="link.startsWith('/') ? '_self' : '_blank'"
         class="flex items-center space-x-3 rounded-xl bg-dark-super p-3 transition hover:bg-opacity-80 md:space-x-6 md:p-6"
     >
-        <NuxtImg
+        <img
             :src="image"
             :alt="name"
-            preload
             class="flex h-full max-h-32 w-full max-w-32 rounded-full shadow"
         />
 

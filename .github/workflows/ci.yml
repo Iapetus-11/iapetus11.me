@@ -1,28 +1,28 @@
 on: [pull_request]
 
 jobs:
-  run-checks:
-    name: Run checks
-    runs-on: ubuntu-latest
-    if: github.actor != 'dependabot[bot]'
+    run-checks:
+        name: Run checks
+        runs-on: ubuntu-latest
+        if: github.actor != 'dependabot[bot]'
 
-    steps:
-      - name: Check out repository
-        uses: actions/checkout@v3
+        steps:
+            - name: Check out repository
+              uses: actions/checkout@v3
 
-      - name: Set up Node 18
-        uses: actions/setup-node@v3.8.1
-        with:
-          node-version: 18
+            - name: Set up Node 18
+              uses: actions/setup-node@v3.8.1
+              with:
+                  node-version: 18
 
-      - name: Install NPM dependencies
-        run: npm install
+            - name: Install NPM dependencies
+              run: npm install
 
-      - name: Run type check
-        run: npx vue-tsc
+            - name: Run type check
+              run: npx vue-tsc
 
-      - name: Run linter
-        run: npx eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --ignore-path .gitignore
+            - name: Run linter
+              run: npx eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --ignore-path .gitignore
 
-      - name: Build project
-        run: npm run build
+            - name: Build project
+              run: npm run build

@@ -15,7 +15,7 @@
         @click="openSelf"
     >
         <div class="my-auto w-full">
-            <NuxtImg
+            <img
                 class="float-left mr-3 mt-1 h-20 w-20 rounded-full"
                 :src="`https://avatars.githubusercontent.com/${username}`"
                 :alt="`${name}'s avatar`"

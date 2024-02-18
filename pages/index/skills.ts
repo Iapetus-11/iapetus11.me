@@ -18,7 +18,10 @@ import {
     faUbuntu,
     faVuejs,
 } from '@fortawesome/free-brands-svg-icons';
+import djangoSvg from '~/assets/images/skill-icons/django.svg';
 import type { IconDefinition } from '@fortawesome/free-solid-svg-icons';
+import svelteSvg from '~/assets/images/skill-icons/svelte.svg';
+import typescriptSvg from '~/assets/images/skill-icons/typescript.svg';
 
 export type SkillDefinition = {
     name: string;
@@ -46,7 +49,7 @@ const PROGRAMMING_LANGUAGES: SkillDefinition[] = [
     },
     {
         name: 'TypeScript',
-        customIcon: 'skill-icons/typescript.svg',
+        customIcon: typescriptSvg,
         customScale: 0.8,
     },
     {
@@ -70,7 +73,7 @@ const TECHNOLOGIES_AND_TOOLS: SkillDefinition[] = [
     },
     {
         name: 'Django',
-        customIcon: 'skill-icons/django.svg',
+        customIcon: djangoSvg,
     },
     {
         name: 'Asp.Net',
@@ -82,7 +85,7 @@ const TECHNOLOGIES_AND_TOOLS: SkillDefinition[] = [
     },
     {
         name: 'Svelte',
-        customIcon: 'skill-icons/svelte.svg',
+        customIcon: svelteSvg,
     },
     {
         name: 'PostgreSQL',
