@@ -293,7 +293,7 @@
                 </a>
                 and conceived at
                 <a href="https://cuhack.it/" target="_blank" rel="noreferrer" class="text-link"
-                    >CUHackit 2022</a
+                >CUHackit 2022</a
                 >
                 by me and my team:
                 <a

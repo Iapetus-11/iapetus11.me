@@ -25,9 +25,13 @@
     <NuxtLink
         v-for="(page, idx) in EXTERNAL_PAGES"
         :key="page.href"
+        npm
+        :href="page.href"
         class="animate-fade-in cursor-pointer text-2xl text-white transition-all hover:text-aqua-normal"
         :class="$attrs.class"
         :style="`animation-delay: ${idx * 75 + (animationDelay ?? 0)}ms`"
+        target="_blank"
+        rel="noreferrer"
     >
         <FontAwesomeIcon :icon="page.icon" :href="page.href" />
     </NuxtLink>
