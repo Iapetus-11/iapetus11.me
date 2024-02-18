@@ -1,23 +1,21 @@
-FROM node:18-alpine AS build
+FROM node:21-slim AS build
 
 WORKDIR /iapetus11.me
+
+COPY package.json package-lock.json /iapetus11.me/
+
+RUN npm install
 
 COPY . .
-RUN npm i
-RUN npm run sync
+
 RUN npm run build
 
-FROM node:18-alpine AS deploy
+FROM node:21-slim AS run
 
 WORKDIR /iapetus11.me
 
-RUN rm -rf ./*
-
 # copy over necessary files from build stage
-COPY --from=build /iapetus11.me/package.json .
-COPY --from=build /iapetus11.me/build .
+COPY --from=build /iapetus11.me/.output/ ./.output/
+COPY package.json package-lock.json ./
 
-# install prod dependencies
-RUN npm i --omit=dev --omit:optional
-
-CMD ["node", "index.js"]
+CMD ["node", ".output/server/index.mjs"]

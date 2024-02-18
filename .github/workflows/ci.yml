@@ -1,36 +1,28 @@
-name: CI
-
-on:
-  push:
-  pull_request:
-    types: [opened]
+on: [pull_request]
 
 jobs:
-  ci:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
+    run-checks:
+        name: Run checks
+        runs-on: ubuntu-latest
+        if: github.actor != 'dependabot[bot]'
 
-      - name: setup node 18
-        uses: actions/setup-node@v3
-        with:
-          node-version: 18
+        steps:
+            - name: Check out repository
+              uses: actions/checkout@v3
 
-      - name: load cached node_modules
-        id: cached-npm-dependencies
-        uses: actions/cache@v2
-        with:
-          path: ./node_modules
-          key: venv-${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
+            - name: Set up Node 18
+              uses: actions/setup-node@v3.8.1
+              with:
+                  node-version: 18
 
-      - name: install dependencies
-        run: yarn
+            - name: Install NPM dependencies
+              run: npm install
 
-      - name: prettier fix
-        run: yarn format
+            - name: Run type check
+              run: npx vue-tsc
 
-      - name: auto commit
-        if: github.ref != 'refs/heads/main'
-        uses: stefanzweifel/git-auto-commit-action@v4.15.4
-        with:
-          commit_message: format / fix code
+            - name: Run linter
+              run: npx eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --ignore-path .gitignore
+
+            - name: Build project
+              run: npm run build
