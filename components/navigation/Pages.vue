@@ -21,7 +21,7 @@
         v-for="(page, idx) in PAGES.filter((p) => p.href !== $route.path).slice(0, 2)"
         :key="page.href"
         :href="page.href"
-        class="animate-fade-in button"
+        class="animate-fade-in button max-sm:text-sm max-sm:px-2"
         :class="$attrs.class"
         :style="`animation-delay: ${idx * 75 + (animationDelay ?? 0)}ms`"
     >

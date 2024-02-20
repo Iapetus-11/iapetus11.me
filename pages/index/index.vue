@@ -27,7 +27,7 @@
             </div>
 
             <div class="col-span-3">
-                <img src="~/assets/images/petus.png" preload class="rounded-full" />
+                <img src="~/assets/images/petus.png" class="rounded-full" />
             </div>
 
             <div class="col-span-2 mx-auto flex flex-col gap-4">
