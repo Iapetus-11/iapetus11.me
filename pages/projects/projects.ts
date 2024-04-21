@@ -4,9 +4,9 @@ import emojiLeaderboardExamplePng from '~/assets/images/projects/emoji-leaderboa
 import fractalColoredIterative1Png from '~/assets/images/projects/fractal_colored_iterative_1.png';
 import minecraftGlobalPaddedPng from '~/assets/images/projects/minecraft-global-padded.png';
 import minecraftSkinsApiPng from '~/assets/images/projects/minecraft-skins-api.png';
-import nimsnakePng from '~/assets/images/projects/nimsnake.png';
 import petusPng from '~/assets/images/petus.png';
 import quake3BotWebp from '~/assets/images/projects/quake-3-bot.webp';
+import tacoTapperLogoPng from '~/assets/images/projects/taco-tapper-logo.png';
 import villagerBotPng from '~/assets/images/projects/villager-bot.png';
 
 export type ProjectDefinition = {
@@ -53,10 +53,10 @@ export const PROJECTS: ProjectDefinition[] = [
         link: 'https://github.com/Iapetus-11/api.iapetus11.me',
     },
     {
-        name: 'Snake',
-        description: 'The snake game written in Nim using a wrapper for the SFML graphics library.',
-        image: nimsnakePng,
-        link: 'https://github.com/Iapetus-11/snake',
+        name: 'Taco Tapper',
+        description: 'An unfinished knockoff cookie clicker but with tacos instead. Written in Vue, all art done by my girlfriend.',
+        image: tacoTapperLogoPng,
+        link: 'https://tacos.iapetus11.me/',
     },
     {
         name: 'Emoji Leaderboard',
