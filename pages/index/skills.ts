@@ -4,6 +4,7 @@ import {
     faCrown,
     faDatabase,
     faDiagramProject,
+    faDroplet,
     faFileLines,
     faHashtag,
     faLayerGroup,
@@ -14,6 +15,7 @@ import {
     faJava,
     faJs,
     faPython,
+    faRust,
     faStripeS,
     faUbuntu,
     faVuejs,
@@ -51,6 +53,14 @@ const PROGRAMMING_LANGUAGES: SkillDefinition[] = [
         name: 'TypeScript',
         customIcon: typescriptSvg,
         customScale: 0.8,
+    },
+    {
+        name: 'Rust',
+        icon: faRust,
+    },
+    {
+        name: 'Elixir',
+        icon: faDroplet,
     },
     {
         name: 'Nim',
