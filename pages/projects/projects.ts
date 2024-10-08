@@ -6,8 +6,9 @@ import minecraftGlobalPaddedPng from '~/assets/images/projects/minecraft-global-
 import minecraftSkinsApiPng from '~/assets/images/projects/minecraft-skins-api.png';
 import petusPng from '~/assets/images/petus.png';
 import quake3BotWebp from '~/assets/images/projects/quake-3-bot.webp';
-import tacoTapperLogoPng from '~/assets/images/projects/taco-tapper-logo.png';
+import tacoTapperLogoPng from '~/assets/images/projects/taco-tapper-logo.png';pillagerBotWebp
 import villagerBotPng from '~/assets/images/projects/villager-bot.png';
+import pillagerBotWebp from '~/assets/images/projects/pillager-bot.webp';
 
 export type ProjectDefinition = {
     link: string;
@@ -67,7 +68,7 @@ export const PROJECTS: ProjectDefinition[] = [
     },
     {
         name: 'Quake III Bot',
-        description: 'A Discord bot which facilitates the management of Quake III servers via RCON',
+        description: 'A Discord bot written in Python which facilitates the management of Quake III servers via RCON',
         image: quake3BotWebp,
         link: 'https://github.com/Iapetus-11/quake3-bot',
     },
@@ -77,6 +78,12 @@ export const PROJECTS: ProjectDefinition[] = [
             'A web app which allows users to open apartments using ButterflyMX using a reverse engineered API wrapper',
         image: butterflymx444Png,
         link: 'https://github.com/Iapetus-11/ButterflyMX-444',
+    },
+    {
+        name: 'Pillager Bot',
+        description: 'A small Discord bot written in Rust + Serenity + Diesel for moderating my Discord servers',
+        image: pillagerBotWebp,
+        link: 'https://github.com/Iapetus-11/Pillager-Bot/',
     },
     {
         name: 'Skin Renderer',
