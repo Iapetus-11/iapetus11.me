@@ -86,6 +86,12 @@
     function resetFractal() {
         fractalConfig.value = { ...DEFAULT_FRACTAL };
     }
+
+    function handleGalleryClick(queryParams: string) {
+        const dummy = new URL(window.location.toString());
+        dummy.search = queryParams;
+        router.push({ query: Object.fromEntries(dummy.searchParams.entries()) });
+    }
 </script>
 
 <template>
@@ -341,7 +347,7 @@
             </p>
 
             <div class="mt-4 grid grid-cols-1 gap-1.5 md:grid-cols-2 lg:grid-cols-3 lg:gap-2">
-                <button v-for="example in EXAMPLES" :key="example" type="button">
+                <button v-for="example in EXAMPLES" :key="example" type="button" @click="handleGalleryClick(example)">
                     <img
                         :src="`${API_BASE_URL}/fractals/?${example}`"
                         alt="fractal example"
