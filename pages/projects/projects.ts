@@ -1,14 +1,15 @@
 import asciiMePng from '~/assets/images/projects/ascii-me.png';
 import butterflymx444Png from '~/assets/images/projects/butterflymx-444.png';
+import clipboardCleansePng from '~/assets/images/projects/clipboard-cleanse.png';
 import emojiLeaderboardExamplePng from '~/assets/images/projects/emoji-leaderboard-example.png';
 import fractalColoredIterative1Png from '~/assets/images/projects/fractal_colored_iterative_1.png';
 import minecraftGlobalPaddedPng from '~/assets/images/projects/minecraft-global-padded.png';
 import minecraftSkinsApiPng from '~/assets/images/projects/minecraft-skins-api.png';
 import petusPng from '~/assets/images/petus.png';
-import quake3BotWebp from '~/assets/images/projects/quake-3-bot.webp';
-import tacoTapperLogoPng from '~/assets/images/projects/taco-tapper-logo.png';pillagerBotWebp
-import villagerBotPng from '~/assets/images/projects/villager-bot.png';
 import pillagerBotWebp from '~/assets/images/projects/pillager-bot.webp';
+import quake3BotWebp from '~/assets/images/projects/quake-3-bot.webp';
+import tacoTapperLogoPng from '~/assets/images/projects/taco-tapper-logo.png';
+import villagerBotPng from '~/assets/images/projects/villager-bot.png';
 
 export type ProjectDefinition = {
     link: string;
@@ -26,13 +27,6 @@ export const PROJECTS: ProjectDefinition[] = [
         link: 'https://villagerbot.com',
     },
     {
-        name: 'To-ASCII',
-        description:
-            'A Python library and command line tool which can convert images, gifs, videos, and even live video to ASCII art.',
-        image: asciiMePng,
-        link: 'https://github.com/Iapetus-11/To-ASCII',
-    },
-    {
         name: 'Fractals',
         description:
             'Fractal generation from adjustable parameters, originally created during CUHackit 2022 but since redone.',
@@ -47,11 +41,17 @@ export const PROJECTS: ProjectDefinition[] = [
         link: 'https://minecraft.global',
     },
     {
-        name: 'api.iapetus11.me',
+        name: 'To-ASCII',
         description:
-            'An API written in C# utilizing Asp.Net and Entity Framework, used by Villager Bot and other projects.',
-        image: petusPng,
-        link: 'https://github.com/Iapetus-11/api.iapetus11.me',
+            'A Python library and command line tool which can convert images, gifs, videos, and even live video to ASCII art.',
+        image: asciiMePng,
+        link: 'https://github.com/Iapetus-11/To-ASCII',
+    },
+    {
+        name: 'Clipboard Cleanse',
+        description: 'A cross-platform toolbar/system tray app written in Rust which removes tracking information and other crap from copied URLs.',
+        image: clipboardCleansePng,
+        link: 'https://github.com/Iapetus-11/clipboard-cleanse',
     },
     {
         name: 'Taco Tapper',
@@ -68,27 +68,34 @@ export const PROJECTS: ProjectDefinition[] = [
     },
     {
         name: 'Quake III Bot',
-        description: 'A Discord bot written in Python which facilitates the management of Quake III servers via RCON',
+        description: 'A Discord bot written in Python which facilitates the management of Quake III servers via RCON.',
         image: quake3BotWebp,
         link: 'https://github.com/Iapetus-11/quake3-bot',
     },
     {
+        name: 'api.iapetus11.me',
+        description:
+            'An API written in C# utilizing Asp.Net and Entity Framework, used by Villager Bot and other projects.',
+        image: petusPng,
+        link: 'https://github.com/Iapetus-11/api.iapetus11.me',
+    },
+    {
         name: 'ButterflyMX 444',
         description:
-            'A web app which allows users to open apartments using ButterflyMX using a reverse engineered API wrapper',
+            'A web app which allows users to open apartments using ButterflyMX using a reverse engineered API wrapper.',
         image: butterflymx444Png,
         link: 'https://github.com/Iapetus-11/ButterflyMX-444',
     },
     {
         name: 'Pillager Bot',
-        description: 'A small Discord bot written in Rust + Serenity + Diesel for moderating my Discord servers',
+        description: 'A small Discord bot written in Rust + Serenity + Diesel for moderating my Discord servers.',
         image: pillagerBotWebp,
         link: 'https://github.com/Iapetus-11/Pillager-Bot/',
     },
     {
         name: 'Skin Renderer',
         description:
-            'A microservice written in Elixir + Phoenix to render Minecraft skins (currently just renders heads)',
+            'A microservice written in Elixir + Phoenix to render Minecraft skins (currently just renders heads).',
         image: minecraftSkinsApiPng,
         link: 'https://github.com/Iapetus-11/minecraft-skins',
     },
