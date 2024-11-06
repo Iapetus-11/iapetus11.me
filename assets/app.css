@@ -16,6 +16,7 @@
     }
 
     .animate-fade-in {
+        opacity: 0;
         animation: fade 200ms linear 1;
         animation-fill-mode: both;
     }
