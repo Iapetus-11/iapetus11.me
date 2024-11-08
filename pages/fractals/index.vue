@@ -299,7 +299,7 @@
                 </a>
                 and conceived at
                 <a href="https://cuhack.it/" target="_blank" rel="noreferrer" class="text-link"
-                >CUHackit 2022</a
+                    >CUHackit 2022</a
                 >
                 by me and my team:
                 <a
@@ -347,7 +347,12 @@
             </p>
 
             <div class="mt-4 grid grid-cols-1 gap-1.5 md:grid-cols-2 lg:grid-cols-3 lg:gap-2">
-                <button v-for="example in EXAMPLES" :key="example" type="button" @click="handleGalleryClick(example)">
+                <button
+                    v-for="example in EXAMPLES"
+                    :key="example"
+                    type="button"
+                    @click="handleGalleryClick(example)"
+                >
                     <img
                         :src="`${API_BASE_URL}/fractals/?${example}`"
                         alt="fractal example"
