@@ -49,13 +49,15 @@ export const PROJECTS: ProjectDefinition[] = [
     },
     {
         name: 'Clipboard Cleanse',
-        description: 'A cross-platform toolbar/system tray app written in Rust which removes tracking information and other crap from copied URLs.',
+        description:
+            'A cross-platform toolbar/system tray app written in Rust which removes tracking information and other crap from copied URLs.',
         image: clipboardCleansePng,
         link: 'https://github.com/Iapetus-11/clipboard-cleanse',
     },
     {
         name: 'Taco Tapper',
-        description: 'An unfinished knockoff cookie clicker but with tacos instead. Written in Vue, all art done by my girlfriend.',
+        description:
+            'An unfinished knockoff cookie clicker but with tacos instead. Written in Vue, all art done by my girlfriend.',
         image: tacoTapperLogoPng,
         link: 'https://tacos.iapetus11.me/',
     },
@@ -68,7 +70,8 @@ export const PROJECTS: ProjectDefinition[] = [
     },
     {
         name: 'Quake III Bot',
-        description: 'A Discord bot written in Python which facilitates the management of Quake III servers via RCON.',
+        description:
+            'A Discord bot written in Python which facilitates the management of Quake III servers via RCON.',
         image: quake3BotWebp,
         link: 'https://github.com/Iapetus-11/quake3-bot',
     },
@@ -88,7 +91,8 @@ export const PROJECTS: ProjectDefinition[] = [
     },
     {
         name: 'Pillager Bot',
-        description: 'A small Discord bot written in Rust + Serenity + Diesel for moderating my Discord servers.',
+        description:
+            'A small Discord bot written in Rust + Serenity + Diesel for moderating my Discord servers.',
         image: pillagerBotWebp,
         link: 'https://github.com/Iapetus-11/Pillager-Bot/',
     },

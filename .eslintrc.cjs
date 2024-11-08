@@ -5,7 +5,7 @@ module.exports = {
         'vue/multi-word-component-names': 0,
         'vue/singleline-html-element-content-newline': 0,
         'sort-imports': ['error', { ignoreCase: true }],
-        'vue/html-indent': ['warn', 4],
+        'vue/html-indent': 0,
         'vue/html-quotes': ['error', 'double'],
         indent: ['error', 4],
         semi: ['error', 'always'],
