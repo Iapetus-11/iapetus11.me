@@ -5,7 +5,7 @@
 </script>
 
 <template>
-    <a
+    <NuxtLink
         :href="link"
         :target="link.startsWith('/') ? '_self' : '_blank'"
         class="flex items-center space-x-3 rounded-xl bg-dark-super p-3 transition hover:bg-opacity-80 md:space-x-6 md:p-6"
@@ -22,5 +22,5 @@
             </h3>
             <p class="text-white">{{ description }}</p>
         </div>
-    </a>
+    </NuxtLink>
 </template>
