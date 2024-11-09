@@ -28,6 +28,6 @@
     }
 
     .button {
-        @apply flex h-9 items-center justify-center rounded-md border border-white px-3 py-2 text-white transition-all hover:border-opacity-0 hover:bg-aqua-dark sm:h-10 sm:px-4;
+        @apply flex h-9 cursor-pointer items-center justify-center rounded-md border border-white px-3 py-2 text-white transition-all hover:border-opacity-0 hover:bg-aqua-dark sm:h-10 sm:px-4;
     }
 }

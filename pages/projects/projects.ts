@@ -52,7 +52,7 @@ export const PROJECTS: ProjectDefinition[] = [
         description:
             'A cross-platform toolbar/system tray app written in Rust which removes tracking information and other crap from copied URLs.',
         image: clipboardCleansePng,
-        link: 'https://github.com/Iapetus-11/clipboard-cleanse',
+        link: '/projects/clipboard-cleanse',
     },
     {
         name: 'Taco Tapper',
