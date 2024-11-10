@@ -3,6 +3,10 @@
         title: 'Clipboard Cleanse',
         titleClasses: '!text-5xl max-sm:!text-4xl',
     });
+
+    defineRouteRules({
+        prerender: true,
+    });
 </script>
 
 <template>

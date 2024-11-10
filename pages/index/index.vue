@@ -7,6 +7,10 @@
         layout: 'home',
     });
 
+    defineRouteRules({
+        prerender: true,
+    });
+
     const ABOUT_ME = (() => {
         const aliveForYears = calculateYearsSince(new Date('9/1/2003'));
         const programmingForYears = calculateYearsSince(new Date('8/1/2016'));

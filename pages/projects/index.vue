@@ -5,6 +5,10 @@
     definePageMeta({
         title: 'Projects',
     });
+
+    defineRouteRules({
+        prerender: true,
+    });
 </script>
 
 <template>
