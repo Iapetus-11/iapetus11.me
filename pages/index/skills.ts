@@ -38,14 +38,6 @@ const PROGRAMMING_LANGUAGES: SkillDefinition[] = [
         icon: faPython,
     },
     {
-        name: 'C#',
-        icon: faHashtag,
-    },
-    {
-        name: 'SQL',
-        icon: faDatabase,
-    },
-    {
         name: 'JavaScript',
         icon: faJs,
     },
@@ -57,6 +49,14 @@ const PROGRAMMING_LANGUAGES: SkillDefinition[] = [
     {
         name: 'Rust',
         icon: faRust,
+    },
+    {
+        name: 'SQL',
+        icon: faDatabase,
+    },
+    {
+        name: 'C#',
+        icon: faHashtag,
     },
     {
         name: 'Elixir',
