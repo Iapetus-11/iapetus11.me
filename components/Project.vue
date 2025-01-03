@@ -1,5 +1,5 @@
 <script setup lang="ts">
-    import type { ProjectDefinition } from '~/pages/projects/projects';
+    import type { ProjectDefinition } from '~/data/projects';
 
     defineProps<ProjectDefinition>();
 </script>

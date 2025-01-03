@@ -1,7 +1,7 @@
 <script setup lang="ts">
     import { calculateYearsSince } from '~/utils/datetime';
-    import Skill from '~/pages/index/Skill.vue';
-    import { SKILLS } from '~/pages/index/skills';
+    import Skill from '~/components/Skill.vue';
+    import { SKILLS } from '~/data/skills';
 
     definePageMeta({
         layout: 'home',

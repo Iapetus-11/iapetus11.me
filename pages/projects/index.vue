@@ -1,6 +1,6 @@
 <script setup lang="ts">
-    import Project from '~/pages/projects/Project.vue';
-    import { PROJECTS } from '~/pages/projects/projects';
+    import Project from '~/components/Project.vue';
+    import { PROJECTS } from '~/data/projects';
 
     definePageMeta({
         title: 'Projects',
