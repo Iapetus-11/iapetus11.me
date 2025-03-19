@@ -13,7 +13,7 @@
 <template>
     <nav class="flex items-center space-x-7">
         <div class="flex space-x-3.5">
-            <NavigationExternalPages />
+            <NavigationSmallItems />
         </div>
 
         <div class="flex space-x-4">
