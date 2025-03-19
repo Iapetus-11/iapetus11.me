@@ -34,7 +34,7 @@
 
     const discordUsernameCopyPop = reactive<{
         open: boolean;
-        timeout: NodeJS.Timeout | string | number | null;
+        timeout: number | null;
     }>({ open: false, timeout: null });
     function showAndCopyDiscordUsername() {
         navigator.clipboard.writeText(DISCORD_USERNAME);
