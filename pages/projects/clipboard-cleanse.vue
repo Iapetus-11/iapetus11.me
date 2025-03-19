@@ -19,7 +19,7 @@
                 class="animate-fade-in float-left -mt-5 h-fit max-lg:w-[256px] max-md:w-[100px] md:-ml-10"
             />
 
-            <span class="block animate-fade-in" style="animation-delay: 50ms">
+            <span class="animate-fade-in block" style="animation-delay: 50ms">
                 Ever tired of the extra crap on the end of URLs you copy? Well it could be useless
                 tracking data to help corporations spy on you and your friends... for example look
                 at this Amazon link:
@@ -38,7 +38,7 @@
                 </a>
             </code>
 
-            <span class="block animate-fade-in" style="animation-delay: 150ms">
+            <span class="animate-fade-in block" style="animation-delay: 150ms">
                 With Clipboard Cleanse, that link would automatically be stripped down to:
             </span>
 
@@ -57,7 +57,7 @@
 
             <br />
 
-            <span class="block animate-fade-in" style="animation-delay: 200ms">
+            <span class="animate-fade-in block" style="animation-delay: 200ms">
                 Currently Clipboard Cleanse is available for Windows and MacOS, but I plan to add
                 support for iOS and Linux.
             </span>
