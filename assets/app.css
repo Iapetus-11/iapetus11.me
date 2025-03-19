@@ -31,3 +31,15 @@
         @apply flex h-9 cursor-pointer items-center justify-center rounded-md border border-white px-3 py-2 text-white transition-all hover:border-opacity-0 hover:bg-aqua-dark sm:h-10 sm:px-4;
     }
 }
+
+/* --- Vue Transitions --- */
+
+.fade-enter-active,
+.fade-leave-active {
+    @apply transition ease-out;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+    @apply opacity-0;
+}

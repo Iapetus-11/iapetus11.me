@@ -27,7 +27,7 @@
         <!-- Mobile navigation -->
         <div class="grid grid-cols-7 items-center gap-6 p-4 md:hidden">
             <div class="col-span-2 mx-auto grid grid-cols-2 gap-4">
-                <NavigationExternalPages />
+                <NavigationSmallItems />
             </div>
 
             <div class="col-span-3">
