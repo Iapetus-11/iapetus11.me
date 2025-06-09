@@ -23,7 +23,7 @@
 </script>
 
 <template>
-    <div class="mb-6 mt-2 flex gap-x-20 gap-y-3 max-md:flex-col lg:gap-x-32">
+    <div class="mt-2 mb-6 flex gap-x-20 gap-y-3 max-md:flex-col lg:gap-x-32">
         <!-- Mobile navigation -->
         <div class="grid grid-cols-7 items-center gap-6 p-4 md:hidden">
             <div class="col-span-2 mx-auto grid grid-cols-2 gap-4">
@@ -47,7 +47,7 @@
             />
 
             <span
-                class="animate-fade-in mb-3 text-3xl font-semibold text-aqua-normal"
+                class="animate-fade-in text-aqua-normal mb-3 text-3xl font-semibold"
                 style="animation-delay: 50ms"
             >
                 Milo <span class="text-white">/</span> Iapetus11
@@ -67,7 +67,7 @@
             <!-- Skill sections and cards -->
             <div v-for="{ title, items } in SKILLS" :key="title">
                 <h3
-                    class="animate-fade-in mb-2.5 ml-1.5 text-2xl font-semibold text-aqua-normal max-md:text-center"
+                    class="animate-fade-in text-aqua-normal mb-2.5 ml-1.5 text-2xl font-semibold max-md:text-center"
                 >
                     {{ title }}
                 </h3>

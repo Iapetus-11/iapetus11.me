@@ -6,7 +6,7 @@
 </script>
 
 <template>
-    <div class="flex flex-row items-center space-x-1.5 rounded-md bg-dark-super px-2.5 py-2">
+    <div class="bg-dark-super flex flex-row items-center space-x-1.5 rounded-md px-2.5 py-2">
         <FontAwesomeIcon v-if="icon" :icon="icon" class="text-aqua-normal" />
         <img
             v-else

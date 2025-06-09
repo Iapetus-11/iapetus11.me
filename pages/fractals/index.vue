@@ -342,7 +342,7 @@
 
         <div class="order-3 mt-4 lg:col-span-2">
             <h2 class="text-5xl">Gallery</h2>
-            <p class="ml-1 mt-1 text-sm italic">
+            <p class="mt-1 ml-1 text-sm italic">
                 Clicking any of these images will load their parameters in above.
             </p>
 

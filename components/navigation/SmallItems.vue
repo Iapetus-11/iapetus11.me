@@ -87,7 +87,7 @@
             <Transition name="fade" mode="out-in">
                 <div
                     v-if="item.key === 'discord' && discordUsernameCopyPop.open"
-                    class="pointer-events-none fixed right-1/2 z-50 translate-x-[85%] whitespace-nowrap rounded-lg border border-white bg-dark-dark p-2 text-xs text-white shadow max-sm:top-10 sm:bottom-10 sm:translate-x-[40%]"
+                    class="bg-dark-dark pointer-events-none fixed right-1/2 z-50 translate-x-[85%] rounded-lg border border-white p-2 text-xs whitespace-nowrap text-white shadow max-sm:top-10 sm:bottom-10 sm:translate-x-[40%]"
                 >
                     Copied <span class="font-mono">{{ DISCORD_USERNAME }}</span> to clipboard!
                 </div>

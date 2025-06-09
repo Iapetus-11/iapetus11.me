@@ -1,21 +1,18 @@
 import { defineNuxtConfig } from 'nuxt/config';
+import tailwindcss from '@tailwindcss/vite';
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
     devtools: { enabled: true },
     plugins: ['~/plugins/fontawesome'],
-    css: ['~/assets/app.css', '@fortawesome/fontawesome-svg-core/styles.css'],
+    css: ['~/assets/main.css', '@fortawesome/fontawesome-svg-core/styles.css'],
 
-    postcss: {
-        plugins: {
-            tailwindcss: {},
-            autoprefixer: {},
-        },
+    vite: {
+        plugins: [tailwindcss()],
     },
 
     runtimeConfig: {
         public: {
-            // @ts-ignore
             API_BASE_URL: process.env.API_BASE_URL ?? '',
         },
     },
@@ -25,4 +22,5 @@ export default defineNuxtConfig({
     },
 
     compatibilityDate: '2025-03-18',
+    modules: ['@nuxt/icon'],
 });

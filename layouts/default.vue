@@ -12,7 +12,7 @@
 
 <template>
     <div
-        class="min-w-screen mx-auto mb-6 mt-2 min-h-screen max-w-[90vw] md:mb-14 md:mt-10 lg:max-w-[80vw] xl:max-w-[70vw]"
+        class="mx-auto mt-2 mb-6 min-h-screen max-w-[90vw] min-w-screen md:mt-10 md:mb-14 lg:max-w-[80vw] xl:max-w-[70vw]"
     >
         <div
             class="my-6 flex min-h-[60px] items-center justify-between max-md:flex-col-reverse md:my-10"

@@ -26,7 +26,7 @@
             </span>
 
             <code
-                class="animate-fade-in my-2 block overflow-hidden break-all rounded-lg bg-dark-dark p-3 text-xs text-slate-300 md:text-base"
+                class="animate-fade-in bg-dark-dark my-2 block overflow-hidden rounded-lg p-3 text-xs break-all text-slate-300 md:text-base"
                 style="animation-delay: 100ms"
             >
                 <a
@@ -43,7 +43,7 @@
             </span>
 
             <code
-                class="animate-fade-in my-2 inline-block overflow-hidden break-all rounded-lg bg-dark-dark p-3 text-xs text-slate-300 md:text-base"
+                class="animate-fade-in bg-dark-dark my-2 inline-block overflow-hidden rounded-lg p-3 text-xs break-all text-slate-300 md:text-base"
                 style="animation-delay: 175ms"
             >
                 <a
