@@ -1,7 +1,7 @@
 <script setup lang="ts">
     import { calculateYearsSince } from '~/utils/datetime';
-    import Skill from '~/components/Skill.vue';
-    import { SKILLS } from '~/data/skills';
+    // import Skill from '~/components/Skill.vue';
+    // import { SKILLS } from '~/data/skills';
 
     definePageMeta({
         layout: 'home',
@@ -23,68 +23,102 @@
 </script>
 
 <template>
-    <div class="mt-2 mb-6 flex gap-x-20 gap-y-3 max-md:flex-col lg:gap-x-32">
-        <!-- Mobile navigation -->
-        <div class="grid grid-cols-7 items-center gap-6 p-4 md:hidden">
-            <div class="col-span-2 mx-auto grid grid-cols-2 gap-4">
-                <NavigationSmallItems />
-            </div>
+    <div class="grid h-full w-full grid-cols-3 px-4 md:px-8 lg:px-12">
+        <div id="fake-loading-bar-1" class="bg-glow fixed bottom-0 left-0 max-h-full w-4 lg:w-8"></div>
 
-            <div class="col-span-3">
-                <img src="~/assets/images/petus.png" class="rounded-full" />
-            </div>
+        <div>
+            <AnimatedCircleOutline :delay-ms="1000">
+                <img
+                    id="profile-picture"
+                    src="~/assets/images/petus.png"
+                    alt="Iapetus11's Profile Picture"
+                    class="bg-glow glow-aqua mb-10 !rounded-full opacity-10"
+                />
+            </AnimatedCircleOutline>
 
-            <div class="col-span-2 mx-auto flex flex-col gap-4">
-                <NavigationPages />
-            </div>
-        </div>
-
-        <div class="flex flex-col items-center justify-center">
-            <img
-                src="~/assets/images/petus.png"
-                alt="Iapetus11's Profile Picture"
-                class="animate-fade-in mb-10 rounded-full max-md:hidden"
-            />
-
-            <span
-                class="animate-fade-in text-aqua-normal mb-3 text-3xl font-semibold"
-                style="animation-delay: 50ms"
-            >
-                Milo <span class="text-white">/</span> Iapetus11
-            </span>
-            <p
-                class="animate-fade-in text-lg font-medium text-gray-100 max-md:text-center lg:-mx-4"
-                style="animation-delay: 100ms"
-            >
-                {{ ABOUT_ME }}
-            </p>
-        </div>
-
-        <!-- Desktop navigation -->
-        <div class="flex flex-col justify-center space-y-6">
-            <NavigationCombined class="max-md:hidden" />
-
-            <!-- Skill sections and cards -->
-            <div v-for="{ title, items } in SKILLS" :key="title">
-                <h3
-                    class="animate-fade-in text-aqua-normal mb-2.5 ml-1.5 text-2xl font-semibold max-md:text-center"
-                >
-                    {{ title }}
-                </h3>
-
-                <div class="animate-fade-in flex flex-wrap gap-2 max-md:justify-center">
-                    <Skill
-                        v-for="(item, idx) in items"
-                        :key="item.name"
-                        v-bind="item"
-                        class="animate-fade-in"
-                        :style="{
-                            'animation-delay': `${(idx + 1) * 25}ms`,
-                            'animation-fill-mode': 'both',
-                        }"
-                    />
-                </div>
-            </div>
+            <p>{{ ABOUT_ME }}</p>
         </div>
     </div>
 </template>
+
+<style scoped>
+    @keyframes profile-picture {
+        0% {
+            opacity: 0%;
+        }
+        35% {
+            opacity: 50%;
+        }
+        40% {
+            opacity: 20%;
+        }
+        50% {
+            opacity: 50%;
+        }
+        100% {
+            opacity: 100%;
+        }
+    }
+
+    #profile-picture {
+        animation: 1s linear profile-picture both;
+        animation-delay: 1s;
+    }
+
+    @keyframes fake-loading-bar-1 {
+        0% {
+            height: 0%;
+            opacity: 100%;
+        }
+        14% {
+            opacity: 100%;
+        }
+        15% {
+            opacity: 0%;
+        }
+        17% {
+            opacity: 100%;
+        }
+        23% {
+            opacity: 100%;
+        }
+        25% {
+            opacity: 10%;
+        }
+        27% {
+            opacity: 100%;
+        }
+        29% {
+            opacity: 20%;
+        }
+        30% {
+            opacity: 100%;
+        }
+        65% {
+            opacity: 100%;
+        }
+        67% {
+            opacity: 10%;
+        }
+        69% {
+            opacity: 100%;
+        }
+        71% {
+            opacity: 20%;
+        }
+        73% {
+            opacity: 100%;
+        }
+        80% {
+            height: 100%;
+            opacity: 100%;
+        }
+        100% {
+            opacity: 0;
+        }
+    }
+
+    #fake-loading-bar-1 {
+        animation: 2.5s linear fake-loading-bar-1 both;
+    }
+</style>

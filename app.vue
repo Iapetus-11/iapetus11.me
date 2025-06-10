@@ -4,9 +4,7 @@
     useHead({
         title: route.meta.title || 'Milo Weinberg',
         bodyAttrs: {
-            class:
-                'select-none bg-dark-dark bg-gradient-to-r from-dark-dark via-dark-light via-dark-normal ' +
-                'to-dark-dark',
+            class: 'select-none bg-[#232333]',
         },
     });
 </script>

@@ -1,19 +1,70 @@
-@import tailwindcss;
+@import 'tailwindcss';
+
+@theme {
+    --color-aqua-normal: #77d5af;
+    --color-aqua-dark: #6bc29f;
+}
 
 @layer base {
+    * {
+        @apply text-white;
+    }
+
+    :root {
+        --color-glow-primary: var(--color-violet-400);
+        --color-glow-bloom: color-mix(in oklch, var(--color-violet-500), black 7.5%);
+        --color-glow-bloom-secondary: #77d5af;
+    }
+
+    .glow-aqua {
+        --color-glow-primary: var(--color-aqua-normal);
+        --color-glow-bloom: var(--color-aqua-dark);
+        --color-glow-bloom-secondary: var(--color- -500);
+    }
+
+    .glow-sky {
+        --color-glow-primary: var(--color-sky-400);
+        --color-glow-bloom: var(--color-sky-500);
+        --color-glow-bloom-secondary: var(--color-red-500);
+    }
+
+    @keyframes fade {
+        0% {
+            transform: scale(0.9);
+            opacity: 0;
+        }
+
+        100% {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+
+    .animate-fade-in {
+        opacity: 0;
+        animation: fade 200ms linear 1;
+        animation-fill-mode: both;
+    }
 }
 
-@layer components {
-}
+@layer utilities {
+    .border-glow {
+        @apply rounded-lg border-3 border-[color:var(--color-glow-primary)];
+        box-shadow:
+            0 0 5px var(--color-glow-bloom),
+            inset 0 0 5px var(--color-glow-bloom),
+            0 0 10px var(--color-glow-bloom),
+            inset 0 0 10px var(--color-glow-bloom),
+            0 0 10px var(--color-glow-bloom-secondary),
+            inset 0 0 10px var(--color-glow-bloom-secondary);
+    }
 
-/* --- Vue Transitions --- */
-
-.fade-enter-active,
-.fade-leave-active {
-    @apply transition ease-out;
-}
-
-.fade-enter-from,
-.fade-leave-to {
-    @apply opacity-0;
+    .bg-glow {
+        @apply rounded-lg bg-[color:var(--color-glow-primary)];
+        box-shadow:
+            0 0 5px var(--color-glow-primary),
+            0 0 5px var(--color-glow-bloom),
+            0 0 10px var(--color-glow-bloom),
+            0 0 10px var(--color-glow-bloom-secondary);
+    }
 }
