@@ -28,6 +28,12 @@
         }
     }, { immediate: true });
 
+    watch(radius, (radius) => {
+        if (radius) {
+            svgEl.value?.style.setProperty('--path-stroke-value', 1800);
+        }
+    }, { immediate: true });
+
     const showCircle = ref(true);
 
     function renderCircle() {
@@ -64,9 +70,14 @@
 </template>
 
 <style scoped>
+    @property --path-stroke-value {
+        syntax: "<number>";
+        inherits: true;
+    }
+
     @keyframes outline-image {
         0% {
-            stroke-dashoffset: 1872;
+            stroke-dashoffset: var(--path-stroke-value);
         }
         50% {
             stroke-dashoffset: 0;
@@ -83,7 +94,7 @@
     }
 
     path {
-        stroke-dasharray: 1872;
+        stroke-dasharray: var(--path-stroke-value);
         animation: outline-image 1.5s linear forwards;
         filter: blur(0.75px);
     }

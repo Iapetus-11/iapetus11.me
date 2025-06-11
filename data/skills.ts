@@ -1,27 +1,4 @@
-import {
-    faBolt,
-    faCodeBranch,
-    faCrown,
-    faDatabase,
-    faDiagramProject,
-    faDroplet,
-    faFileLines,
-    faHashtag,
-    faLayerGroup,
-    faTableColumns,
-} from '@fortawesome/free-solid-svg-icons';
-import {
-    faDocker,
-    faJava,
-    faJs,
-    faPython,
-    faRust,
-    faStripeS,
-    faUbuntu,
-    faVuejs,
-} from '@fortawesome/free-brands-svg-icons';
 import djangoSvg from '~/assets/images/skill-icons/django.svg';
-import type { IconDefinition } from '@fortawesome/free-solid-svg-icons';
 import svelteSvg from '~/assets/images/skill-icons/svelte.svg';
 import typescriptSvg from '~/assets/images/skill-icons/typescript.svg';
 

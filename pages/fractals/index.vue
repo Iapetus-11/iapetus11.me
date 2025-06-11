@@ -7,13 +7,6 @@
         FRACTAL_PARSER,
         VARIATIONS,
     } from '~/pages/fractals/fractals';
-    import {
-        faCheckCircle,
-        faCircleNotch,
-        faClipboard,
-        faHouse,
-    } from '@fortawesome/free-solid-svg-icons';
-    import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
     import { parseQueryParams } from '~/utils/queryParamsParser';
 
     definePageMeta({

@@ -5,15 +5,6 @@
 </script>
 
 <script setup lang="ts">
-    import {
-        faDiscord,
-        faGithub,
-        faLinkedin,
-        type IconDefinition,
-    } from '@fortawesome/free-brands-svg-icons';
-    import { faDonate } from '@fortawesome/free-solid-svg-icons';
-    import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
-
     const DISCORD_USERNAME = 'iapetus11';
 
     const SMALL_PAGES = [
