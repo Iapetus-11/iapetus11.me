@@ -10,22 +10,16 @@
         @apply text-white;
     }
 
-    :root {
-        --color-glow-primary: var(--color-violet-400);
-        --color-glow-bloom: color-mix(in oklch, var(--color-violet-500), black 7.5%);
-        --color-glow-bloom-secondary: #77d5af;
-    }
-
     .glow-aqua {
         --color-glow-primary: var(--color-aqua-normal);
         --color-glow-bloom: var(--color-aqua-dark);
-        --color-glow-bloom-secondary: var(--color- -500);
+        --color-glow-bloom-secondary: var(--color-aqua-normal);
     }
 
-    .glow-sky {
-        --color-glow-primary: var(--color-sky-400);
-        --color-glow-bloom: var(--color-sky-500);
-        --color-glow-bloom-secondary: var(--color-red-500);
+    .glow-purple {
+        --color-glow-primary: var(--color-purple-400);
+        --color-glow-bloom: var(--color-indigo-500);
+        --color-glow-bloom-secondary: var(--color-fuchsia-500);
     }
 
     @keyframes fade {
@@ -62,9 +56,23 @@
     .bg-glow {
         @apply rounded-lg bg-[color:var(--color-glow-primary)];
         box-shadow:
-            0 0 5px var(--color-glow-primary),
-            0 0 5px var(--color-glow-bloom),
+            0 0 10px var(--color-glow-primary),
             0 0 10px var(--color-glow-bloom),
+            0 0 20px var(--color-glow-bloom),
+            0 0 10px var(--color-glow-bloom-secondary);
+    }
+
+    .filter-glow {
+        filter: drop-shadow(0 0 5px var(--color-glow-bloom))
+            drop-shadow(0 0 10px var(--color-glow-bloom))
+            drop-shadow(0 0 10px var(--color-glow-bloom-secondary));
+    }
+
+    .text-glow {
+        text-shadow:
+            0 0 10px var(--color-glow-primary),
+            0 0 10px var(--color-glow-bloom),
+            0 0 20px var(--color-glow-bloom),
             0 0 10px var(--color-glow-bloom-secondary);
     }
 }

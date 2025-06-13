@@ -1,21 +1,27 @@
 <script lang="ts" setup>
+    import { svg } from 'animejs';
+
     interface Props {
-        color?: string;
         delayMs?: number;
+        borderWidthPx?: number;
     }
 
     const props = withDefaults(defineProps<Props>(), {
-        color: 'var(--color-aqua-normal)',
         delayMs: 0,
+        borderWidthPx: 1,
     });
 
     const containerEl = useTemplateRef('container');
-    const svgEl = useTemplateRef('svg');
+    const circleEl = useTemplateRef('circle');
 
-    const childEl = computed(() => (containerEl.value?.querySelector('*') ?? null) as HTMLElement | null);
+    const childEl = computed(
+        () => (containerEl.value?.querySelector('*') ?? null) as HTMLElement | null
+    );
 
     const childRect = ref<DOMRect | null>(null);
-    const radius = computed<number | null>(() => childRect.value ? Number((childRect.value.height / 2.0).toFixed(2)) + 10.0 : null);
+    const radius = computed<number>(() =>
+        childRect.value ? Number((childRect.value.height / 2.0).toFixed(2)) + 10.0 : 0
+    );
 
     useWindowEvent('resize', () => {
         if (childEl.value) {
@@ -26,76 +32,71 @@
         if (childEl) {
             childRect.value = childEl?.getBoundingClientRect();
         }
-    }, { immediate: true });
+    });
 
     watch(radius, (radius) => {
-        if (radius) {
-            svgEl.value?.style.setProperty('--path-stroke-value', 1800);
-        }
-    }, { immediate: true });
+        // Size of the mask to simulate effect of "border"
+        circleEl.value?.style.setProperty(
+            '--circle-stroke-diff',
+            `${radius - (props.borderWidthPx - 1)}px`
+        );
+    });
 
-    const showCircle = ref(true);
+    function animateCircle() {
+        registerCSSProperty({
+            name: '--circle-percentage',
+            syntax: '<percentage>',
+            inherits: true,
+            initialValue: '0%',
+        });
 
-    function renderCircle() {
-        if (!svgEl.value || !childRect.value) return;
+        const circle = svg.createDrawable(circleEl.value!);
 
-        showCircle.value = true;
-
-        const svg = svgEl.value;
-
-        svg.style.width = `${childRect.value.width}px`;
-        svg.style.height = `${childRect.value.height}px`;
-        svg.style.display = 'block';
+        createWAAPITimeline(
+            [
+                {
+                    '--circle-percentage': ['100%', '-400%'],
+                    duration: 1600 * 6.0,
+                },
+                {
+                    rotate: ['430deg', '0deg'],
+                    duration: 1800,
+                },
+                {
+                    opacity: [0, 1],
+                    duration: 250,
+                },
+                {
+                    opacity: [1, 0],
+                    duration: 500,
+                    delay: 1600,
+                },
+            ],
+            { targets: circle, delayMs: props.delayMs }
+        );
     }
 
-    onMounted(() => {
-        setTimeout(renderCircle, props.delayMs);
-    });
+    onMounted(animateCircle);
+    onUpdated(animateCircle);
 </script>
 
 <template>
     <div ref="container" class="relative">
         <slot />
 
-        <svg v-if="radius && showCircle" ref="svg" class="absolute hidden top-[-10px] left-[-10px] -z-10 overflow-visible">
-            <path
-                :d="`M ${radius + 0.01} 1 A ${radius} ${radius} 0 1 1 ${radius - 0.01} 1`"
-                :stroke="color"
-                stroke-width="2"
-                fill="none"
-                @animationend="showCircle = false"
-            ></path>
-        </svg>
+        <div
+            class="filter-glow glow-aqua absolute top-0 left-0 h-[calc(100%+22px)] w-[calc(100%+22px)] -translate-x-[10px] -translate-y-[10px] md:scale-[101%] lg:scale-[102%]"
+        >
+            <div
+                ref="circle"
+                class="filter-glow glow-aqua h-full w-full"
+                :style="{
+                    backgroundImage: `conic-gradient(transparent var(--circle-percentage), var(--color-glow-primary))`,
+                    borderRadius: '50%',
+                    mask: 'radial-gradient(circle var(--circle-stroke-diff), transparent 99%, #fff 0%)',
+                    opacity: 0,
+                }"
+            ></div>
+        </div>
     </div>
 </template>
-
-<style scoped>
-    @property --path-stroke-value {
-        syntax: "<number>";
-        inherits: true;
-    }
-
-    @keyframes outline-image {
-        0% {
-            stroke-dashoffset: var(--path-stroke-value);
-        }
-        50% {
-            stroke-dashoffset: 0;
-        }
-        75% {
-            opacity: 0%;
-        }
-        85% {
-            opacity: 75%;
-        }
-        100% {
-            opacity: 0%;
-        }
-    }
-
-    path {
-        stroke-dasharray: var(--path-stroke-value);
-        animation: outline-image 1.5s linear forwards;
-        filter: blur(0.75px);
-    }
-</style>

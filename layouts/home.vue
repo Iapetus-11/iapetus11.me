@@ -1,7 +1,5 @@
 <template>
-    <div
-        class="mx-auto flex min-h-screen max-w-[90vw] min-w-screen items-center lg:max-w-[80vw] xl:max-w-[70vw]"
-    >
+    <div class="mx-auto flex min-h-screen max-w-[90rem] items-center px-4 md:px-8 lg:px-24">
         <slot />
     </div>
 </template>
