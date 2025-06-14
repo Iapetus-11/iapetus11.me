@@ -1,19 +1,24 @@
 <script lang="ts">
+    import type { VNode } from 'vue';
+
     export default {
         props: {
             as: { type: String, default: 'span' },
-            splitBy: { type: String, default: '' },
         },
         setup(props, { slots }) {
             const content = slots.default!()
                 .map((el) => el.children)
                 .join('');
-            return () =>
+
+            const children: VNode[] = content.split(' ').map((word) =>
                 h(
-                    props.as,
+                    'span',
                     null,
-                    content.split(props.splitBy).map((c) => h('span', null, c + props.splitBy))
-                );
+                    (word + ' ').split('').map((c) => h('span', null, c))
+                )
+            );
+
+            return () => h(props.as, { class: '*:whitespace-pre-wrap *:inline-block' }, children);
         },
     };
 </script>

@@ -24,7 +24,6 @@
     })();
 
     const profilePictureEl = useTemplateRef('profile-picture');
-    const fakeLoadingBarEl = useTemplateRef('fake-loading-bar');
     const aboutMeTextEl = useTemplateRef('about-me-text');
 
     function animateLogo() {
@@ -50,83 +49,33 @@
         );
     }
 
-    function animateFakeLoadingBar() {
-        createWAAPITimeline(
-            [
-                {
-                    y: ['100vh', '0vh'],
-                    x: ['-15%', '0%'],
-                    opacity: 0.75,
-                    duration: 1750,
-                    delay: 0,
-                },
-                {
-                    opacity: [1, 0.3, 1],
-                    duration: 250,
-                    delay: 200,
-                },
-                {
-                    opacity: [1, 0.5, 1, 0.75, 1],
-                    duration: 250,
-                    delay: 1000,
-                },
-                {
-                    opacity: [1, 0],
-                    duration: 250,
-                    delay: 1750,
-                },
-            ],
-            { targets: fakeLoadingBarEl.value! }
-        );
-    }
-
     function animateAboutMeText() {
         const aboutMeChars = aboutMeTextEl.value!.$el.querySelectorAll('span');
 
-        // createTimeline({ delay: 1400 })
-        //     .add(aboutMeChars, {
-        //         opacity: [0, 1],
-        //         duration: () => (Math.random() * 200) + 1000,
-        //         delay: stagger(4),
-        //         ease: 'inBounce'
-        //     }, 0).add(aboutMeChars, {
-        //         color: ['#d97706', '#FFFFFF'],
-        //         duration: 1000,
-        //     }, 0);
-        createTimeline({ delay: 1400 })
+        createTimeline({ delay: 700 })
             .add(
                 aboutMeChars,
                 {
                     opacity: [0, 1],
-                    translateX: (_: any, idx: number) =>
-                        ({
-                            0: ['50px', '0px'],
-                            1: ['-50px', '0px'],
-                        })[idx % 4] ?? [],
-                    translateY: (_: any, idx: number) =>
-                        ({
-                            2: ['50px', '0px'],
-                            3: ['-50px', '0px'],
-                        })[idx % 4] ?? [],
-                    duration: 500,
-                    delay: stagger(50),
-                    ease: 'inOutSine',
+                    duration: () => Math.random() * 1500,
+                    delay: stagger(10),
+                    ease: 'linear',
+                    alternate: true,
                 },
                 0
             )
             .add(
                 aboutMeChars,
                 {
-                    color: ['#77d5af', '#FFFFFF'],
-                    duration: 1000,
-                    delay: stagger(50),
+                    color: ['#FF00FF', '#FFFFFF'],
+                    duration: 2000,
+                    delay: stagger(1),
                 },
                 0
             );
     }
 
     function startAnimations() {
-        animateFakeLoadingBar();
         animateLogo();
         animateAboutMeText();
     }
@@ -137,13 +86,8 @@
 
 <template>
     <div class="grid h-full w-full grid-cols-3">
-        <div
-            ref="fake-loading-bar"
-            class="bg-glow glow-purple fixed bottom-0 left-0 h-[100vh] max-h-full opacity-0 lg:w-8"
-        ></div>
-
         <div>
-            <AnimatedCircleOutline :delay-ms="400" :border-width-px="1">
+            <AnimatedCircleOutline :delay-ms="100" :border-width-px="1">
                 <img
                     ref="profile-picture"
                     src="~/assets/images/petus.png"
@@ -156,8 +100,8 @@
             <p>
                 <AnimateableText
                     ref="about-me-text"
-                    class="whitespace-pre-wrap *:inline-block *:opacity-0"
-                    split-by=" "
+                    class="font-bold tracking-wide *:opacity-0"
+                    style="overflow-wrap: break-word"
                 >
                     {{ ABOUT_ME }}
                 </AnimateableText>

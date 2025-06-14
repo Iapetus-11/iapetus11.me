@@ -17,10 +17,6 @@ export default {
                     light: '#66BAFF',
                 },
             },
-            fontSize: {
-                '7xl': '4.5rem',
-                '8xl': '6rem',
-            },
         },
     },
     plugins: [],
