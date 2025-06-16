@@ -1,34 +1,12 @@
-<script setup lang="ts">
-    const route = useRoute();
-
-    const title = computed<string>(
-        () => (route.meta.title as string | undefined) ?? 'Milo Weinberg'
-    );
-
-    useHead({
-        title: title,
-    });
-</script>
-
 <template>
-    <div
-        class="mx-auto mt-2 mb-6 min-h-screen max-w-[90vw] min-w-screen md:mt-10 md:mb-14 lg:max-w-[80vw] xl:max-w-[70vw]"
-    >
-        <div
-            class="my-6 flex min-h-[60px] items-center justify-between max-md:flex-col-reverse md:my-10"
-        >
-            <h1
-                :key="title"
-                class="animate-fade-in text-6xl font-semibold text-white max-md:mt-3"
-                :class="route.meta.titleClasses || ''"
-            >
-                {{ title }}
-            </h1>
+    <div class="flex min-h-screen flex-col items-center">
+        <header class="flex w-full">
+            <h1 v-if="$route.meta.title">{{ $route.meta.title }}</h1>
 
-            <NavigationCombined />
-        </div>
+            <nav class="ml-auto">Home Projects Recommendations Whatevah bro</nav>
+        </header>
 
-        <main class="w-full">
+        <main class="mx-auto flex max-w-[90rem] grow items-center px-4 md:px-8 lg:px-24">
             <slot />
         </main>
     </div>

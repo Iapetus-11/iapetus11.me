@@ -23,3 +23,9 @@ export default defineNuxtConfig({
     compatibilityDate: '2025-03-18',
     modules: ['@nuxt/icon'],
 });
+
+declare module '#app' {
+    interface PageMeta {
+        title?: false | string;
+    }
+}

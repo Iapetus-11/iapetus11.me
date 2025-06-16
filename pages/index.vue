@@ -6,7 +6,7 @@
     // import { SKILLS } from '~/data/skills';
 
     definePageMeta({
-        layout: 'home',
+        title: false,
     });
 
     defineRouteRules({
@@ -52,27 +52,20 @@
     function animateAboutMeText() {
         const aboutMeChars = aboutMeTextEl.value!.$el.querySelectorAll('span');
 
-        createTimeline({ delay: 700 })
-            .add(
-                aboutMeChars,
-                {
-                    opacity: [0, 1],
-                    duration: () => Math.random() * 1500,
-                    delay: stagger(10),
-                    ease: 'linear',
-                    alternate: true,
-                },
-                0
-            )
-            .add(
-                aboutMeChars,
-                {
-                    color: ['#FF00FF', '#FFFFFF'],
-                    duration: 2000,
-                    delay: stagger(1),
-                },
-                0
-            );
+        createWAAPITimeline([
+            {
+                color: ['#FF00FF', '#FFFFFF'],
+                duration: 1000,
+                delay: stagger(10),
+            },
+            {
+                opacity: [0, 1],
+                duration: () => Math.random() * 1500,
+                delay: stagger(11),
+                ease: 'linear',
+                alternate: true,
+            },
+        ], { targets: aboutMeChars, delayMs: 700 });
     }
 
     function startAnimations() {
@@ -100,7 +93,7 @@
             <p>
                 <AnimateableText
                     ref="about-me-text"
-                    class="font-bold tracking-wide *:opacity-0"
+                    class="*:opacity-0 text-lg"
                     style="overflow-wrap: break-word"
                 >
                     {{ ABOUT_ME }}
@@ -109,5 +102,3 @@
         </div>
     </div>
 </template>
-
-<style scoped></style>
