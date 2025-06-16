@@ -1,21 +1,14 @@
 @import 'tailwindcss';
 
-@font-face {
-    font-family: 'Menlo Regular';
-    font-style: normal;
-    font-weight: normal;
-    src: url('/assets/fonts/Menlo-Regular.woff') format('woff');
-}
-
 @theme {
     --color-aqua-normal: #77d5af;
     --color-aqua-dark: #6bc29f;
-    --font-menlo: 'Menlo Regular', 'sans-serif';
+    --font-nunito: 'Nunito', sans-serif;
 }
 
 @layer base {
     * {
-        @apply font-menlo text-white;
+        @apply font-nunito tracking-[0.00625em] text-white;
     }
 
     .glow-aqua {
