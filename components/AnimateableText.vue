@@ -13,10 +13,12 @@
             const children: VNode[] = content.split(' ').map((word) =>
                 h(
                     'span',
-                    null,
+                    { 'aria-hidden': true },
                     (word + ' ').split('').map((c) => h('span', null, c))
                 )
             );
+
+            children.unshift(h('span', { class: 'sr-only' }, content));
 
             return () => h(props.as, { class: '*:whitespace-pre-wrap *:inline-block' }, children);
         },
