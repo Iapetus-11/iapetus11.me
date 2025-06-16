@@ -18,12 +18,11 @@
 
 <template>
     <NuxtLink
-        v-for="(page, idx) in PAGES.filter((p) => p.href !== $route.path).slice(0, 2)"
+        v-for="page in PAGES.filter((p) => p.href !== $route.path)"
         :key="page.href"
         :href="page.href"
-        class="animate-fade-in button max-sm:px-2 max-sm:text-sm"
+        class="button max-sm:px-2 max-sm:text-sm bg-glow glow-aqua !bg-transparent"
         :class="$attrs.class"
-        :style="`animation-delay: ${idx * 75 + (animationDelay ?? 0)}ms`"
     >
         {{ page.name }}
     </NuxtLink>

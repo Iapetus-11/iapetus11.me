@@ -65,7 +65,7 @@
                 ease: 'linear',
                 alternate: true,
             },
-        ], { targets: aboutMeChars, delayMs: 700 });
+        ], { targets: aboutMeChars, delayMs: 600 });
     }
 
     function startAnimations() {

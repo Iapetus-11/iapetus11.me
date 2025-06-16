@@ -76,4 +76,17 @@
             0 0 20px var(--color-glow-bloom),
             0 0 10px var(--color-glow-bloom-secondary);
     }
+
+    .border-glow {
+        border-shadow:
+            0 0 2px var(--color-glow-bloom)
+            0 0 5px var(--color-glow-bloom)
+            0 0 5px var(--color-glow-bloom-secondary);
+    }
+}
+
+@layer components {
+    .button {
+        @apply border border-white rounded-lg py-1 px-1.5;
+    }
 }
