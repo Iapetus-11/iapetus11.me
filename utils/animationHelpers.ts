@@ -29,14 +29,13 @@ export function createWAAPITimeline(
             );
         }
 
-        if (params.delay && typeof params.delay !== 'number') {
-            throw new Error(
-                `Animation delay type (${typeof params.delay}) not supported: ${{ targets, ...params }}`
-            );
+        let delayMs = (options?.delayMs ?? 0);
+
+        if (params.delay && typeof params.delay === 'number') {
+            delayMs += params.delay;
+            delete params['delay'];
         }
 
-        const delayMs = (options?.delayMs ?? 0) + (params.delay ?? 0);
-        delete params['delay']; // We handle delay here
 
         const startAnimation = () => waapi.animate(targets, params);
 
