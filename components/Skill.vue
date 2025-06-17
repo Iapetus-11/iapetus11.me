@@ -7,7 +7,7 @@
 
 <template>
     <div class="bg-dark-super flex flex-row items-center space-x-1.5 rounded-md px-2.5 py-2">
-        <FontAwesomeIcon v-if="icon" :icon="icon" class="text-aqua-normal" />
+        <FontAwesomeIcon v-if="icon" :icon="icon" class="text-aqua-400" />
         <img
             v-else
             :src="customIcon"

@@ -1,8 +1,13 @@
 @import 'tailwindcss';
 
 @theme {
-    --color-aqua-normal: #77d5af;
-    --color-aqua-dark: #6bc29f;
+    --color-aqua-400: #77d5af;
+    --color-aqua-500: #6bc29f;
+    --color-aqua-600: #54b8a9;
+    --color-aqua-700: #3e9b9d;
+    --color-aqua-800: #347f8b;
+    --color-aqua-900: #326373;
+    --color-dull: #202f36;
     --font-nunito: 'Nunito', sans-serif;
 }
 
@@ -12,9 +17,9 @@
     }
 
     .glow-aqua {
-        --color-glow-primary: var(--color-aqua-normal);
-        --color-glow-bloom: var(--color-aqua-dark);
-        --color-glow-bloom-secondary: var(--color-aqua-normal);
+        --color-glow-primary: var(--color-aqua-400);
+        --color-glow-bloom: var(--color-aqua-500);
+        --color-glow-bloom-secondary: var(--color-aqua-400);
     }
 
     .glow-purple {
@@ -78,15 +83,13 @@
     }
 
     .border-glow {
-        border-shadow:
-            0 0 2px var(--color-glow-bloom)
-            0 0 5px var(--color-glow-bloom)
-            0 0 5px var(--color-glow-bloom-secondary);
+        border-shadow: 0 0 2px var(--color-glow-bloom) 0 0 5px var(--color-glow-bloom) 0 0 5px
+            var(--color-glow-bloom-secondary);
     }
 }
 
 @layer components {
     .button {
-        @apply border border-white rounded-lg py-1 px-1.5;
+        @apply rounded-lg border border-white px-2 py-1.5;
     }
 }

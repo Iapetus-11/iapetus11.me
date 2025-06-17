@@ -43,7 +43,7 @@
 
     const smallPageClasses = computed(() =>
         [
-            'animate-fade-in cursor-pointer text-2xl text-white transition-all hover:text-aqua-normal',
+            'animate-fade-in cursor-pointer text-2xl text-white transition-all hover:text-aqua-400',
             attrs.class,
         ]
             .filter((c) => c)

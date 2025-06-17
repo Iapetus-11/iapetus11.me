@@ -29,13 +29,12 @@ export function createWAAPITimeline(
             );
         }
 
-        let delayMs = (options?.delayMs ?? 0);
+        let delayMs = options?.delayMs ?? 0;
 
         if (params.delay && typeof params.delay === 'number') {
             delayMs += params.delay;
             delete params['delay'];
         }
-
 
         const startAnimation = () => waapi.animate(targets, params);
 

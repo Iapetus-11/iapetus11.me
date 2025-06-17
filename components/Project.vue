@@ -8,19 +8,24 @@
     <NuxtLink
         :href="link"
         :target="link.startsWith('/') ? '_self' : '_blank'"
-        class="bg-dark-super hover:bg-opacity-80 flex items-center space-x-3 rounded-xl p-3 transition md:space-x-6 md:p-6"
+        class="group bg-aqua-800 hover:bg-aqua-700 relative flex h-40 items-center space-x-3 overflow-hidden rounded-xl transition-colors"
     >
-        <img
-            :src="image"
-            :alt="name"
-            class="flex h-full max-h-32 w-full max-w-32 rounded-full shadow"
-        />
-
-        <div class="w-2/3">
-            <h3 class="text-aqua-normal mb-2 text-2xl font-semibold sm:text-3xl">
+        <div class="w-2/3 p-3 md:p-6">
+            <h3 class="mb-2 text-2xl font-semibold text-purple-200 sm:text-3xl">
                 {{ name }}
             </h3>
             <p class="text-white">{{ description }}</p>
+        </div>
+
+        <div
+            class="bg-aqua-900 group-hover:bg-aqua-800 ml-auto flex h-full w-[160px] max-w-48 rounded-l-4xl px-3 py-3 transition-colors"
+            style="box-shadow: -6px 1px 5px -6px rgba(0, 0, 0, 0.25)"
+        >
+            <img
+                :src="image"
+                :alt="name"
+                class="h-fit w-full self-center rounded-l-3xl rounded-r-xl"
+            />
         </div>
     </NuxtLink>
 </template>

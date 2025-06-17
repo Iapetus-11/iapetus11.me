@@ -1,9 +1,10 @@
 <script setup lang="ts">
-    import { createTimeline, stagger } from 'animejs';
     import { calculateYearsSince } from '~/utils/datetime';
     import { createWAAPITimeline } from '~/utils/animationHelpers';
+    import { animate, createTimeline, onScroll, stagger } from 'animejs';
     // import Skill from '~/components/Skill.vue';
     // import { SKILLS } from '~/data/skills';
+    import { PROJECTS } from '~/data/projects';
 
     definePageMeta({
         title: false,
@@ -24,9 +25,10 @@
     })();
 
     const profilePictureEl = useTemplateRef('profile-picture');
+    const profilePictureContainerEl = useTemplateRef('profile-picture-container');
     const aboutMeTextEl = useTemplateRef('about-me-text');
 
-    function animateLogo() {
+    async function animateProfilePicture() {
         registerCSSProperty({
             name: '--profile-picture-saturation',
             syntax: '<percentage>',
@@ -50,55 +52,140 @@
     }
 
     function animateAboutMeText() {
-        const aboutMeChars = aboutMeTextEl.value!.$el.querySelectorAll('span');
+        const aboutMeChars = aboutMeTextEl.value!.querySelectorAll('span');
 
-        createWAAPITimeline([
-            {
-                color: ['#FF00FF', '#FFFFFF'],
-                duration: 1000,
-                delay: stagger(10),
-            },
-            {
-                opacity: [0, 1],
-                duration: () => Math.random() * 1500,
-                delay: stagger(11),
-                ease: 'linear',
-                alternate: true,
-            },
-        ], { targets: aboutMeChars, delayMs: 600 });
+        createWAAPITimeline(
+            [
+                {
+                    color: ['#FF00FF', '#FFFFFF'],
+                    duration: 1000,
+                    delay: stagger(10),
+                },
+                {
+                    opacity: [0, 1],
+                    duration: () => Math.random() * 1500,
+                    delay: stagger(11),
+                    ease: 'linear',
+                    alternate: true,
+                },
+            ],
+            { targets: aboutMeChars, delayMs: 600 }
+        );
     }
 
     function startAnimations() {
-        animateLogo();
+        animateProfilePicture();
         animateAboutMeText();
     }
 
-    onMounted(startAnimations);
-    onUpdated(startAnimations);
+    const profilePictureContainerRect = ref<DOMRect>();
+    function updateProfilePictureContainerRect() {
+        if (!profilePictureContainerEl.value) return;
+        profilePictureContainerRect.value = profilePictureContainerEl.value.getBoundingClientRect();
+    }
+
+    const scrollYPos = ref();
+    useWindowEvent('scroll', () => scrollYPos.value = window.scrollY);
+
+    const profileSectionAnimationDirection = ref(0);
+    const isAnimatingProfileSection = ref(false);
+    function animateProfileSection() {
+        if (!(profilePictureEl.value && aboutMeTextEl.value && profilePictureContainerRect.value)) return;
+        if (isAnimatingProfileSection.value) return;
+
+        if (scrollYPos.value >= 10 && profileSectionAnimationDirection.value !== 1) {
+            profileSectionAnimationDirection.value = 1;
+            isAnimatingProfileSection.value = true;
+            
+            createTimeline()
+                .add(profilePictureEl.value, {
+                    duration: 200,
+                    ease: 'outQuad',
+                    position: 'fixed',
+                    width: '48px',
+                    height: '48px',
+                    top: '12px',
+                }, 0)
+                .add(aboutMeTextEl.value, {
+                    duration: 200,
+                    ease: 'outQuad',
+                    translateX: '-50vw',
+                }, 0)
+                .then(() => isAnimatingProfileSection.value = false);
+        } else if (scrollYPos.value < 10 && profileSectionAnimationDirection.value === 1) {
+            profileSectionAnimationDirection.value = -1;
+            isAnimatingProfileSection.value = true;
+
+            const top = profilePictureContainerRect.value.top;
+            const left = profilePictureContainerRect.value.left;
+            const width = profilePictureContainerRect.value.width;
+            const height = profilePictureContainerRect.value.height;
+
+            // TODO: Handle about me text animation
+
+            animate(profilePictureEl.value, {
+                autoplay: true,
+                duration: 200,
+                ease: 'inQuad',
+                position: ['fixed'],
+                translateX: ['50%', '0%'],
+                top: `${top}px`,
+                left: `${left}px`,
+                width: `${width}px`,
+                height: `${height}px`,
+            }).then(() => isAnimatingProfileSection.value = false);
+        }
+    }
+
+    watch(scrollYPos, () => {
+        updateProfilePictureContainerRect();
+        animateProfileSection();
+    }, { immediate: true });
+
+    onBeforeMount(() => {
+        scrollYPos.value = window.scrollY;
+        updateProfilePictureContainerRect();
+    });
+
+    onMounted(() => {
+        animateProfileSection();
+        startAnimations();
+    });
 </script>
 
 <template>
-    <div class="grid h-full w-full grid-cols-3">
-        <div>
-            <AnimatedCircleOutline :delay-ms="100" :border-width-px="1">
-                <img
-                    ref="profile-picture"
-                    src="~/assets/images/petus.png"
-                    alt="Iapetus11's Profile Picture"
-                    class="bg-glow glow-aqua mb-10 !rounded-full opacity-0"
-                    style="filter: saturate(var(--profile-picture-saturation))"
-                />
-            </AnimatedCircleOutline>
+    <div class="flex h-full w-full gap-36">
+        <div class="relative max-w-124">
+            <div ref="profile-picture-container" class="h-[100w] w-full aspect-square mb-10">
+                <AnimatedCircleOutline :delay-ms="100" :border-width-px="1" :disabled="scrollYPos >= 10">
+                    <img
+                        ref="profile-picture"
+                        src="~/assets/images/petus.png"
+                        alt="Iapetus11's Profile Picture"
+                        class="z-50 bg-glow glow-aqua !rounded-full opacity-0"
+                        style="filter: saturate(var(--profile-picture-saturation))"
+                    />
+                </AnimatedCircleOutline>
+            </div>
 
-            <p>
+            <p ref="about-me-text">
                 <AnimateableText
-                    ref="about-me-text"
-                    class="*:opacity-0 text-lg"
+                    class="text-lg *:opacity-0"
                     style="overflow-wrap: break-word"
                 >
                     {{ ABOUT_ME }}
                 </AnimateableText>
             </p>
+        </div>
+
+        <div class="ml-auto flex w-1/2 flex-col gap-3">
+            <Project
+                v-for="(project, idx) in PROJECTS"
+                v-bind="project"
+                :key="project.name"
+                class="animate-fade-in"
+                :style="`animation-delay: ${idx * 50}ms`"
+            />
         </div>
     </div>
 </template>

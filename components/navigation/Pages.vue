@@ -21,7 +21,7 @@
         v-for="page in PAGES.filter((p) => p.href !== $route.path)"
         :key="page.href"
         :href="page.href"
-        class="button max-sm:px-2 max-sm:text-sm bg-glow glow-aqua !bg-transparent"
+        class="button max-sm:px-2 max-sm:text-sm"
         :class="$attrs.class"
     >
         {{ page.name }}

@@ -4,11 +4,13 @@
     interface Props {
         delayMs?: number;
         borderWidthPx?: number;
+        disabled?: boolean;
     }
 
     const props = withDefaults(defineProps<Props>(), {
         delayMs: 0,
         borderWidthPx: 1,
+        disabled: false,
     });
 
     const containerEl = useTemplateRef('container');
@@ -43,6 +45,8 @@
     });
 
     function animateCircle() {
+        if (props.disabled) return;
+
         registerCSSProperty({
             name: '--circle-percentage',
             syntax: '<percentage>',
@@ -77,7 +81,6 @@
     }
 
     onMounted(animateCircle);
-    onUpdated(animateCircle);
 </script>
 
 <template>
@@ -85,7 +88,8 @@
         <slot />
 
         <div
-            class="filter-glow glow-aqua absolute top-0 left-0 h-[calc(100%+22px)] w-[calc(100%+22px)] -translate-x-[10px] -translate-y-[10px] md:scale-[101%] lg:scale-[102%]"
+            class="filter-glow glow-aqua absolute top-0 left-0 h-[calc(100%+22px)] w-[calc(100%+22px)] -translate-x-[10px] -translate-y-[10px] md:scale-[101%] lg:scale-[102%] transition-opacity"
+            :class="{ 'opacity-0': disabled }"
         >
             <div
                 ref="circle"
