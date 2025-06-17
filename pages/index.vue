@@ -85,33 +85,42 @@
     }
 
     const scrollYPos = ref();
-    useWindowEvent('scroll', () => scrollYPos.value = window.scrollY);
+    useWindowEvent('scroll', () => (scrollYPos.value = window.scrollY));
 
     const profileSectionAnimationDirection = ref(0);
     const isAnimatingProfileSection = ref(false);
     function animateProfileSection() {
-        if (!(profilePictureEl.value && aboutMeTextEl.value && profilePictureContainerRect.value)) return;
+        if (!(profilePictureEl.value && aboutMeTextEl.value && profilePictureContainerRect.value))
+            return;
         if (isAnimatingProfileSection.value) return;
 
         if (scrollYPos.value >= 10 && profileSectionAnimationDirection.value !== 1) {
             profileSectionAnimationDirection.value = 1;
             isAnimatingProfileSection.value = true;
-            
+
             createTimeline()
-                .add(profilePictureEl.value, {
-                    duration: 200,
-                    ease: 'outQuad',
-                    position: 'fixed',
-                    width: '48px',
-                    height: '48px',
-                    top: '12px',
-                }, 0)
-                .add(aboutMeTextEl.value, {
-                    duration: 200,
-                    ease: 'outQuad',
-                    translateX: '-50vw',
-                }, 0)
-                .then(() => isAnimatingProfileSection.value = false);
+                .add(
+                    profilePictureEl.value,
+                    {
+                        duration: 200,
+                        ease: 'outQuad',
+                        position: 'fixed',
+                        width: '48px',
+                        height: '48px',
+                        top: '12px',
+                    },
+                    0
+                )
+                .add(
+                    aboutMeTextEl.value,
+                    {
+                        duration: 200,
+                        ease: 'outQuad',
+                        translateX: '-50vw',
+                    },
+                    0
+                )
+                .then(() => (isAnimatingProfileSection.value = false));
         } else if (scrollYPos.value < 10 && profileSectionAnimationDirection.value === 1) {
             profileSectionAnimationDirection.value = -1;
             isAnimatingProfileSection.value = true;
@@ -133,14 +142,18 @@
                 left: `${left}px`,
                 width: `${width}px`,
                 height: `${height}px`,
-            }).then(() => isAnimatingProfileSection.value = false);
+            }).then(() => (isAnimatingProfileSection.value = false));
         }
     }
 
-    watch(scrollYPos, () => {
-        updateProfilePictureContainerRect();
-        animateProfileSection();
-    }, { immediate: true });
+    watch(
+        scrollYPos,
+        () => {
+            updateProfilePictureContainerRect();
+            animateProfileSection();
+        },
+        { immediate: true }
+    );
 
     onBeforeMount(() => {
         scrollYPos.value = window.scrollY;
@@ -156,23 +169,24 @@
 <template>
     <div class="flex h-full w-full gap-36">
         <div class="relative max-w-124">
-            <div ref="profile-picture-container" class="h-[100w] w-full aspect-square mb-10">
-                <AnimatedCircleOutline :delay-ms="100" :border-width-px="1" :disabled="scrollYPos >= 10">
+            <div ref="profile-picture-container" class="mb-10 aspect-square h-[100w] w-full">
+                <AnimatedCircleOutline
+                    :delay-ms="100"
+                    :border-width-px="1"
+                    :disabled="scrollYPos >= 10"
+                >
                     <img
                         ref="profile-picture"
                         src="~/assets/images/petus.png"
                         alt="Iapetus11's Profile Picture"
-                        class="z-50 bg-glow glow-aqua !rounded-full opacity-0"
+                        class="bg-glow glow-aqua z-50 !rounded-full opacity-0"
                         style="filter: saturate(var(--profile-picture-saturation))"
                     />
                 </AnimatedCircleOutline>
             </div>
 
             <p ref="about-me-text">
-                <AnimateableText
-                    class="text-lg *:opacity-0"
-                    style="overflow-wrap: break-word"
-                >
+                <AnimateableText class="text-lg *:opacity-0" style="overflow-wrap: break-word">
                     {{ ABOUT_ME }}
                 </AnimateableText>
             </p>

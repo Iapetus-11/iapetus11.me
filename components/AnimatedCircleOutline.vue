@@ -88,7 +88,7 @@
         <slot />
 
         <div
-            class="filter-glow glow-aqua absolute top-0 left-0 h-[calc(100%+22px)] w-[calc(100%+22px)] -translate-x-[10px] -translate-y-[10px] md:scale-[101%] lg:scale-[102%] transition-opacity"
+            class="filter-glow glow-aqua absolute top-0 left-0 h-[calc(100%+22px)] w-[calc(100%+22px)] -translate-x-[10px] -translate-y-[10px] transition-opacity md:scale-[101%] lg:scale-[102%]"
             :class="{ 'opacity-0': disabled }"
         >
             <div
