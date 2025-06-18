@@ -21,7 +21,7 @@
                 :alt="`${name}'s avatar`"
             />
 
-            <h3 class="text-aqua-400 block py-1 text-2xl font-semibold sm:text-3xl">
+            <h3 class="text-theme-400 block py-1 text-2xl font-semibold sm:text-3xl">
                 {{ name }}
             </h3>
             <div>

@@ -105,7 +105,7 @@
                 <button
                     type="button"
                     class="button col-span-6 w-full"
-                    :class="{ 'bg-aqua-800': linkCopied }"
+                    :class="{ 'bg-theme-800': linkCopied }"
                     @click="copyLinkToFractal"
                 >
                     <FontAwesomeIcon

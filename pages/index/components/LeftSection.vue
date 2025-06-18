@@ -77,7 +77,6 @@
         profilePictureContainerRect.value = profilePictureContainerEl.value.getBoundingClientRect();
     }
 
-
     const profileSectionAnimationDirection = ref(0);
     const isAnimatingProfileSection = ref(false);
     function animateProfileSection() {
@@ -85,7 +84,6 @@
             return;
 
         if (scrollYPos.value >= SCROLLY_THRESHOLD && profileSectionAnimationDirection.value !== 1) {
-            console.log('forwards');
             profileSectionAnimationDirection.value = 1;
             isAnimatingProfileSection.value = true;
 
@@ -113,8 +111,10 @@
                     0
                 )
                 .then(() => (isAnimatingProfileSection.value = false));
-        } else if (scrollYPos.value < SCROLLY_THRESHOLD && profileSectionAnimationDirection.value === 1) {
-            console.log('reverse');
+        } else if (
+            scrollYPos.value < SCROLLY_THRESHOLD &&
+            profileSectionAnimationDirection.value === 1
+        ) {
             profileSectionAnimationDirection.value = -1;
             isAnimatingProfileSection.value = true;
 
@@ -149,9 +149,13 @@
                     },
                     0
                 )
-                .add(profilePictureEl.value, {
-                    position: 'static',
-                }, '<')
+                .add(
+                    profilePictureEl.value,
+                    {
+                        position: 'static',
+                    },
+                    '<'
+                )
                 .then(() => (isAnimatingProfileSection.value = false));
         }
     }
@@ -159,7 +163,6 @@
     watch(
         scrollYPos,
         () => {
-            console.log('scrollYpos changed!');
             updateProfilePictureContainerRect();
             animateProfileSection();
         },
