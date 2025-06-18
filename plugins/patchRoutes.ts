@@ -5,5 +5,7 @@
 
 export default defineNuxtPlugin(() => {
     const router = useRouter();
-    router.options.routes.filter(r => r.path.includes('components')).forEach(r => router.removeRoute(r.name!));
+    router.options.routes
+        .filter((r) => r.path.includes('components'))
+        .forEach((r) => router.removeRoute(r.name!));
 });
