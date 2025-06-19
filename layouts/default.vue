@@ -42,7 +42,7 @@
     <div class="flex min-h-screen flex-col items-center">
         <header
             ref="header"
-            class="bg-dull shadow-lg shadow-dull sticky top-0 z-30 mb-13 flex h-18 w-full items-center p-6 opacity-0 shadow-lg"
+            class="bg-dull shadow-dull sticky top-0 z-30 mb-13 flex h-18 w-full items-center p-6 opacity-0 shadow-lg"
         >
             <h1 v-if="$route.meta.title">{{ $route.meta.title }}</h1>
 
