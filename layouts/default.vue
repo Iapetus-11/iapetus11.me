@@ -1,6 +1,6 @@
 <script setup lang="ts">
     const headerEl = useTemplateRef('header');
-    const headerBottomEl = useTemplateRef('header-bottom');
+    const headerBottomEl = useTemplateRef('header-line');
 
     function animateHeader() {
         createWAAPITimeline([
@@ -13,21 +13,18 @@
                 width: ['0%', '100%'],
                 duration: 500,
                 targets: headerBottomEl.value!,
-                ease: 'inQuad',
                 delay: 100,
             },
             {
                 scaleY: [1, 3, 1],
                 duration: 400,
                 targets: headerBottomEl.value!,
-                ease: 'inQuad',
                 delay: 800,
             },
             {
                 opacity: [1, 0],
                 duration: 500,
                 targets: headerBottomEl.value!,
-                ease: 'inQuad',
                 delay: 1200,
             },
         ]);
@@ -49,8 +46,8 @@
             <nav class="ml-auto flex gap-2"><NavigationPages /></nav>
 
             <div
-                ref="header-bottom"
-                class="bg-glow glow-purple absolute bottom-0 left-0 h-[1px]"
+                ref="header-line"
+                class="bg-glow glow-purple absolute top-0 left-0 h-[1px]"
             ></div>
         </header>
 

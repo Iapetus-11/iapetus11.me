@@ -51,7 +51,7 @@
 
 @layer utilities {
     .border-glow {
-        @apply rounded-lg border-3 border-[color:var(--color-glow-primary)];
+        @apply rounded-lg border-[color:var(--color-glow-primary)];
         box-shadow:
             0 0 5px var(--color-glow-bloom),
             inset 0 0 5px var(--color-glow-bloom),
@@ -74,19 +74,6 @@
         filter: drop-shadow(0 0 5px var(--color-glow-bloom))
             drop-shadow(0 0 10px var(--color-glow-bloom))
             drop-shadow(0 0 10px var(--color-glow-bloom-secondary));
-    }
-
-    .text-glow {
-        text-shadow:
-            0 0 10px var(--color-glow-primary),
-            0 0 10px var(--color-glow-bloom),
-            0 0 20px var(--color-glow-bloom),
-            0 0 10px var(--color-glow-bloom-secondary);
-    }
-
-    .border-glow {
-        border-shadow: 0 0 2px var(--color-glow-bloom) 0 0 5px var(--color-glow-bloom) 0 0 5px
-            var(--color-glow-bloom-secondary);
     }
 }
 

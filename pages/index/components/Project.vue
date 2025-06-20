@@ -1,5 +1,5 @@
 <script setup lang="ts">
-    import { createTimeline, svg } from 'animejs';
+    import { createTimeline } from 'animejs';
     import type { ProjectDefinition } from '~/data/projects';
 
     const props = defineProps<ProjectDefinition & { idx: number }>();
@@ -7,42 +7,71 @@
     const projectLinkEl = useTemplateRef('nuxt-link');
     const svgOutlineEl = useTemplateRef('svg-border');
 
-    const svgOutlineRect = useElementRect(svgOutlineEl);
-    const svgOutlineLengthPx = computed<number>(() => svgOutlineRect.value ? (2 * (svgOutlineRect.value.width + svgOutlineRect.value.height)) : 0);
+    const svgOutlineRect = ref<DOMRect>();
+    const svgOutlinePathDef = ref<string>('');
+    const svgOutlineLengthPx = computed<number>(() =>
+        svgOutlineRect.value ? 2 * (svgOutlineRect.value.width + svgOutlineRect.value.height) : 0
+    );
 
-    function animateSelfIn() {
-        const delay = 75 * props.idx;
+    function generateSvgOutlinePathDef(): string {
+        const OUTLINE_EXTRA_SPACE = 8;
+
+        if (!projectLinkEl.value) return '';
+        const el: HTMLAnchorElement = projectLinkEl.value.$el;
+
+        const w: number = el.offsetWidth + OUTLINE_EXTRA_SPACE;
+        const h: number = el.offsetHeight + OUTLINE_EXTRA_SPACE;
+        const r = 16;
+
+        return [
+            `M ${w / 2} 0`,
+            `H ${w - r}`,
+            `A ${r} ${r} 0 0 1 ${w} ${r}`,
+            `V ${h - r}`,
+            `A ${r} ${r} 0 0 1 ${w - r} ${h}`,
+            `H ${r}`,
+            `A ${r} ${r} 0 0 1 0 ${h - r}`,
+            `V ${r}`,
+            `A ${r} ${r} 0 0 1 ${r} 0`,
+            `H ${w / 2}`,
+            'Z',
+        ].join(' ');
+    }
+
+    function updateSvgOutlineValues() {
+        svgOutlineRect.value = svgOutlineEl.value?.getBoundingClientRect();
+        svgOutlinePathDef.value = generateSvgOutlinePathDef();
+    }
+
+    useResizeObserver(
+        computed(() => projectLinkEl.value?.$el),
+        updateSvgOutlineValues
+    );
+
+    async function animateSelfIn() {
+        const delay = 200 * props.idx;
+
+        while (!svgOutlineLengthPx.value) {
+            console.log('waiting');
+            await new Promise((resolve) => setTimeout(resolve, 10));
+        }
 
         try {
-            // createWAAPITimeline([
-            //     {
-            //         draw: ['0. 1'],
-            //         ease: 'inOutQuad',
-            //         duration: 1000,
-            //         delay,
-            //         targets: svg.createDrawable(svgBorderEl.value!),
-            //     },
-            //     // {
-            //     //     targets: aEl,
-            //     //     opacity: [0, 1],
-            //     //     scale: [0, 1],
-            //     //     duration: 300,
-            //     //     delay: delay + 200,
-            //     // },
-            // ]);
-
-            // const length = 2 * (svgBorderEl.value!.width.baseVal.value + svgBorderEl.value!.height.baseVal.value);
-            const svgBorderElRect = svgOutlineEl.value!.getBoundingClientRect();
-            const length = 2 * (svgBorderElRect.width + svgBorderElRect.height);
-
-            svgOutlineEl.value!.style.strokeDashoffset = `${0}px`;
-
             createTimeline()
                 .add(
-                    svg.createDrawable(svgOutlineEl.value!),
+                    svgOutlineEl.value!,
                     {
-                        strokeDashoffset: [length, 0],
-                        duration: 2000,
+                        opacity: [0, 1],
+                        duration: 500,
+                        delay,
+                    },
+                    0
+                )
+                .add(
+                    svgOutlineEl.value!,
+                    {
+                        strokeDashoffset: [svgOutlineLengthPx.value, 0],
+                        duration: 750,
                         delay,
                     },
                     0
@@ -51,33 +80,52 @@
                     projectLinkEl.value!.$el,
                     {
                         opacity: [0, 1],
-                        duration: 1000,
-                        delay: 750 + delay,
+                        duration: 1500,
+                        delay: 300 + delay,
                     },
                     0
+                )
+                .add(
+                    svgOutlineEl.value!,
+                    {
+                        opacity: [1, 0],
+                        duration: () => Math.random() * 1000,
+                        ease: 'outBounce',
+                        delay,
+                    },
+                    1750
+                )
+                .add(
+                    projectLinkEl.value!.$el,
+                    {
+                        borderColor: ['rgba(0, 0, 0, 0)', 'var(--color-theme-primary-500)'],
+                        duration: 500,
+                    },
+                    '<',
                 );
         } catch (e) {
             console.error(e);
         }
     }
 
-
-    onMounted(animateSelfIn);
+    onMounted(() => {
+        updateSvgOutlineValues();
+        animateSelfIn();
+    });
 </script>
 
 <template>
-    <div class="relative h-40">
-        <svg class="absolute top-[-3px] left-[-3px] h-full w-full overflow-visible">
-            <rect
+    <div class="relative">
+        <svg
+            class="pointer-events-none absolute top-[-3px] left-[-3px] h-full w-full overflow-visible"
+        >
+            <path
                 ref="svg-border"
-                x="0"
-                y="0"
-                rx="32"
-                ry="32"
+                :d="svgOutlinePathDef"
                 fill="transparent"
                 stroke-width="2"
-                class="stroke-theme-primary-500 h-[calc(100+6px)] w-[calc(100%+6px)]"
-                :style="{ strokeDasharray: `${svgOutlineLengthPx}px` }"
+                class="stroke-theme-primary-500 filter-glow glow-aqua h-[calc(100%+8px)] w-[calc(100%+8px)] opacity-0"
+                :stroke-dasharray="svgOutlineLengthPx.toFixed(2)"
             />
         </svg>
 
@@ -85,19 +133,20 @@
             ref="nuxt-link"
             :href="link"
             :target="link.startsWith('/') ? '_self' : '_blank'"
-            class="group bg-theme-primary-800 hover:bg-theme-primary-700 flex items-center space-x-3 rounded-4xl transition-colors opacity-0"
+            class="group bg-theme-primary-800 hover:bg-theme-primary-700 ring-theme-primary-600 border-transparent flex h-full items-center space-x-3 rounded-2xl border-2 opacity-0 transition-colors hover:ring"
         >
-            <div class="w-2/3 p-3 md:p-6">
-                <h3 class="mb-2 font-mono text-2xl font-semibold text-white sm:text-3xl">
+            <div class="flex h-full w-2/3 flex-col p-3 md:p-6">
+                <h3
+                    class="align-self-end mb-2 font-mono text-lg font-semibold text-white sm:text-3xl md:text-xl lg:text-2xl"
+                >
                     {{ name }}
                 </h3>
-                <p class="text-white">{{ description }}</p>
+                <p class="text-xs font-light text-white md:text-sm lg:text-base">
+                    {{ description }}
+                </p>
             </div>
 
-            <div
-                class="bg-theme-primary-900 group-hover:bg-theme-primary-900/90 ml-auto flex h-full w-[160px] max-w-48 rounded-4xl px-3 py-3 transition-colors"
-                style="box-shadow: -6px 1px 5px -6px rgba(0, 0, 0, 0.25)"
-            >
+            <div class="ml-auto flex h-full w-[160px] rounded-2xl px-3 py-3 transition-colors">
                 <img :src="image" :alt="name" class="h-fit w-full self-center rounded-3xl" />
             </div>
         </NuxtLink>

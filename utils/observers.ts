@@ -1,20 +1,26 @@
-import { onWatcherCleanup } from "vue";
+import { onWatcherCleanup } from 'vue';
 
 export function useResizeObserver(
     target: Ref<Element | null | undefined>,
-    callback: ResizeObserverCallback,
+    callback: ResizeObserverCallback
 ) {
+    if (!import.meta.client) return;
+
     const observer = new ResizeObserver(callback);
 
-    watch(target, (target) => {
-        if (target) {
-            observer.observe(target);
-        }
+    watch(
+        target,
+        (target) => {
+            if (target) {
+                observer.observe(target);
+            }
 
-        onWatcherCleanup(() => {
-            observer.disconnect();
-        });
-    }, { immediate: true });
+            onWatcherCleanup(() => {
+                observer.disconnect();
+            });
+        },
+        { immediate: true }
+    );
 }
 
 export function useElementRect(target: Ref<Element | null | undefined>): Ref<DOMRect | undefined> {

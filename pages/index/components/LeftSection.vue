@@ -93,10 +93,7 @@
                     {
                         duration: 200,
                         ease: 'outQuad',
-                        position: 'fixed',
-                        width: '48px',
-                        height: '48px',
-                        top: '12px',
+                        opacity: [1, 0],
                     },
                     0
                 )
@@ -105,8 +102,7 @@
                     {
                         duration: 200,
                         ease: 'outQuad',
-                        translateX: '-50vw',
-                        translateY: '50vh',
+                        opacity: [1, 0],
                     },
                     0
                 )
@@ -118,34 +114,13 @@
             profileSectionAnimationDirection.value = -1;
             isAnimatingProfileSection.value = true;
 
-            const top = profilePictureContainerRect.value.top;
-            const left = profilePictureContainerRect.value.left;
-            const width = profilePictureContainerRect.value.width;
-            const height = profilePictureContainerRect.value.height;
-
             createTimeline()
                 .add(
                     profilePictureEl.value,
                     {
-                        autoplay: true,
                         duration: 200,
                         ease: 'inQuad',
-                        position: 'fixed',
-                        translateX: ['50%', '0%'],
-                        top: `${top}px`,
-                        left: `${left}px`,
-                        width: `${width}px`,
-                        height: `${height}px`,
-                    },
-                    0
-                )
-                .add(
-                    aboutMeTextEl.value,
-                    {
-                        duration: 200,
-                        ease: 'inQuad',
-                        translateX: '0vw',
-                        translateY: '0vh',
+                        opacity: [0, 1],
                     },
                     0
                 )
@@ -155,6 +130,16 @@
                         position: 'static',
                     },
                     '<'
+                )
+                .add(
+                    aboutMeTextEl.value,
+                    {
+                        duration: 200,
+                        ease: 'inQuad',
+                        opacity: [0, 1],
+                        delay: 100,
+                    },
+                    0
                 )
                 .then(() => (isAnimatingProfileSection.value = false));
         }
@@ -200,7 +185,7 @@
                     ref="profile-picture"
                     src="~/assets/images/petus.png"
                     alt="Iapetus11's Profile Picture"
-                    class="bg-glow glow-aqua z-50 !rounded-full opacity-0"
+                    class="bg-glow glow-aqua z-50 !rounded-full border border-white/20 opacity-0"
                     style="filter: saturate(var(--profile-picture-saturation))"
                 />
             </AnimatedCircleOutline>
