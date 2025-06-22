@@ -2,6 +2,10 @@
     const headerEl = useTemplateRef('header');
     const headerBottomEl = useTemplateRef('header-line');
 
+    const scrollYPos = ref();
+    useWindowEvent('scroll', () => (scrollYPos.value = window.scrollY));
+    useWindowEvent('resize', () => (scrollYPos.value = window.scrollY));
+
     function animateHeader() {
         createWAAPITimeline([
             {
@@ -43,7 +47,7 @@
         >
             <h1 v-if="$route.meta.title">{{ $route.meta.title }}</h1>
 
-            <nav class="ml-auto flex gap-2"><NavigationPages /></nav>
+            <nav class="ml-auto flex gap-2">brh</nav>
 
             <div
                 ref="header-line"

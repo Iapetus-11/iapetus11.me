@@ -16,7 +16,7 @@
     <div class="flex h-full w-full gap-36">
         <ProfileSection />
 
-        <div class="ml-auto flex w-1/2 flex-col gap-5">
+        <div class="ml-auto flex w-1/2 flex-col gap-7">
             <Project v-for="(project, idx) in PROJECTS" v-bind="project" :key="project.name" :idx />
         </div>
     </div>

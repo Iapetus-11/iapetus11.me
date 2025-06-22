@@ -63,6 +63,7 @@
                     {
                         opacity: [0, 1],
                         duration: 500,
+                        ease: 'inBounce',
                         delay,
                     },
                     0
@@ -86,20 +87,10 @@
                     0
                 )
                 .add(
-                    svgOutlineEl.value!,
-                    {
-                        opacity: [1, 0],
-                        duration: () => Math.random() * 1000,
-                        ease: 'outBounce',
-                        delay,
-                    },
-                    1750
-                )
-                .add(
                     projectLinkEl.value!.$el,
                     {
                         borderColor: ['rgba(0, 0, 0, 0)', 'var(--color-theme-primary-500)'],
-                        duration: 500,
+                        duration: 2000,
                     },
                     '<',
                 );
@@ -117,7 +108,7 @@
 <template>
     <div class="relative">
         <svg
-            class="pointer-events-none absolute top-[-3px] left-[-3px] h-full w-full overflow-visible"
+            class="pointer-events-none absolute top-[-4px] left-[-4px] h-full w-full overflow-visible"
         >
             <path
                 ref="svg-border"
@@ -133,7 +124,7 @@
             ref="nuxt-link"
             :href="link"
             :target="link.startsWith('/') ? '_self' : '_blank'"
-            class="group bg-theme-primary-800 hover:bg-theme-primary-700 ring-theme-primary-600 border-transparent flex h-full items-center space-x-3 rounded-2xl border-2 opacity-0 transition-colors hover:ring"
+            class="group bg-theme-primary-800/50 hover:bg-theme-primary-700/50 border-transparent flex h-full items-center space-x-3 rounded-2xl opacity-0 transition-colors"
         >
             <div class="flex h-full w-2/3 flex-col p-3 md:p-6">
                 <h3

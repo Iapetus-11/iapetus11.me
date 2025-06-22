@@ -175,7 +175,7 @@
 
 <template>
     <div class="relative max-w-124">
-        <div ref="profile-picture-container" class="mb-10 aspect-square h-[100w] w-full">
+        <div ref="profile-picture-container" class="mb-10 aspect-square h-[55vh] mx-auto">
             <AnimatedCircleOutline
                 :delay-ms="100"
                 :border-width-px="1"
