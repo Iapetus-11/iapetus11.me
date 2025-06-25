@@ -4,7 +4,7 @@
 
     const props = defineProps<ProjectDefinition & { idx: number }>();
 
-    const projectLinkEl = useTemplateRef('nuxt-link');
+    const projectLinkEl = useTemplateRef('project-link');
     const svgOutlineEl = useTemplateRef('svg-border');
 
     const svgOutlineRect = ref<DOMRect>();
@@ -43,16 +43,13 @@
         svgOutlinePathDef.value = generateSvgOutlinePathDef();
     }
 
-    useResizeObserver(
-        computed(() => projectLinkEl.value?.$el),
-        updateSvgOutlineValues
-    );
+    useWindowEvent('resize', updateSvgOutlineValues);
 
     async function animateSelfIn() {
         const delay = 200 * props.idx;
 
         while (!svgOutlineLengthPx.value) {
-            console.log('waiting');
+            updateSvgOutlineValues();
             await new Promise((resolve) => setTimeout(resolve, 10));
         }
 
@@ -92,17 +89,14 @@
                         borderColor: ['rgba(0, 0, 0, 0)', 'var(--color-theme-primary-500)'],
                         duration: 2000,
                     },
-                    '<',
+                    '<'
                 );
         } catch (e) {
             console.error(e);
         }
     }
 
-    onMounted(() => {
-        updateSvgOutlineValues();
-        animateSelfIn();
-    });
+    onMounted(animateSelfIn);
 </script>
 
 <template>
@@ -121,18 +115,18 @@
         </svg>
 
         <NuxtLink
-            ref="nuxt-link"
+            ref="project-link"
             :href="link"
             :target="link.startsWith('/') ? '_self' : '_blank'"
-            class="group bg-theme-primary-800/50 hover:bg-theme-primary-700/50 border-transparent flex h-full items-center space-x-3 rounded-2xl opacity-0 transition-colors"
+            class="group bg-theme-primary-800/50 hover:bg-theme-primary-700/50 flex h-full items-center space-x-3 rounded-2xl border-transparent opacity-0 transition-colors"
         >
             <div class="flex h-full w-2/3 flex-col p-3 md:p-6">
                 <h3
-                    class="align-self-end mb-2 font-mono text-lg font-semibold text-white sm:text-3xl md:text-xl lg:text-2xl"
+                    class="align-self-end mb-2 font-mono text-lg font-semibold whitespace-nowrap text-white sm:text-3xl md:text-xl lg:text-2xl"
                 >
                     {{ name }}
                 </h3>
-                <p class="text-xs font-light text-white md:text-sm lg:text-base">
+                <p class="text-xs text-white md:text-sm lg:text-base">
                     {{ description }}
                 </p>
             </div>

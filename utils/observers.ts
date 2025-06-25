@@ -1,4 +1,4 @@
-import { onWatcherCleanup } from 'vue';
+import { onWatcherCleanup, type Reactive } from 'vue';
 
 export function useResizeObserver(
     target: Ref<Element | null | undefined>,
@@ -31,4 +31,21 @@ export function useElementRect(target: Ref<Element | null | undefined>): Ref<DOM
     });
 
     return rect;
+}
+
+export function useWindowScroll(): Ref<{ x: number; y: number }> {
+    const scroll = ref({ x: 0, y: 0 });
+
+    function updateScroll() {
+        scroll.value.x = window.scrollX;
+        scroll.value.y = window.scrollY;
+    }
+
+    if (import.meta.client) {
+        updateScroll();
+    }
+
+    useWindowEvent('scroll', updateScroll);
+
+    return scroll;
 }

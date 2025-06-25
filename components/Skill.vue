@@ -1,5 +1,4 @@
 <script setup lang="ts">
-    import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
     import type { SkillDefinition } from '~/data/skills';
 
     defineProps<SkillDefinition>();
