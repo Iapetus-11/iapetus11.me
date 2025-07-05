@@ -51,12 +51,12 @@
     >
         <div
             style="filter: blur(3px)"
-            class="flex h-full w-full overflow-hidden absolute *:w-[200px] *:h-[45px] *:rotate-[-45deg] *:absolute *:top-0 *:opacity-100 transition-opacity duration-100"
+            class="absolute flex h-full w-full overflow-hidden transition-opacity duration-100 *:absolute *:top-0 *:h-[45px] *:w-[200px] *:rotate-[-45deg] *:opacity-100"
             :class="isPastScrollYThreshold ? 'opacity-100' : 'opacity-0'"
         >
-            <div class="bg-gradient-to-r from-white/40 to-white mr-20 !opacity-5"></div>
-            <div class="bg-gradient-to-r from-white/40 to-dull mr-70 !h-[20px]"></div>
-            <div class="bg-gradient-to-r from-white/40 to-gray mr-40 !h-[90px] !w-[250px]"></div>
+            <div class="mr-20 bg-gradient-to-r from-white/40 to-white !opacity-5"></div>
+            <div class="to-dull mr-70 !h-[20px] bg-gradient-to-r from-white/40"></div>
+            <div class="to-gray mr-40 !h-[90px] !w-[250px] bg-gradient-to-r from-white/40"></div>
         </div>
 
         <img
@@ -70,7 +70,7 @@
             {{ $route.meta.title }}
         </h1>
 
-        <nav class="ml-auto flex gap-2">brh {{  windowScroll }} -> {{ isPastScrollYThreshold}}</nav>
+        <nav class="ml-auto flex gap-2">brh {{ windowScroll }} -> {{ isPastScrollYThreshold }}</nav>
 
         <div ref="header-line" class="bg-glow glow-purple absolute top-0 left-0 h-[1px]"></div>
     </header>
