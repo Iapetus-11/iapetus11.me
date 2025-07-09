@@ -1,0 +1,16 @@
+/**
+* @license
+*
+* Font Family: Nunito
+* Designed by: Vernon Adams, Cyreal, Jacques Le Bailly
+*
+* Nunito Variable (Variable font)
+*/
+
+@font-face {
+    font-family: 'Nunito';
+    src: url('/fonts/Nunito-Variable.woff2') format('woff2');
+    font-weight: 200 1000;
+    font-display: swap;
+    font-style: normal;
+}

@@ -1,0 +1,16 @@
+@import 'tailwindcss';
+
+@plugin '@iconify/tailwind4';
+
+@theme {
+    --color-primary-400: #77d5af;
+    --color-primary-500: #6bc29f;
+    --color-primary-600: #60a192;
+    --color-primary-700: #53827e;
+
+    --font-nunito: 'Nunito';
+}
+
+body {
+    @apply bg-gray-950 text-white select-none font-nunito leading-5.5;
+}

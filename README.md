@@ -1,13 +1,45 @@
-# [iapetus11.me](https://iapetus11.me)
+# flat-neon
 
-_My personal / portfolio website_
+This template should help get you started developing with Vue 3 in Vite.
 
--   [Previously written in SvelteKit](https://github.com/Iapetus-11/iapetus11.me/tree/sveltekit)
--   [Previously written in Next.js](https://github.com/Iapetus-11/iapetus11.me/tree/nextjs)
+## Recommended IDE Setup
 
-## Technologies
+[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
 
--   [Vue + Nuxt 3](https://nuxt.com/)
--   [TypeScript](https://www.typescriptlang.org/)
--   [Tailwind CSS](https://tailwindcss.com/)
--   [Docker](https://docker.com/)
+## Type Support for `.vue` Imports in TS
+
+TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+
+## Customize configuration
+
+See [Vite Configuration Reference](https://vite.dev/config/).
+
+## Project Setup
+
+```sh
+npm install
+```
+
+### Compile and Hot-Reload for Development
+
+```sh
+npm run dev
+```
+
+### Type-Check, Compile and Minify for Production
+
+```sh
+npm run build
+```
+
+### Run Unit Tests with [Vitest](https://vitest.dev/)
+
+```sh
+npm run test:unit
+```
+
+### Lint with [ESLint](https://eslint.org/)
+
+```sh
+npm run lint
+```
