@@ -14,7 +14,7 @@
         <img
             src="@/assets/images/petus.png"
             alt="Iapetus11's Profile Picture"
-            class="size-[1.25em] !rounded-full"
+            class="size-[1.375em] !rounded-full"
         />
     </header>
 </template>
