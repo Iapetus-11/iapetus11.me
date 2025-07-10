@@ -11,6 +11,15 @@
     --font-nunito: 'Nunito';
 }
 
+html {
+    @apply bg-gray-800;
+}
+
 body {
-    @apply bg-gray-950 text-white select-none font-nunito leading-5.5;
+    @apply font-nunito bg-gradient-to-br from-blue-950/40 via-gray-800 to-blue-950/40 bg-contain leading-5.5 text-white select-none;
+}
+
+button,
+a {
+    @apply cursor-pointer;
 }

@@ -1,14 +1,14 @@
 <template>
-    <header class="text-2xl flex gap-2 items-center bg-slate-900 border-b-2 border-primary-600 w-full justify-between py-2.5 px-3.5">
+    <header
+        class="border-primary-600 flex w-full items-center justify-between gap-2 border-b-2 bg-slate-900 px-3.5 py-2.5 text-2xl"
+    >
         <div class="*:whitespace-nowrap">
-            <h1 class="font-medium -mb-px">
+            <h1 class="-mb-px font-medium">
                 Milo
-                <span class="text-purple-300 font-bold">/</span>
+                <span class="font-bold text-purple-300">/</span>
                 Iapetus11
             </h1>
-            <h2 class="text-xs italic text-purple-200">
-                Full-Stack Software Engineer
-            </h2>
+            <h2 class="text-xs text-purple-200 italic">Full-Stack Software Engineer</h2>
         </div>
 
         <img
