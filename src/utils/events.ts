@@ -32,32 +32,16 @@ export function useEvent<T extends HTMLElement, K extends keyof HTMLElementEvent
 
 export function useWindowEvent<K extends keyof WindowEventMap>(
     event: K,
-    listener: (ev: WindowEventMap[K]) => void
+    listener: (ev: WindowEventMap[K]) => void,
+    options?: boolean | AddEventListenerOptions
 ) {
     onMounted(() => {
-        window.addEventListener(event, listener);
+        window.addEventListener(event, listener, options);
     });
 
     onUnmounted(() => {
-        window.removeEventListener(event, listener);
+        window.removeEventListener(event, listener, options);
     });
-}
-
-export function useWindowScroll(): DeepReadonly<Ref<{ x: number; y: number }>> {
-    const scroll = ref({ x: 0, y: 0 });
-
-    function updateScroll() {
-        scroll.value.x = window.scrollX;
-        scroll.value.y = window.scrollY;
-    }
-
-    if (!import.meta.env.SSR) {
-        updateScroll();
-    }
-
-    useWindowEvent('scroll', updateScroll);
-
-    return readonly(scroll);
 }
 
 export function useMousePosition(
@@ -78,7 +62,34 @@ export function useMousePosition(
         };
     }
 
-    useWindowEvent('mousemove', updateMouse!);
+    useWindowEvent('mousemove', updateMouse!, { passive: true });
 
     return readonly(mouse);
+}
+
+/**
+ * Tracks the specified IDs to determine the section that is currently scrolled to on the page.
+ * To be used in conjunction with anchor links (Scroll-To-Text-Fragment/STTF).
+ * 
+ * @returns the current section's ID
+ */
+export function useActiveSTTFSection(sectionIds: string[]): DeepReadonly<Ref<string>> {
+    const activeSection = ref();
+    
+    const scrollY = ref(0);
+    useWindowEvent('scroll', () => scrollY.value = window.scrollY);
+
+    const observer = new IntersectionObserver((entries) => {
+        for (const entry of entries) {
+            console.log(entry);
+        }
+    });
+
+    onMounted(() => {
+        for (const sectionId of sectionIds) {
+            observer.observe(document.getElementById(sectionId)!);
+        }
+    })
+
+    return readonly(activeSection);
 }

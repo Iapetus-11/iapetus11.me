@@ -11,13 +11,13 @@ import quake3BotWebp from '@/assets/images/projects/quake-3-bot.webp';
 import tacoTapperLogoPng from '@/assets/images/projects/taco-tapper-logo.png';
 import villagerBotPng from '@/assets/images/projects/villager-bot.png';
 
-export interface ProjectDefinition {
+export type ProjectDefinition = {
     link: string;
     image: string;
     name: string;
     description: string;
     skills: string[];
-}
+};
 
 export const PROJECTS: ProjectDefinition[] = [
     {
@@ -26,7 +26,7 @@ export const PROJECTS: ProjectDefinition[] = [
             'A Minecraft-themed utility, moderation, and economy Discord bot used by tens of thousands.',
         image: villagerBotPng,
         link: 'https://villagerbot.com',
-        skills: ['Python', 'Cython', 'Websockets', 'Discord.py'],
+        skills: ['Python', 'Cython', 'Websockets', 'Discord.py', 'Docker'],
     },
     {
         name: 'Fractals',
@@ -98,7 +98,7 @@ export const PROJECTS: ProjectDefinition[] = [
             'A multi-purpose API used by my projects (Villager Bot, iapetus11.me, Fractals) and several other people.',
         image: petusPng,
         link: 'https://github.com/Iapetus-11/api.iapetus11.me',
-        skills: ['C#', 'ASP.NET'],
+        skills: ['C#', 'ASP.NET', 'Docker'],
     },
     {
         name: 'ButterflyMX 444',

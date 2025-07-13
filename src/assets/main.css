@@ -8,15 +8,15 @@
     --color-primary-600: #60a192;
     --color-primary-700: #53827e;
 
-    --font-nunito: 'Nunito';
+    --font-nunito: 'Nunito', sans-serif;
 }
 
 html {
-    @apply bg-gray-800;
+    @apply scroll-smooth bg-gray-800;
 }
 
 body {
-    @apply font-nunito bg-gradient-to-br from-blue-950/40 via-gray-800 to-blue-950/40 bg-contain leading-5.5 text-white select-none;
+    @apply font-nunito overflow-x-hidden bg-gradient-to-br from-blue-950/40 via-gray-800 to-blue-950/40 bg-contain leading-5.5 text-white select-none;
 }
 
 button,
