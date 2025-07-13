@@ -75,18 +75,21 @@ export function useMousePosition(
  * @returns the current section's ID
  */
 export function useActiveSTTFSection(sectionIds: string[]): DeepReadonly<Ref<string>> {
+    let sections: HTMLElement[] = [];
     const activeSection = ref();
     
     const scrollY = ref(0);
     useWindowEvent('scroll', () => scrollY.value = window.scrollY);
 
     onMounted(() => {
+        sections = sectionIds.map(sId => document.getElementById(sId)!);
         scrollY.value = window.scrollY;
     });
 
-    watch(debouncedRef(scrollY, 100), (scrollY) => {
-
-    })
+    watch(debouncedRef(scrollY, 10), (scrollY) => {
+        const sectionScrollPos = sections.map(s => [s.id, s.getBoundingClientRect().top]);
+        console.log(sectionScrollPos);
+    });
 
     return readonly(activeSection);
 }

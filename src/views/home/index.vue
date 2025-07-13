@@ -4,13 +4,13 @@
     import ProjectsSection from './ProjectsSection.vue';
     import SectionNavLink from './SectionNavLink.vue';
     import ResumeSection from './ResumeSection.vue';
-import { useActiveSTTFSection } from '@/utils/events';
+    import { useActiveSTTFSection } from '@/utils/events';
 
     // TODO: Does this get in build data?
     const aliveForYears = calculateYearsSince(new Date('9/1/2003'));
     const programmingForYears = calculateYearsSince(new Date('8/1/2016'));
 
-    const activeSTTFSection = useActiveSTTFSection(['resume', 'project', 'skills']);
+    const activeSTTFSection = useActiveSTTFSection(['resume', 'projects']);
 </script>
 
 <template>
