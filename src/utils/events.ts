@@ -9,6 +9,7 @@ import {
     type DeepReadonly,
     type Ref,
 } from 'vue';
+import { debouncedRef } from './reactivity';
 
 export function useEvent<T extends HTMLElement, K extends keyof HTMLElementEventMap>(
     target: T | Ref<T | null | undefined>,
@@ -79,16 +80,12 @@ export function useActiveSTTFSection(sectionIds: string[]): DeepReadonly<Ref<str
     const scrollY = ref(0);
     useWindowEvent('scroll', () => scrollY.value = window.scrollY);
 
-    const observer = new IntersectionObserver((entries) => {
-        for (const entry of entries) {
-            console.log(entry);
-        }
+    onMounted(() => {
+        scrollY.value = window.scrollY;
     });
 
-    onMounted(() => {
-        for (const sectionId of sectionIds) {
-            observer.observe(document.getElementById(sectionId)!);
-        }
+    watch(debouncedRef(scrollY, 100), (scrollY) => {
+
     })
 
     return readonly(activeSection);
