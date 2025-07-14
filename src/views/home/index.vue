@@ -6,8 +6,9 @@
     import ResumeSection from './ResumeSection.vue';
     import { useActiveSTTFSection } from '@/utils/sttfs';
     import { useRoute, useRouter } from 'vue-router';
-    import { onMounted, watch } from 'vue';
-import SocialLink from './SocialLink.vue';
+    import { onMounted, useTemplateRef, watch } from 'vue';
+    import SocialLink from './SocialLink.vue';
+    import { useWindowEvent } from '@/utils/events';
 
     const STTF_SECTIONS = ['resume', 'projects'];
 
@@ -23,7 +24,20 @@ import SocialLink from './SocialLink.vue';
         router.replace({ hash: `#${activeSTTFSectionId}` });
     });
 
+    const stickyContainerEl = useTemplateRef('sticky-container');
+    function resizeStickyContainerToFillHeight() {
+        const top = stickyContainerEl.value?.getBoundingClientRect().top;
+        if (!top) return;
+
+        const height = window.innerHeight - top;
+
+        stickyContainerEl.value.style.height = `${height}px`;
+    }
+    useWindowEvent('resize', resizeStickyContainerToFillHeight, { passive: true });
+
     onMounted(() => {
+        resizeStickyContainerToFillHeight();
+
         const sttfId = route.hash.slice(1);
         if (STTF_SECTIONS.includes(sttfId)) {
             document.getElementById(sttfId)!.scrollIntoView({ behavior: 'instant' });
@@ -33,7 +47,10 @@ import SocialLink from './SocialLink.vue';
 
 <template>
     <DefaultLayout class="flex items-center py-22 lg:gap-x-32 xl:gap-x-48">
-        <div class="self-start sticky top-22 flex w-[40%] flex-col gap-y-5">
+        <div
+            ref="sticky-container"
+            class="fade-in sticky top-22 -mb-100 flex w-[40%] flex-col gap-y-5 self-start pb-10"
+        >
             <div class="flex items-center">
                 <img
                     src="@/assets/images/petus.png"
@@ -60,7 +77,7 @@ import SocialLink from './SocialLink.vue';
                 Enterprise + Lending.
             </p>
 
-            <div class="mt-[12vh] flex flex-col items-start gap-3">
+            <div class="my-auto flex flex-col items-start gap-3">
                 <SectionNavLink sttf-id="projects" icon="icon-[hugeicons--test-tube-01]">
                     Projects
                 </SectionNavLink>
@@ -72,12 +89,20 @@ import SocialLink from './SocialLink.vue';
                 </SectionNavLink>
             </div>
 
-            <div class=" flex flex-col items-start gap-3">
-                <SocialLink icon="icon-[fa6-brands--discord]" />
+            <div class="mt-auto flex gap-2">
+                <SocialLink
+                    icon="icon-[fa6-brands--github]"
+                    link="https://github.com/Iapetus-11/"
+                />
+                <SocialLink icon="icon-[fa6-brands--discord]" link="https://villagerbot.com/" />
+                <SocialLink
+                    icon="icon-[fa6-brands--linkedin]"
+                    link="https://www.linkedin.com/in/milo-weinberg/"
+                />
             </div>
         </div>
 
-        <div class="flex flex-col gap-20">
+        <div class="fade-in flex flex-col gap-20" style="animation-delay: 100ms">
             <ProjectsSection id="projects" class="scroll-mt-100" />
             <ResumeSection id="resume" class="scroll-mt-20" />
 
