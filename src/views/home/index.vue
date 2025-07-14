@@ -10,7 +10,7 @@
     const aliveForYears = calculateYearsSince(new Date('9/1/2003'));
     const programmingForYears = calculateYearsSince(new Date('8/1/2016'));
 
-    const activeSTTFSection = useActiveSTTFSection(['resume', 'projects']);
+    const activeSTTFSection = useActiveSTTFSection(['projects', 'resume']);
 </script>
 
 <template>
