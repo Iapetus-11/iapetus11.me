@@ -5,7 +5,7 @@ export function calculateScrollCardEffect(
     el: HTMLElement,
     dividerLine: number,
     scaleDivisor: number,
-    yTranslateFactor: number,
+    yTranslateFactor: number
 ): Partial<CSSStyleDeclaration> {
     const rect = el.getBoundingClientRect();
     const yCenter = (rect.top + rect.bottom) / 2.0;
@@ -20,7 +20,7 @@ export function calculateScrollCardEffect(
 
 export function useScrollCardEffect(
     elements: Ref<HTMLElement[]>,
-    options?: { scaleDivisor?: number, yTranslateFactor?: number }
+    options?: { scaleDivisor?: number; yTranslateFactor?: number }
 ) {
     const scaleDivisor = options?.scaleDivisor ?? 5.0;
     const yTranslateFactor = options?.yTranslateFactor ?? 0.0;
@@ -34,16 +34,25 @@ export function useScrollCardEffect(
 
     function updateElements() {
         elements.value.forEach((el) => {
-            const css = calculateScrollCardEffect(el, dividerLine.value, scaleDivisor, yTranslateFactor);
+            const css = calculateScrollCardEffect(
+                el,
+                dividerLine.value,
+                scaleDivisor,
+                yTranslateFactor
+            );
             Object.assign(el.style, css);
         });
     }
 
     useWindowEvent('scroll', updateElements, { passive: true });
-    useWindowEvent('resize', () => {
-        windowHeight.value = window.outerHeight;
-        updateElements();
-    }, { passive: true });
+    useWindowEvent(
+        'resize',
+        () => {
+            windowHeight.value = window.outerHeight;
+            updateElements();
+        },
+        { passive: true }
+    );
 
     onMounted(updateElements);
 }

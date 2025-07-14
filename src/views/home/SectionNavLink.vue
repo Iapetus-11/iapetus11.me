@@ -20,8 +20,8 @@
         :class="{ 'text-slate-300': isActive }"
     >
         <span
-            :class="[icon, { 'opacity-75': isActive }]"
-            class="mr-1.5 -ml-1 scale-110 opacity-0 transition-opacity group-hover:opacity-75"
+            :class="[icon, { 'scale-110 opacity-75': isActive }]"
+            class="mr-1.5 -ml-1 scale-0 opacity-0 transition-[opacity,scale] group-hover:scale-110 group-hover:opacity-75"
         ></span>
 
         <slot />

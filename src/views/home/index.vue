@@ -4,17 +4,34 @@
     import ProjectsSection from './ProjectsSection.vue';
     import SectionNavLink from './SectionNavLink.vue';
     import ResumeSection from './ResumeSection.vue';
-    import { useActiveSTTFSection } from '@/utils/events';
+    import { useActiveSTTFSection } from '@/utils/sttfs';
+    import { useRoute, useRouter } from 'vue-router';
+    import { onMounted, watch } from 'vue';
+
+    const STTF_SECTIONS = ['resume', 'projects'];
+
+    const router = useRouter();
+    const route = useRoute();
 
     // TODO: Does this get in build data?
     const aliveForYears = calculateYearsSince(new Date('9/1/2003'));
     const programmingForYears = calculateYearsSince(new Date('8/1/2016'));
 
-    const activeSTTFSection = useActiveSTTFSection(['projects', 'resume']);
+    const activeSTTFSection = useActiveSTTFSection(STTF_SECTIONS);
+    watch(activeSTTFSection, (activeSTTFSectionId) => {
+        router.replace({ hash: `#${activeSTTFSectionId}` });
+    });
+
+    onMounted(() => {
+        const sttfId = route.hash.slice(1);
+        if (STTF_SECTIONS.includes(sttfId)) {
+            document.getElementById(sttfId)!.scrollIntoView({ behavior: 'instant' });
+        }
+    });
 </script>
 
 <template>
-    <DefaultLayout class="flex items-start lg:gap-x-32 xl:gap-x-48 py-22">
+    <DefaultLayout class="flex items-start py-22 lg:gap-x-32 xl:gap-x-48">
         <div class="sticky top-22 flex w-[40%] flex-col gap-y-5">
             <div class="flex items-center">
                 <img

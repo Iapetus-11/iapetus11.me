@@ -1,4 +1,4 @@
-import { readonly, ref, watch, type DeepReadonly, type Ref } from "vue";
+import { readonly, ref, watch, type DeepReadonly, type Ref } from 'vue';
 
 /**
  * @param source The value that should be debounced when changed

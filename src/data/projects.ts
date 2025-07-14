@@ -66,7 +66,7 @@ export const PROJECTS: ProjectDefinition[] = [
         description:
             'A cross-platform (Mac & Windows) toolbar/system tray app which automatically removes tracking information and other crap from copied URLs.',
         image: clipboardCleansePng,
-        link: '/projects/clipboard-cleanse',
+        link: 'https://github.com/Iapetus-11/clipboard-cleanse',
         skills: ['Rust', 'Objective-C', 'AppKit', 'Win32'],
     },
     {

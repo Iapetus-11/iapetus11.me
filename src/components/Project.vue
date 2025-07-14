@@ -10,7 +10,7 @@
     <Link
         :to="link"
         :target="link.startsWith('/') ? '_self' : '_blank'"
-        class="group border-primary-500 flex items-center space-x-3 rounded-xl border-2 bg-teal-300/5 p-4 transition-[colors,opacity] hover:bg-teal-400/10"
+        class="group border-primary-500 flex items-center space-x-3 rounded-xl border-2 bg-teal-300/5 p-4 transition-[colors] hover:bg-teal-400/10"
     >
         <div class="mr-10 flex h-full w-full flex-col">
             <div
@@ -19,7 +19,7 @@
                 <h3>{{ name }}</h3>
 
                 <span
-                    class="icon-[hugeicons--link-square-02] ml-3 scale-0 text-purple-300 opacity-0 transition-[opacity,scale] group-hover:scale-100 group-hover:opacity-100"
+                    class="icon-[hugeicons--link-square-02] ml-2.5 scale-0 text-purple-300 opacity-0 transition-[opacity,scale] group-hover:scale-100 group-hover:opacity-100"
                 ></span>
             </div>
 

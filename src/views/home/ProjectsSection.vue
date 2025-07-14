@@ -6,7 +6,7 @@
 
     const container = useTemplateRef('projects-container');
     const projectElements = computed(() => [
-        ...(container.value?.children ?? []) as HTMLElement[],
+        ...((container.value?.children ?? []) as HTMLElement[]),
     ]);
 
     useScrollCardEffect(projectElements, { yTranslateFactor: 1.0 });

@@ -14,13 +14,14 @@
 
 <template>
     <div ref="resume-container" class="flex flex-col gap-6">
-        <div class="flex flex-col mb-2 gap-2">
-            <h2 class="text-3xl font-mono font-bold whitespace-nowrap">Resume / Timeline</h2>
+        <div class="mb-2 flex flex-col gap-2">
+            <h2 class="font-mono text-3xl font-bold whitespace-nowrap">Resume / Timeline</h2>
 
             <p>
-                I have not attended a university or bootcamp.
-                I would claim to be self-taught, but that is not the case either.
-                In addition to hard work and practice, mentors, teachers, friends, and family have helped me get where I am today and I am forever thankful.
+                I have not attended a university or bootcamp. I would claim to be self-taught, but
+                that is not the case either. In addition to hard work and practice, mentors,
+                teachers, friends, and family have helped me get where I am today and I am forever
+                thankful.
             </p>
         </div>
 

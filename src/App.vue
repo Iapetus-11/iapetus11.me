@@ -4,7 +4,6 @@
 </script>
 
 <template>
-    <div id="bruh" class="w-[100vw] absolute left-0 h-[3px] bg-red-500"></div>
     <MouseSpotlight />
     <RouterView />
 </template>
