@@ -12,7 +12,6 @@ export const RESUME_ITEMS: ResumeItemDefinition[] = [
         company: 'MedShift',
         title: 'Senior I Software Engineer',
         bullets: [
-            'Assisted architecting solutions for syncing BigCommerce data with the Velocity Enterprise platform',
             'Planned and led projects across two teams, ensuring timely success to meet customer expectations',
             'Met with B2B customers to determine project requirements and communicate updates',
             'Responsible for onboarding new engineers, as well as mentoring interns and peers across multiple teams',

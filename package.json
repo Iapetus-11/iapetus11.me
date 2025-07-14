@@ -19,6 +19,7 @@
     "vue": "^3.5.17"
   },
   "devDependencies": {
+    "@iconify-json/fa6-brands": "^1.2.5",
     "@iconify-json/hugeicons": "^1.2.5",
     "@iconify/tailwind4": "^1.0.6",
     "@tsconfig/node22": "^22.0.2",

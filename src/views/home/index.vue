@@ -7,6 +7,7 @@
     import { useActiveSTTFSection } from '@/utils/sttfs';
     import { useRoute, useRouter } from 'vue-router';
     import { onMounted, watch } from 'vue';
+import SocialLink from './SocialLink.vue';
 
     const STTF_SECTIONS = ['resume', 'projects'];
 
@@ -31,8 +32,8 @@
 </script>
 
 <template>
-    <DefaultLayout class="flex items-start py-22 lg:gap-x-32 xl:gap-x-48">
-        <div class="sticky top-22 flex w-[40%] flex-col gap-y-5">
+    <DefaultLayout class="flex items-center py-22 lg:gap-x-32 xl:gap-x-48">
+        <div class="self-start sticky top-22 flex w-[40%] flex-col gap-y-5">
             <div class="flex items-center">
                 <img
                     src="@/assets/images/petus.png"
@@ -69,6 +70,10 @@
                 <SectionNavLink sttf-id="skills" icon="icon-[hugeicons--setting-done-01]">
                     Skills
                 </SectionNavLink>
+            </div>
+
+            <div class=" flex flex-col items-start gap-3">
+                <SocialLink icon="icon-[fa6-brands--discord]" />
             </div>
         </div>
 
