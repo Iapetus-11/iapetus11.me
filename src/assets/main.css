@@ -37,3 +37,13 @@ a {
     @apply opacity-0;
     animation: 250ms ease-in-out fade-in forwards;
 }
+
+/* Vue transitions ---- */
+.scale-enter-active,
+.scale-leave-active {
+    @apply transition ease-in-out;
+}
+.scale-enter-from,
+.scale-leave-to {
+    @apply scale-90 opacity-0;
+}

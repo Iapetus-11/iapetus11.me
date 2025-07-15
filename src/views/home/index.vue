@@ -9,7 +9,7 @@
     import { onMounted, useTemplateRef, watch } from 'vue';
     import SocialButton from './SocialButton.vue';
     import { useWindowEvent } from '@/utils/events';
-import DiscordSocialButton from './DiscordSocialButton.vue';
+    import DiscordSocialButton from './DiscordSocialButton.vue';
 
     const STTF_SECTIONS = ['resume', 'projects'];
 
@@ -25,6 +25,8 @@ import DiscordSocialButton from './DiscordSocialButton.vue';
         router.replace({ hash: `#${activeSTTFSectionId}` });
     });
 
+    // I can't figure out the CSS (without hard-coding some number for padding or whatever) to get the sidebar to fill
+    // the height of the screen, so here we go :/
     const stickyContainerEl = useTemplateRef('sticky-container');
     function resizeStickyContainerToFillHeight() {
         const top = stickyContainerEl.value?.getBoundingClientRect().top;
@@ -39,6 +41,8 @@ import DiscordSocialButton from './DiscordSocialButton.vue';
     onMounted(() => {
         resizeStickyContainerToFillHeight();
 
+        // For some reason sttfs don't work on page load (on chrome at least), this jumps to the 
+        // right section if there's a hash in the URL
         const sttfId = route.hash.slice(1);
         if (STTF_SECTIONS.includes(sttfId)) {
             document.getElementById(sttfId)!.scrollIntoView({ behavior: 'instant' });
@@ -47,23 +51,23 @@ import DiscordSocialButton from './DiscordSocialButton.vue';
 </script>
 
 <template>
-    <DefaultLayout class="flex items-center py-22 lg:gap-x-32 xl:gap-x-48">
+    <DefaultLayout class="flex flex-col md:flex-row items-center lg:gap-x-32 xl:gap-x-48">
         <div
             ref="sticky-container"
-            class="fade-in sticky top-22 -mb-100 flex w-[40%] flex-col gap-y-5 self-start pb-12"
+            class="fade-in md:sticky top-22 -mb-100 flex md:w-[40%] flex-col gap-y-5 self-start pb-12"
         >
-            <div class="flex items-center -ml-1">
+            <div class="md:-ml-1 flex items-center max-md:mx-auto">
                 <img
                     src="@/assets/images/petus.png"
                     alt="Iapetus11's Profile Picture"
-                    class="outline-primary-400/30 mr-5 size-20 !rounded-full outline-1 outline-offset-3"
+                    class="outline-primary-400/30 mr-5 size-12 md:size-20 !rounded-full outline-1 outline-offset-3"
                 />
 
                 <div>
-                    <h1 class="font-mono text-5xl font-bold whitespace-nowrap">
-                        Milo<span class="text-primary-400 mx-4">/</span>Iapetus11
+                    <h1 class="font-mono text-2xl md:text-5xl font-bold whitespace-nowrap">
+                        Milo<span class="text-primary-400 mx-2 md:mx-4">/</span>Iapetus11
                     </h1>
-                    <h2 class="text-primary-400 mt-1 text-xl font-medium whitespace-nowrap italic">
+                    <h2 class="text-primary-400 mt-1 text-sm md:text-xl font-medium whitespace-nowrap italic">
                         Full-Stack Software Engineer & Hobbyist
                     </h2>
                 </div>
@@ -100,12 +104,16 @@ import DiscordSocialButton from './DiscordSocialButton.vue';
                     icon="icon-[fa6-brands--linkedin]"
                     link="https://www.linkedin.com/in/milo-weinberg/"
                 />
+                <SocialButton
+                    icon="icon-[hugeicons--dollar-square]"
+                    link="https://venmo.com/u/Iapetus11"
+                />
             </div>
         </div>
 
         <div class="fade-in flex flex-col gap-20" style="animation-delay: 100ms">
-            <ProjectsSection id="projects" class="scroll-mt-100" />
-            <ResumeSection id="resume" class="scroll-mt-20" />
+            <!-- <ProjectsSection id="projects" class="scroll-mt-100" /> -->
+            <!-- <ResumeSection id="resume" class="scroll-mt-20" /> -->
 
             <!-- Get last element to appear correctly with useScrollCardEffect -->
             <div class="h-[100px]"></div>

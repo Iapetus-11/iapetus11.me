@@ -11,4 +11,9 @@ export default [
             }
         },
     },
+    {
+        path: '/fractals',
+        name: 'fractals',
+        component: () => import('@/views/fractals/index.vue'),
+    },
 ] satisfies RouteRecordRaw[];
