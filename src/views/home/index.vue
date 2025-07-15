@@ -7,8 +7,9 @@
     import { useActiveSTTFSection } from '@/utils/sttfs';
     import { useRoute, useRouter } from 'vue-router';
     import { onMounted, useTemplateRef, watch } from 'vue';
-    import SocialLink from './SocialLink.vue';
+    import SocialButton from './SocialButton.vue';
     import { useWindowEvent } from '@/utils/events';
+import DiscordSocialButton from './DiscordSocialButton.vue';
 
     const STTF_SECTIONS = ['resume', 'projects'];
 
@@ -49,9 +50,9 @@
     <DefaultLayout class="flex items-center py-22 lg:gap-x-32 xl:gap-x-48">
         <div
             ref="sticky-container"
-            class="fade-in sticky top-22 -mb-100 flex w-[40%] flex-col gap-y-5 self-start pb-10"
+            class="fade-in sticky top-22 -mb-100 flex w-[40%] flex-col gap-y-5 self-start pb-12"
         >
-            <div class="flex items-center">
+            <div class="flex items-center -ml-1">
                 <img
                     src="@/assets/images/petus.png"
                     alt="Iapetus11's Profile Picture"
@@ -90,12 +91,12 @@
             </div>
 
             <div class="mt-auto flex gap-2">
-                <SocialLink
+                <SocialButton
                     icon="icon-[fa6-brands--github]"
                     link="https://github.com/Iapetus-11/"
                 />
-                <SocialLink icon="icon-[fa6-brands--discord]" link="https://villagerbot.com/" />
-                <SocialLink
+                <DiscordSocialButton />
+                <SocialButton
                     icon="icon-[fa6-brands--linkedin]"
                     link="https://www.linkedin.com/in/milo-weinberg/"
                 />
