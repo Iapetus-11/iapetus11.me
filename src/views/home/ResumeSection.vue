@@ -15,7 +15,9 @@
 <template>
     <div ref="resume-container" class="flex flex-col gap-6">
         <div class="mb-2 flex flex-col gap-2">
-            <h2 class="font-mono text-3xl font-bold whitespace-nowrap">Resume / Timeline</h2>
+            <h2 class="font-mono text-3xl font-bold whitespace-nowrap max-lg:text-center">
+                Resume / Timeline
+            </h2>
 
             <p>
                 I have not attended a university or bootcamp. I would claim to be self-taught, but

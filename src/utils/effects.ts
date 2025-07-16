@@ -11,7 +11,6 @@ export function calculateScrollCardEffect(
     const yCenter = (rect.top + rect.bottom) / 2.0;
 
     const factor = Math.max(yCenter / dividerLine, 1.0) - 1.0;
-    
 
     return {
         transform: `rotate(${factor * -12.0}deg) translateX(${factor * 5.0}vw) translateY(${factor * yTranslateFactor}px) scale(${Math.max(1 - factor / scaleDivisor, 0) * 100.0}%)`,

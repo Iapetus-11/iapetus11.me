@@ -6,7 +6,7 @@
 
 <template>
     <div
-        class="mx-auto flex min-h-screen max-w-[90rem] flex-col items-center px-4 md:px-8 lg:px-10 py-6 md:py-22"
+        class="mx-auto flex min-h-screen max-w-[50rem] flex-col items-center px-4 py-6 md:py-10 lg:max-w-[90rem] lg:px-10 lg:py-16 xl:py-22"
     >
         <div v-bind="$attrs">
             <slot />

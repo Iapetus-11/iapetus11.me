@@ -9,6 +9,9 @@
     --color-primary-700: #53827e;
 
     --font-nunito: 'Nunito', sans-serif;
+
+    --breakpoint-lg: 1100px;
+    --breakpoint-xs: 500px;
 }
 
 html {

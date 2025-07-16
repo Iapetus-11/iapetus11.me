@@ -7,9 +7,8 @@
     import { useActiveSTTFSection } from '@/utils/sttfs';
     import { useRoute, useRouter } from 'vue-router';
     import { onMounted, useTemplateRef, watch } from 'vue';
-    import SocialButton from './SocialButton.vue';
     import { useWindowEvent } from '@/utils/events';
-    import DiscordSocialButton from './DiscordSocialButton.vue';
+    import SocialButtons from './SocialButtons.vue';
 
     const STTF_SECTIONS = ['resume', 'projects'];
 
@@ -41,7 +40,7 @@
     onMounted(() => {
         resizeStickyContainerToFillHeight();
 
-        // For some reason sttfs don't work on page load (on chrome at least), this jumps to the 
+        // For some reason sttfs don't work on page load (on chrome at least), this jumps to the
         // right section if there's a hash in the URL
         const sttfId = route.hash.slice(1);
         if (STTF_SECTIONS.includes(sttfId)) {
@@ -51,38 +50,46 @@
 </script>
 
 <template>
-    <DefaultLayout class="flex flex-col md:flex-row items-center lg:gap-x-32 xl:gap-x-48">
+    <DefaultLayout class="flex flex-col items-center lg:flex-row lg:gap-x-32 xl:gap-x-48">
         <div
             ref="sticky-container"
-            class="fade-in md:sticky top-22 -mb-100 flex md:w-[40%] flex-col gap-y-5 self-start pb-12"
+            class="fade-in top-22 flex flex-col gap-y-5 self-start pb-12 max-lg:!h-fit lg:sticky lg:-mb-100 lg:w-[40%]"
         >
-            <div class="md:-ml-1 flex items-center max-md:mx-auto">
+            <div class="xs:max-lg:w-full flex items-center max-lg:mx-auto lg:-ml-1">
                 <img
                     src="@/assets/images/petus.png"
                     alt="Iapetus11's Profile Picture"
-                    class="outline-primary-400/30 mr-5 size-12 md:size-20 !rounded-full outline-1 outline-offset-3"
+                    class="outline-primary-400/30 xs:size-16 mr-5 size-14 !rounded-full outline-1 outline-offset-3 md:size-18 xl:size-20"
                 />
 
                 <div>
-                    <h1 class="font-mono text-2xl md:text-5xl font-bold whitespace-nowrap">
-                        Milo<span class="text-primary-400 mx-2 md:mx-4">/</span>Iapetus11
+                    <h1
+                        class="font-mono text-3xl font-bold whitespace-nowrap sm:text-4xl xl:text-5xl"
+                    >
+                        Milo<span class="text-primary-400 mx-2 xl:mx-4">/</span>Iapetus11
                     </h1>
-                    <h2 class="text-primary-400 mt-1 text-sm md:text-xl font-medium whitespace-nowrap italic">
+                    <h2
+                        class="text-primary-400 mt-1 text-sm font-medium whitespace-nowrap italic sm:text-base md:text-xl"
+                    >
                         Full-Stack Software Engineer & Hobbyist
                     </h2>
                 </div>
+
+                <div class="xs:max-lg:grid ml-auto hidden grid-cols-2 justify-items-center gap-1">
+                    <SocialButtons />
+                </div>
             </div>
 
-            <p class="mt-5">
+            <p class="max-lg:order-last lg:mt-5">
                 I'm a {{ aliveForYears }} year-old full-stack developer who's been programming for
                 {{ programmingForYears }} years and loves to learn new things!
             </p>
-            <p>
+            <p class="max-lg:order-last">
                 I'm currently dabbling in Rust with Villager Bot and working at MedShift on Velocity
                 Enterprise + Lending.
             </p>
 
-            <div class="my-auto flex flex-col items-start gap-3">
+            <div class="my-auto flex flex-col gap-3 max-lg:hidden lg:items-start">
                 <SectionNavLink sttf-id="projects" icon="icon-[hugeicons--test-tube-01]">
                     Projects
                 </SectionNavLink>
@@ -94,29 +101,17 @@
                 </SectionNavLink>
             </div>
 
-            <div class="mt-auto flex gap-2">
-                <SocialButton
-                    icon="icon-[fa6-brands--github]"
-                    link="https://github.com/Iapetus-11/"
-                />
-                <DiscordSocialButton />
-                <SocialButton
-                    icon="icon-[fa6-brands--linkedin]"
-                    link="https://www.linkedin.com/in/milo-weinberg/"
-                />
-                <SocialButton
-                    icon="icon-[hugeicons--dollar-square]"
-                    link="https://venmo.com/u/Iapetus11"
-                />
+            <div class="xs:max-lg:hidden flex gap-3 max-lg:mx-auto max-lg:mt-1 md:gap-2 lg:mt-auto">
+                <SocialButtons />
             </div>
         </div>
 
         <div class="fade-in flex flex-col gap-20" style="animation-delay: 100ms">
-            <!-- <ProjectsSection id="projects" class="scroll-mt-100" /> -->
-            <!-- <ResumeSection id="resume" class="scroll-mt-20" /> -->
+            <ProjectsSection id="projects" class="scroll-mt-100" />
+            <ResumeSection id="resume" class="scroll-mt-20" />
 
             <!-- Get last element to appear correctly with useScrollCardEffect -->
-            <div class="h-[100px]"></div>
+            <div class="h-[100px] max-lg:hidden"></div>
         </div>
     </DefaultLayout>
 </template>

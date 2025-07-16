@@ -7,7 +7,7 @@
 
 <template>
     <div class="border-primary-500 flex flex-col rounded-xl border-2 bg-teal-300/5 p-4">
-        <h3 class="align-self-end font-mono text-xl font-semibold whitespace-nowrap text-white">
+        <h3 class="align-self-end font-mono text-xl font-semibold text-white md:whitespace-nowrap">
             {{ title }} <span class="text-slate-300">@</span> <span class="">{{ company }}</span>
         </h3>
         <span class="text-sm text-slate-300">
