@@ -10,17 +10,16 @@ export function calculateScrollCardEffect(
 
     let vectorFromCenter = Math.max(0, Math.min(1, (elCenter - dividerLine) / dividerLine));
     
-    // vectorFromCenter = Math.pow(vectorFromCenter, 2) * Math.sign(vectorFromCenter);
+    vectorFromCenter = Math.pow(vectorFromCenter, 2) * Math.sign(vectorFromCenter);
 
     const scalarFromCenter = Math.abs(vectorFromCenter);
     
-    // Calculate rotation angle
-    const angle = vectorFromCenter * 60;
+    const angle = vectorFromCenter * 45;
 
     return {
-        transform: `perspective(${800}px) rotateX(${-angle}deg) translateY(${(vectorFromCenter) * 100}px)`,
-        opacity: `${1 - scalarFromCenter * 0.7}`,
-        scale: `${1 - scalarFromCenter * 0.1}`,
+        transform: `perspective(${800}px) rotateX(${-angle}deg)`,
+        opacity: `${1 - scalarFromCenter * 0.9}`,
+        scale: `${1 - scalarFromCenter * 0.2}`,
     };
 }
 
