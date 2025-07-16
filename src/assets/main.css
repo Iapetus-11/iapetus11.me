@@ -43,6 +43,10 @@
     animation: 250ms ease-in-out fade-in forwards;
 }
 
+@utility outlined-actionable {
+    @apply border-primary-500 border-2 bg-teal-300/5 transition-[colors] hover:bg-teal-400/10;
+}
+
 /* Vue transitions ---- */
 .scale-enter-active,
 .scale-leave-active {

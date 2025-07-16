@@ -4,17 +4,23 @@ import { computed, onMounted, ref, type Ref } from 'vue';
 export function calculateScrollCardEffect(
     el: HTMLElement,
     dividerLine: number,
-    scaleDivisor: number,
-    yTranslateFactor: number
 ): Partial<CSSStyleDeclaration> {
     const rect = el.getBoundingClientRect();
-    const yCenter = (rect.top + rect.bottom) / 2.0;
+    const elCenter = (rect.top + rect.bottom) / 2;
 
-    const factor = Math.max(yCenter / dividerLine, 1.0) - 1.0;
+    let vectorFromCenter = Math.max(0, Math.min(1, (elCenter - dividerLine) / dividerLine));
+    
+    // vectorFromCenter = Math.pow(vectorFromCenter, 2) * Math.sign(vectorFromCenter);
+
+    const scalarFromCenter = Math.abs(vectorFromCenter);
+    
+    // Calculate rotation angle
+    const angle = vectorFromCenter * 60;
 
     return {
-        transform: `rotate(${factor * -12.0}deg) translateX(${factor * 5.0}vw) translateY(${factor * yTranslateFactor}px) scale(${Math.max(1 - factor / scaleDivisor, 0) * 100.0}%)`,
-        opacity: '100%',
+        transform: `perspective(${800}px) rotateX(${-angle}deg) translateY(${(vectorFromCenter) * 100}px)`,
+        opacity: `${1 - scalarFromCenter * 0.7}`,
+        scale: `${1 - scalarFromCenter * 0.1}`,
     };
 }
 
@@ -30,15 +36,13 @@ export function useScrollCardEffect(
         windowHeight.value = window.outerHeight;
     }
 
-    const dividerLine = computed(() => windowHeight.value / 1.5);
+    const dividerLine = computed(() => windowHeight.value / 2);
 
     function updateElements() {
         elements.value.forEach((el) => {
             const css = calculateScrollCardEffect(
                 el,
                 dividerLine.value,
-                scaleDivisor,
-                yTranslateFactor
             );
             Object.assign(el.style, css);
         });

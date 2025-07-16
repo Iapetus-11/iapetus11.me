@@ -10,7 +10,7 @@
     <Link
         :to="link"
         :target="link.startsWith('/') ? '_self' : '_blank'"
-        class="group border-primary-500 flex shrink items-center space-x-3 rounded-xl border-2 bg-teal-300/5 p-4 transition-[colors] hover:bg-teal-400/10"
+        class="group outlined-actionable flex shrink items-center space-x-3 rounded-xl p-4"
     >
         <div class="mr-2 flex h-full w-full flex-col md:mr-5 xl:mr-10">
             <div

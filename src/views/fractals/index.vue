@@ -12,6 +12,7 @@
     import { ref, watch } from 'vue';
     import { useAsyncState, type AsyncState } from '@/utils/asyncState';
     import DefaultLayout from '@/components/layout/DefaultLayout.vue';
+    import Select from '@/components/Select.vue';
 
     const API_BASE_URL: string = import.meta.env.VITE_API_BASE_URL;
 
@@ -102,6 +103,14 @@
     }
 </script>
 
+<style scoped>
+    @reference '@/assets/main.css';
+
+    .button {
+        @apply outlined-actionable flex items-center justify-center rounded-xl p-2 text-base font-medium;
+    }
+</style>
+
 <template>
     <DefaultLayout>
         <div class="grid grid-cols-1 justify-between gap-4 text-white lg:-mx-6 lg:grid-cols-2">
@@ -109,8 +118,9 @@
             <div class="flex aspect-square w-full items-center justify-center lg:order-2">
                 <span
                     v-if="!fractal || fractal.pending"
-                    class="icon-[hugeicons--refresh] animate-spin text-8xl text-gray-500"
+                    class="icon-[hugeicons--loading-03] text-primary-600 animate-spin text-8xl"
                 ></span>
+
                 <img
                     v-else-if="fractal?.result"
                     :src="fractal.result"
@@ -142,7 +152,7 @@
                     </button>
 
                     <button type="button" class="button col-span-6 w-full" @click="resetFractal">
-                        <!-- <FontAwesomeIcon :icon="faHouse" fixed-width class="mr-1 self-center" /> -->
+                        <span class="icon-[hugeicons--undo] mr-1"></span>
                         <span class="self-center">Reset</span>
                     </button>
                 </div>
@@ -179,21 +189,13 @@
 
                     <label for="fractal-coloring-select">Coloring Mode</label>
 
-                    <select
-                        id="fractal-variation-select"
-                        v-model="fractalConfig.variation"
-                        class="text-black"
-                    >
+                    <Select id="fractal-variation-select" v-model="fractalConfig.variation">
                         <option v-for="variation in VARIATIONS" :key="variation" :value="variation">
                             {{ variation }}
                         </option>
-                    </select>
+                    </Select>
 
-                    <select
-                        id="fractal-coloring-select"
-                        v-model="fractalConfig.coloring"
-                        class="text-black"
-                    >
+                    <Select id="fractal-coloring-select" v-model="fractalConfig.coloring">
                         <option
                             v-for="[name, coloringStrategy] in COLORING_STRATEGY_LABELS"
                             :key="coloringStrategy"
@@ -201,7 +203,7 @@
                         >
                             {{ name }}
                         </option>
-                    </select>
+                    </Select>
                 </div>
 
                 <div class="grid grid-cols-2 gap-1.5 lg:gap-2">
