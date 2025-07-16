@@ -53,7 +53,7 @@
     <DefaultLayout class="flex flex-col items-center lg:flex-row lg:gap-x-32 xl:gap-x-48">
         <div
             ref="sticky-container"
-            class="fade-in flex flex-col gap-y-5 self-start pb-12 max-lg:!h-fit lg:sticky lg:-mb-100 lg:w-[40%] md:top-10 x:top-16 2xl:top-22"
+            class="fade-in x:top-16 flex flex-col gap-y-5 self-start pb-12 max-lg:!h-fit md:top-10 lg:sticky lg:-mb-100 lg:w-[40%] 2xl:top-22"
         >
             <div class="xs:max-lg:w-full flex items-center max-lg:mx-auto lg:-ml-1">
                 <img

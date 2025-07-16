@@ -9,7 +9,7 @@
         ...((container.value?.children ?? []) as HTMLElement[]),
     ]);
 
-    useScrollCardEffect(projectElements, { yTranslateFactor: 1.0 });
+    useScrollCardEffect(projectElements);
 </script>
 
 <template>

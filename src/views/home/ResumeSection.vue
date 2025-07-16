@@ -9,7 +9,7 @@
         ...(container.value?.querySelectorAll('div').values() ?? []),
     ]);
 
-    useScrollCardEffect(resumeElements, { scaleDivisor: 4.0, yTranslateFactor: 16.0 });
+    useScrollCardEffect(resumeElements);
 </script>
 
 <template>
