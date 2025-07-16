@@ -53,13 +53,13 @@
     <DefaultLayout class="flex flex-col items-center lg:flex-row lg:gap-x-32 xl:gap-x-48">
         <div
             ref="sticky-container"
-            class="fade-in top-22 flex flex-col gap-y-5 self-start pb-12 max-lg:!h-fit lg:sticky lg:-mb-100 lg:w-[40%]"
+            class="fade-in top-16 flex flex-col gap-y-5 self-start pb-12 max-lg:!h-fit lg:sticky lg:-mb-100 lg:w-[40%] xl:top-22"
         >
             <div class="xs:max-lg:w-full flex items-center max-lg:mx-auto lg:-ml-1">
                 <img
                     src="@/assets/images/petus.png"
                     alt="Iapetus11's Profile Picture"
-                    class="outline-primary-400/30 xs:size-16 mr-5 size-14 !rounded-full outline-1 outline-offset-3 md:size-18 xl:size-20"
+                    class="outline-primary-400/30 xs:size-16 mr-3.5 size-14 !rounded-full outline-1 outline-offset-3 md:mr-5 md:size-18 xl:size-20"
                 />
 
                 <div>
@@ -106,7 +106,7 @@
             </div>
         </div>
 
-        <div class="fade-in flex flex-col gap-20" style="animation-delay: 100ms">
+        <div class="fade-in flex flex-col gap-16 md:gap-20" style="animation-delay: 100ms">
             <ProjectsSection id="projects" class="scroll-mt-100" />
             <ResumeSection id="resume" class="scroll-mt-20" />
 
