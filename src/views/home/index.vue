@@ -111,7 +111,7 @@
             <ResumeSection id="resume" class="scroll-mt-20" />
 
             <!-- Get last element to appear correctly with useScrollCardEffect -->
-            <div class="h-[100px] max-lg:hidden"></div>
+            <div class="h-6 max-md:hidden"></div>
         </div>
     </DefaultLayout>
 </template>
