@@ -33,7 +33,12 @@ export function useScrollCardEffect(elements: Ref<HTMLElement[]>) {
     }
 
     const dividerLine = computed(() => {
-        const divisor = windowWidth.value < BREAKPOINTS.md ? 1.8 : windowWidth.value < BREAKPOINTS.LG ? 1.9 : 2.0;
+        const divisor =
+            windowWidth.value < BREAKPOINTS.md
+                ? 1.8
+                : windowWidth.value < BREAKPOINTS.LG
+                  ? 1.9
+                  : 2.0;
         return windowHeight.value / divisor;
     });
 

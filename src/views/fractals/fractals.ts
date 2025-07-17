@@ -1,5 +1,4 @@
-import { getBool, getNum, getOpt, getStr } from '@/utils/queryParamsParser';
-import type { QueryParamParser } from '~/utils/queryParamsParser';
+import { getBool, getNum, getOpt, getStr, type QueryParamParser } from '@/utils/queryParamsParser';
 
 export const EXAMPLES = [
     'resolution=2048&variation=Spherical&colorA=%234466ee&colorB=%2300ff00&coloring=Experimental&iterTransformX=0.625&iterTransformY=0.4375&transform=0.4375&iterations=642300&mirrored=true&xShift=-0.3125&blur=1',
