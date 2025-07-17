@@ -14,6 +14,7 @@ export function useActiveSTTFSection(sectionIds: string[]): DeepReadonly<Ref<str
 
     const scrollY = ref(0);
     useWindowEvent('scroll', () => (scrollY.value = window.scrollY));
+    useWindowEvent('resize', () => (scrollY.value = window.scrollY));
 
     onMounted(() => {
         sections = sectionIds.map((sId) => document.getElementById(sId)!);

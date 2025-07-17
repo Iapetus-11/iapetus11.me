@@ -17,7 +17,7 @@ export function calculateScrollCardEffect(
     const angle = vectorFromCenter * 45;
 
     return {
-        transform: `perspective(${800}px) rotateX(${-angle}deg)`,
+        transform: `perspective(${800}px) rotateX(${-angle}deg) translateY(${scalarFromCenter * -30}px)`,
         opacity: `${1 - scalarFromCenter * 0.9}`,
         scale: `${1 - scalarFromCenter * 0.2}`,
     };
