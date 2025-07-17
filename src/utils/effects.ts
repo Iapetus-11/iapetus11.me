@@ -9,8 +9,7 @@ export function calculateScrollCardEffect(
     const rect = el.getBoundingClientRect();
     const elCenter = (rect.top + rect.bottom) / 2;
 
-    let vectorFromCenter = Math.max(0, Math.min(1, (elCenter - dividerLine) / dividerLine));
-
+    let vectorFromCenter = Math.max(-1, Math.min(1, (elCenter - dividerLine) / dividerLine));
     vectorFromCenter = Math.pow(vectorFromCenter, 2) * Math.sign(vectorFromCenter);
 
     const scalarFromCenter = Math.abs(vectorFromCenter);
@@ -18,9 +17,9 @@ export function calculateScrollCardEffect(
     const angle = vectorFromCenter * 30;
 
     return {
-        transform: `perspective(${800}px) rotateX(${-angle}deg) translateY(${scalarFromCenter * -30}px)`,
+        transform: `perspective(${800}px) rotateX(${-angle}deg)`,
         opacity: `${1 - scalarFromCenter * 0.9}`,
-        scale: `${1 - scalarFromCenter * 0.2}`,
+        scale: `${1 - scalarFromCenter * 0.175}`,
     };
 }
 
@@ -33,12 +32,7 @@ export function useScrollCardEffect(elements: Ref<HTMLElement[]>) {
     }
 
     const dividerLine = computed(() => {
-        const divisor =
-            windowWidth.value < BREAKPOINTS.md
-                ? 1.8
-                : windowWidth.value < BREAKPOINTS.lg
-                  ? 1.9
-                  : 2.0;
+        const divisor = windowWidth.value < BREAKPOINTS.md ? 1.8 : 2.0;
         return windowHeight.value / divisor;
     });
 
