@@ -9,8 +9,9 @@
     import { onMounted, useTemplateRef, watch } from 'vue';
     import { useWindowEvent } from '@/utils/events';
     import SocialButtons from './SocialButtons.vue';
+    import AboutSection from './AboutSection.vue';
 
-    const STTF_SECTIONS = ['resume', 'projects'];
+    const STTF_SECTIONS = ['about', 'projects', 'resume'];
 
     const router = useRouter();
     const route = useRoute();
@@ -90,14 +91,14 @@
             </p>
 
             <div class="my-auto flex flex-col gap-3 max-lg:hidden lg:items-start">
+                <SectionNavLink sttf-id="about" icon="icon-[hugeicons--bulb-charging]">
+                    About
+                </SectionNavLink>
                 <SectionNavLink sttf-id="projects" icon="icon-[hugeicons--test-tube-01]">
                     Projects
                 </SectionNavLink>
                 <SectionNavLink sttf-id="resume" icon="icon-[hugeicons--ai-content-generator-01]">
                     Experience
-                </SectionNavLink>
-                <SectionNavLink sttf-id="skills" icon="icon-[hugeicons--setting-done-01]">
-                    Skills
                 </SectionNavLink>
             </div>
 
@@ -107,11 +108,14 @@
         </div>
 
         <div class="fade-in flex flex-col gap-16 md:gap-20" style="animation-delay: 100ms">
-            <ProjectsSection id="projects" class="scroll-mt-100" />
+            <div class="h-10 max-lg:hidden"></div>
+
+            <AboutSection id="about" class="scroll-mt-100 max-lg:order-last" />
+            <ProjectsSection id="projects" class="scroll-mt-100 lg:scroll-mt-64" />
             <ResumeSection id="resume" class="scroll-mt-20" />
 
             <!-- Get last element to appear correctly with useScrollCardEffect -->
-            <div class="h-6 max-md:hidden"></div>
+            <div class="h-32 lg:h-6 order-last"></div>
         </div>
     </DefaultLayout>
 </template>
