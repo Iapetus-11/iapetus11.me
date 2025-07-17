@@ -36,7 +36,7 @@ export function useScrollCardEffect(elements: Ref<HTMLElement[]>) {
         const divisor =
             windowWidth.value < BREAKPOINTS.md
                 ? 1.8
-                : windowWidth.value < BREAKPOINTS.LG
+                : windowWidth.value < BREAKPOINTS.lg
                   ? 1.9
                   : 2.0;
         return windowHeight.value / divisor;
