@@ -21,21 +21,27 @@ export function useActiveSTTFSection(sectionIds: string[]): DeepReadonly<Ref<str
         scrollY.value = window.scrollY;
     });
 
-    watch(debouncedRef(scrollY, 10), (scrollY) => {
-        const windowCenter = scrollY + window.innerHeight / 2.0;
+    watch(debouncedRef(scrollY, 10), () => {
+        const windowCenter = window.innerHeight / 2.0;
 
-        const sectionRects: [HTMLElement, DOMRect][] = sections.map((s) => [
-            s,
-            s.getBoundingClientRect(),
-        ]);
-        const sectionDists: [HTMLElement, number][] = sectionRects.map(([s, r]) => [
-            s,
-            Math.abs(r.bottom + window.innerHeight - windowCenter),
-        ]);
+        // Account for gap between sections where there might not be an element in the center of screen
+        const IN_VIEW_PADDING_PX = 100;
 
-        sectionDists.sort(([, aD], [, bD]) => aD - bD);
+        // Find the section closest to the center line
+        const viewableSections: [string, number][] = sections
+            .map((el) => [
+                el.id,
+                el.getBoundingClientRect(),
+            ] as const)
+            .filter(
+                ([, r]) =>
+                    r.top - IN_VIEW_PADDING_PX <= windowCenter &&
+                    r.bottom + IN_VIEW_PADDING_PX >= windowCenter
+            )
+            .map(([el, r]) => [el, Math.abs((r.top + r.bottom) / 2.0 - windowCenter)]);
+        viewableSections.sort(([, aD], [, bD]) => aD - bD);
 
-        activeSection.value = sectionDists[0][0].id;
+        activeSection.value = viewableSections[0][0];
     });
 
     return readonly(activeSection);
