@@ -12,11 +12,10 @@ export function useActiveSTTFSection(
     sectionIds: string[],
     pauseUpdates?: Ref<boolean>
 ): DeepReadonly<Ref<string>> {
-    let sections: HTMLElement[] = [];
     const activeSection = ref();
 
     const updateActiveSTTF = throttled(() => {
-        if (!sections.length || pauseUpdates?.value) return;
+        if (pauseUpdates?.value) return;
 
         const windowCenter = window.innerHeight / 2.0;
 
@@ -24,7 +23,8 @@ export function useActiveSTTFSection(
         const IN_VIEW_PADDING_PX = 100;
 
         // Find the section closest to the center line
-        const viewableSections: [string, number][] = sections
+        const viewableSections: [string, number][] = sectionIds.map((sId) => document.getElementById(sId))
+        .filter(el => el !== null)
             .map((el) => [el.id, el.getBoundingClientRect()] as const)
             .filter(
                 ([, r]) =>
@@ -40,10 +40,7 @@ export function useActiveSTTFSection(
     useWindowEvent('scroll', updateActiveSTTF);
     useWindowEvent('resize', updateActiveSTTF);
 
-    onMounted(() => {
-        sections = sectionIds.map((sId) => document.getElementById(sId)!);
-        updateActiveSTTF();
-    });
+    onMounted(updateActiveSTTF);
 
     return readonly(activeSection);
 }
