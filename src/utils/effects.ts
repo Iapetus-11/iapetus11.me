@@ -4,7 +4,9 @@ import { BREAKPOINTS } from './tailwind';
 
 export function calculateScrollCardEffect(
     el: HTMLElement,
-    dividerLine: number
+    dividerLine: number,
+    opacityModifier: number,
+    scaleModifier: number,
 ): Partial<CSSStyleDeclaration> {
     const rect = el.getBoundingClientRect();
     const elCenter = (rect.top + rect.bottom) / 2;
@@ -18,12 +20,15 @@ export function calculateScrollCardEffect(
 
     return {
         transform: `perspective(${800}px) rotateX(${-angle}deg)`,
-        opacity: `${1 - scalarFromCenter * 0.9}`,
-        scale: `${1 - scalarFromCenter * 0.175}`,
+        opacity: `${1 - scalarFromCenter * opacityModifier}`,
+        scale: `${1 - scalarFromCenter * scaleModifier}`,
     };
 }
 
-export function useScrollCardEffect(elements: Ref<HTMLElement[]>) {
+export function useScrollCardEffect(elements: Ref<HTMLElement[]>, options?: { opacityModifier?: number, scaleModifier?: number }) {
+    const opacityModifier = options?.opacityModifier ?? 0.9;
+    const scaleModifier = options?.scaleModifier ?? 0.175;
+
     const windowHeight = ref(0);
     const windowWidth = ref(0);
     if (!import.meta.env.SSR) {
@@ -38,7 +43,7 @@ export function useScrollCardEffect(elements: Ref<HTMLElement[]>) {
 
     function updateElements() {
         elements.value.forEach((el) => {
-            const css = calculateScrollCardEffect(el, dividerLine.value);
+            const css = calculateScrollCardEffect(el, dividerLine.value, opacityModifier, scaleModifier);
             Object.assign(el.style, css);
         });
     }
