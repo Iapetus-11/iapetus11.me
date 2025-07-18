@@ -6,7 +6,7 @@
     import ResumeSection from './ResumeSection.vue';
     import { useActiveSTTFSection } from '@/utils/sttfs';
     import { useRoute, useRouter } from 'vue-router';
-    import { onMounted, ref, useTemplateRef, watch } from 'vue';
+    import { onMounted, useTemplateRef, watch } from 'vue';
     import { useWindowEvent } from '@/utils/events';
     import SocialButtons from './SocialButtons.vue';
     import AboutSection from './AboutSection.vue';
@@ -20,21 +20,7 @@
     const aliveForYears = calculateYearsSince(new Date('9/1/2003'));
     const programmingForYears = calculateYearsSince(new Date('8/1/2016'));
 
-    // Used to pause the hash changing after clicking a section as it scrolls through the sections
-    const sectionLinkWasClicked = ref(false);
-    let sectionLinkWasClickedResetTimeout: number | null = null;
-    watch(sectionLinkWasClicked, () => {
-        if (sectionLinkWasClicked.value) {
-            if (sectionLinkWasClickedResetTimeout) clearTimeout(sectionLinkWasClickedResetTimeout);
-
-            sectionLinkWasClickedResetTimeout = setTimeout(
-                () => (sectionLinkWasClicked.value = false),
-                750
-            );
-        }
-    });
-
-    const activeSTTFSection = useActiveSTTFSection(STTF_SECTIONS, sectionLinkWasClicked);
+    const activeSTTFSection = useActiveSTTFSection(STTF_SECTIONS);
     watch(activeSTTFSection, (activeSTTFSectionId) => {
         router.replace({ hash: `#${activeSTTFSectionId}` });
     });

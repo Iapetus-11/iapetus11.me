@@ -1,6 +1,6 @@
 import { onMounted, readonly, ref, type DeepReadonly, type Ref } from 'vue';
 import { useWindowEvent } from './events';
-import { throttled } from './debounce';
+import { debounced } from './debounce';
 
 /**
  * Tracks the specified IDs to determine the section that is currently scrolled to on the page.
@@ -10,13 +10,10 @@ import { throttled } from './debounce';
  */
 export function useActiveSTTFSection(
     sectionIds: string[],
-    pauseUpdates?: Ref<boolean>
 ): DeepReadonly<Ref<string>> {
     const activeSection = ref();
 
-    const updateActiveSTTF = throttled(() => {
-        if (pauseUpdates?.value) return;
-
+    const updateActiveSTTF = debounced(() => {
         const windowCenter = window.innerHeight / 2.0;
 
         // Account for gap between sections where there might not be an element in the center of screen
