@@ -101,7 +101,6 @@
 
             <div
                 class="my-auto flex flex-col gap-3 max-lg:hidden lg:items-start"
-                @click="sectionLinkWasClicked = true"
             >
                 <SectionNavLink sttf-id="about" icon="icon-[hugeicons--bulb-charging]">
                     About

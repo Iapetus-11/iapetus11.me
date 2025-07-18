@@ -6,7 +6,7 @@ export function calculateScrollCardEffect(
     el: HTMLElement,
     dividerLine: number,
     opacityModifier: number,
-    scaleModifier: number,
+    scaleModifier: number
 ): Partial<CSSStyleDeclaration> {
     const rect = el.getBoundingClientRect();
     const elCenter = (rect.top + rect.bottom) / 2;
@@ -25,7 +25,10 @@ export function calculateScrollCardEffect(
     };
 }
 
-export function useScrollCardEffect(elements: Ref<HTMLElement[]>, options?: { opacityModifier?: number, scaleModifier?: number }) {
+export function useScrollCardEffect(
+    elements: Ref<HTMLElement[]>,
+    options?: { opacityModifier?: number; scaleModifier?: number }
+) {
     const opacityModifier = options?.opacityModifier ?? 0.9;
     const scaleModifier = options?.scaleModifier ?? 0.175;
 
@@ -43,7 +46,12 @@ export function useScrollCardEffect(elements: Ref<HTMLElement[]>, options?: { op
 
     function updateElements() {
         elements.value.forEach((el) => {
-            const css = calculateScrollCardEffect(el, dividerLine.value, opacityModifier, scaleModifier);
+            const css = calculateScrollCardEffect(
+                el,
+                dividerLine.value,
+                opacityModifier,
+                scaleModifier
+            );
             Object.assign(el.style, css);
         });
     }

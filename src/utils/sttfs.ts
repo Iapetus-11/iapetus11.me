@@ -8,9 +8,7 @@ import { debounced } from './debounce';
  *
  * @returns the current section's ID
  */
-export function useActiveSTTFSection(
-    sectionIds: string[],
-): DeepReadonly<Ref<string>> {
+export function useActiveSTTFSection(sectionIds: string[]): DeepReadonly<Ref<string>> {
     const activeSection = ref();
 
     const updateActiveSTTF = debounced(() => {
@@ -20,8 +18,9 @@ export function useActiveSTTFSection(
         const IN_VIEW_PADDING_PX = 100;
 
         // Find the section closest to the center line
-        const viewableSections: [string, number][] = sectionIds.map((sId) => document.getElementById(sId))
-        .filter(el => el !== null)
+        const viewableSections: [string, number][] = sectionIds
+            .map((sId) => document.getElementById(sId))
+            .filter((el) => el !== null)
             .map((el) => [el.id, el.getBoundingClientRect()] as const)
             .filter(
                 ([, r]) =>
