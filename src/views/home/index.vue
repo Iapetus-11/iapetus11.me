@@ -108,14 +108,15 @@
         </div>
 
         <div class="fade-in flex flex-col gap-16 md:gap-20" style="animation-delay: 100ms">
+            <!-- Allow first element to be properly viewable with useScrollCardEffect -->
             <div class="h-10 max-lg:hidden"></div>
 
             <AboutSection id="about" class="scroll-mt-100 max-lg:order-last" />
-            <ProjectsSection id="projects" class="scroll-mt-100 lg:scroll-mt-64" />
-            <ResumeSection id="resume" class="scroll-mt-20" />
+            <ProjectsSection id="projects" class="scroll-mt-100 lg:scroll-mt-[30vh]" />
+            <ResumeSection id="resume" class="scroll-mt-[30vh]" />
 
             <!-- Get last element to appear correctly with useScrollCardEffect -->
-            <div class="h-32 lg:h-6 order-last"></div>
+            <div class="order-last h-32 lg:h-6"></div>
         </div>
     </DefaultLayout>
 </template>
