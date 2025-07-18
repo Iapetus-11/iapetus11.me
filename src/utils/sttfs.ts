@@ -29,10 +29,7 @@ export function useActiveSTTFSection(sectionIds: string[]): DeepReadonly<Ref<str
 
         // Find the section closest to the center line
         const viewableSections: [string, number][] = sections
-            .map((el) => [
-                el.id,
-                el.getBoundingClientRect(),
-            ] as const)
+            .map((el) => [el.id, el.getBoundingClientRect()] as const)
             .filter(
                 ([, r]) =>
                     r.top - IN_VIEW_PADDING_PX <= windowCenter &&
