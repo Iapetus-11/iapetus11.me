@@ -43,6 +43,7 @@
 
         // For some reason sttfs don't work on page load (on chrome at least), this jumps to the
         // right section if there's a hash in the URL
+        // Also no I cannot use vue-router's scrollBehavior, because that does not respect scroll margin
         const sttfId = route.hash.slice(1);
         if (STTF_SECTIONS.includes(sttfId)) {
             document.getElementById(sttfId)!.scrollIntoView({ behavior: 'instant' });
