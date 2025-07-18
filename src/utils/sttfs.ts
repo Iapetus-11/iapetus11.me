@@ -1,6 +1,6 @@
-import { onMounted, readonly, ref, watch, type DeepReadonly, type Ref } from 'vue';
+import { onMounted, readonly, ref, type DeepReadonly, type Ref } from 'vue';
 import { useWindowEvent } from './events';
-import { debouncedRef } from './reactivity';
+import { throttled } from './debounce';
 
 /**
  * Tracks the specified IDs to determine the section that is currently scrolled to on the page.
@@ -8,20 +8,16 @@ import { debouncedRef } from './reactivity';
  *
  * @returns the current section's ID
  */
-export function useActiveSTTFSection(sectionIds: string[]): DeepReadonly<Ref<string>> {
+export function useActiveSTTFSection(
+    sectionIds: string[],
+    pauseUpdates?: Ref<boolean>
+): DeepReadonly<Ref<string>> {
     let sections: HTMLElement[] = [];
     const activeSection = ref();
 
-    const scrollY = ref(0);
-    useWindowEvent('scroll', () => (scrollY.value = window.scrollY));
-    useWindowEvent('resize', () => (scrollY.value = window.scrollY));
+    const updateActiveSTTF = throttled(() => {
+        if (!sections.length || pauseUpdates?.value) return;
 
-    onMounted(() => {
-        sections = sectionIds.map((sId) => document.getElementById(sId)!);
-        scrollY.value = window.scrollY;
-    });
-
-    watch(debouncedRef(scrollY, 10), () => {
         const windowCenter = window.innerHeight / 2.0;
 
         // Account for gap between sections where there might not be an element in the center of screen
@@ -39,6 +35,14 @@ export function useActiveSTTFSection(sectionIds: string[]): DeepReadonly<Ref<str
         viewableSections.sort(([, aD], [, bD]) => aD - bD);
 
         activeSection.value = viewableSections[0][0];
+    }, 100);
+
+    useWindowEvent('scroll', updateActiveSTTF);
+    useWindowEvent('resize', updateActiveSTTF);
+
+    onMounted(() => {
+        sections = sectionIds.map((sId) => document.getElementById(sId)!);
+        updateActiveSTTF();
     });
 
     return readonly(activeSection);

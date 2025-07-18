@@ -47,6 +47,10 @@
     @apply border-primary-500 border-2 bg-teal-300/5 transition-[colors] hover:bg-teal-400/10;
 }
 
+@utility text-link {
+    @apply hover:decoration-primary-400 hover:text-primary-400 text-teal-100 decoration-teal-100/0 transition-colors hover:underline;
+}
+
 /* Vue transitions ---- */
 .scale-enter-active,
 .scale-leave-active {

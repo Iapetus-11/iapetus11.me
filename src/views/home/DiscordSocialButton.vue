@@ -4,11 +4,14 @@
 
     const showCopiedPopup = ref(false);
 
+    let popupHideTimeout: number | null = null;
     function copyUsername() {
+        if (popupHideTimeout !== null) clearTimeout(popupHideTimeout);
+
         navigator.clipboard.writeText('iapetus11');
 
         showCopiedPopup.value = true;
-        setTimeout(() => (showCopiedPopup.value = false), 1000);
+        popupHideTimeout = setTimeout(() => (showCopiedPopup.value = false), 1000);
     }
 </script>
 
@@ -19,7 +22,7 @@
         <Transition name="scale" mode="out-in">
             <div
                 v-if="showCopiedPopup"
-                class="absolute bottom-11 left-1/2 -translate-x-1/2 rounded-xl bg-purple-400/25 px-2 py-1.5 whitespace-nowrap text-gray-100"
+                class="absolute bottom-12.5 left-1/2 -translate-x-1/2 rounded-xl bg-purple-400/50 px-2 py-1.5 whitespace-nowrap text-gray-100"
             >
                 username copied!
             </div>

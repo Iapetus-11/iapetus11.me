@@ -6,7 +6,7 @@
     import ResumeSection from './ResumeSection.vue';
     import { useActiveSTTFSection } from '@/utils/sttfs';
     import { useRoute, useRouter } from 'vue-router';
-    import { onMounted, useTemplateRef, watch } from 'vue';
+    import { onMounted, ref, useTemplateRef, watch } from 'vue';
     import { useWindowEvent } from '@/utils/events';
     import SocialButtons from './SocialButtons.vue';
     import AboutSection from './AboutSection.vue';
@@ -20,7 +20,21 @@
     const aliveForYears = calculateYearsSince(new Date('9/1/2003'));
     const programmingForYears = calculateYearsSince(new Date('8/1/2016'));
 
-    const activeSTTFSection = useActiveSTTFSection(STTF_SECTIONS);
+    // Used to pause the hash changing after clicking a section as it scrolls through the sections
+    const sectionLinkWasClicked = ref(false);
+    let sectionLinkWasClickedResetTimeout: number | null = null;
+    watch(sectionLinkWasClicked, () => {
+        if (sectionLinkWasClicked.value) {
+            if (sectionLinkWasClickedResetTimeout) clearTimeout(sectionLinkWasClickedResetTimeout);
+
+            sectionLinkWasClickedResetTimeout = setTimeout(
+                () => (sectionLinkWasClicked.value = false),
+                750
+            );
+        }
+    });
+
+    const activeSTTFSection = useActiveSTTFSection(STTF_SECTIONS, sectionLinkWasClicked);
     watch(activeSTTFSection, (activeSTTFSectionId) => {
         router.replace({ hash: `#${activeSTTFSectionId}` });
     });
@@ -85,12 +99,23 @@
                 I'm a {{ aliveForYears }} year-old full-stack developer who's been programming for
                 {{ programmingForYears }} years and loves to learn new things!
             </p>
-            <p class="max-lg:order-last">
-                I'm currently dabbling in Rust with Villager Bot and working at MedShift on Velocity
-                Enterprise + Lending.
+            <p class="[&>a]:text-link max-lg:order-last">
+                I'm currently dabbling in Rust with
+                <a
+                    href="https://github.com/Iapetus-11/Villager-Bot/"
+                    target="_blank"
+                    rel="noreferrer"
+                    >Villager Bot</a
+                >
+                and working at
+                <a href="https://medshift.com/" target="_blank" rel="noreferrer">MedShift</a> on
+                Velocity Enterprise + Lending.
             </p>
 
-            <div class="my-auto flex flex-col gap-3 max-lg:hidden lg:items-start">
+            <div
+                class="my-auto flex flex-col gap-3 max-lg:hidden lg:items-start"
+                @click="sectionLinkWasClicked = true"
+            >
                 <SectionNavLink sttf-id="about" icon="icon-[hugeicons--bulb-charging]">
                     About
                 </SectionNavLink>
