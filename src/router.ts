@@ -24,5 +24,11 @@ export default {
             name: 'fractals',
             component: () => import('@/views/fractals/index.vue'),
         },
+        {
+            // Match any route, must be last
+            path: '/:pathMatch(.*)*',
+            name: 'not-found',
+            component: () => import('@/views/not-found.vue'),
+        },
     ],
 } satisfies RouterOptions;
