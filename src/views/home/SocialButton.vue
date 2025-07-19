@@ -5,7 +5,7 @@
     }>();
 
     const CLASSES =
-        'rounded-full p-1 text-slate-300 transition-colors hover:text-purple-300 text-2xl scale-110';
+        'rounded-full p-1 text-slate-300 transition-[colors,scale] hover:text-purple-300 text-2xl scale-110 hover:scale-120';
 </script>
 
 <template>
