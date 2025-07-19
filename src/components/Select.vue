@@ -1,3 +1,11 @@
+<script setup lang="ts">
+    defineProps<{
+        id?: string;
+    }>();
+
+    const modelValue = defineModel({ required: true });
+</script>
+
 <style scoped>
     @reference '@/assets/main.css';
 
@@ -8,7 +16,7 @@
 
 <template>
     <div class="relative">
-        <select>
+        <select v-model="modelValue" :id class="relative">
             <slot />
         </select>
 

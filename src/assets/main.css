@@ -10,8 +10,8 @@
 
     --font-nunito: 'Nunito', sans-serif;
 
-    --breakpoint-lg: 1100px;
-    --breakpoint-xs: 500px;
+    --breakpoint-xs: 31.25rem;
+    --breakpoint-lg: 68.75rem;
 }
 
 @layer base {
@@ -44,7 +44,7 @@
 }
 
 @utility outlined-actionable {
-    @apply border-primary-500 border-2 bg-teal-300/5 transition-[colors] hover:bg-teal-400/10;
+    @apply border-primary-500 cursor-pointer border-2 bg-teal-300/5 transition-[colors] hover:bg-teal-400/10;
 }
 
 @utility text-link {

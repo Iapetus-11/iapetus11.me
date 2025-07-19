@@ -100,9 +100,7 @@
                 Velocity Enterprise + Lending.
             </p>
 
-            <div
-                class="my-auto flex flex-col gap-3 max-lg:hidden lg:items-start"
-            >
+            <div class="my-auto flex flex-col gap-3 max-lg:hidden lg:items-start">
                 <SectionNavLink sttf-id="about" icon="icon-[hugeicons--bulb-charging]">
                     About
                 </SectionNavLink>
