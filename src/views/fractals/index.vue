@@ -123,15 +123,13 @@
 </style>
 
 <template>
-    <DefaultLayout
-        class="grid grid-cols-1 justify-between gap-4 text-white lg:-mx-6 lg:grid-cols-2"
-    >
-        <div class="mb-6 flex justify-between lg:col-span-2">
-            <h1 class="font-mono text-5xl font-bold">Fractal Generator</h1>
+    <DefaultLayout class="grid grid-cols-1 justify-between gap-4 text-white lg:grid-cols-2">
+        <div class="flex justify-between gap-x-6 gap-y-4 lg:col-span-2 lg:mb-3">
+            <h1 class="font-mono text-4xl font-bold md:text-5xl">Fractal Generator</h1>
 
             <RouterLink
                 :to="{ name: 'home' }"
-                class="group outlined-actionable my-auto flex h-fit items-center rounded-xl p-3 whitespace-nowrap"
+                class="group outlined-actionable mb-auto flex h-fit w-fit items-center rounded-xl p-2 whitespace-nowrap sm:my-auto md:p-3"
             >
                 <span
                     class="icon-[hugeicons--arrow-left-01] mr-0.5 -ml-1.5 text-2xl transition-[margin] group-hover:mr-1"
@@ -166,7 +164,7 @@
                     @click="copyLinkToFractal"
                 >
                     <span
-                        class="mr-1"
+                        class="mr-1.5"
                         :class="
                             showLinkCopiedConfirmation
                                 ? 'icon-[hugeicons--checkmark-circle-02]'
@@ -179,7 +177,7 @@
                 </button>
 
                 <button type="button" class="button col-span-6 w-full" @click="resetFractal">
-                    <span class="icon-[hugeicons--undo] mr-1"></span>
+                    <span class="icon-[hugeicons--undo] mr-1.5"></span>
                     <span class="self-center">Reset</span>
                 </button>
             </div>
