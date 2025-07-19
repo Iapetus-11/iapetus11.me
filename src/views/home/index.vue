@@ -121,7 +121,7 @@
             <!-- Allow first element to be properly viewable with useScrollCardEffect -->
             <div class="h-10 max-lg:hidden"></div>
 
-            <AboutSection id="about" class="scroll-mt-100 max-lg:order-last" />
+            <AboutSection id="about" class="scroll-mt-100 max-lg:order-last lg:mt-10" />
             <ProjectsSection id="projects" class="scroll-mt-100 lg:scroll-mt-[30vh]" />
             <ResumeSection id="resume" class="scroll-mt-[30vh]" />
 
