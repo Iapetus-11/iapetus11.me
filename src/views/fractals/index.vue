@@ -69,21 +69,29 @@
     }
 
     let abortController: AbortController | null = null;
-    const fractal = ref<AsyncState<string>>();
+    const fractalState = ref<AsyncState<string>>();
     watch(
         fractalConfig,
         () => {
             abortController?.abort();
 
-            if (fractal.value?.result) {
-                URL.revokeObjectURL(fractal.value.result);
+            if (fractalState.value?.result) {
+                URL.revokeObjectURL(fractalState.value.result);
             }
 
             abortController = new AbortController();
-            fractal.value = useAsyncState(makeFractalRequest(abortController.signal));
+            fractalState.value = useAsyncState(makeFractalRequest(abortController.signal));
         },
         { immediate: true }
     );
+
+    // Allow previous fractal to be shown while fractalState is busy loading another
+    const fractal = ref<string>();
+    watch(fractalState, (fractalState) => {
+        if (fractalState?.result) {
+            fractal.value = fractalState.result;
+        }
+    }, { deep: true });
 
     const showLinkCopiedConfirmation = ref(false);
     function copyLinkToFractal() {
@@ -129,18 +137,19 @@
         </div>
 
         <!-- Fractal display / loading -->
-        <div class="flex aspect-square w-full items-center justify-center lg:order-2">
-            <span
-                v-if="!fractal || fractal.pending"
-                class="icon-[hugeicons--loading-03] text-primary-600 animate-spin text-8xl"
-            ></span>
-
+        <div class="relative flex aspect-square w-full items-center justify-center lg:order-2">
             <img
-                v-else-if="fractal?.result"
-                :src="fractal.result"
+                v-if="fractal"
+                :src="fractal"
                 alt="Fractal"
                 class="rounded-2xl"
+                :class="{ 'opacity-50': fractalState?.pending }"
             />
+
+            <span
+                v-if="!fractal || fractalState?.pending"
+                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 icon-[hugeicons--loading-03] text-primary-600 animate-spin text-8xl"
+            ></span>
         </div>
 
         <!-- Fractal config -->
