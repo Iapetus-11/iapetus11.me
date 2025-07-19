@@ -71,7 +71,7 @@ export const RESUME_ITEMS: ResumeItemDefinition[] = [
             'Wrote several social media bots for a few platforms including Twitter, Discord, and Reddit',
             'Developed several web scrapers and data aggregation utilities (usually into Google Sheets)',
             'Engineered a PoC for collecting data from a distributed network of Arduino ESP32s and Raspberry Pis',
-            'Mentored CS students, helping them understand topics from class',
+            'Mentored CS students, helping them understand topics from their classes',
             'Undertook graphic design and even hiring/candidate-vetting responsibilities',
         ],
         skills: [
