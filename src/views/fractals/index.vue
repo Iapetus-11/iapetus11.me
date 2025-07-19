@@ -87,11 +87,15 @@
 
     // Allow previous fractal to be shown while fractalState is busy loading another
     const fractal = ref<string>();
-    watch(fractalState, (fractalState) => {
-        if (fractalState?.result) {
-            fractal.value = fractalState.result;
-        }
-    }, { deep: true });
+    watch(
+        fractalState,
+        (fractalState) => {
+            if (fractalState?.result) {
+                fractal.value = fractalState.result;
+            }
+        },
+        { deep: true }
+    );
 
     const showLinkCopiedConfirmation = ref(false);
     function copyLinkToFractal() {
@@ -148,7 +152,7 @@
 
             <span
                 v-if="!fractal || fractalState?.pending"
-                class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 icon-[hugeicons--loading-03] text-primary-600 animate-spin text-8xl"
+                class="icon-[hugeicons--loading-03] text-primary-600 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 animate-spin text-8xl"
             ></span>
         </div>
 
