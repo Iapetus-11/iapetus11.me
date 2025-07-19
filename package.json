@@ -1,59 +1,59 @@
 {
-  "name": "flat-neon",
-  "version": "0.0.0",
-  "private": true,
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite-ssg build",
-    "preview": "vite preview",
-    "test": "vitest",
-    "type-check": "vue-tsc --build",
-    "lint": "eslint . --fix",
-    "format": "prettier --write src/ --list-different"
-  },
-  "dependencies": {
-    "@tailwindcss/vite": "^4.1.11",
-    "tailwindcss": "^4.1.11",
-    "vue": "^3.5.17"
-  },
-  "devDependencies": {
-    "@iconify-json/fa6-brands": "^1.2.5",
-    "@iconify-json/hugeicons": "^1.2.5",
-    "@iconify/tailwind4": "^1.0.6",
-    "@tsconfig/node22": "^22.0.2",
-    "@types/jsdom": "^21.1.7",
-    "@types/node": "^22.15.32",
-    "@unhead/vue": "^2.0.12",
-    "@vitejs/plugin-vue": "^6.0.0",
-    "@vitest/eslint-plugin": "^1.2.7",
-    "@vue/eslint-config-prettier": "^10.2.0",
-    "@vue/eslint-config-typescript": "^14.5.1",
-    "@vue/test-utils": "^2.4.6",
-    "@vue/tsconfig": "^0.7.0",
-    "eslint": "^9.29.0",
-    "eslint-plugin-vue": "~10.2.0",
-    "jiti": "^2.4.2",
-    "jsdom": "^26.1.0",
-    "prettier": "3.5.3",
-    "prettier-plugin-tailwindcss": "^0.6.13",
-    "typescript": "~5.8.0",
-    "vite": "^7.0.0",
-    "vite-ssg": "^28.0.0",
-    "vitest": "^3.2.4",
-    "vue-router": "^4.5.1",
-    "vue-tsc": "^2.2.10"
-  },
-  "prettier": {
-    "$schema": "https://json.schemastore.org/prettierrc",
-    "semi": true,
-    "tabWidth": 4,
-    "singleQuote": true,
-    "printWidth": 100,
-    "trailingComma": "es5",
-    "vueIndentScriptAndStyle": true,
-    "plugins": [
-      "prettier-plugin-tailwindcss"
-    ]
-  }
+    "name": "flat-neon",
+    "version": "0.0.0",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite-ssg build",
+        "preview": "vite preview",
+        "test": "vitest",
+        "type-check": "vue-tsc --build",
+        "lint": "eslint . --fix",
+        "format": "prettier --write . --list-different --"
+    },
+    "dependencies": {
+        "@tailwindcss/vite": "^4.1.11",
+        "tailwindcss": "^4.1.11",
+        "vue": "^3.5.17"
+    },
+    "devDependencies": {
+        "@iconify-json/fa6-brands": "^1.2.5",
+        "@iconify-json/hugeicons": "^1.2.5",
+        "@iconify/tailwind4": "^1.0.6",
+        "@tsconfig/node22": "^22.0.2",
+        "@types/jsdom": "^21.1.7",
+        "@types/node": "^22.15.32",
+        "@unhead/vue": "^2.0.12",
+        "@vitejs/plugin-vue": "^6.0.0",
+        "@vitest/eslint-plugin": "^1.2.7",
+        "@vue/eslint-config-prettier": "^10.2.0",
+        "@vue/eslint-config-typescript": "^14.5.1",
+        "@vue/test-utils": "^2.4.6",
+        "@vue/tsconfig": "^0.7.0",
+        "eslint": "^9.29.0",
+        "eslint-plugin-vue": "~10.2.0",
+        "jiti": "^2.4.2",
+        "jsdom": "^26.1.0",
+        "prettier": "3.5.3",
+        "prettier-plugin-tailwindcss": "^0.6.13",
+        "typescript": "~5.8.0",
+        "vite": "^7.0.0",
+        "vite-ssg": "^28.0.0",
+        "vitest": "^3.2.4",
+        "vue-router": "^4.5.1",
+        "vue-tsc": "^2.2.10"
+    },
+    "prettier": {
+        "$schema": "https://json.schemastore.org/prettierrc",
+        "semi": true,
+        "tabWidth": 4,
+        "singleQuote": true,
+        "printWidth": 100,
+        "trailingComma": "es5",
+        "vueIndentScriptAndStyle": true,
+        "plugins": [
+            "prettier-plugin-tailwindcss"
+        ]
+    }
 }
