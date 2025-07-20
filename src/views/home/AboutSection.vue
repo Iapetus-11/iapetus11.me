@@ -13,7 +13,7 @@
 <template>
     <div ref="about-container" class="[&>p]:leading-relaxed">
         <h2 class="mb-6 font-mono text-3xl font-bold whitespace-nowrap max-md:text-center">
-            About Me
+            How did I get here?
         </h2>
 
         <p>

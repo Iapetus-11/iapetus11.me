@@ -96,13 +96,15 @@
                     >Villager Bot</a
                 >
                 and working at
-                <a href="https://medshift.com/" target="_blank" rel="noreferrer">MedShift</a> on
-                Velocity Enterprise + Lending.
+                <a href="https://medshift.com/" target="_blank" rel="noreferrer">MedShift</a>. If
+                I'm not programming, bouldering, or busy being a couch potato, you'll find me
+                zooming on mountain backroads in my
+                <RouterLink :to="{ name: 'miata' }">Miata</RouterLink>!
             </p>
 
             <div class="my-auto flex flex-col gap-3 max-lg:hidden lg:items-start">
                 <SectionNavLink sttf-id="about" icon="icon-[hugeicons--bulb-charging]">
-                    About
+                    Journey
                 </SectionNavLink>
                 <SectionNavLink sttf-id="projects" icon="icon-[hugeicons--test-tube-01]">
                     Projects
