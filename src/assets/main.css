@@ -39,8 +39,7 @@
 }
 
 @utility fade-in {
-    @apply opacity-0;
-    animation: 250ms ease-in-out fade-in forwards;
+    animation: 50ms ease-in-out fade-in both;
 }
 
 @utility outlined-actionable {
