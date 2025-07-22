@@ -121,7 +121,7 @@
             <div class="h-10 max-lg:hidden"></div>
 
             <PicturesSection id="pictures" class="scroll-mt-0 max-lg:order-last" />
-            <ProjectsSection id="projects" class="scroll-mt-100 lg:scroll-mt-[30vh]" />
+            <ProjectsSection id="projects" class="scroll-mt-100 lg:scroll-mt-[28vh]" />
             <ResumeSection id="resume" class="scroll-mt-[30vh]" />
 
             <!-- Get last element to appear correctly with useScrollCardEffect -->
