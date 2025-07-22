@@ -5,7 +5,7 @@
     const container = useTemplateRef('pictures-container');
     const imgElements = computed(() => [...((container.value?.children ?? []) as HTMLElement[])]);
 
-    useScrollCardEffect(imgElements, { opacityModifier: 0.65 });
+    useScrollCardEffect(imgElements, { opacityModifier: 0.65, scaleModifier: 0.125 });
 </script>
 
 <style scoped>
