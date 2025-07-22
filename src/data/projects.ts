@@ -1,15 +1,15 @@
-import asciiMePng from '@/assets/images/projects/ascii-me.png';
-import butterflymx444Png from '@/assets/images/projects/butterflymx-444.png';
-import clipboardCleansePng from '@/assets/images/projects/clipboard-cleanse.png';
-import emojiLeaderboardExamplePng from '@/assets/images/projects/emoji-leaderboard-example.png';
-import fractalColoredIterative1Png from '@/assets/images/projects/fractal_colored_iterative_1.png';
-import minecraftGlobalPaddedPng from '@/assets/images/projects/minecraft-global-padded.png';
-import minecraftSkinsApiPng from '@/assets/images/projects/minecraft-skins-api.png';
-import petusPng from '@/assets/images/petus.png';
+import asciiMeWebp from '@/assets/images/projects/ascii-me.webp';
+import butterflymx444Webp from '@/assets/images/projects/butterflymx-444.webp';
+import clipboardCleanseWebp from '@/assets/images/projects/clipboard-cleanse.webp';
+import emojiLeaderboardExampleWebp from '@/assets/images/projects/emoji-leaderboard-example.webp';
+import fractalColoredIterative1Webp from '@/assets/images/projects/fractal_colored_iterative_1.webp';
+import minecraftGlobalPaddedWebp from '@/assets/images/projects/minecraft-global-padded.webp';
+import minecraftSkinsApiWebp from '@/assets/images/projects/minecraft-skins-api.webp';
+import petusWebp from '@/assets/images/petus.webp';
 import pillagerBotWebp from '@/assets/images/projects/pillager-bot.webp';
 import quake3BotWebp from '@/assets/images/projects/quake-3-bot.webp';
-import tacoTapperLogoPng from '@/assets/images/projects/taco-tapper-logo.png';
-import villagerBotPng from '@/assets/images/projects/villager-bot.png';
+import tacoTapperLogoWebp from '@/assets/images/projects/taco-tapper-logo.webp';
+import villagerBotWebp from '@/assets/images/projects/villager-bot.webp';
 
 export type ProjectDefinition = {
     link: string;
@@ -24,7 +24,7 @@ export const PROJECTS: ProjectDefinition[] = [
         name: 'Villager Bot',
         description:
             'A Minecraft-themed utility, moderation, and economy Discord bot used by tens of thousands.',
-        image: villagerBotPng,
+        image: villagerBotWebp,
         link: 'https://villagerbot.com',
         skills: ['Python', 'Cython', 'Websockets', 'Discord.py', 'Docker'],
     },
@@ -32,7 +32,7 @@ export const PROJECTS: ProjectDefinition[] = [
         name: 'Fractals',
         description:
             'Flame fractal generation from adjustable parameters, originally created during CUHackit 2022 but since remade.',
-        image: fractalColoredIterative1Png,
+        image: fractalColoredIterative1Webp,
         link: '/fractals',
         skills: ['C#', 'ASP.NET', 'Vue.js', 'Tailwind CSS', 'TypeScript'],
     },
@@ -40,7 +40,7 @@ export const PROJECTS: ProjectDefinition[] = [
         name: 'minecraft\u200B.global',
         description:
             'A Minecraft server list originally created with the help of a friend. Home to many Minecraft Java Edition & Bedrock Edition servers.',
-        image: minecraftGlobalPaddedPng,
+        image: minecraftGlobalPaddedWebp,
         link: 'https://minecraft.global',
         skills: [
             'C#',
@@ -57,7 +57,7 @@ export const PROJECTS: ProjectDefinition[] = [
         name: 'To-ASCII',
         description:
             'A Python library and command line tool which can convert images, gifs, videos, and even live video to ASCII art.',
-        image: asciiMePng,
+        image: asciiMeWebp,
         link: 'https://github.com/Iapetus-11/To-ASCII',
         skills: ['Python', 'Nim', 'OpenCV', 'Numpy'],
     },
@@ -65,7 +65,7 @@ export const PROJECTS: ProjectDefinition[] = [
         name: 'Clipboard Cleanse',
         description:
             'A cross-platform (Mac & Windows) toolbar/system tray app which automatically removes tracking information and other crap from copied URLs.',
-        image: clipboardCleansePng,
+        image: clipboardCleanseWebp,
         link: 'https://github.com/Iapetus-11/clipboard-cleanse',
         skills: ['Rust', 'Objective-C', 'AppKit', 'Win32'],
     },
@@ -73,7 +73,7 @@ export const PROJECTS: ProjectDefinition[] = [
         name: 'Taco Tapper',
         description:
             'An unfinished knockoff cookie clicker but with tacos instead. Written in Vue, all art done by my girlfriend.',
-        image: tacoTapperLogoPng,
+        image: tacoTapperLogoWebp,
         link: 'https://tacos.iapetus11.me/',
         skills: ['Vue', 'TypeScript', 'Cloudflare Pages'],
     },
@@ -81,7 +81,7 @@ export const PROJECTS: ProjectDefinition[] = [
         name: 'Emoji Leaderboard',
         description:
             'A Slack bot which tracks emoji use and displays a leaderboard of the most used emojis. Also has functionality to sync emojis from Slack to Discord.',
-        image: emojiLeaderboardExamplePng,
+        image: emojiLeaderboardExampleWebp,
         link: 'https://github.com/Iapetus-11/slack-emoji-leaderboard',
         skills: ['Python', 'JavaScript', 'SvelteKit', 'FastAPI'],
     },
@@ -96,7 +96,7 @@ export const PROJECTS: ProjectDefinition[] = [
         name: 'api.iapetus11.me',
         description:
             'A multi-purpose API used by my projects (Villager Bot, iapetus11.me, Fractals) and several other people.',
-        image: petusPng,
+        image: petusWebp,
         link: 'https://github.com/Iapetus-11/api.iapetus11.me',
         skills: ['C#', 'ASP.NET', 'Docker'],
     },
@@ -104,7 +104,7 @@ export const PROJECTS: ProjectDefinition[] = [
         name: 'ButterflyMX 444',
         description:
             'A web app which allows users to open their apartment using ButterflyMX using a reverse engineered API wrapper.',
-        image: butterflymx444Png,
+        image: butterflymx444Webp,
         link: 'https://github.com/Iapetus-11/ButterflyMX-444',
         skills: ['Python', 'FastAPI', 'Jinja', 'Docker'],
     },
@@ -120,7 +120,7 @@ export const PROJECTS: ProjectDefinition[] = [
         name: 'Skin Renderer',
         description:
             "A microservice for rendering player's Minecraft skins (currently just renders heads).",
-        image: minecraftSkinsApiPng,
+        image: minecraftSkinsApiWebp,
         link: 'https://github.com/Iapetus-11/minecraft-skins',
         skills: ['Elixir', 'Phoenix'],
     },

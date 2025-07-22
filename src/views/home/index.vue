@@ -65,7 +65,7 @@
         >
             <div class="xs:max-lg:w-full flex items-center max-lg:mx-auto lg:-ml-1">
                 <img
-                    src="@/assets/images/petus.png"
+                    src="@/assets/images/petus.webp"
                     alt="Iapetus11's Profile Picture"
                     class="outline-primary-400/30 xs:size-16 mr-3.5 size-14 !rounded-full outline-1 outline-offset-3 md:mr-5 md:size-18 xl:size-20"
                 />

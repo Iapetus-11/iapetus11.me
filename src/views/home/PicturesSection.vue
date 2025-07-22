@@ -23,49 +23,49 @@
     >
         <div class="z-10">
             <img
-                src="@/assets/images/me/me-asheville-blue-wall.jpg"
+                src="@/assets/images/me/me-asheville-blue-wall.webp"
                 alt="Me in Asheville"
                 class="translate-y-15 scale-80"
             />
         </div>
         <div class="z-10">
             <img
-                src="@/assets/images/me/trinity-and-i-park.jpg"
+                src="@/assets/images/me/trinity-and-i-park.webp"
                 alt="Trinity and I at a park"
                 class="-translate-x-12 -translate-y-6.5"
             />
         </div>
         <div class="z-10">
             <img
-                src="@/assets/images/me/cliff-view-w-trinity.jpg"
+                src="@/assets/images/me/cliff-view-w-trinity.webp"
                 alt="Trinity & Miata on a cliff"
                 class="translate-y-4 scale-110"
             />
         </div>
         <div class="z-15">
             <img
-                src="@/assets/images/me/elk-mountain-graffiti-rd-angled.jpg"
+                src="@/assets/images/me/elk-mountain-graffiti-rd-angled.webp"
                 alt="Miata at Elk Mountain Scenic Highway"
                 class="-translate-y-16"
             />
         </div>
         <div class="z-5">
             <img
-                src="@/assets/images/me/me-and-trinity-icecream.jpg"
+                src="@/assets/images/me/me-and-trinity-icecream.webp"
                 alt="Trinity and I getting icecream"
                 class="-translate-x-2 translate-y-6"
             />
         </div>
         <div class="z-5">
             <img
-                src="@/assets/images/me/parking-lot-sunset.jpg"
+                src="@/assets/images/me/parking-lot-sunset.webp"
                 alt="Miata in parking lot close to sunset"
                 class="-translate-y-18 scale-110"
             />
         </div>
         <div class="z-10">
             <img
-                src="@/assets/images/me/me-ny.jpg"
+                src="@/assets/images/me/me-ny.webp"
                 alt="Me in NY"
                 class="translate-x-48 -translate-y-17"
             />
