@@ -9,7 +9,7 @@
         ...(container.value?.querySelectorAll('div').values() ?? []),
     ]);
 
-    useScrollCardEffect(resumeElements, { opacityModifier: 0.65, scaleModifier: 0.15 });
+    useScrollCardEffect(resumeElements, { opacityModifier: 0.65 });
 </script>
 
 <template>
@@ -19,7 +19,7 @@
                 Resume / Timeline
             </h2>
 
-            <p>
+            <p class="md:text-lg">
                 I have not attended a university or bootcamp. I would claim to be self-taught, but
                 that is not the case either. In addition to hard work and practice, mentors,
                 teachers, friends, and family have helped me get where I am today and I am forever

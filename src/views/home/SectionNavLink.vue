@@ -16,7 +16,7 @@
 <template>
     <a
         :href="sttf"
-        class="group flex items-center text-lg font-medium transition-colors hover:text-purple-300"
+        class="group flex items-center text-lg font-medium transition-colors hover:text-purple-300 md:text-xl"
         :class="{ 'text-slate-300': isActive }"
     >
         <span

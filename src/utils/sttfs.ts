@@ -36,7 +36,14 @@ export function useActiveSTTFSection(sectionIds: string[]): DeepReadonly<Ref<str
     useWindowEvent('scroll', updateActiveSTTF);
     useWindowEvent('resize', updateActiveSTTF);
 
-    onMounted(updateActiveSTTF);
+    onMounted(() => {
+        const hash = window.location.hash.slice(1);
+        if (sectionIds.includes(hash)) {
+            activeSection.value = hash;
+        } else {
+            updateActiveSTTF();
+        }
+    });
 
     return readonly(activeSection);
 }

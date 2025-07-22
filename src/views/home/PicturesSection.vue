@@ -1,0 +1,74 @@
+<script setup lang="ts">
+    import { computed, useTemplateRef } from 'vue';
+    import { useScrollCardEffect } from '@/utils/effects';
+
+    const container = useTemplateRef('pictures-container');
+    const imgElements = computed(() => [...((container.value?.children ?? []) as HTMLElement[])]);
+
+    useScrollCardEffect(imgElements, { opacityModifier: 0.65 });
+</script>
+
+<style scoped>
+    @reference '@/assets/main.css';
+
+    img {
+        @apply rounded-xl shadow-lg max-sm:translate-x-0 max-sm:translate-y-0 max-sm:scale-100;
+    }
+</style>
+
+<template>
+    <div
+        ref="pictures-container"
+        class="pictures-container grid max-sm:gap-3 sm:grid-cols-2 xl:max-2xl:-translate-x-10"
+    >
+        <div class="z-10">
+            <img
+                src="@/assets/images/me/me-asheville-blue-wall.jpg"
+                alt="Me in Asheville"
+                class="translate-y-15 scale-80"
+            />
+        </div>
+        <div class="z-10">
+            <img
+                src="@/assets/images/me/trinity-and-i-park.jpg"
+                alt="Trinity and I at a park"
+                class="-translate-x-12 -translate-y-6.5"
+            />
+        </div>
+        <div class="z-10">
+            <img
+                src="@/assets/images/me/cliff-view-w-trinity.jpg"
+                alt="Trinity & Miata on a cliff"
+                class="translate-y-4 scale-110"
+            />
+        </div>
+        <div class="z-15">
+            <img
+                src="@/assets/images/me/elk-mountain-graffiti-rd-angled.jpg"
+                alt="Miata at Elk Mountain Scenic Highway"
+                class="-translate-y-16"
+            />
+        </div>
+        <div class="z-5">
+            <img
+                src="@/assets/images/me/me-and-trinity-icecream.jpg"
+                alt="Trinity and I getting icecream"
+                class="-translate-x-2 translate-y-6"
+            />
+        </div>
+        <div class="z-5">
+            <img
+                src="@/assets/images/me/parking-lot-sunset.jpg"
+                alt="Miata in parking lot close to sunset"
+                class="-translate-y-18 scale-110"
+            />
+        </div>
+        <div class="z-10">
+            <img
+                src="@/assets/images/me/me-ny.jpg"
+                alt="Me in NY"
+                class="translate-x-48 -translate-y-17"
+            />
+        </div>
+    </div>
+</template>

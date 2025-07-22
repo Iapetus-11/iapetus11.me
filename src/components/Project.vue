@@ -10,7 +10,7 @@
     <Link
         :to="link"
         :target="link.startsWith('/') ? '_self' : '_blank'"
-        class="group outlined-actionable flex shrink items-center space-x-3 rounded-xl p-4"
+        class="group outlined-actionable flex shrink items-center space-x-3 rounded-xl p-4 lg:p-5"
     >
         <div class="mr-2 flex h-full w-full flex-col md:mr-5 xl:mr-10">
             <div
@@ -19,7 +19,7 @@
                 <h3>{{ name }}</h3>
 
                 <span
-                    class="icon-[hugeicons--link-square-02] ml-2.5 scale-0 text-purple-300 opacity-0 transition-[opacity,scale] group-hover:scale-100 group-hover:opacity-100"
+                    class="icon-[hugeicons--link-square-02] ml-2.5 scale-0 text-purple-300 opacity-0 transition-[opacity,scale] group-hover:scale-110 group-hover:opacity-100"
                 ></span>
 
                 <div class="-mt-2 -mr-4 ml-auto size-10 overflow-hidden rounded-full sm:hidden">
@@ -27,7 +27,7 @@
                 </div>
             </div>
 
-            <p class="text-white">
+            <p class="text-white md:text-lg">
                 {{ description }}
             </p>
 

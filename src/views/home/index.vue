@@ -9,9 +9,9 @@
     import { onMounted, useTemplateRef, watch } from 'vue';
     import { useWindowEvent } from '@/utils/events';
     import SocialButtons from './SocialButtons.vue';
-    import AboutSection from './AboutSection.vue';
+    import PicturesSection from './PicturesSection.vue';
 
-    const STTF_SECTIONS = ['about', 'projects', 'resume'];
+    const STTF_SECTIONS = ['pictures', 'projects', 'resume'];
 
     const router = useRouter();
     const route = useRoute();
@@ -38,14 +38,19 @@
     }
     useWindowEvent('resize', resizeStickyContainerToFillHeight, { passive: true });
 
-    onMounted(() => {
+    const sectionsContainer = useTemplateRef('sections-container');
+
+    onMounted(async () => {
         resizeStickyContainerToFillHeight();
+
+        await new Promise((resolve) => setTimeout(resolve, 1));
 
         // For some reason sttfs don't work on page load (on chrome at least), this jumps to the
         // right section if there's a hash in the URL
         // Also no I cannot use vue-router's scrollBehavior, because that does not respect scroll margin
         const sttfId = route.hash.slice(1);
         if (STTF_SECTIONS.includes(sttfId)) {
+            sectionsContainer.value!.classList.add('fade-in');
             document.getElementById(sttfId)!.scrollIntoView({ behavior: 'instant' });
         }
     });
@@ -83,19 +88,12 @@
                 </div>
             </div>
 
-            <p class="max-lg:order-last lg:mt-5">
+            <p class="max-lg:order-last md:text-lg lg:mt-5">
                 I'm a {{ aliveForYears }} year-old full-stack developer who's been programming for
                 {{ programmingForYears }} years and loves to learn new things!
             </p>
-            <p class="[&>a]:text-link max-lg:order-last">
-                I'm currently dabbling in Rust with
-                <a
-                    href="https://github.com/Iapetus-11/Villager-Bot/"
-                    target="_blank"
-                    rel="noreferrer"
-                    >Villager Bot</a
-                >
-                and working at
+            <p class="[&>a]:text-link max-lg:order-last md:text-lg">
+                I'm currently loving Rust, and working with Python + Vue.js for
                 <a href="https://medshift.com/" target="_blank" rel="noreferrer">MedShift</a>. If
                 I'm not programming, bouldering, or busy being a couch potato, you'll find me
                 zooming on mountain backroads in my
@@ -103,8 +101,8 @@
             </p>
 
             <div class="my-auto flex flex-col gap-3 max-lg:hidden lg:items-start">
-                <SectionNavLink sttf-id="about" icon="icon-[hugeicons--bulb-charging]">
-                    Journey
+                <SectionNavLink sttf-id="pictures" icon="icon-[hugeicons--bulb-charging]">
+                    Pictures
                 </SectionNavLink>
                 <SectionNavLink sttf-id="projects" icon="icon-[hugeicons--test-tube-01]">
                     Projects
@@ -119,11 +117,11 @@
             </div>
         </div>
 
-        <div class="fade-in flex flex-col gap-16 md:gap-20" style="animation-delay: 100ms">
+        <div ref="sections-container" class="flex flex-col gap-16 opacity-0 md:gap-20">
             <!-- Allow first element to be properly viewable with useScrollCardEffect -->
             <div class="h-10 max-lg:hidden"></div>
 
-            <AboutSection id="about" class="scroll-mt-100 max-lg:order-last lg:mt-10" />
+            <PicturesSection id="pictures" class="scroll-mt-0 max-lg:order-last" />
             <ProjectsSection id="projects" class="scroll-mt-100 lg:scroll-mt-[30vh]" />
             <ResumeSection id="resume" class="scroll-mt-[30vh]" />
 

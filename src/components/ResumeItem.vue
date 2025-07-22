@@ -19,7 +19,7 @@
             </template>
         </span>
 
-        <ul class="mt-3 ml-5 text-sm text-white" style="list-style-type: '◦'">
+        <ul class="mt-3 ml-5 text-sm text-white md:text-base" style="list-style-type: '◦'">
             <li v-for="bullet in bullets" :key="bullet" class="pl-2">
                 {{ bullet }}
             </li>

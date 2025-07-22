@@ -5,7 +5,7 @@
 </script>
 
 <template>
-    <ul class="flex flex-wrap gap-2 text-xs text-blue-200">
+    <ul class="flex flex-wrap gap-2 text-xs text-blue-200 md:text-sm">
         <li
             v-for="skill in skills"
             :key="skill"

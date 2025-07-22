@@ -1,8 +1,8 @@
 import type { RouterOptions } from 'vite-ssg';
 
 export default {
-    scrollBehavior: (to, from) => {
-        if (to.name !== from.name && !to.hash) {
+    scrollBehavior: (to) => {
+        if (!to.hash) {
             return { top: 0, left: 0, behavior: 'instant' };
         }
 
