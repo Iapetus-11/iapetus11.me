@@ -61,7 +61,7 @@
                         Milo<span class="text-primary-400 mx-2 xl:mx-4">/</span>Iapetus11
                     </h1>
                     <h2
-                        class="text-primary-400 mt-1 text-sm font-medium whitespace-nowrap italic sm:text-base md:text-xl"
+                        class="text-primary-400 mt-1 text-sm font-medium whitespace-nowrap italic sm:text-base lg:text-lg xl:text-xl"
                     >
                         Full-Stack Software Engineer & Hobbyist
                     </h2>
@@ -72,11 +72,11 @@
                 </div>
             </div>
 
-            <p class="max-lg:order-last md:text-lg lg:mt-5">
+            <p class="max-lg:order-last md:text-lg lg:text-[1.0625rem] 2xl:text-lg lg:mt-5">
                 I'm a {{ aliveForYears }} year-old full-stack developer who's been programming for
                 {{ programmingForYears }} years and loves to learn new things!
             </p>
-            <p class="[&>a]:text-link max-lg:order-last md:text-lg">
+            <p class="[&>a]:text-link max-lg:order-last md:text-lg lg:text-[1.0625rem] 2xl:text-lg">
                 I'm currently loving Rust, and working with Python + Vue.js for
                 <a href="https://medshift.com/" target="_blank" rel="noreferrer">MedShift</a>. If
                 I'm not programming, bouldering, or busy being a couch potato, you'll find me
@@ -84,7 +84,7 @@
             </p>
 
             <div class="my-auto flex flex-col gap-3 max-lg:hidden lg:items-start">
-                <SectionNavLink sttf-id="pictures" icon="icon-[hugeicons--bulb-charging]">
+                <SectionNavLink sttf-id="pictures" icon="icon-[hugeicons--image-composition]">
                     Pictures
                 </SectionNavLink>
                 <SectionNavLink sttf-id="projects" icon="icon-[hugeicons--test-tube-01]">
