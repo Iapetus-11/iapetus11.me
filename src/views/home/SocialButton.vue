@@ -1,6 +1,7 @@
 <script setup lang="ts">
     defineProps<{
         icon: string;
+        name: string;
         link?: string;
     }>();
 
@@ -20,6 +21,7 @@
         <span :class="icon"></span>
     </a>
     <button v-else type="button" :class="CLASSES">
+        <span class="sr-only">{{ name }}</span>
         <span :class="icon"></span>
     </button>
 </template>

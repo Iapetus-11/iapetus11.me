@@ -4,11 +4,20 @@
 </script>
 
 <template>
-    <SocialButton icon="icon-[fa6-brands--github]" link="https://github.com/Iapetus-11/" />
+    <SocialButton
+        icon="icon-[fa6-brands--github]"
+        link="https://github.com/Iapetus-11/"
+        name="GitHub"
+    />
     <DiscordSocialButton />
     <SocialButton
         icon="icon-[fa6-brands--linkedin]"
         link="https://www.linkedin.com/in/milo-weinberg/"
+        name="Linkedin"
     />
-    <SocialButton icon="icon-[hugeicons--dollar-square]" link="https://venmo.com/u/Iapetus11" />
+    <SocialButton
+        icon="icon-[hugeicons--dollar-square]"
+        link="https://venmo.com/u/Iapetus11"
+        name="Venmo"
+    />
 </template>

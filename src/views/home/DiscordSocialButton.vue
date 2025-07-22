@@ -17,7 +17,7 @@
 
 <template>
     <div class="relative">
-        <SocialButton icon="icon-[fa6-brands--discord]" @click="copyUsername" />
+        <SocialButton icon="icon-[fa6-brands--discord]" @click="copyUsername" name="Discord" />
 
         <Transition name="scale" mode="out-in">
             <div
