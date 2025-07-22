@@ -45,15 +45,24 @@ export function useScrollCardEffect(
     });
 
     function updateElements() {
-        elements.value.forEach((el) => {
-            const css = calculateScrollCardEffect(
-                el,
-                dividerLine.value,
-                opacityModifier,
-                scaleModifier
-            );
+        // Calculations are done in a separate for loop to help avoid the effect looking like it's lagging behind the scroll
+
+        const elementsEffectCss = elements.value.map(
+            (el) =>
+                [
+                    el,
+                    calculateScrollCardEffect(
+                        el,
+                        dividerLine.value,
+                        opacityModifier,
+                        scaleModifier
+                    ),
+                ] as const
+        );
+
+        for (const [el, css] of elementsEffectCss) {
             Object.assign(el.style, css);
-        });
+        }
     }
 
     useWindowEvent('scroll', updateElements, { passive: true });
