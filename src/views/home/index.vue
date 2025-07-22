@@ -7,7 +7,6 @@
     import { useActiveSTTFSection } from '@/utils/sttfs';
     import { useRoute, useRouter } from 'vue-router';
     import { onMounted, useTemplateRef, watch } from 'vue';
-    import { useWindowEvent } from '@/utils/events';
     import SocialButtons from './SocialButtons.vue';
     import PicturesSection from './PicturesSection.vue';
 
@@ -25,24 +24,9 @@
         router.replace({ hash: `#${activeSTTFSectionId}` });
     });
 
-    // I can't figure out the CSS (without hard-coding some number for padding or whatever) to get the sidebar to fill
-    // the height of the screen, so here we go :/
-    const stickyContainerEl = useTemplateRef('sticky-container');
-    function resizeStickyContainerToFillHeight() {
-        const top = stickyContainerEl.value?.getBoundingClientRect().top;
-        if (!top) return;
-
-        const height = window.innerHeight - top;
-
-        stickyContainerEl.value.style.height = `${height}px`;
-    }
-    useWindowEvent('resize', resizeStickyContainerToFillHeight, { passive: true });
-
     const sectionsContainer = useTemplateRef('sections-container');
 
     onMounted(async () => {
-        resizeStickyContainerToFillHeight();
-
         await new Promise((resolve) => setTimeout(resolve, 1));
 
         // For some reason sttfs don't work on page load (on chrome at least), this jumps to the
@@ -58,10 +42,10 @@
 
 <template>
     <DefaultLayout class="flex flex-col items-center lg:flex-row lg:gap-x-32 xl:gap-x-48">
-        <!-- top-* here must match the y padding in <DefaultLayout> -->
+        <!-- top-* and h-[calc(...)] here must match the y padding in <DefaultLayout> -->
         <div
             ref="sticky-container"
-            class="flex flex-col gap-y-5 self-start pb-12 max-lg:!h-fit md:top-10 lg:sticky lg:-mb-100 lg:w-[40%] xl:top-16 2xl:top-22"
+            class="flex flex-col gap-y-5 self-start pb-12 max-lg:!h-fit md:top-10 md:h-[calc(100vh-2.5rem)] lg:sticky lg:-mb-100 lg:w-[40%] xl:top-16 xl:h-[calc(100vh-4rem)] 2xl:top-22 2xl:h-[calc(100vh-5.5rem)]"
         >
             <div class="xs:max-lg:w-full flex items-center max-lg:mx-auto lg:-ml-1">
                 <img
