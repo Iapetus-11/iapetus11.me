@@ -16,9 +16,10 @@
     <div ref="projects-container" class="flex flex-col gap-6">
         <Project
             ref="project-components"
-            v-for="project in PROJECTS"
+            v-for="(project, idx) in PROJECTS"
             v-bind="project"
             :key="project.name"
+            :img-loading="idx <= 4 ? 'eager' : 'lazy'"
         />
     </div>
 </template>

@@ -77,4 +77,6 @@ export function useScrollCardEffect(
     );
 
     onMounted(updateElements);
+
+    return { updateElements };
 }

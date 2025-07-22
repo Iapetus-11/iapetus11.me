@@ -3,7 +3,11 @@
     import Link from '@/components/Link.vue';
     import SkillList from './SkillList.vue';
 
-    defineProps<ProjectDefinition>();
+    defineProps<
+        ProjectDefinition & {
+            imgLoading: 'eager' | 'lazy';
+        }
+    >();
 </script>
 
 <template>
@@ -35,7 +39,7 @@
         </div>
 
         <div class="ml-auto w-1/3 max-w-[8rem] overflow-hidden rounded-3xl max-sm:hidden">
-            <img :src="image" :alt="name" />
+            <img :src="image" :alt="name" :loading="imgLoading" />
         </div>
     </Link>
 </template>
