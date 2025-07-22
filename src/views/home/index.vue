@@ -96,8 +96,7 @@
                 I'm currently loving Rust, and working with Python + Vue.js for
                 <a href="https://medshift.com/" target="_blank" rel="noreferrer">MedShift</a>. If
                 I'm not programming, bouldering, or busy being a couch potato, you'll find me
-                zooming on mountain backroads in my
-                <RouterLink :to="{ name: 'miata' }">Miata</RouterLink>!
+                zooming on mountain backroads in my Miata!
             </p>
 
             <div class="my-auto flex flex-col gap-3 max-lg:hidden lg:items-start">
