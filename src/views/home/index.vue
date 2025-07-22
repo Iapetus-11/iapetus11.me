@@ -61,7 +61,7 @@
         <!-- top-* here must match the y padding in <DefaultLayout> -->
         <div
             ref="sticky-container"
-            class="fade-in flex flex-col gap-y-5 self-start pb-12 max-lg:!h-fit md:top-10 lg:sticky lg:-mb-100 lg:w-[40%] xl:top-16 2xl:top-22"
+            class="flex flex-col gap-y-5 self-start pb-12 max-lg:!h-fit md:top-10 lg:sticky lg:-mb-100 lg:w-[40%] xl:top-16 2xl:top-22"
         >
             <div class="xs:max-lg:w-full flex items-center max-lg:mx-auto lg:-ml-1">
                 <img
