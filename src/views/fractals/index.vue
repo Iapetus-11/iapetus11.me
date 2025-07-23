@@ -14,8 +14,6 @@
     import DefaultLayout from '@/components/layout/DefaultLayout.vue';
     import Select from '@/components/Select.vue';
     import { useSeo } from '@/utils/head';
-    import { blendHexColors } from '@/utils/colors';
-    import { hash33 } from '@/utils/hash33';
 
     const API_BASE_URL: string = import.meta.env.VITE_API_BASE_URL;
 
@@ -122,20 +120,6 @@
 
     useSeo({
         title: 'Milo / Iapetus11 | Fractals',
-        embedTitle: () => {
-            const fractalHash = hash33(
-                JSON.stringify(
-                    Object.keys(DEFAULT_FRACTAL).map(
-                        (k) => fractalConfig.value[k as keyof Fractal]
-                    ) ?? null
-                ).replaceAll(/\[|\]|\,|\"|\{|\}|\:/g, '')
-            );
-            return `Fractal ${fractalHash}`;
-        },
-        url: route.fullPath,
-        imageUrl: () => fractalRequestUrl.value.toString(),
-        imageType: 'large',
-        color: () => blendHexColors(fractalConfig.value.colorA, fractalConfig.value.colorB, 0.5),
     });
 </script>
 
