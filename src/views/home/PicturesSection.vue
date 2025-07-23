@@ -31,6 +31,8 @@
                 loading="lazy"
                 class="translate-y-15 scale-80"
                 @load="updateScrollCardEffect"
+                width="768"
+                height="614"
             />
         </div>
         <div class="z-10">
@@ -40,6 +42,8 @@
                 loading="lazy"
                 class="-translate-x-12 -translate-y-6.5"
                 @load="updateScrollCardEffect"
+                width="768"
+                height="577"
             />
         </div>
         <div class="z-10">
@@ -49,6 +53,8 @@
                 loading="lazy"
                 class="translate-y-4 scale-110"
                 @load="updateScrollCardEffect"
+                width="1024"
+                height="605"
             />
         </div>
         <div class="z-15">
@@ -58,6 +64,8 @@
                 loading="lazy"
                 class="-translate-y-16"
                 @load="updateScrollCardEffect"
+                width="1024"
+                height="453"
             />
         </div>
         <div class="z-5">
@@ -67,6 +75,8 @@
                 loading="lazy"
                 class="-translate-x-2 translate-y-6"
                 @load="updateScrollCardEffect"
+                width="1024"
+                height="768"
             />
         </div>
         <div class="z-5">
@@ -76,6 +86,8 @@
                 loading="lazy"
                 class="-translate-y-18 scale-110"
                 @load="updateScrollCardEffect"
+                width="1024"
+                height="770"
             />
         </div>
         <div class="z-10">
@@ -85,6 +97,8 @@
                 loading="lazy"
                 class="translate-x-48 -translate-y-17"
                 @load="updateScrollCardEffect"
+                width="1024"
+                height="958"
             />
         </div>
     </div>
