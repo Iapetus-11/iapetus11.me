@@ -43,7 +43,7 @@
     useSeo({
         title: 'Milo / Iapetus11',
         description:
-            `Hey! I'm a ${aliveForYears} year-old full-stack developer who's been programming for` +
+            `Hey! I'm a ${aliveForYears} year-old full-stack developer who's been programming for ` +
             `${programmingForYears} years and loves to learn new things!`,
         url: 'https://iapetus11.me/',
     });
@@ -81,11 +81,11 @@
                 </div>
             </div>
 
-            <p class="max-lg:order-last md:text-lg lg:mt-5 lg:text-md 2xl:text-lg">
+            <p class="lg:text-md max-lg:order-last md:text-lg lg:mt-5 2xl:text-lg">
                 I'm a {{ aliveForYears }} year-old full-stack developer who's been programming for
                 {{ programmingForYears }} years and loves to learn new things!
             </p>
-            <p class="[&>a]:text-link max-lg:order-last md:text-lg lg:text-md 2xl:text-lg">
+            <p class="[&>a]:text-link lg:text-md max-lg:order-last md:text-lg 2xl:text-lg">
                 I'm currently loving Rust, and working with Python + Vue.js for
                 <a href="https://medshift.com/" target="_blank" rel="noreferrer">MedShift</a>. If
                 I'm not programming, bouldering, or busy being a couch potato, you'll find me
