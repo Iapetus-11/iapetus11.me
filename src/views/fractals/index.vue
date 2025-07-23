@@ -9,10 +9,13 @@
         VARIATIONS,
     } from './fractals';
     import { parseQueryParams } from '@/utils/queryParamsParser';
-    import { ref, watch } from 'vue';
+    import { computed, ref, watch } from 'vue';
     import { useAsyncState, type AsyncState } from '@/utils/asyncState';
     import DefaultLayout from '@/components/layout/DefaultLayout.vue';
     import Select from '@/components/Select.vue';
+    import { useSeo } from '@/utils/head';
+    import { blendHexColors } from '@/utils/colors';
+    import { hash33 } from '@/utils/hash33';
 
     const API_BASE_URL: string = import.meta.env.VITE_API_BASE_URL;
 
@@ -46,7 +49,7 @@
         { deep: true, immediate: true }
     );
 
-    function makeFractalRequest(signal: AbortSignal): Promise<string> {
+    const fractalRequestUrl = computed<URL>(() => {
         const url = new URL(`${API_BASE_URL}/fractals`);
 
         for (const [pKey, pValue] of Object.entries(fractalConfig.value).filter(([k, v]) => {
@@ -63,7 +66,11 @@
             url.searchParams.set(pKey, pValue!.toString());
         }
 
-        return fetch(url, { method: 'GET', signal })
+        return url;
+    });
+
+    function makeFractalRequest(signal: AbortSignal): Promise<string> {
+        return fetch(fractalRequestUrl.value, { method: 'GET', signal })
             .then((res) => res.blob())
             .then((blob) => URL.createObjectURL(blob));
     }
@@ -112,6 +119,24 @@
         router.push({ query: Object.fromEntries(new URLSearchParams(queryParams).entries()) });
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
+
+    useSeo({
+        title: 'Milo / Iapetus11 | Fractals',
+        embedTitle: () => {
+            const fractalHash = hash33(
+                JSON.stringify(
+                    Object.keys(DEFAULT_FRACTAL).map(
+                        (k) => fractalConfig.value[k as keyof Fractal]
+                    ) ?? null
+                ).replaceAll(/\[|\]|\,|\"|\{|\}|\:/g, '')
+            );
+            return `Fractal ${fractalHash}`;
+        },
+        url: route.fullPath,
+        imageUrl: () => fractalRequestUrl.value.toString(),
+        imageType: 'large',
+        color: () => blendHexColors(fractalConfig.value.colorA, fractalConfig.value.colorB, 0.5),
+    });
 </script>
 
 <style scoped>

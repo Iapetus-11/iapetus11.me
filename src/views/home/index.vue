@@ -9,6 +9,7 @@
     import { onMounted, useTemplateRef, watch } from 'vue';
     import SocialButtons from './SocialButtons.vue';
     import PicturesSection from './PicturesSection.vue';
+    import { useSeo } from '@/utils/head';
 
     const STTF_SECTIONS = ['pictures', 'projects', 'resume'];
 
@@ -37,6 +38,14 @@
             sectionsContainer.value!.classList.add('fade-in');
             document.getElementById(sttfId)!.scrollIntoView({ behavior: 'instant' });
         }
+    });
+
+    useSeo({
+        title: 'Milo / Iapetus11',
+        description:
+            `Hey! I'm a ${aliveForYears} year-old full-stack developer who's been programming for` +
+            `${programmingForYears} years and loves to learn new things!`,
+        url: 'https://iapetus11.me/',
     });
 </script>
 
@@ -72,7 +81,7 @@
                 </div>
             </div>
 
-            <p class="max-lg:order-last md:text-lg lg:text-[1.0625rem] 2xl:text-lg lg:mt-5">
+            <p class="max-lg:order-last md:text-lg lg:mt-5 lg:text-[1.0625rem] 2xl:text-lg">
                 I'm a {{ aliveForYears }} year-old full-stack developer who's been programming for
                 {{ programmingForYears }} years and loves to learn new things!
             </p>
@@ -105,7 +114,7 @@
             <div class="h-10 max-lg:hidden"></div>
 
             <PicturesSection id="pictures" class="scroll-mt-0 max-lg:order-last" />
-            <ProjectsSection id="projects" class="scroll-mt-200 lg:scroll-mt-[28vh]" />
+            <ProjectsSection id="projects" class="scroll-mt-200 lg:scroll-mt-[26vh]" />
             <ResumeSection id="resume" class="scroll-mt-[30vh]" />
 
             <!-- Get last element to appear correctly with useScrollCardEffect -->
