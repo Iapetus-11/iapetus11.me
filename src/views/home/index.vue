@@ -81,11 +81,11 @@
                 </div>
             </div>
 
-            <p class="max-lg:order-last md:text-lg lg:mt-5 lg:text-[1.0625rem] 2xl:text-lg">
+            <p class="max-lg:order-last md:text-lg lg:mt-5 lg:text-md 2xl:text-lg">
                 I'm a {{ aliveForYears }} year-old full-stack developer who's been programming for
                 {{ programmingForYears }} years and loves to learn new things!
             </p>
-            <p class="[&>a]:text-link max-lg:order-last md:text-lg lg:text-[1.0625rem] 2xl:text-lg">
+            <p class="[&>a]:text-link max-lg:order-last md:text-lg lg:text-md 2xl:text-lg">
                 I'm currently loving Rust, and working with Python + Vue.js for
                 <a href="https://medshift.com/" target="_blank" rel="noreferrer">MedShift</a>. If
                 I'm not programming, bouldering, or busy being a couch potato, you'll find me

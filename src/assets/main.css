@@ -12,6 +12,8 @@
 
     --breakpoint-xs: 31.25rem;
     --breakpoint-lg: 68.75rem;
+
+    --text-md: 1.0625rem;
 }
 
 @layer base {

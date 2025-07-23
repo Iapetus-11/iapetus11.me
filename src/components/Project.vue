@@ -31,7 +31,7 @@
                 </div>
             </div>
 
-            <p class="text-white md:text-lg">
+            <p class="text-white">
                 {{ description }}
             </p>
 
