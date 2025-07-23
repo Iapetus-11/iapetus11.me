@@ -31,7 +31,7 @@ export function useActiveSTTFSection(sectionIds: string[]): DeepReadonly<Ref<str
         viewableSections.sort(([, aD], [, bD]) => aD - bD);
 
         activeSection.value = viewableSections[0][0];
-    }, 100);
+    }, 10);
 
     useWindowEvent('scroll', updateActiveSTTF);
     useWindowEvent('resize', updateActiveSTTF);
