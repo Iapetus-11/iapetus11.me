@@ -95,7 +95,7 @@
             </p>
 
             <div class="my-auto flex flex-col gap-3 max-lg:hidden lg:items-start">
-                <SectionNavLink sttf-id="pictures" icon="icon-[hugeicons--image-composition]">
+                <SectionNavLink sttf-id="pictures" icon="icon-[hugeicons--image-02]">
                     Pictures
                 </SectionNavLink>
                 <SectionNavLink sttf-id="projects" icon="icon-[hugeicons--test-tube-01]">
