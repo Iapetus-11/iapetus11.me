@@ -83,7 +83,7 @@
                 </div>
             </div>
 
-            <p class="lg:text-md max-lg:order-last md:text-lg lg:mt-5 2xl:text-lg">
+            <p class="lg:text-md max-lg:order-last md:text-lg lg:mt-2 2xl:text-lg">
                 I'm a {{ aliveForYears }} year-old full-stack developer who's been programming for
                 {{ programmingForYears }} years and loves to learn new things!
             </p>
