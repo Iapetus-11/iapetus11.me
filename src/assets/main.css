@@ -22,7 +22,7 @@
     }
 
     body {
-        @apply font-nunito overflow-x-hidden bg-gradient-to-bl from-[#15224F] via-[#040917] to-[#14204A] bg-fixed leading-5.5 text-white select-none;
+        @apply font-nunito overflow-x-hidden leading-5.5 text-white select-none;
     }
 
     button,
