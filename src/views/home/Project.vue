@@ -1,7 +1,7 @@
 <script setup lang="ts">
     import type { ProjectDefinition } from '@/data/projects';
     import Link from '@/components/Link.vue';
-    import SkillList from './SkillList.vue';
+    import BadgeList from './BadgeList.vue';
 
     defineProps<
         ProjectDefinition & {
@@ -35,7 +35,7 @@
                 {{ description }}
             </p>
 
-            <SkillList :skills class="mt-3" />
+            <BadgeList :badges="points" class="mt-3" />
         </div>
 
         <div class="ml-auto w-1/3 max-w-[8rem] overflow-hidden rounded-3xl max-sm:hidden">

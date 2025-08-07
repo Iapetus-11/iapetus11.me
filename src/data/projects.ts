@@ -4,7 +4,6 @@ import clipboardCleanseWebp from '@/assets/images/projects/clipboard-cleanse.web
 import emojiLeaderboardExampleWebp from '@/assets/images/projects/emoji-leaderboard-example.webp';
 import fractalColoredIterative1Webp from '@/assets/images/projects/fractal_colored_iterative_1.webp';
 import minecraftGlobalPaddedWebp from '@/assets/images/projects/minecraft-global-padded.webp';
-import minecraftSkinsApiWebp from '@/assets/images/projects/minecraft-skins-api.webp';
 import petusWebp from '@/assets/images/petus.webp';
 import pillagerBotWebp from '@/assets/images/projects/pillager-bot.webp';
 import quake3BotWebp from '@/assets/images/projects/quake-3-bot.webp';
@@ -16,7 +15,7 @@ export type ProjectDefinition = {
     image: string;
     name: string;
     description: string;
-    skills: string[];
+    points: string[];
 };
 
 export const PROJECTS: ProjectDefinition[] = [
@@ -26,7 +25,7 @@ export const PROJECTS: ProjectDefinition[] = [
             'A Minecraft-themed utility, moderation, and economy Discord bot used by tens of thousands.',
         image: villagerBotWebp,
         link: 'https://villagerbot.com',
-        skills: ['Python', 'Cython', 'Websockets', 'Discord.py', 'Docker'],
+        points: ['100,000+ Users', 'Python', 'Cython', 'Websockets', 'Discord.py', 'Docker'],
     },
     {
         name: 'Fractals',
@@ -34,7 +33,7 @@ export const PROJECTS: ProjectDefinition[] = [
             'Flame fractal generation from adjustable parameters, originally created during CUHackit 2022 but since remade.',
         image: fractalColoredIterative1Webp,
         link: '/fractals',
-        skills: ['C#', 'ASP.NET', 'Vue.js', 'Tailwind CSS', 'TypeScript'],
+        points: ['C#', 'ASP.NET', 'Vue.js', 'Tailwind CSS', 'TypeScript'],
     },
     {
         name: 'minecraft\u200B.global',
@@ -42,7 +41,8 @@ export const PROJECTS: ProjectDefinition[] = [
             'A Minecraft server list originally created with the help of a friend. Home to many Minecraft Java Edition & Bedrock Edition servers.',
         image: minecraftGlobalPaddedWebp,
         link: 'https://minecraft.global',
-        skills: [
+        points: [
+            '10,000+ Monthly Users',
             'C#',
             'ASP.NET',
             'Entity Frameork',
@@ -59,7 +59,7 @@ export const PROJECTS: ProjectDefinition[] = [
             'A Python library and command line tool which can convert images, gifs, videos, and even live video to ASCII art.',
         image: asciiMeWebp,
         link: 'https://github.com/Iapetus-11/To-ASCII',
-        skills: ['Python', 'Nim', 'OpenCV', 'Numpy'],
+        points: ['Python', 'Nim', 'OpenCV', 'Numpy'],
     },
     {
         name: 'Clipboard Cleanse',
@@ -67,7 +67,7 @@ export const PROJECTS: ProjectDefinition[] = [
             'A cross-platform (Mac & Windows) toolbar/system tray app which automatically removes tracking information and other crap from copied URLs.',
         image: clipboardCleanseWebp,
         link: 'https://github.com/Iapetus-11/clipboard-cleanse',
-        skills: ['Rust', 'Objective-C', 'AppKit', 'Win32'],
+        points: ['Rust', 'Objective-C', 'AppKit', 'Win32'],
     },
     {
         name: 'Taco Tapper',
@@ -75,7 +75,7 @@ export const PROJECTS: ProjectDefinition[] = [
             'An unfinished knockoff cookie clicker but with tacos instead. Written in Vue, all art done by my girlfriend.',
         image: tacoTapperLogoWebp,
         link: 'https://tacos.iapetus11.me/',
-        skills: ['Vue', 'TypeScript', 'Cloudflare Pages'],
+        points: ['Vue', 'TypeScript', 'Cloudflare Pages'],
     },
     {
         name: 'Emoji Leaderboard',
@@ -83,14 +83,14 @@ export const PROJECTS: ProjectDefinition[] = [
             'A Slack bot which tracks emoji use and displays a leaderboard of the most used emojis. Also has functionality to sync emojis from Slack to Discord.',
         image: emojiLeaderboardExampleWebp,
         link: 'https://github.com/Iapetus-11/slack-emoji-leaderboard',
-        skills: ['Python', 'JavaScript', 'SvelteKit', 'FastAPI'],
+        points: ['Python', 'JavaScript', 'SvelteKit', 'FastAPI'],
     },
     {
         name: 'Quake III Bot',
         description: 'A Discord bot to faciliate the management of Quake III servers via RCON.',
         image: quake3BotWebp,
         link: 'https://github.com/Iapetus-11/quake3-bot',
-        skills: ['Python', 'Discord.py', 'Quake III RCON Protocol'],
+        points: ['Python', 'Discord.py', 'Quake III RCON Protocol'],
     },
     {
         name: 'api.iapetus11.me',
@@ -98,7 +98,7 @@ export const PROJECTS: ProjectDefinition[] = [
             'A multi-purpose API used by my projects (Villager Bot, iapetus11.me, Fractals) and several other people.',
         image: petusWebp,
         link: 'https://github.com/Iapetus-11/api.iapetus11.me',
-        skills: ['C#', 'ASP.NET', 'Docker'],
+        points: ['C#', 'ASP.NET', 'Docker'],
     },
     {
         name: 'ButterflyMX 444',
@@ -106,7 +106,7 @@ export const PROJECTS: ProjectDefinition[] = [
             'A web app which allows users to open their apartment using ButterflyMX using a reverse engineered API wrapper.',
         image: butterflymx444Webp,
         link: 'https://github.com/Iapetus-11/ButterflyMX-444',
-        skills: ['Python', 'FastAPI', 'Jinja', 'Docker'],
+        points: ['Python', 'FastAPI', 'Jinja', 'Docker'],
     },
     {
         name: 'Pillager Bot',
@@ -114,14 +114,6 @@ export const PROJECTS: ProjectDefinition[] = [
             'A small Discord bot for moderating my personal Discord servers. Includes anti-scammer functionality.',
         image: pillagerBotWebp,
         link: 'https://github.com/Iapetus-11/Pillager-Bot/',
-        skills: ['Rust', 'Diesel'],
-    },
-    {
-        name: 'Skin Renderer',
-        description:
-            "A microservice for rendering player's Minecraft skins (currently just renders heads).",
-        image: minecraftSkinsApiWebp,
-        link: 'https://github.com/Iapetus-11/minecraft-skins',
-        skills: ['Elixir', 'Phoenix'],
+        points: ['Rust', 'Diesel'],
     },
 ];

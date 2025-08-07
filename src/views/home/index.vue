@@ -16,7 +16,6 @@
     const router = useRouter();
     const route = useRoute();
 
-    // TODO: Does this get in build data?
     const aliveForYears = calculateYearsSince(new Date('9/1/2003'));
     const programmingForYears = calculateYearsSince(new Date('8/1/2016'));
 

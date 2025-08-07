@@ -1,6 +1,6 @@
 <script setup lang="ts">
     import type { ResumeItemDefinition } from '@/data/resume';
-    import SkillList from './SkillList.vue';
+    import BadgeList from './BadgeList.vue';
 
     defineProps<ResumeItemDefinition>();
 </script>
@@ -25,6 +25,6 @@
             </li>
         </ul>
 
-        <SkillList :skills class="mt-4" />
+        <BadgeList :badges="skills" class="mt-4" />
     </div>
 </template>

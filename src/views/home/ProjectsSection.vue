@@ -1,6 +1,6 @@
 <script setup lang="ts">
     import { PROJECTS } from '@/data/projects';
-    import Project from '../../components/Project.vue';
+    import Project from './Project.vue';
     import { computed, useTemplateRef } from 'vue';
     import { useScrollCardEffect } from '@/utils/effects';
 
