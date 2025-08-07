@@ -6,13 +6,18 @@ export function calculateScrollCardEffect(
     el: HTMLElement,
     dividerLine: number,
     opacityModifier: number,
-    scaleModifier: number
+    scaleModifier: number,
+    startEffectReductionFactor: number,
 ): Partial<CSSStyleDeclaration> {
     const rect = el.getBoundingClientRect();
     const elCenter = (rect.top + rect.bottom) / 2;
 
     let vectorFromCenter = Math.max(-1, Math.min(1, (elCenter - dividerLine) / dividerLine));
     vectorFromCenter = (Math.pow(vectorFromCenter, 2) / 1.125) * Math.sign(vectorFromCenter);
+
+    if (vectorFromCenter < 0) {
+        vectorFromCenter /= startEffectReductionFactor;
+    }
 
     const scalarFromCenter = Math.abs(vectorFromCenter);
 
@@ -45,8 +50,11 @@ export function useScrollCardEffect(
     });
 
     function updateElements() {
-        // Calculations are done in a separate for loop to help avoid the effect looking like it's lagging behind the scroll
+        // Used to avoid transforming/fading elements at the initial start/top of the page, to make sure they're
+        // always legible since the user can't scroll up
+        const startEffectReductionFactor = Math.max(((window.innerHeight / 5.0) / window.scrollY), 1);
 
+        // Calculations are done in a separate for loop to help avoid the effect looking like it's lagging behind the scroll
         const elementsEffectCss = elements.value.map(
             (el) =>
                 [
@@ -55,7 +63,8 @@ export function useScrollCardEffect(
                         el,
                         dividerLine.value,
                         opacityModifier,
-                        scaleModifier
+                        scaleModifier,
+                        startEffectReductionFactor,
                     ),
                 ] as const
         );

@@ -1,6 +1,6 @@
 <script setup lang="ts">
     import { computed, useTemplateRef } from 'vue';
-    import { useScrollCardEffect } from '@/utils/effects';
+    import { useScrollCardEffect } from '@/utils/scrollCardEffect';
 
     const container = useTemplateRef('pictures-container');
     const imgElements = computed(() => [...((container.value?.children ?? []) as HTMLElement[])]);

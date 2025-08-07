@@ -2,7 +2,7 @@
     import { PROJECTS } from '@/data/projects';
     import Project from '../../components/Project.vue';
     import { computed, useTemplateRef } from 'vue';
-    import { useScrollCardEffect } from '@/utils/effects';
+    import { useScrollCardEffect } from '@/utils/scrollCardEffect';
 
     const container = useTemplateRef('projects-container');
     const projectElements = computed(() => [
@@ -20,6 +20,8 @@
             v-bind="project"
             :key="project.name"
             :img-loading="idx <= 4 ? 'eager' : 'lazy'"
+            :fade-in-idx="idx"
+            :fade-in-mode="idx <= 3 ? 'immediate' : 'waitForJs'"
         />
     </div>
 </template>

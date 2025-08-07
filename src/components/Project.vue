@@ -2,19 +2,33 @@
     import type { ProjectDefinition } from '@/data/projects';
     import Link from '@/components/Link.vue';
     import SkillList from './SkillList.vue';
+import { onMounted, ref } from 'vue';
 
-    defineProps<
+    const props = defineProps<
         ProjectDefinition & {
             imgLoading: 'eager' | 'lazy';
+            fadeInIdx: number;
+            fadeInMode: 'waitForJs' | 'immediate';
         }
     >();
+
+    const mounted = ref(false);
+    const transitionDelay = ref(50 * props.fadeInIdx);
+    const transitionDuration = ref(200);
+    onMounted(() => {
+        mounted.value = true;
+        transitionDelay.value = 0;
+        setTimeout(() => transitionDuration.value = 0, 200);
+    });
 </script>
 
 <template>
     <Link
         :to="link"
         :target="link.startsWith('/') ? '_self' : '_blank'"
-        class="group outlined-actionable flex shrink items-center space-x-3 rounded-xl p-4 lg:p-5"
+        class="group outlined-actionable flex shrink items-center space-x-3 rounded-xl p-4 lg:p-5 transition-opacity opacity-[0.001]"
+        :class="{ 'opacity-100': fadeInMode === 'immediate' || mounted }"
+        :style="{ transitionDelay: `${transitionDelay}ms`, transitionDuration: `${transitionDuration}ms` }"
     >
         <div class="mr-2 flex h-full w-full flex-col md:mr-5 xl:mr-10">
             <div

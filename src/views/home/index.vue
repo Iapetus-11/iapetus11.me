@@ -5,8 +5,8 @@
     import SectionNavLink from './SectionNavLink.vue';
     import ResumeSection from './ResumeSection.vue';
     import { useActiveSTTFSection } from '@/utils/sttfs';
-    import { useRoute, useRouter } from 'vue-router';
-    import { onMounted, useTemplateRef, watch } from 'vue';
+    import { useRouter } from 'vue-router';
+    import { watch } from 'vue';
     import SocialButtons from './SocialButtons.vue';
     import PicturesSection from './PicturesSection.vue';
     import { useSeo } from '@/utils/head';
@@ -14,30 +14,13 @@
     const STTF_SECTIONS = ['pictures', 'projects', 'resume'];
 
     const router = useRouter();
-    const route = useRoute();
 
-    // TODO: Does this get in build data?
     const aliveForYears = calculateYearsSince(new Date('9/1/2003'));
     const programmingForYears = calculateYearsSince(new Date('8/1/2016'));
 
     const activeSTTFSection = useActiveSTTFSection(STTF_SECTIONS);
     watch(activeSTTFSection, (activeSTTFSectionId) => {
         router.replace({ hash: `#${activeSTTFSectionId}` });
-    });
-
-    const sectionsContainer = useTemplateRef('sections-container');
-
-    onMounted(async () => {
-        await new Promise((resolve) => setTimeout(resolve, 1));
-
-        // For some reason sttfs don't work on page load (on chrome at least), this jumps to the
-        // right section if there's a hash in the URL
-        // Also no I cannot use vue-router's scrollBehavior, because that does not respect scroll margin
-        const sttfId = route.hash.slice(1);
-        if (STTF_SECTIONS.includes(sttfId)) {
-            sectionsContainer.value!.classList.add('fade-in');
-            document.getElementById(sttfId)!.scrollIntoView({ behavior: 'instant' });
-        }
     });
 
     useSeo({
@@ -95,14 +78,14 @@
             </p>
 
             <div class="my-auto flex flex-col gap-3 max-lg:hidden lg:items-start">
-                <SectionNavLink sttf-id="pictures" icon="icon-[hugeicons--image-02]">
-                    Pictures
-                </SectionNavLink>
                 <SectionNavLink sttf-id="projects" icon="icon-[hugeicons--test-tube-01]">
                     Projects
                 </SectionNavLink>
                 <SectionNavLink sttf-id="resume" icon="icon-[hugeicons--ai-content-generator-01]">
                     Experience
+                </SectionNavLink>
+                <SectionNavLink sttf-id="pictures" icon="icon-[hugeicons--image-02]">
+                    Pictures
                 </SectionNavLink>
             </div>
 
@@ -111,13 +94,10 @@
             </div>
         </div>
 
-        <div ref="sections-container" class="flex flex-col gap-16 opacity-0 md:gap-20">
-            <!-- Allow first element to be properly viewable with useScrollCardEffect -->
-            <div class="h-10 max-lg:hidden"></div>
-
-            <PicturesSection id="pictures" class="-scroll-mt-48 max-lg:order-last" />
-            <ProjectsSection id="projects" class="scroll-mt-200 lg:scroll-mt-[26vh]" />
+        <div class="flex flex-col gap-16 md:gap-20 lg:mt-5">
+            <ProjectsSection id="projects" class="scroll-mt-200" />
             <ResumeSection id="resume" class="scroll-mt-[30vh]" />
+            <PicturesSection id="pictures" class="scroll-mt-[30vh]" />
 
             <!-- Get last element to appear correctly with useScrollCardEffect -->
             <div class="order-last h-32 lg:h-6"></div>
