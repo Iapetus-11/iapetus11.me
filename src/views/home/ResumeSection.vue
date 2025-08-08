@@ -1,7 +1,7 @@
 <script setup lang="ts">
     import ResumeItem from './ResumeItem.vue';
     import { RESUME_ITEMS } from '@/data/resume';
-    import { useScrollCardEffect } from '@/utils/effects';
+    import { useScrollCardEffect } from '@/utils/scrollCardEffect';
     import { computed, useTemplateRef } from 'vue';
 
     const container = useTemplateRef('resume-container');

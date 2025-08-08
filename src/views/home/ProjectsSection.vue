@@ -2,7 +2,7 @@
     import { PROJECTS } from '@/data/projects';
     import Project from './Project.vue';
     import { computed, useTemplateRef } from 'vue';
-    import { useScrollCardEffect } from '@/utils/effects';
+    import { useScrollCardEffect } from '@/utils/scrollCardEffect';
 
     const container = useTemplateRef('projects-container');
     const projectElements = computed(() => [
