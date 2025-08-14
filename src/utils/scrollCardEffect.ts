@@ -12,7 +12,7 @@ export function calculateScrollCardEffect(
     const elCenter = (rect.top + rect.bottom) / 2;
 
     let vectorFromCenter = Math.max(-1, Math.min(1, (elCenter - dividerLine) / dividerLine));
-    vectorFromCenter = (Math.pow(vectorFromCenter, 2) / 1.125) * Math.sign(vectorFromCenter);
+    vectorFromCenter = Math.abs(Math.pow(Math.pow(vectorFromCenter, 2), 1.25)) * Math.sign(vectorFromCenter);
 
     const scalarFromCenter = Math.abs(vectorFromCenter);
 
@@ -63,9 +63,12 @@ export function useScrollCardEffect(
         for (const [el, css] of elementsEffectCss) {
             Object.assign(el.style, css);
         }
+
+        requestAnimationFrame(updateElements);
     }
 
-    useWindowEvent('scroll', updateElements, { passive: true });
+    requestAnimationFrame(updateElements);
+
     useWindowEvent(
         'resize',
         () => {
