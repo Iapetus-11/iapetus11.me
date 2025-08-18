@@ -10,7 +10,7 @@ export const RESUME_ITEMS: ResumeItemDefinition[] = [
     {
         dateRange: [new Date(2025, 1, 1), null],
         company: 'MedShift',
-        title: 'Senior I Software Engineer',
+        title: 'Senior Software Engineer I',
         bullets: [
             'Planned and led projects across two teams, ensuring timely success to meet customer expectations',
             'Met with B2B customers to determine project requirements and communicate updates',
