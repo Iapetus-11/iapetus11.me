@@ -1,9 +1,3 @@
-<script setup lang="ts">
-    import { ref } from 'vue';
-
-    const imageReady = ref(false);
-</script>
-
 <!--
     Safari (and some other browsers like Ladybird) do not support fixed gradient backgrounds on the <body> element
     well, the recommended fix is to just position a div as the background. This solution avoids flickering and other
@@ -15,9 +9,8 @@
     >
         <img
             src="@/assets/images/background.webp"
-            class="h-screen w-screen object-cover opacity-0 transition-all duration-750"
-            :class="{ 'opacity-5': imageReady }"
-            @load="imageReady = true"
+            class="h-screen w-screen object-cover opacity-[0.0001] transition-opacity duration-750"
+            onload="event.target.classList.add('!opacity-5')"
         />
     </div>
 </template>
