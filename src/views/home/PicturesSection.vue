@@ -22,7 +22,7 @@
 <template>
     <div
         ref="pictures-container"
-        class="flex flex-col-reverse sm:grid max-sm:gap-3 grid-cols-2 xl:max-2xl:-translate-x-10"
+        class="flex grid-cols-2 flex-col-reverse max-sm:gap-3 sm:grid xl:max-2xl:-translate-x-10"
     >
         <div class="z-10">
             <img
