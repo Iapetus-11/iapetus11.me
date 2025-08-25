@@ -1,5 +1,5 @@
 import { useWindowEvent } from './events';
-import { computed, onMounted, ref, type Ref } from 'vue';
+import { computed, onBeforeMount, ref, type Ref } from 'vue';
 import { BREAKPOINTS } from './tailwind';
 
 export function calculateScrollCardEffect(
@@ -68,8 +68,6 @@ export function useScrollCardEffect(
         requestAnimationFrame(updateElements);
     }
 
-    requestAnimationFrame(updateElements);
-
     useWindowEvent(
         'resize',
         () => {
@@ -80,7 +78,10 @@ export function useScrollCardEffect(
         { passive: true }
     );
 
-    onMounted(updateElements);
+    onBeforeMount(() => {
+        updateElements();
+        requestAnimationFrame(updateElements); // TODO: Does this break?
+    });
 
     return { updateElements };
 }
