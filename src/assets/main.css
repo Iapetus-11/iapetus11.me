@@ -3,6 +3,7 @@
 @plugin '@iconify/tailwind4';
 
 @theme {
+    --color-primary-300: #95dec0;
     --color-primary-400: #77d5af;
     --color-primary-500: #6bc29f;
     --color-primary-600: #60a192;
@@ -49,7 +50,7 @@
 }
 
 @utility text-link {
-    @apply hover:decoration-primary-400 hover:text-primary-400 text-teal-100 decoration-teal-100/0 transition-colors hover:underline;
+    @apply hover:decoration-primary-300 hover:text-primary-300 text-teal-100 decoration-teal-100/0 transition-colors hover:underline;
 }
 
 /* Vue transitions ---- */
