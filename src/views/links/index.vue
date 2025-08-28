@@ -5,7 +5,7 @@
     import PageLayout from '@/components/layout/PageLayout.vue';
 
     useSeo({
-        title: 'Milo / Iapetus11 | Links',
+        title: 'Milo | Links',
     });
 </script>
 
