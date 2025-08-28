@@ -14,6 +14,7 @@
     import DefaultLayout from '@/components/layout/DefaultLayout.vue';
     import Select from '@/components/Select.vue';
     import { useSeo } from '@/utils/head';
+    import PageHeader from '@/components/layout/PageHeader.vue';
 
     const API_BASE_URL: string = import.meta.env.VITE_API_BASE_URL;
 
@@ -133,19 +134,7 @@
 
 <template>
     <DefaultLayout class="grid grid-cols-1 justify-between gap-4 text-white lg:grid-cols-2">
-        <div class="flex justify-between gap-x-6 gap-y-4 lg:col-span-2 lg:mb-3">
-            <h1 class="font-mono text-4xl font-bold md:text-5xl">Fractal Generator</h1>
-
-            <RouterLink
-                :to="{ name: 'home' }"
-                class="group outlined-actionable mb-auto flex h-fit w-fit items-center rounded-xl p-2 whitespace-nowrap sm:my-auto md:p-3"
-            >
-                <span
-                    class="icon-[hugeicons--arrow-left-01] mr-0.5 -ml-1.5 text-2xl transition-[margin] group-hover:mr-1"
-                ></span>
-                Go Back
-            </RouterLink>
-        </div>
+        <PageHeader title="Fractal Generator" class="lg:col-span-2 lg:mb-3" />
 
         <!-- Fractal display / loading -->
         <div class="relative flex aspect-square w-full items-center justify-center lg:order-2">
