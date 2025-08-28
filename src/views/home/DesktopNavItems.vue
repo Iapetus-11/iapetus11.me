@@ -57,6 +57,9 @@
                 <NavLink :to="{ name: 'links' }" icon="icon-[hugeicons--link-03]">
                     Link Dump
                 </NavLink>
+                <NavLink :to="{ name: 'miata' }" icon="icon-[hugeicons--car-02]">
+                    Miata
+                </NavLink>
             </div>
         </Transition>
     </div>
