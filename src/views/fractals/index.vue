@@ -137,13 +137,13 @@
         <PageHeader title="Fractal Generator" class="lg:col-span-2 lg:mb-3" />
 
         <!-- Fractal display / loading -->
-        <div class="relative flex aspect-square w-full items-center justify-center lg:order-2">
+        <div class="relative flex aspect-square w-full items-center justify-center lg:order-2 bg-[#040917] rounded-2xl">
             <img
                 v-if="fractal"
                 :src="fractal"
                 alt="Fractal"
                 class="rounded-2xl"
-                :class="{ 'opacity-50': fractalState?.pending }"
+                :class="{ 'opacity-50 grayscale-25': fractalState?.pending }"
             />
 
             <span
