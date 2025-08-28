@@ -2,7 +2,6 @@
     import BaseLayout from '@/components/layout/BaseLayout.vue';
     import { calculateYearsSince } from '@/utils/datetime';
     import ProjectsSection from './ProjectsSection.vue';
-    import SectionNavLink from './SectionNavLink.vue';
     import ResumeSection from './ResumeSection.vue';
     import { useActiveSTTFSection } from '@/utils/sttfs';
     import { useRoute, useRouter } from 'vue-router';
@@ -10,6 +9,7 @@
     import SocialButtons from './SocialButtons.vue';
     import PicturesSection from './PicturesSection.vue';
     import { useSeo } from '@/utils/head';
+    import DesktopNavItems from './DesktopNavItems.vue';
 
     const STTF_SECTIONS = ['pictures', 'projects', 'resume'];
 
@@ -96,20 +96,7 @@
                     zooming on mountain backroads in my Miata!
                 </p>
 
-                <div class="my-auto flex flex-col gap-3 max-lg:hidden lg:items-start">
-                    <SectionNavLink sttf-id="pictures" icon="icon-[hugeicons--image-02]">
-                        Pictures
-                    </SectionNavLink>
-                    <SectionNavLink sttf-id="projects" icon="icon-[hugeicons--test-tube-01]">
-                        Projects
-                    </SectionNavLink>
-                    <SectionNavLink
-                        sttf-id="resume"
-                        icon="icon-[hugeicons--ai-content-generator-01]"
-                    >
-                        Experience
-                    </SectionNavLink>
-                </div>
+                <DesktopNavItems class="my-auto max-lg:!hidden" />
 
                 <div
                     class="xs:max-lg:hidden flex gap-3 max-lg:mx-auto max-lg:mt-1 md:gap-2 lg:mt-auto"
