@@ -27,7 +27,12 @@
                 ></span>
 
                 <div class="-mt-2 -mr-4 ml-auto size-10 overflow-hidden rounded-full sm:hidden">
-                    <img :src="image" :alt="name" />
+                    <img
+                        :src="image"
+                        :alt="name"
+                        :loading="imgLoading"
+                        :fetchpriority="imgLoading === 'eager' ? 'high' : 'auto'"
+                    />
                 </div>
             </div>
 
@@ -39,7 +44,12 @@
         </div>
 
         <div class="ml-auto w-1/3 max-w-[8rem] overflow-hidden rounded-3xl max-sm:hidden">
-            <img :src="image" :alt="name" :loading="imgLoading" />
+            <img
+                :src="image"
+                :alt="name"
+                :loading="imgLoading"
+                :fetchpriority="imgLoading === 'eager' ? 'high' : 'auto'"
+            />
         </div>
     </Link>
 </template>

@@ -144,6 +144,7 @@
                     alt="Fractal"
                     class="rounded-2xl"
                     :class="{ 'opacity-50 grayscale-25': fractalState?.pending }"
+                    fetchpriority="high"
                 />
 
                 <span
@@ -411,6 +412,7 @@
                             alt="fractal example"
                             class="rounded-xl shadow-xl"
                             loading="lazy"
+                            fetchpriority="low"
                         />
                     </button>
                 </div>

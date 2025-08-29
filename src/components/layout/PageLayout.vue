@@ -16,8 +16,9 @@
             <RouterLink :to="{ name: 'home' }" class="group shrink-0">
                 <img
                     src="@/assets/images/petus.webp"
-                    class="xs:size-12 outline-primary-400/30 group-hover:outline-primary-400/70 size-14 rounded-full outline-1 outline-offset-3 transition-[colors,scale] group-hover:scale-105 sm:size-14"
+                    class="xs:size-12 outline-primary-400/30 group-hover:outline-primary-400/70 pixel-image size-14 rounded-full outline-1 outline-offset-3 transition-[colors,scale] group-hover:scale-105 sm:size-14"
                     alt="Iapetus-11's profile picture"
+                    fetchpriority="high"
                 />
                 <span class="sr-only">Go Home</span>
             </RouterLink>

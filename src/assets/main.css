@@ -53,6 +53,12 @@
     @apply hover:decoration-primary-300 hover:text-primary-300 text-teal-100 decoration-teal-100/0 transition-colors hover:underline;
 }
 
+@utility pixel-image {
+    image-rendering: pixelated;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: crisp-edges;
+}
+
 /* Vue transitions ---- */
 .scale-enter-active,
 .scale-leave-active {
