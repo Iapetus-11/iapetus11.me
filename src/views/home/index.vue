@@ -119,7 +119,7 @@
                 </div>
             </div>
 
-            <div ref="sections-container" class="flex flex-col gap-16 opacity-0 md:gap-20">
+            <div ref="sections-container" class="flex flex-col gap-16 opacity-[0.0001] md:gap-20">
                 <!-- Allow first element to be properly viewable with useScrollCardEffect -->
                 <div class="h-10 max-lg:hidden"></div>
 
