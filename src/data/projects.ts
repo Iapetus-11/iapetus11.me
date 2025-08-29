@@ -42,7 +42,7 @@ export const PROJECTS: ProjectDefinition[] = [
         image: minecraftGlobalPaddedWebp,
         link: 'https://minecraft.global',
         points: [
-            '10,000+ Monthly Users',
+            '10,000+ Monthly Visitors',
             'C#',
             'ASP.NET',
             'Entity Frameork',
