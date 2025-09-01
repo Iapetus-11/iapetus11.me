@@ -1,15 +1,16 @@
 <script setup lang="ts">
     import BaseLayout from '@/components/layout/BaseLayout.vue';
     import { calculateYearsSince } from '@/utils/datetime';
-    import ProjectsSection from './ProjectsSection.vue';
-    import ResumeSection from './ResumeSection.vue';
+    import ProjectsSection from './sections/ProjectsSection.vue';
+    import ResumeSection from './sections/ResumeSection.vue';
     import { useActiveSTTFSection } from '@/utils/sttfs';
     import { useRoute, useRouter } from 'vue-router';
     import { onMounted, useTemplateRef, watch } from 'vue';
-    import SocialButtons from './SocialButtons.vue';
-    import PicturesSection from './PicturesSection.vue';
+    import SocialButtons from './social/SocialButtons.vue';
+    import PicturesSection from './sections/PicturesSection.vue';
     import { useSeo } from '@/utils/head';
-    import DesktopNavItems from './DesktopNavItems.vue';
+    import DesktopNavItems from './nav/desktop/NavItems.vue';
+    import MobileNavItems from './nav/mobile/NavItems.vue';
 
     const STTF_SECTIONS = ['pictures', 'projects', 'resume'];
 

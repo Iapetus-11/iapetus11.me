@@ -38,7 +38,7 @@
 </style>
 
 <template>
-    <div class="nav-column overflow-y-clip py-10">
+    <div class="overflow-y-clip py-10">
         <Transition mode="out-in" :name="showingMore ? 'slide-out' : 'slide-in'" :duration="100">
             <div v-if="!showingMore" class="nav-column">
                 <SectionNavLink sttf-id="pictures" icon="icon-[hugeicons--image-02]">
