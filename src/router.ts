@@ -30,6 +30,11 @@ export default {
             component: () => import('@/views/links/index.vue'),
         },
         {
+            path: '/miata',
+            name: 'miata',
+            component: () => import('@/views/miata/index.vue'),
+        },
+        {
             // Match any route, must be last
             path: '/:pathMatch(.*)*',
             name: 'not-found',
