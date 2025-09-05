@@ -10,7 +10,6 @@
     import PicturesSection from './sections/PicturesSection.vue';
     import { useSeo } from '@/utils/head';
     import DesktopNavItems from './nav/desktop/NavItems.vue';
-    import MobileNavItems from './nav/mobile/NavItems.vue';
 
     const STTF_SECTIONS = ['pictures', 'projects', 'resume'];
 
@@ -61,7 +60,7 @@
                     <img
                         src="@/assets/images/petus.webp"
                         alt="Iapetus11's Profile Picture"
-                        class="outline-primary-400/30 xs:size-15 sm:size-16 pixel-image mr-3.5 size-14 !rounded-full outline-1 outline-offset-3 md:mr-5 md:size-18 xl:size-20"
+                        class="outline-primary-400/30 xs:size-15 pixel-image mr-3.5 size-14 !rounded-full outline-1 outline-offset-3 sm:size-16 md:mr-5 md:size-18 xl:size-20"
                         width="128"
                         height="128"
                         fetchpriority="high"
@@ -87,17 +86,19 @@
                     </div>
                 </div>
 
-                <MobileNavItems class="order-last lg:hidden" />
 
-                <p class="lg:text-md max-lg:order-last md:text-lg lg:mt-2 2xl:text-lg">
-                    I'm a {{ aliveForYears }} year-old full-stack developer who's been programming
-                    for {{ programmingForYears }} years and loves to learn new things!
-                </p>
-                <p class="[&>a]:text-link lg:text-md max-lg:order-last md:text-lg 2xl:text-lg">
-                    I'm currently loving Rust, and working with Python + Vue.js for
-                    <a href="https://medshift.com/" target="_blank" rel="noreferrer">MedShift</a>.
-                    If I'm not programming, bouldering, or busy being a couch potato, you'll find me
-                    zooming on mountain backroads in my Miata!
+                <p class="lg:text-md max-lg:order-last md:text-lg 2xl:text-lg">
+                    <span class="block">
+                        I'm a {{ aliveForYears }} year-old full-stack developer who's been
+                        programming for {{ programmingForYears }} years and loves to learn new
+                        things!
+                    </span>
+                    <span class="[&>a]:text-link mt-4 block">
+                        I'm currently loving Rust, and working with Python + Vue.js for
+                        <a href="https://medshift.com/" target="_blank" rel="noreferrer">MedShift</a
+                        >. If I'm not programming, bouldering, or busy being a couch potato, you'll
+                        find me zooming on mountain backroads in my Miata!
+                    </span>
                 </p>
 
                 <DesktopNavItems class="my-auto max-lg:hidden" />
