@@ -1,15 +1,15 @@
 <script setup lang="ts">
     import BaseLayout from '@/components/layout/BaseLayout.vue';
     import { calculateYearsSince } from '@/utils/datetime';
-    import ProjectsSection from './ProjectsSection.vue';
-    import SectionNavLink from './SectionNavLink.vue';
-    import ResumeSection from './ResumeSection.vue';
+    import ProjectsSection from './sections/ProjectsSection.vue';
+    import ResumeSection from './sections/ResumeSection.vue';
     import { useActiveSTTFSection } from '@/utils/sttfs';
     import { useRoute, useRouter } from 'vue-router';
     import { onMounted, useTemplateRef, watch } from 'vue';
-    import SocialButtons from './SocialButtons.vue';
-    import PicturesSection from './PicturesSection.vue';
+    import SocialButtons from './social/SocialButtons.vue';
+    import PicturesSection from './sections/PicturesSection.vue';
     import { useSeo } from '@/utils/head';
+    import DesktopNavItems from './nav/desktop/NavItems.vue';
 
     const STTF_SECTIONS = ['pictures', 'projects', 'resume'];
 
@@ -60,7 +60,7 @@
                     <img
                         src="@/assets/images/petus.webp"
                         alt="Iapetus11's Profile Picture"
-                        class="outline-primary-400/30 xs:size-16 pixel-image mr-3.5 size-14 !rounded-full outline-1 outline-offset-3 md:mr-5 md:size-18 xl:size-20"
+                        class="outline-primary-400/30 xs:size-15 pixel-image mr-3.5 size-14 !rounded-full outline-1 outline-offset-3 sm:size-16 md:mr-5 md:size-18 xl:size-20"
                         width="128"
                         height="128"
                         fetchpriority="high"
@@ -86,31 +86,21 @@
                     </div>
                 </div>
 
-                <p class="lg:text-md max-lg:order-last md:text-lg lg:mt-2 2xl:text-lg">
-                    I'm a {{ aliveForYears }} year-old full-stack developer who's been programming
-                    for {{ programmingForYears }} years and loves to learn new things!
-                </p>
-                <p class="[&>a]:text-link lg:text-md max-lg:order-last md:text-lg 2xl:text-lg">
-                    I'm currently loving Rust, and working with Python + Vue.js for
-                    <a href="https://medshift.com/" target="_blank" rel="noreferrer">MedShift</a>.
-                    If I'm not programming, bouldering, or busy being a couch potato, you'll find me
-                    zooming on mountain backroads in my Miata!
+                <p class="lg:text-md max-lg:order-last md:text-lg 2xl:text-lg">
+                    <span class="block">
+                        I'm a {{ aliveForYears }} year-old full-stack developer who's been
+                        programming for {{ programmingForYears }} years and loves to learn new
+                        things!
+                    </span>
+                    <span class="[&>a]:text-link mt-4 block">
+                        I'm currently loving Rust, and working with Python + Vue.js for
+                        <a href="https://medshift.com/" target="_blank" rel="noreferrer">MedShift</a
+                        >. If I'm not programming, bouldering, or busy being a couch potato, you'll
+                        find me zooming on mountain backroads in my Miata!
+                    </span>
                 </p>
 
-                <div class="my-auto flex flex-col gap-3 max-lg:hidden lg:items-start">
-                    <SectionNavLink sttf-id="pictures" icon="icon-[hugeicons--image-02]">
-                        Pictures
-                    </SectionNavLink>
-                    <SectionNavLink sttf-id="projects" icon="icon-[hugeicons--test-tube-01]">
-                        Projects
-                    </SectionNavLink>
-                    <SectionNavLink
-                        sttf-id="resume"
-                        icon="icon-[hugeicons--ai-content-generator-01]"
-                    >
-                        Experience
-                    </SectionNavLink>
-                </div>
+                <DesktopNavItems class="my-auto max-lg:hidden" />
 
                 <div
                     class="xs:max-lg:hidden flex gap-3 max-lg:mx-auto max-lg:mt-1 md:gap-2 lg:mt-auto"

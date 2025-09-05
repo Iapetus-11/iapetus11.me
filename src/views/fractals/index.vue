@@ -119,7 +119,7 @@
     }
 
     useSeo({
-        title: 'Milo / Iapetus11 | Fractals',
+        title: 'Milo | Fractals',
     });
 </script>
 
