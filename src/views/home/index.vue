@@ -60,7 +60,7 @@
                     <img
                         src="@/assets/images/petus.webp"
                         alt="Iapetus11's Profile Picture"
-                        class="outline-primary-400/30 xs:size-15 sm:size-16 pixel-image mr-3.5 size-14 !rounded-full outline-1 outline-offset-3 md:mr-5 md:size-18 xl:size-20"
+                        class="outline-primary-400/30 xs:size-15 pixel-image mr-3.5 size-14 !rounded-full outline-1 outline-offset-3 sm:size-16 md:mr-5 md:size-18 xl:size-20"
                         width="128"
                         height="128"
                         fetchpriority="high"
@@ -85,7 +85,6 @@
                         <SocialButtons />
                     </div>
                 </div>
-
 
                 <p class="lg:text-md max-lg:order-last md:text-lg 2xl:text-lg">
                     <span class="block">
