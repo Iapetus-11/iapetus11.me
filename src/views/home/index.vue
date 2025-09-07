@@ -110,10 +110,7 @@
             </div>
 
             <div ref="sections-container" class="flex flex-col gap-16 opacity-[0.0001] md:gap-20">
-                <!-- Allow first element to be properly viewable with useScrollCardEffect -->
-                <div class="h-10 max-lg:hidden"></div>
-
-                <PicturesSection id="pictures" class="-scroll-mt-48 max-lg:order-last" />
+                <PicturesSection id="pictures" class="-scroll-mt-48 max-lg:order-last lg:mt-10" />
                 <ProjectsSection id="projects" class="scroll-mt-200 lg:scroll-mt-[26vh]" />
                 <ResumeSection id="resume" class="scroll-mt-[30vh]" />
 

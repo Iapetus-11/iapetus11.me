@@ -8,6 +8,7 @@
     const { updateElements: updateScrollCardEffect } = useScrollCardEffect(imgElements, {
         opacityModifier: 0.65,
         scaleModifier: 0.125,
+        angleModifier: 30 * 0.75,
     });
 </script>
 

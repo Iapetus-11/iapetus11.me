@@ -1,12 +1,14 @@
-import { useWindowEvent } from './events';
-import { computed, onBeforeMount, ref, type Ref } from 'vue';
+import { onBeforeMount, type Ref } from 'vue';
 import { BREAKPOINTS } from './tailwind';
 
 export function calculateScrollCardEffect(
     el: HTMLElement,
     dividerLine: number,
     opacityModifier: number,
-    scaleModifier: number
+    scaleModifier: number,
+    angleModifier: number,
+    startEffectReductionFactor: number,
+    startEffectReductionCutoff: number
 ): Partial<CSSStyleDeclaration> {
     const rect = el.getBoundingClientRect();
     const elCenter = (rect.top + rect.bottom) / 2;
@@ -15,9 +17,13 @@ export function calculateScrollCardEffect(
     vectorFromCenter =
         Math.abs(Math.pow(Math.pow(vectorFromCenter, 2), 1.25)) * Math.sign(vectorFromCenter);
 
+    if (vectorFromCenter < startEffectReductionCutoff) {
+        vectorFromCenter /= startEffectReductionFactor;
+    }
+
     const scalarFromCenter = Math.abs(vectorFromCenter);
 
-    const angle = vectorFromCenter * 30;
+    const angle = vectorFromCenter * angleModifier;
 
     return {
         transform: `perspective(${800}px) rotateX(${-angle}deg)`,
@@ -28,35 +34,43 @@ export function calculateScrollCardEffect(
 
 export function useScrollCardEffect(
     elements: Ref<HTMLElement[]>,
-    options?: { opacityModifier?: number; scaleModifier?: number }
+    options?: { opacityModifier?: number; scaleModifier?: number; angleModifier?: number }
 ) {
     const opacityModifier = options?.opacityModifier ?? 0.9;
     const scaleModifier = options?.scaleModifier ?? 0.175;
-
-    const windowHeight = ref(0);
-    const windowWidth = ref(0);
-    if (!import.meta.env.SSR) {
-        windowHeight.value = window.innerHeight;
-        windowWidth.value = window.innerWidth;
-    }
-
-    const dividerLine = computed(() => {
-        const divisor = windowWidth.value < BREAKPOINTS.md ? 1.8 : 2.0;
-        return windowHeight.value / divisor;
-    });
+    const angleModifier = options?.angleModifier ?? 30.0;
 
     function updateElements() {
-        // Calculations are done in a separate for loop to help avoid the effect looking like it's lagging behind the scroll
+        // On mobile devices, move the optimal viewing area further up the page to make room for their
+        // finger at the bottom scrolling
+        const dividerLine: number =
+            window.innerHeight / (window.innerWidth <= BREAKPOINTS.sm ? 2.2 : 2.1);
 
+        // Used to avoid transforming/fading elements at the initial start/top of the page, to make sure they're
+        // always legible since the user can't scroll up
+        let startEffectReductionFactor: number;
+        if (window.innerWidth >= BREAKPOINTS.lg) {
+            startEffectReductionFactor = Math.max(window.innerHeight / 5.0 / window.scrollY, 1);
+        } else {
+            startEffectReductionFactor = Math.max(window.innerHeight / 0.75 / window.scrollY, 1);
+        }
+        const startEffectReductionCutoff =
+            window.innerWidth <= BREAKPOINTS.md ? dividerLine / 100 : 0;
+
+        // Calculations are done in a separate for loop to help avoid the effect looking like it's
+        // lagging behind the scroll (this helps only minimally :/ )
         const elementsEffectCss = elements.value.map(
             (el) =>
                 [
                     el,
                     calculateScrollCardEffect(
                         el,
-                        dividerLine.value,
+                        dividerLine,
                         opacityModifier,
-                        scaleModifier
+                        scaleModifier,
+                        angleModifier,
+                        startEffectReductionFactor,
+                        startEffectReductionCutoff
                     ),
                 ] as const
         );
@@ -68,19 +82,11 @@ export function useScrollCardEffect(
         requestAnimationFrame(updateElements);
     }
 
-    useWindowEvent(
-        'resize',
-        () => {
-            windowHeight.value = window.innerHeight;
-            windowWidth.value = window.innerWidth;
-            updateElements();
-        },
-        { passive: true }
-    );
-
+    // When developing, this can run multiple times since the component can be re-mounted from HMR
+    // which can make things look laggy (just refresh)
     onBeforeMount(() => {
         updateElements();
-        requestAnimationFrame(updateElements); // TODO: Does this break?
+        requestAnimationFrame(updateElements);
     });
 
     return { updateElements };
