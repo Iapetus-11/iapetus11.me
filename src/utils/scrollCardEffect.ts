@@ -44,7 +44,7 @@ export function useScrollCardEffect(
         // On mobile devices, move the optimal viewing area further up the page to make room for their
         // finger at the bottom scrolling
         const dividerLine: number =
-            window.innerHeight / (window.innerWidth <= BREAKPOINTS.sm ? 2.2 : 2.1);
+            window.innerHeight / (window.innerWidth <= BREAKPOINTS.sm ? 2.2 : 2.0);
 
         // Used to avoid transforming/fading elements at the initial start/top of the page, to make sure they're
         // always legible since the user can't scroll up
