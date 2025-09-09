@@ -3,7 +3,7 @@ import { reactive } from 'vue';
 export type AsyncState<T> = {
     result: T | null;
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    error: any | null;
+    error: any;
     pending: boolean;
     promise: Promise<T>;
 };
