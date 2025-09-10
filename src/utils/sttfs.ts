@@ -30,7 +30,7 @@ export function useActiveSTTFSection(sectionIds: string[]): DeepReadonly<Ref<str
             .map(([el, r]) => [el, Math.abs((r.top + r.bottom) / 2.0 - windowCenter)]);
         viewableSections.sort(([, aD], [, bD]) => aD - bD);
 
-        activeSection.value = viewableSections[0][0];
+        activeSection.value = viewableSections[0]![0];
     }, 50);
 
     useWindowEvent('scroll', updateActiveSTTF);
