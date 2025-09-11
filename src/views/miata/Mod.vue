@@ -1,6 +1,6 @@
 <script setup lang="ts">
-    import { computed, inject, useTemplateRef, watch } from 'vue';
-    import { ModId, OPEN_MOD_INJECTION_KEY } from './Mods.vue';
+    import { computed, useTemplateRef, watch } from 'vue';
+    import { ModId, useModDisclosureState } from './modDisclosureState';
 
     interface Props {
         title: string;
@@ -9,7 +9,7 @@
 
     const props = defineProps<Props>();
 
-    const openMod = inject(OPEN_MOD_INJECTION_KEY)!;
+    const openMod = useModDisclosureState();
     const isOpen = computed(() => openMod.value === props.modId);
 
     const ICON_ANIMATION = [
