@@ -10,7 +10,10 @@
 </script>
 
 <template>
-    <BaseLayout :extra-width class="flex flex-col gap-6 !py-4 sm:gap-8 sm:!py-6 md:!py-10 lg:gap-12">
+    <BaseLayout
+        :extra-width
+        class="flex flex-col gap-6 !py-4 sm:gap-8 sm:!py-6 md:!py-10 lg:gap-12"
+    >
         <header class="w-full">
             <div class="flex items-center justify-between">
                 <h1 class="mr-6 text-left font-mono text-4xl font-bold md:text-5xl">{{ title }}</h1>
