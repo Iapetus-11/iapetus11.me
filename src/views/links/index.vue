@@ -13,8 +13,8 @@
     <PageLayout title="Link Dump">
         <template #subheading>
             <p class="mt-2 text-gray-200 md:max-w-4/5">
-                Inspired by another site, I have here a heap of links pointing to places I find interesting or useful. I
-                like the idea, and as he said:
+                Here's a dump of links to places I find interesting or useful. I got the idea from a
+                colleague, and as he said:
                 <a
                     href="https://www.marginalia.nu/log/19-website-discoverability-crisis/"
                     target="_blank"
@@ -23,7 +23,6 @@
                 >
                     the internet needs more links</a
                 >.
-                WORDING TBD :/
             </p>
         </template>
 

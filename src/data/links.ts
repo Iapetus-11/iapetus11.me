@@ -12,8 +12,8 @@ export const PEOPLE_LINKS: LinkDefinition[] = [
         link: 'https://kevinjosethomas.com/',
     },
     {
-        name: 'Garrett Simpson',
-        description: 'My favorite Rust & mixology enthusiast',
+        name: 'Gabby Simpson',
+        description: 'My favorite Rust & mixology enthusiast. Inspired me to learn Rust.',
         link: 'https://dotunwrap.dev/',
     },
     {
