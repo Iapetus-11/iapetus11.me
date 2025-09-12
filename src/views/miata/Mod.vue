@@ -52,11 +52,11 @@
         <button
             type="button"
             @click="toggleOpen"
-            class="flex cursor-pointer items-center transition-colors hover:text-purple-200"
+            class="flex cursor-pointer items-start transition-colors hover:text-purple-200"
         >
             <span
                 ref="icon"
-                class="icon-[hugeicons--arrow-right-01] mr-1 -ml-[0.5em] text-2xl"
+                class="icon-[hugeicons--arrow-right-01] mr-1 -ml-[0.5em] translate-y-0.5 text-2xl"
             ></span>
 
             <h3 class="text-left font-mono text-xl font-semibold">

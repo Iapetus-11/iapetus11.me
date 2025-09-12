@@ -1,12 +1,12 @@
 <script setup lang="ts">
     import PageLayout from '@/components/layout/PageLayout.vue';
-    import Images from './Images.vue';
+    import Pictures from './Pictures.vue';
     import Mods from './Mods.vue';
 </script>
 
 <template>
     <PageLayout title="Miata" extra-width>
-        <div class="grid grid-cols-2 gap-16">
+        <div class="grid grid-cols-1 gap-4 md:gap-16 md:grid-cols-2">
             <div class="flex flex-col gap-4 md:-mt-6 lg:-mt-8">
                 <p>
                     I own a 2023 ND Miata (after my girlfriend decided she had enough of me whining
@@ -19,8 +19,8 @@
                 <Mods />
             </div>
 
-            <div class="grid grid-cols-1 *:col-span-1 *:rounded-xl xl:grid-cols-2">
-                <Images />
+            <div class="grid h-fit grid-cols-1 gap-3 lg:gap-2 lg:grid-cols-2">
+                <Pictures />
             </div>
         </div>
     </PageLayout>
