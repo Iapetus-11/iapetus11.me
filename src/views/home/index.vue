@@ -112,7 +112,7 @@
 
             <div ref="sections-container" class="flex flex-col gap-16 opacity-[0.0001] md:gap-20">
                 <PicturesSection id="pictures" class="-scroll-mt-48 max-lg:order-last lg:mt-10" />
-                <ExtraNavItems class="-mb-4 max-lg:-mb-7 lg:-mt-16" />
+                <ExtraNavItems class="-mb-10 max-lg:-mb-7 lg:-mt-16" />
                 <ProjectsSection id="projects" class="scroll-mt-200 lg:scroll-mt-[26vh]" />
                 <ResumeSection id="resume" class="scroll-mt-[30vh]" />
 

@@ -6,7 +6,7 @@
 
 <template>
     <PageLayout title="Miata" extra-width>
-        <div class="grid grid-cols-1 gap-4 md:gap-16 md:grid-cols-2">
+        <div class="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-16">
             <div class="flex flex-col gap-4 md:-mt-6 lg:-mt-8">
                 <p>
                     I own a 2023 ND Miata (after my girlfriend decided she had enough of me whining
@@ -19,7 +19,7 @@
                 <Mods />
             </div>
 
-            <div class="grid h-fit grid-cols-1 gap-3 lg:gap-2 lg:grid-cols-2">
+            <div class="grid h-fit grid-cols-1 gap-3 lg:grid-cols-2 lg:gap-2">
                 <Pictures />
             </div>
         </div>
