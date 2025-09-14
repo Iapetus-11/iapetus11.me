@@ -8,12 +8,12 @@
 <template>
     <Mod :mod-id="ModId.DashcamAndRadarDetectorHardwire" title="Dashcam + Radar Detector Hardwire">
         <p>
-            One of the first things I did was hardwire a dashcam, a BlackVue DR770X-1CH, which,
-            while mostly good, I would no longer recommend because BlackVue's app now requires a
+            One of the first things I did was hardwire a dashcam, a BlackVue DR770X-1CH. The camera
+            is good, but I would no longer recommend because BlackVue's app now requires a
             sign-in and is slow and buggy.
         </p>
         <p>
-            The wiring was ran above the windshield and through the A-pillar down to the interior
+            The wiring runs above the windshield and through the A-pillar down to the interior
             fusebox. I used fuse taps and a breakout board to power both, and an extra fuse tap so
             the dashcam could remain recording on battery power when the engine is off.
         </p>
@@ -25,12 +25,13 @@
 
     <Mod :mod-id="ModId.PacoMotorsportsSeatLowering" title="Paco Motorsports Seat Lowering">
         <p>
-            I plan to track this car in the future, but with a convertible your head (including helmet)
-            must be below the top of the windshield and the roll hoops behind the seat.
-            Unfortunately, I have an XL-sized head which does poke out a little bit with a helmet.
+            I do plan to track this car in the future, however with a convertible, your head
+            (including helmet) must be below the top of the windshield and the roll hoops behind
+            the seat. Unfortunately, I have an XL-sized head which does poke out a little bit with
+            a helmet.
         </p>
         <p>
-            Lowering my seat took two days (I gave up on the first day, turns out working in a hot
+            Lowering my seat took two days. (I gave up on the first day, turns out working in a hot
             parking lot sucks and you'll get sunburned). I actually also had to take the seat back
             out of the car and redo the mounting of the rails as the instructions aren't updated for
             the new four-slot rail design.
