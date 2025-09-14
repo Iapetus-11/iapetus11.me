@@ -4,15 +4,14 @@
     import { useScrollCardEffect } from '@/utils/scrollCardEffect';
 
     const container = useTemplateRef('container');
-    const extraNavElements = computed(() => [
-        ...((container.value?.querySelectorAll('div').values() ?? []) as HTMLElement[]),
-    ]);
-
-    useScrollCardEffect(extraNavElements);
+    useScrollCardEffect(computed(() => [container.value].filter((el) => !!el)));
 </script>
 
 <template>
-    <div ref="container" class="flex justify-end gap-4 *:w-1/3 xl:*:w-1/4">
+    <div
+        ref="container"
+        class="flex justify-between gap-4 *:w-1/2 md:*:w-1/3 lg:justify-end xl:*:w-1/4"
+    >
         <NavLink :to="{ name: 'links' }">
             Link Dump
 

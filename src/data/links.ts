@@ -64,7 +64,7 @@ export const ONLINE_TOOL_LINKS: LinkDefinition[] = [
     },
     {
         name: "Anna's Archive",
-        description: 'A free online library including millions of books, papers, and more',
+        description: 'A free online library with millions of books, papers, and more',
         link: 'https://annas-archive.org/',
     },
     {
