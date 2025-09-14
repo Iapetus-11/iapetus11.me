@@ -9,8 +9,8 @@
     <Mod :mod-id="ModId.DashcamAndRadarDetectorHardwire" title="Dashcam + Radar Detector Hardwire">
         <p>
             One of the first things I did was hardwire a dashcam, a BlackVue DR770X-1CH. The camera
-            is good, but I would no longer recommend because BlackVue's app now requires a
-            sign-in and is slow and buggy.
+            is good, but I would no longer recommend because BlackVue's app now requires a sign-in
+            and is slow and buggy.
         </p>
         <p>
             The wiring runs above the windshield and through the A-pillar down to the interior
@@ -26,9 +26,9 @@
     <Mod :mod-id="ModId.PacoMotorsportsSeatLowering" title="Paco Motorsports Seat Lowering">
         <p>
             I do plan to track this car in the future, however with a convertible, your head
-            (including helmet) must be below the top of the windshield and the roll hoops behind
-            the seat. Unfortunately, I have an XL-sized head which does poke out a little bit with
-            a helmet.
+            (including helmet) must be below the top of the windshield and the roll hoops behind the
+            seat. Unfortunately, I have an XL-sized head which does poke out a little bit with a
+            helmet.
         </p>
         <p>
             Lowering my seat took two days. (I gave up on the first day, turns out working in a hot
