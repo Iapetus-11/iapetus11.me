@@ -49,7 +49,7 @@
         </div>
         <div class="z-10">
             <img
-                src="@/assets/images/me/cliff-view-w-trinity.webp"
+                src="@/assets/images/miata/cliff-view-w-trinity.webp"
                 alt="Trinity & Miata on a cliff"
                 loading="lazy"
                 class="translate-y-4 scale-110"
@@ -60,7 +60,7 @@
         </div>
         <div class="z-15">
             <img
-                src="@/assets/images/me/elk-mountain-graffiti-rd-angled.webp"
+                src="@/assets/images/miata/elk-mountain-graffiti-rd-angled.webp"
                 alt="Miata at Elk Mountain Scenic Highway"
                 loading="lazy"
                 class="-translate-y-16"
@@ -82,7 +82,7 @@
         </div>
         <div class="z-5">
             <img
-                src="@/assets/images/me/parking-lot-sunset.webp"
+                src="@/assets/images/miata/parking-lot-sunset.webp"
                 alt="Miata in parking lot close to sunset"
                 loading="lazy"
                 class="-translate-y-18 scale-110"
