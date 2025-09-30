@@ -68,6 +68,11 @@ export const ONLINE_TOOL_LINKS: LinkDefinition[] = [
         link: 'https://annas-archive.org/',
     },
     {
+        name: 'timeful.app',
+        description: 'A very nice tool for coordinating meetups/meetings between people',
+        link: 'https://timeful.app',
+    },
+    {
         name: 'Photopea',
         description:
             'An online photo editor, very easy to use, though not as good as [get]paint.net',
