@@ -30,14 +30,14 @@
         class="z-10 -translate-x-6 -translate-y-30 scale-120"
     />
     <img
-        src="@/assets/images/miata/parking-lot-open-top.webp"
-        alt="Picture of the Miata with the top down in a parking lot"
-        class="z-10 translate-x-2 -translate-y-2 scale-120"
+        src="@/assets/images/miata/grandfather-mtn-oct2025.webp"
+        alt="A picture of the Miata near Grandfather Mountain in fall"
+        class="z-10 translate-x-2 scale-140"
     />
     <img
-        src="@/assets/images/miata/parking-lot-sunset-older.webp"
-        alt="A picture of the Miata in a parking lot at sunset"
-        class="translate-x-4 -translate-y-30"
+        src="@/assets/images/miata/parking-lot-open-top.webp"
+        alt="Picture of the Miata with the top down in a parking lot"
+        class="translate-x-10 -translate-y-23"
     />
 </template>
 
