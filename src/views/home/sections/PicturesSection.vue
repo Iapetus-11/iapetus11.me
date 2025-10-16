@@ -16,7 +16,7 @@
     @reference '@/assets/main.css';
 
     img {
-        @apply rounded-xl shadow-lg max-sm:translate-x-0 max-sm:translate-y-0 max-sm:scale-100;
+        @apply rounded-xl shadow-lg max-sm:mt-0 max-sm:translate-x-0 max-sm:translate-y-0 max-sm:scale-100;
     }
 </style>
 
@@ -47,12 +47,12 @@
                 height="577"
             />
         </div>
-        <div class="z-10">
+        <div class="-z-10">
             <img
-                src="@/assets/images/miata/cliff-view-w-trinity.webp"
-                alt="Trinity & Miata on a cliff"
+                src="@/assets/images/miata/grandfather-mtn-oct2025-sq.webp"
+                alt="Miata in fall at grandfather mountain"
                 loading="lazy"
-                class="translate-y-4 scale-110"
+                class="-mt-20 translate-y-2 scale-110"
                 @load="updateScrollCardEffect"
                 width="1024"
                 height="605"
@@ -74,7 +74,7 @@
                 src="@/assets/images/me/me-and-trinity-icecream.webp"
                 alt="Trinity and I getting icecream"
                 loading="lazy"
-                class="-translate-x-2 translate-y-6"
+                class="-translate-x-2 translate-y-2"
                 @load="updateScrollCardEffect"
                 width="1024"
                 height="768"

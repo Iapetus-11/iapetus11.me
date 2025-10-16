@@ -30,7 +30,7 @@
         class="z-10 -translate-x-6 -translate-y-30 scale-120"
     />
     <img
-        src="@/assets/images/miata/grandfather-mtn-oct2025.webp"
+        src="@/assets/images/miata/grandfather-mtn-oct2025-hd.webp"
         alt="A picture of the Miata near Grandfather Mountain in fall"
         class="z-10 translate-x-2 scale-140"
     />
