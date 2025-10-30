@@ -10,7 +10,6 @@ export type AsyncState<T> = {
 
 /**
  * Create reactive state for a promise
- * @returns Refs for the state of the promise
  */
 export function useAsyncState<T>(promise: Promise<T>): AsyncState<T> {
     const state: AsyncState<T> = reactive({

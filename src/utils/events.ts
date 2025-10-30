@@ -10,6 +10,11 @@ import {
     type Ref,
 } from 'vue';
 
+/**
+ * Register an event listener on a target that is automatically removed when the component unmounts.
+ * Supports passing a `Ref<HTMLElement?>` which, when changed, automatically unregisters & re-registers
+ * the event listener.
+ */
 export function useEvent<T extends HTMLElement, K extends keyof HTMLElementEventMap>(
     target: T | Ref<T | null | undefined>,
     event: K,
@@ -29,7 +34,9 @@ export function useEvent<T extends HTMLElement, K extends keyof HTMLElementEvent
         { immediate: true }
     );
 }
-
+/**
+ * Register an event listener on the window that is automatically removed when the component unmounts
+ */
 export function useWindowEvent<K extends keyof WindowEventMap>(
     event: K,
     listener: (ev: WindowEventMap[K]) => void,
