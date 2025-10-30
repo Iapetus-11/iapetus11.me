@@ -8,8 +8,10 @@ import { debounced } from './debounce';
  *
  * @returns the current section's ID
  */
-export function useActiveSTTFSection(sectionIds: string[]): DeepReadonly<Ref<string>> {
-    const activeSection = ref();
+export function useActiveSTTFSection<SectionId extends string>(
+    sectionIds: SectionId[]
+): DeepReadonly<Ref<SectionId | undefined>> {
+    const activeSection = ref<SectionId>();
 
     const updateActiveSTTF = debounced(() => {
         const windowCenter = window.innerHeight / 2.0;
@@ -18,19 +20,23 @@ export function useActiveSTTFSection(sectionIds: string[]): DeepReadonly<Ref<str
         const IN_VIEW_PADDING_PX = 100;
 
         // Find the section closest to the center line
-        const viewableSections: [string, number][] = sectionIds
-            .map((sId) => document.getElementById(sId))
-            .filter((el) => el !== null)
-            .map((el) => [el.id, el.getBoundingClientRect()] as const)
+        const viewableSections: [SectionId, number][] = sectionIds
+            .map((sectionId: SectionId) => [sectionId, document.getElementById(sectionId)] as const)
+            .filter(([, el]) => el !== null)
+            .map(([sectionId, el]) => [sectionId, el!.getBoundingClientRect()] as const)
+            // Check to see if the center of the screen is within the section
             .filter(
-                ([, r]) =>
-                    r.top - IN_VIEW_PADDING_PX <= windowCenter &&
-                    r.bottom + IN_VIEW_PADDING_PX >= windowCenter
+                ([, rect]) =>
+                    rect.top - IN_VIEW_PADDING_PX <= windowCenter &&
+                    rect.bottom + IN_VIEW_PADDING_PX >= windowCenter
             )
-            .map(([el, r]) => [el, Math.abs((r.top + r.bottom) / 2.0 - windowCenter)]);
-        viewableSections.sort(([, aD], [, bD]) => aD - bD);
+            .map(([sectionId, rect]) => [
+                sectionId,
+                Math.abs((rect.top + rect.bottom) / 2.0 - windowCenter),
+            ]);
+        viewableSections.sort(([, aDelta], [, bDelta]) => aDelta - bDelta);
 
-        activeSection.value = viewableSections[0]![0];
+        activeSection.value = viewableSections[0]?.[0];
     }, 50);
 
     useWindowEvent('scroll', updateActiveSTTF);
@@ -38,8 +44,8 @@ export function useActiveSTTFSection(sectionIds: string[]): DeepReadonly<Ref<str
 
     onMounted(() => {
         const hash = window.location.hash.slice(1);
-        if (sectionIds.includes(hash)) {
-            activeSection.value = hash;
+        if (sectionIds.some((sId) => sId === hash)) {
+            activeSection.value = hash as SectionId;
         } else {
             updateActiveSTTF();
         }
