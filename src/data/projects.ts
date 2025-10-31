@@ -87,7 +87,7 @@ export const PROJECTS: ProjectDefinition[] = [
     },
     {
         name: 'Quake III Bot',
-        description: 'A Discord bot to faciliate the management of Quake III servers via RCON.',
+        description: 'A Discord bot to facilitate the management of Quake III servers via RCON.',
         image: quake3BotWebp,
         link: 'https://github.com/Iapetus-11/quake3-bot',
         points: ['Python', 'Discord.py', 'Quake III RCON Protocol'],
