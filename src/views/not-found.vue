@@ -1,3 +1,11 @@
+<script setup lang="ts">
+    import { useSeo } from '@/utils/head';
+
+    useSeo({
+        title: 'Page Not Found',
+    });
+</script>
+
 <template>
     <div
         class="fade-in fixed top-1/2 left-1/2 flex -translate-x-1/2 -translate-y-1/2 flex-col items-center"

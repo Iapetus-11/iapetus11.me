@@ -120,6 +120,7 @@
 
     useSeo({
         title: 'Milo | Fractals',
+        url: 'https://iapetus11.me/fractals',
     });
 </script>
 

@@ -2,6 +2,12 @@
     import PageLayout from '@/components/layout/PageLayout.vue';
     import Pictures from './Pictures.vue';
     import Mods from './Mods.vue';
+    import { useSeo } from '@/utils/head';
+
+    useSeo({
+        title: 'Milo | Miata',
+        url: 'https://iapetus11.me/miata',
+    });
 </script>
 
 <template>

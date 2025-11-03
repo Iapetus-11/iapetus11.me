@@ -6,6 +6,7 @@
 
     useSeo({
         title: 'Milo | Links',
+        url: 'https://iapetus11.me/links',
     });
 </script>
 
