@@ -45,7 +45,7 @@ export const PROJECTS: ProjectDefinition[] = [
             '10,000+ Monthly Visitors',
             'C#',
             'ASP.NET',
-            'Entity Frameork',
+            'Entity Framework',
             'Razor',
             'SvelteKit',
             'TypeScript',
@@ -103,7 +103,7 @@ export const PROJECTS: ProjectDefinition[] = [
     {
         name: 'ButterflyMX 444',
         description:
-            'A web app which allows users to open their apartment using ButterflyMX using a reverse engineered API wrapper.',
+            'A web app which allows users to open their apartment with ButterflyMX, using a reverse engineered API wrapper.',
         image: butterflymx444Webp,
         link: 'https://github.com/Iapetus-11/ButterflyMX-444',
         points: ['Python', 'FastAPI', 'Jinja', 'Docker'],

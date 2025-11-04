@@ -41,11 +41,11 @@ export const RESUME_ITEMS: ResumeItemDefinition[] = [
         bullets: [
             'Programmed a cross-platform app & website to help sales reps acquire leases for medical device deals, backed by $400 million',
             'Developed scalable solutions for collecting and displaying IoT data from various IoT offerings for different customers',
-            'Mentored coworkers and superiors, helping them with tasks & peer programming as well as offering assistance after-hours',
+            'Mentored coworkers and superiors, helping them with tasks & pair programming as well as offering assistance after-hours',
             'Developed novel software solutions integrating with Oracle Financial Cloud & Stripe processing millions of dollars',
             'Programmed a SaaS solution for facilitating a pay-per-use model based on IoT data from medical devices',
             'Helped my team learn/migrate to more robust technologies (Cloudflare, TypeScript, Ruff Linter)',
-            'While on-call, assisted with after-hours emergencies ensuring our products remained stable for customers',
+            'While on-call, assisted with after-hours emergencies, ensuring our products remained stable for customers',
         ],
         skills: [
             'Django',
@@ -67,8 +67,8 @@ export const RESUME_ITEMS: ResumeItemDefinition[] = [
         company: 'Self-Employed',
         title: 'Freelance Software Engineer',
         bullets: [
-            'Took commissioned programming work from a variety of small businesses and invididuals',
-            'Wrote several social media bots for a few platforms including Twitter, Discord, and Reddit',
+            'Took commissioned programming work from a variety of small businesses and individuals',
+            'Wrote several social media bots for a few platforms, including Twitter, Discord, and Reddit',
             'Developed several web scrapers and data aggregation utilities (usually into Google Sheets)',
             'Engineered a PoC for collecting data from a distributed network of Arduino ESP32s and Raspberry Pis',
             'Mentored CS students, helping them understand topics from their classes',

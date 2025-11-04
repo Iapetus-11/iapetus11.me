@@ -8,7 +8,7 @@ export const PEOPLE_LINKS: LinkDefinition[] = [
     {
         name: 'Kevin Thomas',
         description:
-            'A bright student who I have collaborated with in the past. Has a lot of cool projects on their portfolio site.',
+            'A bright student who I have collaborated with in the past. Has a lot of cool projects on his portfolio site.',
         link: 'https://kevinjosethomas.com/',
     },
     {
@@ -49,7 +49,7 @@ export const ONLINE_TOOL_LINKS: LinkDefinition[] = [
     {
         name: 'cobalt.tools',
         description:
-            'Download any video / audio from Youtube and almost any other social media (like Reddit, TikTok, Twitter, etc...)',
+            'Download any video or audio from Youtube and almost any other social media (like Reddit, TikTok, Twitter, etc.)',
         link: 'https://cobalt.tools/',
     },
     {
@@ -90,7 +90,7 @@ export const SOFTWARE_LINKS: LinkDefinition[] = [
     {
         name: 'Kiwix',
         description:
-            'An offline reader for various wikis, docs, and other resources including Wikipedia. I have an offline copy of Wikipedia just in case :)',
+            'An offline reader for various wikis, docs, and other resources including Wikipedia. I have an offline copy of Wikipedia just in case the world ends.',
         link: 'https://kiwix.org/',
     },
 ];
