@@ -41,7 +41,7 @@
     });
 
     useSeo({
-        title: 'Milo / Iapetus11',
+        title: 'Milo Weinberg / Iapetus11',
         description:
             `Hey! I'm a ${aliveForYears} year-old full-stack developer who's been programming for ` +
             `${programmingForYears} years and loves to learn new things!`,
@@ -71,7 +71,8 @@
                         <h1
                             class="font-mono text-3xl font-bold whitespace-nowrap sm:text-4xl xl:text-5xl"
                         >
-                            Milo<span class="text-primary-400 mx-2 xl:mx-4">/</span>Iapetus11
+                            Milo<span class="sr-only"> Weinberg</span
+                            ><span class="text-primary-400 mx-2 xl:mx-4">/</span>Iapetus11
                         </h1>
                         <h2
                             class="text-primary-400 mt-1 text-sm font-medium whitespace-nowrap italic sm:text-base lg:text-lg xl:text-xl"
