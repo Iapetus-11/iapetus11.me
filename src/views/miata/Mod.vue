@@ -2,6 +2,19 @@
     import { computed, useTemplateRef, watch } from 'vue';
     import { ModId, useModDisclosureState } from './modDisclosureState';
 
+    const MOD_DISCLOSURE_NOSCRIPT_HTML = `
+    <style>
+        .mod-disclosure {
+            opacity: 100% !important;
+            grid-template-rows: 1fr !important;
+        }
+
+        .mod-disclosure-icon {
+            display: none !important;
+        }
+    </style>
+    `;
+
     interface Props {
         title: string;
         modId: ModId;
@@ -49,6 +62,8 @@
 
 <template>
     <div>
+        <noscript v-html="MOD_DISCLOSURE_NOSCRIPT_HTML"></noscript>
+
         <button
             type="button"
             @click="toggleOpen"
@@ -56,7 +71,7 @@
         >
             <span
                 ref="icon"
-                class="icon-[hugeicons--arrow-right-01] mr-1 -ml-[0.5em] translate-y-0.5 text-2xl"
+                class="icon-[hugeicons--arrow-right-01] mod-disclosure-icon mr-1 -ml-[0.5em] translate-y-0.5 text-2xl"
             ></span>
 
             <h3 class="text-left font-mono text-xl font-semibold">
@@ -65,7 +80,7 @@
         </button>
 
         <div
-            class="grid grid-rows-[0fr] opacity-50 transition-[grid-template-rows,opacity] duration-300 ease-in-out"
+            class="mod-disclosure grid grid-rows-[0fr] opacity-50 transition-[grid-template-rows,opacity] duration-300 ease-in-out"
             :class="{ 'grid-rows-[1fr] opacity-100': isOpen }"
         >
             <div class="w-full space-y-2.5 overflow-hidden">

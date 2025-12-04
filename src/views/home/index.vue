@@ -14,6 +14,15 @@
 
     const STTF_SECTIONS = ['pictures', 'projects', 'resume'];
 
+    // At least show something if they've disabled javascript
+    const SECTIONS_CONTAINER_NOSCRIPT_HTML = `
+    <style>
+        #sections-container {
+            opacity: 1 !important;
+        }
+    </style>
+    `;
+
     const router = useRouter();
     const route = useRoute();
 
@@ -112,7 +121,12 @@
                 </div>
             </div>
 
-            <div ref="sections-container" class="flex flex-col gap-16 opacity-[0.0001] md:gap-20">
+            <noscript v-html="SECTIONS_CONTAINER_NOSCRIPT_HTML"></noscript>
+            <div
+                ref="sections-container"
+                id="sections-container"
+                class="flex flex-col gap-16 opacity-[0.0001] md:gap-20"
+            >
                 <PicturesSection id="pictures" class="-scroll-mt-48 max-lg:order-last lg:mt-10" />
                 <ExtraNavItems class="-mb-10 max-lg:-mb-7 lg:-mt-16" />
                 <ProjectsSection id="projects" class="scroll-mt-200 lg:scroll-mt-[26vh]" />

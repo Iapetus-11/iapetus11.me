@@ -152,6 +152,12 @@
                     v-if="!fractal || fractalState?.pending"
                     class="icon-[hugeicons--loading-03] text-primary-600 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 animate-spin text-8xl"
                 ></span>
+
+                <noscript
+                    class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#040917] p-16 text-lg whitespace-nowrap"
+                >
+                    This page requires JavaScript.
+                </noscript>
             </div>
 
             <!-- Fractal config -->
