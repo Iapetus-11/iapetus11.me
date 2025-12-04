@@ -1,4 +1,5 @@
 import { useSeoMeta, type MetaFlat, type ResolvableValue } from '@unhead/vue';
+import petusWebp from '@/assets/images/petus.webp?no-inline';
 
 export interface SeoMeta {
     type: MetaFlat['ogType'];
@@ -17,7 +18,7 @@ export function useSeo({
     embedTitle = title,
     description,
     url,
-    imageUrl,
+    imageUrl = petusWebp,
     imageType = 'small',
     color = '#77d5af',
 }: Partial<{ [K in keyof SeoMeta]: ResolvableValue<SeoMeta[K]> }>) {
@@ -34,6 +35,7 @@ export function useSeo({
         twitterTitle: embedTitle || title,
         twitterCard: imageType === 'large' ? 'summary_large_image' : 'summary',
         twitterDescription: description,
+        twitterImage: imageUrl,
 
         themeColor: color,
     });
