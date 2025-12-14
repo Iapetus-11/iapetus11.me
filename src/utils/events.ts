@@ -1,39 +1,5 @@
-import {
-    onMounted,
-    onUnmounted,
-    onWatcherCleanup,
-    readonly,
-    ref,
-    toRef,
-    watch,
-    type DeepReadonly,
-    type Ref,
-} from 'vue';
+import { onMounted, onUnmounted, readonly, ref, type DeepReadonly, type Ref } from 'vue';
 
-/**
- * Register an event listener on a target that is automatically removed when the component unmounts.
- * Supports passing a `Ref<HTMLElement?>` which, when changed, automatically unregisters & re-registers
- * the event listener.
- */
-export function useEvent<T extends HTMLElement, K extends keyof HTMLElementEventMap>(
-    target: T | Ref<T | null | undefined>,
-    event: K,
-    listener: (ev: HTMLElementEventMap[K]) => void
-) {
-    watch(
-        toRef(target),
-        (target) => {
-            if (!target) return;
-
-            target.addEventListener(event, listener);
-
-            onWatcherCleanup(() => {
-                target.removeEventListener(event, listener);
-            });
-        },
-        { immediate: true }
-    );
-}
 /**
  * Register an event listener on the window that is automatically removed when the component unmounts
  */
