@@ -88,6 +88,12 @@ export const SOFTWARE_LINKS: LinkDefinition[] = [
         link: 'https://jellyfin.org/',
     },
     {
+        name: 'Immich',
+        description:
+            'Photo/video storage (open-source, self-hosted) with an emphasis on speed. I cancelled my Google Photos subscription, and have been getting my family on it.',
+        link: 'https://immich.app/',
+    },
+    {
         name: 'Kiwix',
         description:
             'An offline reader for various wikis, docs, and other resources including Wikipedia. I have an offline copy of Wikipedia just in case the world ends.',
