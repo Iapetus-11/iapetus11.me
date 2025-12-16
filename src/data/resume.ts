@@ -14,8 +14,8 @@ export const RESUME_ITEMS: ResumeItemDefinition[] = [
         bullets: [
             'Planned and led projects across two teams, ensuring timely success to meet customer expectations',
             'Met with B2B customers to determine project requirements and communicate updates',
-            'Responsible for onboarding new engineers, as well as mentoring interns and peers across multiple teams',
-            'Continued working on various projects, both internal and external',
+            'Onboarded new engineers, as well as continued mentoring of interns and peers across multiple teams',
+            'Helped build Shopify app enabling sales reps to place orders for customers, automatically calculating commission',
         ],
         skills: [
             'Django',
@@ -27,6 +27,7 @@ export const RESUME_ITEMS: ResumeItemDefinition[] = [
             'Auth0',
             'Stripe',
             'BigCommerce',
+            'Shopify',
             'Docusign',
             'Cloudflare',
             'Project Management',
@@ -39,13 +40,13 @@ export const RESUME_ITEMS: ResumeItemDefinition[] = [
         company: 'MedShift',
         title: 'Full-Stack Software Engineer',
         bullets: [
-            'Programmed a cross-platform app & website to help sales reps acquire leases for medical device deals, backed by $400 million',
-            'Developed scalable solutions for collecting and displaying IoT data from various IoT offerings for different customers',
+            'Programmed a cross-platform app & website to accelerate medical device financing, backed by $400 million',
+            'Developed scalable solutions for collecting and displaying IoT data from various offerings for multiple customers',
             'Mentored coworkers and superiors, helping them with tasks & pair programming as well as offering assistance after-hours',
-            'Developed novel software solutions integrating with Oracle Financial Cloud & Stripe processing millions of dollars',
+            'Developed novel software solutions integrating with Oracle Financial Cloud & Stripe, processing millions of dollars',
             'Programmed a SaaS solution for facilitating a pay-per-use model based on IoT data from medical devices',
-            'Helped my team learn/migrate to more robust technologies (Cloudflare, TypeScript, Ruff Linter)',
-            'While on-call, assisted with after-hours emergencies, ensuring our products remained stable for customers',
+            'Helped team learn/migrate to more robust technologies (Cloudflare, TypeScript, Ruff Linter)',
+            'Assisted with after-hours emergencies and customer support, ensuring a good experience for customers',
         ],
         skills: [
             'Django',

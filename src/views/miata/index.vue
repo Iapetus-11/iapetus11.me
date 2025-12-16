@@ -15,9 +15,9 @@
         <div class="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-16">
             <div class="flex flex-col gap-4 md:-mt-6 lg:-mt-8">
                 <p>
-                    I own a 2023 ND Miata (after my girlfriend decided they had enough of me whining
-                    about wanting a fast car)! It's very cute, and carving through twisty mountain
-                    roads (especially in a convertible) is exhilarating fun.
+                    I bought a 2023 ND Miata after my girlfriend decided they had enough of me
+                    whining about wanting a sports car! It's very cute, and carving through twisty
+                    mountain roads (especially in a convertible) is exhilarating fun.
                 </p>
 
                 <h2 class="mt-1 font-mono text-3xl font-semibold">Modifications?</h2>
