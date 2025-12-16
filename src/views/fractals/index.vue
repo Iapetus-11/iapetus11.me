@@ -121,6 +121,8 @@
     useSeo({
         title: 'Milo | Fractals',
         url: 'https://iapetus11.me/fractals',
+        description:
+            'Generate custom fractals: choose the equation, colors, and tweak the input parameters to get cool output images',
     });
 </script>
 

@@ -7,6 +7,7 @@
     useSeo({
         title: 'Milo | Miata',
         url: 'https://iapetus11.me/miata',
+        description: 'A page dedicated to my beloved 2023 ND Miata',
     });
 </script>
 
