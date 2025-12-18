@@ -42,11 +42,11 @@ export const RESUME_ITEMS: ResumeItemDefinition[] = [
         bullets: [
             'Programmed a cross-platform app to accelerate medical device financing, backed by $400 million',
             'Developed scalable solutions for collecting and displaying IoT data for multiple customers',
-            'Mentored coworkers and superiors, helping them with tasks & pair programming as well as offering assistance after-hours',
+            'Mentored coworkers and superiors, helping them with tasks, pair programming, and offering assistance after-hours',
             'Developed novel software solutions integrating with Oracle Financial Cloud & Stripe, processing millions of dollars',
             'Programmed a SaaS solution facilitating a pay-per-use model based on IoT data from medical devices',
             'Helped team learn/migrate to more robust technologies (Cloudflare, TypeScript, Ruff Linter)',
-            'Assisted with after-hours emergencies and customer support, ensuring a good experience for customers',
+            'Assisted with after-hours emergencies and customer support, ensuring a good experience for clients',
         ],
         skills: [
             'Django',

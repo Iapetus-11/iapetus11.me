@@ -52,7 +52,7 @@
     useSeo({
         title: 'Milo Weinberg / Iapetus11',
         description:
-            `Hey! I'm a ${aliveForYears} year-old full-stack developer who's been programming for ` +
+            `Hey! I'm Milo Weinberg, a ${aliveForYears} year-old full-stack developer who's been programming for ` +
             `${programmingForYears} years and loves to learn new things!`,
         url: 'https://iapetus11.me/',
     });

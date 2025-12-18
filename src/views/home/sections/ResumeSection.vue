@@ -20,10 +20,9 @@
             </h2>
 
             <p class="md:text-lg">
-                I have not attended a university or bootcamp. I would claim to be self-taught, but
-                that is not the case either. In addition to hard work and practice, mentors,
-                teachers, friends, and family have helped me get where I am today and I am forever
-                thankful.
+                I have not attended a university or bootcamp. Despite that, I am only partially
+                self-taught. I am thankful to my mentors, friends, teachers, and family who
+                encouraged and helped me get to where I am today.
             </p>
         </div>
 
