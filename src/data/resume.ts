@@ -15,7 +15,7 @@ export const RESUME_ITEMS: ResumeItemDefinition[] = [
             'Planned and led projects across two teams, ensuring timely success to meet customer expectations',
             'Met with B2B customers to determine project requirements and communicate updates',
             'Onboarded new engineers, as well as continued mentoring of interns and peers across multiple teams',
-            'Helped build Shopify app enabling sales reps to place orders for customers, automatically calculating commission',
+            'Helped build a Shopify app enabling sales reps to place orders for customers, automatically calculating commission',
         ],
         skills: [
             'Django',
@@ -42,7 +42,7 @@ export const RESUME_ITEMS: ResumeItemDefinition[] = [
         bullets: [
             'Programmed a cross-platform app to accelerate medical device financing, backed by $400 million',
             'Developed scalable solutions for collecting and displaying IoT data for multiple customers',
-            'Mentored coworkers and superiors, helping them with tasks, pair programming, and offering assistance after-hours',
+            'Mentored coworkers and superiors, helping them with tasks, pair programming, and providing assistance after-hours',
             'Developed novel software solutions integrating with Oracle Financial Cloud & Stripe, processing millions of dollars',
             'Programmed a SaaS solution facilitating a pay-per-use model based on IoT data from medical devices',
             'Helped team learn/migrate to more robust technologies (Cloudflare, TypeScript, Ruff Linter)',
