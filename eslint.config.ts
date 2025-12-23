@@ -3,6 +3,7 @@ import { defineConfigWithVueTs, vueTsConfigs } from '@vue/eslint-config-typescri
 import pluginVue from 'eslint-plugin-vue';
 import pluginVitest from '@vitest/eslint-plugin';
 import skipFormatting from '@vue/eslint-config-prettier/skip-formatting';
+import compat from 'eslint-plugin-compat';
 
 export default defineConfigWithVueTs(
     {
@@ -25,5 +26,7 @@ export default defineConfigWithVueTs(
         rules: {
             'vue/multi-word-component-names': 'off',
         },
-    }
+    },
+
+    compat.configs['flat/recommended']
 );
