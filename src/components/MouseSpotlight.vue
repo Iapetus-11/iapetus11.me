@@ -6,7 +6,9 @@
 
 <template>
     <div
-        class="from-primary-400/5 pointer-events-none fixed size-[calc(max(70vw,70vh))] bg-radial via-transparent to-transparent max-md:hidden"
-        :style="{ top: `calc(${mouse.y}px - 35vw)`, left: `calc(${mouse.x}px - 35vw)` }"
+        class="pointer-events-none fixed size-full max-md:hidden"
+        :style="{
+            backgroundImage: `radial-gradient(calc(max(50vw,50vh)) at ${mouse.x}px ${mouse.y}px, color-mix(in oklab, var(--color-primary-400) 5%, transparent) 0%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0) 100%)`,
+        }"
     />
 </template>
