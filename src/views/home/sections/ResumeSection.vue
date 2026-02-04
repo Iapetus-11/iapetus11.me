@@ -9,7 +9,10 @@
         ...(container.value?.querySelectorAll('div').values() ?? []),
     ]);
 
-    useScrollCardEffect(resumeElements, { opacityModifier: 0.65 });
+    useScrollCardEffect(resumeElements, {
+        scaleModifier: 0.125,
+        angleModifier: 30 * 1.125,
+    });
 </script>
 
 <template>
