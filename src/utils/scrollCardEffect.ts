@@ -1,4 +1,4 @@
-import { onBeforeMount, type Ref } from 'vue';
+import { onBeforeMount, onUnmounted, type Ref } from 'vue';
 import { BREAKPOINTS } from './tailwind';
 
 export function calculateScrollCardEffect(
@@ -8,7 +8,8 @@ export function calculateScrollCardEffect(
     scaleModifier: number,
     angleModifier: number,
     startEffectReductionFactor: number,
-    startEffectReductionCutoff: number
+    startEffectReductionCutoff: number,
+    perspectiveHeight: number
 ): Partial<CSSStyleDeclaration> {
     const rect = el.getBoundingClientRect();
     const elCenter = (rect.top + rect.bottom) / 2;
@@ -26,7 +27,7 @@ export function calculateScrollCardEffect(
     const angle = vectorFromCenter * angleModifier;
 
     return {
-        transform: `perspective(${800}px) rotateX(${-angle}deg)`,
+        transform: `perspective(${perspectiveHeight}px) rotateX(${-angle}deg)`,
         opacity: `${1 - scalarFromCenter * opacityModifier}`,
         scale: `${1 - scalarFromCenter * scaleModifier}`,
     };
@@ -36,9 +37,17 @@ export function useScrollCardEffect(
     elements: Ref<HTMLElement[]>,
     options?: { opacityModifier?: number; scaleModifier?: number; angleModifier?: number }
 ) {
+    if (import.meta.env.SSR) {
+        return { updateElements: () => {} };
+    }
+
     const opacityModifier = options?.opacityModifier ?? 0.9;
     const scaleModifier = options?.scaleModifier ?? 0.175;
     const angleModifier = options?.angleModifier ?? 30.0;
+
+    const queueNextFrame = window.requestAnimationFrame ?? ((callback) => setTimeout(callback, 16));
+
+    let stop = false;
 
     function updateElements() {
         // On mobile devices, move the optimal viewing area further up the page to make room for their
@@ -57,6 +66,8 @@ export function useScrollCardEffect(
         const startEffectReductionCutoff =
             window.innerWidth <= BREAKPOINTS.md ? dividerLine / 100 : 0;
 
+        const perspectiveHeight = Math.max(800, window.innerHeight);
+
         // Calculations are done in a separate for loop to help avoid the effect looking like it's
         // lagging behind the scroll (this helps only minimally :/ )
         const elementsEffectCss = elements.value.map(
@@ -70,7 +81,8 @@ export function useScrollCardEffect(
                         scaleModifier,
                         angleModifier,
                         startEffectReductionFactor,
-                        startEffectReductionCutoff
+                        startEffectReductionCutoff,
+                        perspectiveHeight
                     ),
                 ] as const
         );
@@ -79,15 +91,13 @@ export function useScrollCardEffect(
             Object.assign(el.style, css);
         }
 
-        requestAnimationFrame(updateElements);
+        if (!stop) {
+            queueNextFrame(updateElements);
+        }
     }
 
-    // When developing, this can run multiple times since the component can be re-mounted from HMR
-    // which can make things look laggy (just refresh)
-    onBeforeMount(() => {
-        updateElements();
-        requestAnimationFrame(updateElements);
-    });
+    onBeforeMount(updateElements);
+    onUnmounted(() => (stop = true));
 
     return { updateElements };
 }
