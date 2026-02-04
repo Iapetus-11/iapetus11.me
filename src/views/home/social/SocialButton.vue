@@ -10,14 +10,7 @@
 </script>
 
 <template>
-    <a
-        v-if="link"
-        :href="link"
-        target="_blank"
-        rel="noreferrer"
-        :class="CLASSES"
-        class="text-slate-300"
-    >
+    <a v-if="link" :href="link" target="_blank" rel="noreferrer" :class="CLASSES">
         <span :class="icon"></span>
     </a>
     <button v-else type="button" :class="CLASSES">

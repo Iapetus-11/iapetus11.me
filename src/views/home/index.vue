@@ -64,13 +64,13 @@
             <!-- top-* and h-[calc(...)] here must match the y padding in <DefaultLayout> -->
             <div
                 ref="sticky-container"
-                class="flex flex-col gap-y-5 self-start pb-8 max-lg:!h-fit md:top-10 md:h-[calc(100vh-2.5rem)] md:pb-12 lg:sticky lg:-mb-100 lg:w-[40%] xl:top-16 xl:h-[calc(100vh-4rem)] 2xl:top-22 2xl:h-[calc(100vh-5.5rem)]"
+                class="flex flex-col gap-y-5 self-start pb-8 max-lg:h-fit! md:top-10 md:h-[calc(100vh-2.5rem)] md:pb-12 lg:sticky lg:-mb-100 lg:w-[40%] xl:top-16 xl:h-[calc(100vh-4rem)] 2xl:top-22 2xl:h-[calc(100vh-5.5rem)]"
             >
                 <div class="xs:max-lg:w-full flex items-center max-lg:mx-auto lg:-ml-1">
                     <img
                         src="@/assets/images/petus.webp"
                         alt="Iapetus11's Profile Picture"
-                        class="outline-primary-400/30 xs:size-15 pixel-image mr-3.5 size-14 !rounded-full outline-1 outline-offset-3 sm:size-16 md:mr-5 md:size-18 xl:size-20"
+                        class="outline-primary-400/30 xs:size-15 pixel-image mr-3.5 size-14 rounded-full! outline-1 outline-offset-3 sm:size-16 md:mr-5 md:size-18 xl:size-20"
                         width="128"
                         height="128"
                         fetchpriority="high"

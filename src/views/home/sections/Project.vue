@@ -45,7 +45,7 @@
                 :alt="name"
                 :loading="imgLoading"
                 :fetchpriority="imgLoading === 'eager' ? 'high' : 'auto'"
-                class="max-h-[128px] rounded-2xl sm:rounded-3xl"
+                class="max-h-32 rounded-2xl sm:rounded-3xl"
             />
         </div>
     </Link>

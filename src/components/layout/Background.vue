@@ -16,7 +16,7 @@
 -->
 <template>
     <div
-        class="fixed top-0 left-0 -z-50 h-screen w-screen bg-gradient-to-bl from-[#15224F] via-[#040917] to-[#14204A]"
+        class="fixed top-0 left-0 -z-50 h-screen w-screen bg-linear-to-bl from-[#15224F] via-[#040917] to-[#14204A]"
     >
         <noscript v-html="BACKGROUND_NOSCRIPT_HTML"></noscript>
         <img

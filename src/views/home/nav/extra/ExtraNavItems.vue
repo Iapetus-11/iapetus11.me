@@ -26,7 +26,7 @@
             <template #icon>
                 <span class="icon-[hugeicons--car-01]"></span>
                 <span
-                    class="icon-[hugeicons--fast-wind] -mr-[1em] scale-80 opacity-0 transition-[color,opacity,margin,scale] group-hover:-mr-0 group-hover:scale-100 group-hover:opacity-100"
+                    class="icon-[hugeicons--fast-wind] -mr-[1em] scale-80 opacity-0 transition-[color,opacity,margin,scale] group-hover:mr-0 group-hover:scale-100 group-hover:opacity-100"
                 ></span>
             </template>
         </NavLink>
