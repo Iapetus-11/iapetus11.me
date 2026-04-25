@@ -63,11 +63,6 @@ export const ONLINE_TOOL_LINKS: LinkDefinition[] = [
         link: 'https://discussed.online/',
     },
     {
-        name: "Anna's Archive",
-        description: 'A free online library with millions of books, papers, and more',
-        link: 'https://annas-archive.org/',
-    },
-    {
         name: 'timeful.app',
         description: 'A very nice tool for coordinating meetups/meetings between people',
         link: 'https://timeful.app',
