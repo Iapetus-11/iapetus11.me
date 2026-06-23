@@ -1,12 +1,12 @@
 <script setup lang="ts">
     import { PEOPLE_LINKS, ONLINE_TOOL_LINKS, SOFTWARE_LINKS } from '@/data/links';
     import LinksSection from './LinksSection.vue';
-    import { useSeo } from '@/utils/head';
+    import { SITE_URL, useSeo } from '@/utils/head';
     import PageLayout from '@/components/layout/PageLayout.vue';
 
     useSeo({
         title: 'Milo | Links',
-        url: 'https://iapetus11.me/links',
+        url: `${SITE_URL}links`,
     });
 </script>
 

@@ -12,7 +12,7 @@
     import { computed, ref, watch } from 'vue';
     import { useAsyncState, type AsyncState } from '@/utils/asyncState';
     import Select from '@/components/Select.vue';
-    import { useSeo } from '@/utils/head';
+    import { SITE_URL, useSeo } from '@/utils/head';
     import PageLayout from '@/components/layout/PageLayout.vue';
 
     const API_BASE_URL: string = import.meta.env.VITE_API_BASE_URL;
@@ -120,7 +120,7 @@
 
     useSeo({
         title: 'Milo | Fractals',
-        url: 'https://iapetus11.me/fractals',
+        url: `${SITE_URL}fractals`,
         description:
             'Generate custom fractals: choose the equation, colors, and tweak the input parameters to get cool output images',
     });

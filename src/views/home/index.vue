@@ -8,7 +8,14 @@
     import { onMounted, useTemplateRef, watch } from 'vue';
     import SocialButtons from './social/SocialButtons.vue';
     import PicturesSection from './sections/PicturesSection.vue';
-    import { useSeo } from '@/utils/head';
+    import { SITE_URL, useSeo } from '@/utils/head';
+    import {
+        useSchemaOrg,
+        defineWebSite,
+        definePerson,
+        defineWebPage,
+    } from '@unhead/schema-org/vue';
+    import petusWebp from '@/assets/images/petus.webp?no-inline';
     import DesktopNavItems from './nav/desktop/NavItems.vue';
     import ExtraNavItems from './nav/extra/ExtraNavItems.vue';
 
@@ -49,13 +56,41 @@
         }
     });
 
+    const description =
+        `Hey! I'm Milo Weinberg, a ${aliveForYears} year-old full-stack developer who's been programming for ` +
+        `${programmingForYears} years and loves to learn new things!`;
+
     useSeo({
         title: 'Milo Weinberg / Iapetus11',
-        description:
-            `Hey! I'm Milo Weinberg, a ${aliveForYears} year-old full-stack developer who's been programming for ` +
-            `${programmingForYears} years and loves to learn new things!`,
-        url: 'https://iapetus11.me/',
+        description,
+        url: SITE_URL,
     });
+
+    useSchemaOrg([
+        definePerson({
+            name: 'Milo Weinberg',
+            alternateName: 'Iapetus11',
+            url: SITE_URL,
+            image: new URL(petusWebp, SITE_URL).href,
+            jobTitle: 'Full-Stack Software Engineer',
+            description,
+            sameAs: [
+                'https://github.com/Iapetus-11/',
+                'https://www.linkedin.com/in/milo-weinberg/',
+            ],
+        }),
+        defineWebSite({
+            name: 'Milo Weinberg / Iapetus11',
+            description,
+            inLanguage: 'en',
+        }),
+        defineWebPage({
+            '@type': 'ProfilePage',
+            mainEntity: {
+                '@id': `${SITE_URL}#identity`,
+            },
+        }),
+    ]);
 </script>
 
 <template>

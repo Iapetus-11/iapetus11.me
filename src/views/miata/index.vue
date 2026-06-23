@@ -2,11 +2,11 @@
     import PageLayout from '@/components/layout/PageLayout.vue';
     import Pictures from './Pictures.vue';
     import Mods from './Mods.vue';
-    import { useSeo } from '@/utils/head';
+    import { SITE_URL, useSeo } from '@/utils/head';
 
     useSeo({
         title: 'Milo | Miata',
-        url: 'https://iapetus11.me/miata',
+        url: `${SITE_URL}miata`,
         description: 'A page dedicated to my beloved 2023 ND Miata',
     });
 </script>

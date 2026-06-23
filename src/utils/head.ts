@@ -1,6 +1,8 @@
 import { useSeoMeta, type MetaFlat, type ResolvableValue } from '@unhead/vue';
 import petusWebp from '@/assets/images/petus.webp?no-inline';
 
+export const SITE_URL = 'https://iapetus11.me/';
+
 export interface SeoMeta {
     type: MetaFlat['ogType'];
     title: string;
