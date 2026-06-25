@@ -20,7 +20,7 @@ export function useSeo({
     embedTitle = title,
     description,
     url,
-    imageUrl = petusWebp,
+    imageUrl = new URL(petusWebp, SITE_URL).href,
     imageType = 'small',
     color = '#77d5af',
 }: Partial<{ [K in keyof SeoMeta]: ResolvableValue<SeoMeta[K]> }>) {
