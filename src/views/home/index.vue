@@ -57,7 +57,7 @@
     });
 
     const description =
-        `Hey! I'm Milo Weinberg, a ${aliveForYears} year-old full-stack developer who's been programming for ` +
+        `Hey! I'm Milo, a ${aliveForYears} year-old full-stack developer who's been programming for ` +
         `${programmingForYears} years and loves to learn new things!`;
 
     useSeo({

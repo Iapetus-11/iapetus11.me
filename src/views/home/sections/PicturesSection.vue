@@ -24,26 +24,15 @@
         ref="pictures-container"
         class="flex grid-cols-2 flex-col-reverse max-sm:gap-3 sm:grid xl:max-2xl:-translate-x-10"
     >
-        <div class="z-10">
+        <div class="z-15">
             <img
-                src="@/assets/images/me/me-asheville-blue-wall.webp"
-                alt="Me in Asheville"
+                src="@/assets/images/me/milo-crowders-mtn.webp"
+                alt="Me at Crowder's Mountain"
                 loading="lazy"
-                class="translate-y-15 scale-80"
+                class="translate-x-5"
                 @load="updateScrollCardEffect"
-                width="768"
-                height="614"
-            />
-        </div>
-        <div class="z-10">
-            <img
-                src="@/assets/images/me/trinity-and-i-park.webp"
-                alt="Trinity and I at a park"
-                loading="lazy"
-                class="-translate-x-12 -translate-y-6.5"
-                @load="updateScrollCardEffect"
-                width="768"
-                height="577"
+                width="1024"
+                height="770"
             />
         </div>
         <div class="-z-10">
@@ -51,54 +40,54 @@
                 src="@/assets/images/miata/grandfather-mtn-oct2025-sq.webp"
                 alt="Miata in fall at grandfather mountain"
                 loading="lazy"
-                class="-mt-20 translate-y-2 scale-110"
+                class="-mt-20 translate-x-7 translate-y-2 scale-110"
                 @load="updateScrollCardEffect"
-                width="1024"
-                height="605"
-            />
-        </div>
-        <div class="z-15">
-            <img
-                src="@/assets/images/miata/elk-mountain-graffiti-rd-angled.webp"
-                alt="Miata at Elk Mountain Scenic Highway"
-                loading="lazy"
-                class="-translate-y-16"
-                @load="updateScrollCardEffect"
-                width="1024"
-                height="453"
-            />
-        </div>
-        <div class="z-5">
-            <img
-                src="@/assets/images/me/me-and-trinity-icecream.webp"
-                alt="Trinity and I getting icecream"
-                loading="lazy"
-                class="-translate-x-2 translate-y-2"
-                @load="updateScrollCardEffect"
-                width="1024"
-                height="768"
-            />
-        </div>
-        <div class="z-5">
-            <img
-                src="@/assets/images/miata/parking-lot-sunset.webp"
-                alt="Miata in parking lot close to sunset"
-                loading="lazy"
-                class="-translate-y-18 scale-110"
-                @load="updateScrollCardEffect"
-                width="1024"
-                height="770"
+                width="901"
+                height="734"
             />
         </div>
         <div class="z-10">
             <img
-                src="@/assets/images/me/me-ny.webp"
-                alt="Me in NY"
+                src="@/assets/images/me/milo-trinity-airb-dr.webp"
+                alt="Trinity and I in the Dominican Republic"
+                width="1024"
+                height="866"
                 loading="lazy"
-                class="translate-x-48 -translate-y-17"
+                class="-translate-x-10 -translate-y-13"
+                @load="updateScrollCardEffect"
+            />
+        </div>
+        <div class="z-15">
+            <img
+                src="@/assets/images/me/milo-trinity-teleferico-dr.webp"
+                alt="Trinity and I on the teleférico"
+                width="2032"
+                height="1536"
+                loading="lazy"
+                class="-translate-y-10 scale-110"
+                @load="updateScrollCardEffect"
+            />
+        </div>
+        <div class="z-10">
+            <img
+                src="@/assets/images/miata/parking-lot-sunset.webp"
+                alt="Miata in parking lot close to sunset"
+                width="1024"
+                height="770"
+                loading="lazy"
+                class="-translate-y-20"
+                @load="updateScrollCardEffect"
+            />
+        </div>
+        <div class="z-5">
+            <img
+                src="@/assets/images/me/milo-cold-drive.webp"
+                alt="Me driving the Miata"
+                loading="lazy"
+                class="-translate-x-4 -translate-y-28"
                 @load="updateScrollCardEffect"
                 width="1024"
-                height="958"
+                height="1009"
             />
         </div>
     </div>
