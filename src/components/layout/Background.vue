@@ -1,4 +1,7 @@
 <script setup lang="ts">
+    import backgroundAvif from '@/assets/images/background.avif?no-inline';
+    import backgroundPng from '@/assets/images/background.png?no-inline';
+
     // Show the background automatically if javascript is disabled
     const BACKGROUND_NOSCRIPT_HTML = `
     <style>
@@ -19,12 +22,15 @@
         class="fixed top-0 left-0 -z-50 h-screen w-screen bg-linear-to-bl from-[#15224F] via-[#040917] to-[#14204A]"
     >
         <noscript v-html="BACKGROUND_NOSCRIPT_HTML"></noscript>
-        <img
-            id="background-image"
-            src="@/assets/images/background.webp"
-            class="h-screen w-screen object-cover opacity-[0.0001] transition-opacity duration-750"
-            fetchpriority="low"
-            onload="event.target.classList.add('!opacity-[6%]', 'md:opacity-5')"
-        />
+        <picture>
+            <source :srcset="backgroundAvif" type="image/avif" />
+            <img
+                id="background-image"
+                :src="backgroundPng"
+                class="h-screen w-screen object-cover opacity-[0.0001] transition-opacity duration-750"
+                fetchpriority="low"
+                onload="event.target.classList.add('!opacity-[6%]', 'md:opacity-5')"
+            />
+        </picture>
     </div>
 </template>

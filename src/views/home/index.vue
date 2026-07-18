@@ -9,12 +9,7 @@
     import SocialButtons from './social/SocialButtons.vue';
     import PicturesSection from './sections/PicturesSection.vue';
     import { SITE_URL, useSeo } from '@/utils/head';
-    import {
-        useSchemaOrg,
-        defineWebSite,
-        definePerson,
-        defineWebPage,
-    } from '@unhead/schema-org/vue';
+    import { useHead } from '@unhead/vue';
     import petusWebp from '@/assets/images/petus.webp?no-inline';
     import DesktopNavItems from './nav/desktop/NavItems.vue';
     import ExtraNavItems from './nav/extra/ExtraNavItems.vue';
@@ -66,31 +61,60 @@
         url: SITE_URL,
     });
 
-    useSchemaOrg([
-        definePerson({
-            name: 'Milo Weinberg',
-            alternateName: 'Iapetus11',
-            url: SITE_URL,
-            image: new URL(petusWebp, SITE_URL).href,
-            jobTitle: 'Full-Stack Software Engineer',
-            description,
-            sameAs: [
-                'https://github.com/Iapetus-11/',
-                'https://www.linkedin.com/in/milo-weinberg/',
-            ],
-        }),
-        defineWebSite({
-            name: 'Milo Weinberg / Iapetus11',
-            description,
-            inLanguage: 'en',
-        }),
-        defineWebPage({
-            '@type': 'ProfilePage',
-            mainEntity: {
-                '@id': `${SITE_URL}#identity`,
+    const petusImageUrl = new URL(petusWebp, SITE_URL).href;
+    useHead({
+        script: [
+            {
+                type: 'application/ld+json',
+                id: 'schema-org-graph',
+                innerHTML: JSON.stringify({
+                    '@context': 'https://schema.org',
+                    '@graph': [
+                        {
+                            '@id': `${SITE_URL}#identity`,
+                            '@type': 'Person',
+                            name: 'Milo Weinberg',
+                            alternateName: 'Iapetus11',
+                            description,
+                            jobTitle: 'Full-Stack Software Engineer',
+                            url: SITE_URL,
+                            image: { '@id': `${SITE_URL}#/schema/image/1` },
+                            sameAs: [
+                                'https://github.com/Iapetus-11/',
+                                'https://www.linkedin.com/in/milo-weinberg/',
+                            ],
+                        },
+                        {
+                            '@id': `${SITE_URL}#website`,
+                            '@type': 'WebSite',
+                            name: 'Milo Weinberg / Iapetus11',
+                            description,
+                            inLanguage: 'en',
+                            url: SITE_URL,
+                            publisher: { '@id': `${SITE_URL}#identity` },
+                        },
+                        {
+                            '@id': `${SITE_URL}#webpage`,
+                            '@type': ['WebPage', 'ProfilePage'],
+                            name: 'Milo Weinberg / Iapetus11',
+                            description,
+                            url: SITE_URL,
+                            about: { '@id': `${SITE_URL}#identity` },
+                            isPartOf: { '@id': `${SITE_URL}#website` },
+                            mainEntity: { '@id': `${SITE_URL}#identity` },
+                        },
+                        {
+                            '@id': `${SITE_URL}#/schema/image/1`,
+                            '@type': 'ImageObject',
+                            inLanguage: 'en',
+                            url: petusImageUrl,
+                            contentUrl: petusImageUrl,
+                        },
+                    ],
+                }),
             },
-        }),
-    ]);
+        ],
+    });
 </script>
 
 <template>

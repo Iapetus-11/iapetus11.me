@@ -29,6 +29,7 @@
                 src="@/assets/images/me/milo-crowders-mtn.webp"
                 alt="Me at Crowder's Mountain"
                 loading="lazy"
+                fetchpriority="low"
                 class="translate-x-5"
                 @load="updateScrollCardEffect"
                 width="1024"
@@ -40,6 +41,7 @@
                 src="@/assets/images/miata/grandfather-mtn-oct2025-sq.webp"
                 alt="Miata in fall at grandfather mountain"
                 loading="lazy"
+                fetchpriority="low"
                 class="-mt-20 translate-x-7 translate-y-2 scale-110"
                 @load="updateScrollCardEffect"
                 width="901"
@@ -53,6 +55,7 @@
                 width="1024"
                 height="866"
                 loading="lazy"
+                fetchpriority="low"
                 class="-translate-x-10 -translate-y-13"
                 @load="updateScrollCardEffect"
             />
@@ -64,6 +67,7 @@
                 width="2032"
                 height="1536"
                 loading="lazy"
+                fetchpriority="low"
                 class="-translate-y-10 scale-110"
                 @load="updateScrollCardEffect"
             />
@@ -75,6 +79,7 @@
                 width="1024"
                 height="770"
                 loading="lazy"
+                fetchpriority="low"
                 class="-translate-y-20"
                 @load="updateScrollCardEffect"
             />
@@ -84,6 +89,7 @@
                 src="@/assets/images/me/milo-cold-drive.webp"
                 alt="Me driving the Miata"
                 loading="lazy"
+                fetchpriority="low"
                 class="-translate-x-4 -translate-y-28"
                 @load="updateScrollCardEffect"
                 width="1024"
