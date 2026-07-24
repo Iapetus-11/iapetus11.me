@@ -30,6 +30,7 @@
                 class="h-screen w-screen object-cover opacity-[0.0001] transition-opacity duration-750"
                 fetchpriority="low"
                 onload="event.target.classList.add('!opacity-[6%]', 'md:opacity-5')"
+                alt=""
             />
         </picture>
     </div>
