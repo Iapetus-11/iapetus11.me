@@ -25,7 +25,15 @@ export const PROJECTS: ProjectDefinition[] = [
             'A Minecraft-themed utility, moderation, and economy Discord bot used by tens of thousands.',
         image: villagerBotWebp,
         link: 'https://villagerbot.com',
-        points: ['100,000+ Users', 'Python', 'Cython', 'Websockets', 'Discord.py', 'Docker'],
+        points: [
+            '100,000+ Users',
+            'Python',
+            'Cython',
+            'Websockets',
+            'Discord',
+            'Docker',
+            'PostgreSQL',
+        ],
     },
     {
         name: 'Fractals',
@@ -90,7 +98,7 @@ export const PROJECTS: ProjectDefinition[] = [
         description: 'A Discord bot to facilitate the management of Quake III servers via RCON.',
         image: quake3BotWebp,
         link: 'https://github.com/Iapetus-11/quake3-bot',
-        points: ['Python', 'Discord.py', 'Quake III RCON Protocol'],
+        points: ['Python', 'Discord', 'Quake III RCON Protocol'],
     },
     {
         name: 'api.iapetus11.me',
@@ -106,7 +114,7 @@ export const PROJECTS: ProjectDefinition[] = [
             'A web app which allows users to open their apartment with ButterflyMX, using a reverse engineered API wrapper.',
         image: butterflymx444Webp,
         link: 'https://github.com/Iapetus-11/ButterflyMX-444',
-        points: ['Python', 'FastAPI', 'Jinja', 'Docker'],
+        points: ['Python', 'FastAPI', 'Jinja'],
     },
     {
         name: 'Pillager Bot',
@@ -114,6 +122,6 @@ export const PROJECTS: ProjectDefinition[] = [
             'A small Discord bot for moderating my personal Discord servers. Includes anti-scammer functionality.',
         image: pillagerBotWebp,
         link: 'https://github.com/Iapetus-11/Pillager-Bot/',
-        points: ['Rust', 'Diesel'],
+        points: ['Rust', 'SQLX', 'PostgreSQL', 'Discord'],
     },
 ];
