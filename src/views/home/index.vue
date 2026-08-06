@@ -163,7 +163,7 @@
                         things!
                     </span>
                     <span class="[&>a]:text-link mt-4 block">
-                        I'm currently learning NeoVim, loving Rust, and working with Python + Vue.js
+                        I'm currently learning Neovim, loving Rust, and working with Python + Vue.js
                         for
                         <a href="https://medshift.com/" target="_blank" rel="noreferrer nofollow"
                             >MedShift</a
