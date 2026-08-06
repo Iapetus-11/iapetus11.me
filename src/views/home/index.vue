@@ -163,11 +163,12 @@
                         things!
                     </span>
                     <span class="[&>a]:text-link mt-4 block">
-                        I'm currently loving Rust, and working with Python + Vue.js for
+                        I'm currently learning NeoVim, loving Rust, and working with Python + Vue.js
+                        for
                         <a href="https://medshift.com/" target="_blank" rel="noreferrer nofollow"
                             >MedShift</a
-                        >. If I'm not programming, bouldering, or busy being a couch potato, you'll
-                        find me zooming on mountain backroads in my Miata!
+                        >. If I'm not programming or bouldering, you'll find me zooming on mountain
+                        backroads in my Miata!
                     </span>
                 </p>
 
