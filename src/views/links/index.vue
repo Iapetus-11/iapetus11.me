@@ -6,6 +6,7 @@
 
     useSeo({
         title: 'Milo | Links',
+        description: 'Dump of links to places or people I find interesting, useful, or nice.',
         url: `${SITE_URL}links`,
     });
 </script>
@@ -14,8 +15,8 @@
     <PageLayout title="Link Dump">
         <template #subheading>
             <p class="mt-2 text-gray-200 md:max-w-4/5">
-                Here's a dump of links to places I find interesting or useful. I got the idea from a
-                colleague, and as he referenced:
+                Here's a dump of links to places or people I find interesting, useful, or nice. I
+                got the idea from a colleague, and as he referenced:
                 <a
                     href="https://www.marginalia.nu/log/19-website-discoverability-crisis/"
                     target="_blank"

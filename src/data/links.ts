@@ -29,9 +29,10 @@ export const PEOPLE_LINKS: LinkDefinition[] = [
         link: 'https://romestop.pages.dev/',
     },
     {
-        name: 'Ryan Thomson',
-        description: 'Very smart and very opinionated. I encourage you to check out his blog.',
-        link: 'https://www.ryanthomson.net/',
+        name: 'Max Herold',
+        description:
+            'A good friend, software engineer, and artist. Quiet, but exceptionally worth listening to.',
+        link: 'https://maxypoo.dev/',
     },
     {
         name: 'Patrick Smathers',
