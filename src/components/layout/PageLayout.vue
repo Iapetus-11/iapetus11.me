@@ -2,7 +2,7 @@
     import BaseLayout from './BaseLayout.vue';
 
     interface Props {
-        title: string;
+        title?: string;
         extraWidth?: boolean;
     }
 
@@ -13,7 +13,13 @@
     <BaseLayout :extra-width class="gap-6 py-4! sm:gap-8 sm:py-6! md:py-10! lg:gap-12">
         <header class="w-full">
             <div class="flex items-center justify-between">
-                <h1 class="mr-6 text-left font-mono text-4xl font-bold md:text-5xl">{{ title }}</h1>
+                <div class="mr-6 text-left font-mono text-4xl font-bold md:text-5xl">
+                    <slot name="title">
+                        <h1>
+                            {{ title }}
+                        </h1>
+                    </slot>
+                </div>
 
                 <RouterLink :to="{ name: 'home' }" class="group shrink-0">
                     <img

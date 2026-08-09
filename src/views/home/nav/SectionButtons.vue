@@ -1,5 +1,5 @@
 <script setup lang="ts">
-    import SectionNavLink from './SectionNavLink.vue';
+    import SectionNavLink from './SectionButton.vue';
 </script>
 
 <template>
