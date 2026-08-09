@@ -11,8 +11,8 @@
     import { SITE_URL, useSeo } from '@/utils/head';
     import { useHead } from '@unhead/vue';
     import petusWebp from '@/assets/images/petus.webp?no-inline';
-    import DesktopNavItems from './nav/desktop/NavItems.vue';
-    import ExtraNavItems from './nav/extra/ExtraNavItems.vue';
+    import SectionButtons from './nav/SectionButtons.vue';
+    import ExtraNavLinks from './nav/extra/ExtraNavLinks.vue';
 
     const STTF_SECTIONS = ['pictures', 'projects', 'resume'];
 
@@ -139,8 +139,7 @@
                         <h1
                             class="font-mono text-3xl font-bold whitespace-nowrap sm:text-4xl xl:text-5xl"
                         >
-                            Milo<span class="sr-only"> Weinberg</span
-                            ><span class="text-primary-400 mx-2 xl:mx-4">/</span>Iapetus11
+                            Milo<span class="text-primary-400 mx-2 xl:mx-4">/</span>Iapetus11
                         </h1>
                         <h2
                             class="text-primary-400 mt-1 text-sm font-medium whitespace-nowrap italic sm:text-base lg:text-lg xl:text-xl"
@@ -172,7 +171,7 @@
                     </span>
                 </p>
 
-                <DesktopNavItems class="my-auto max-lg:hidden" />
+                <SectionButtons class="my-auto max-lg:hidden" />
 
                 <div
                     class="xs:max-lg:hidden flex gap-3 max-lg:mx-auto max-lg:mt-1 md:gap-2 lg:mt-auto"
@@ -188,7 +187,7 @@
                 class="flex flex-col gap-16 opacity-[0.0001] md:gap-20"
             >
                 <PicturesSection id="pictures" class="-scroll-mt-48 max-lg:order-last lg:mt-10" />
-                <ExtraNavItems class="-mb-10 max-lg:-mb-7 lg:-mt-16" />
+                <ExtraNavLinks class="-mb-10 max-lg:-mb-7 lg:-mt-16" />
                 <ProjectsSection id="projects" class="scroll-mt-200 lg:scroll-mt-[26vh]" />
                 <ResumeSection id="resume" class="scroll-mt-[30vh]" />
 

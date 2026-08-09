@@ -1,8 +1,8 @@
 <script setup lang="ts">
-    import PageLayout from '@/components/layout/PageLayout.vue';
     import Pictures from './Pictures.vue';
     import Mods from './Mods.vue';
     import { SITE_URL, useSeo } from '@/utils/head';
+    import PostLayout from '../../PostLayout.vue';
 
     useSeo({
         title: 'Milo | Miata',
@@ -12,7 +12,7 @@
 </script>
 
 <template>
-    <PageLayout title="Miata" extra-width>
+    <PostLayout title="Miata" extra-width>
         <div class="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-16">
             <div class="flex flex-col gap-4 md:-mt-6 lg:-mt-8">
                 <p>
@@ -30,5 +30,5 @@
                 <Pictures />
             </div>
         </div>
-    </PageLayout>
+    </PostLayout>
 </template>

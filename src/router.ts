@@ -20,19 +20,29 @@ export default {
             },
         },
         {
+            path: '/blog',
+            children: [
+                {
+                    path: '',
+                    name: 'blog',
+                    component: () => import('@/views/blog/index.vue'),
+                },
+                {
+                    path: 'links',
+                    name: 'blog-links',
+                    component: () => import('@/views/blog/posts/links/index.vue'),
+                },
+                {
+                    path: 'miata',
+                    name: 'blog-miata',
+                    component: () => import('@/views/blog/posts/miata/index.vue'),
+                },
+            ],
+        },
+        {
             path: '/fractals',
             name: 'fractals',
             component: () => import('@/views/fractals/index.vue'),
-        },
-        {
-            path: '/links',
-            name: 'links',
-            component: () => import('@/views/links/index.vue'),
-        },
-        {
-            path: '/miata',
-            name: 'miata',
-            component: () => import('@/views/miata/index.vue'),
         },
         {
             // Match any route, must be last

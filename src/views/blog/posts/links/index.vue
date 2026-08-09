@@ -2,7 +2,7 @@
     import { PEOPLE_LINKS, ONLINE_TOOL_LINKS, SOFTWARE_LINKS } from '@/data/links';
     import LinksSection from './LinksSection.vue';
     import { SITE_URL, useSeo } from '@/utils/head';
-    import PageLayout from '@/components/layout/PageLayout.vue';
+    import PostLayout from '../../PostLayout.vue';
 
     useSeo({
         title: 'Milo | Links',
@@ -12,7 +12,7 @@
 </script>
 
 <template>
-    <PageLayout title="Link Dump">
+    <PostLayout title="Link Dump">
         <template #subheading>
             <p class="mt-2 text-gray-200 md:max-w-4/5">
                 Here's a dump of links to places or people I find interesting, useful, or nice. I
@@ -36,5 +36,5 @@
             <LinksSection title="Friends & Colleagues" :links="PEOPLE_LINKS" />
             <LinksSection title="Software" :links="SOFTWARE_LINKS" />
         </div>
-    </PageLayout>
+    </PostLayout>
 </template>
