@@ -12,7 +12,6 @@
     import { useHead } from '@unhead/vue';
     import petusWebp from '@/assets/images/petus.webp?no-inline';
     import SectionButtons from './nav/SectionButtons.vue';
-    import ExtraNavLinks from './nav/extra/ExtraNavLinks.vue';
 
     const STTF_SECTIONS = ['pictures', 'projects', 'resume'];
 
@@ -187,8 +186,10 @@
                 class="flex flex-col gap-16 opacity-[0.0001] md:gap-20"
             >
                 <PicturesSection id="pictures" class="-scroll-mt-48 max-lg:order-last lg:mt-10" />
-                <ExtraNavLinks class="-mb-10 max-lg:-mb-7 lg:-mt-16" />
-                <ProjectsSection id="projects" class="scroll-mt-200 lg:scroll-mt-[26vh]" />
+                <ProjectsSection
+                    id="projects"
+                    class="-mt-10 scroll-mt-200 max-lg:-mt-7 lg:-mt-16 lg:scroll-mt-[26vh]"
+                />
                 <ResumeSection id="resume" class="scroll-mt-[30vh]" />
 
                 <!-- Get last element to appear correctly with useScrollCardEffect -->

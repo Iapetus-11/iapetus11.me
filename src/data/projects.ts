@@ -20,6 +20,13 @@ export type ProjectDefinition = {
 
 export const PROJECTS: ProjectDefinition[] = [
     {
+        name: 'Blog',
+        description: 'Miscellanous rants, link dump, etc.',
+        image: villagerBotWebp,
+        link: '/blog',
+        points: [],
+    },
+    {
         name: 'Villager Bot',
         description:
             'A Minecraft-themed utility, moderation, and economy Discord bot used by tens of thousands.',
