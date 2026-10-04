@@ -5,12 +5,13 @@
 
 <template>
     <PageLayout title="Blog / Dump">
-        <div>
+        <div class="flex gap-4">
             <PostListItem
                 title="Miata"
                 description="Showing off my Miiaaaata"
                 route-name="blog-miata"
             />
+
             <PostListItem title="Link Dump" description="link dump" route-name="blog-links" />
         </div>
     </PageLayout>

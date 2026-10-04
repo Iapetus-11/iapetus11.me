@@ -10,11 +10,13 @@
 </script>
 
 <template>
-    <PageLayout :extra-width>
-        <template #title>
-            <RouterLink :to="{ name: 'blog' }"> Blog </RouterLink>
+    <PageLayout :extra-width :title>
+        <template #subheading>
+            <RouterLink :to="{ name: 'blog' }" class="text-lg text-white/75">
+                Back to posts
+            </RouterLink>
 
-            <h1>{{ title }}</h1>
+            <slot name="subheading" />
         </template>
 
         <slot />
