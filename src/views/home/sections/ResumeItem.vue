@@ -1,6 +1,6 @@
 <script setup lang="ts">
     import type { ResumeItemDefinition } from '@/data/resume';
-    import BadgeList from './BadgeList.vue';
+    import BadgeList from '../../../components/BadgeList.vue';
 
     defineProps<ResumeItemDefinition>();
 </script>

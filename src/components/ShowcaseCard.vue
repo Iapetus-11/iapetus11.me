@@ -1,13 +1,20 @@
 <script setup lang="ts">
-    import type { ProjectDefinition } from '@/data/projects';
     import Link from '@/components/Link.vue';
     import BadgeList from './BadgeList.vue';
 
-    defineProps<
-        ProjectDefinition & {
-            imgLoading: 'eager' | 'lazy';
-        }
-    >();
+    interface Props {
+        link: string;
+        image: string;
+        title: string;
+        description: string;
+        points?: string[];
+        imgLoading?: 'eager' | 'lazy';
+    }
+
+    withDefaults(defineProps<Props>(), {
+        points: () => [],
+        imageLoading: 'eager',
+    });
 </script>
 
 <template>
@@ -20,7 +27,7 @@
             <div
                 class="mb-1 flex items-center font-mono text-xl font-semibold whitespace-nowrap text-white md:text-2xl"
             >
-                <h3>{{ name }}</h3>
+                <h3>{{ title }}</h3>
 
                 <span
                     class="icon-[hugeicons--link-square-02] ml-2.5 scale-0 text-purple-300 opacity-0 transition-[opacity,scale] group-hover:scale-110 group-hover:opacity-100"
@@ -42,9 +49,9 @@
         >
             <img
                 :src="image"
-                :alt="name"
-                :loading="imgLoading"
-                :fetchpriority="imgLoading === 'eager' ? 'high' : 'auto'"
+                :alt="title"
+                :loading="imageLoading"
+                :fetchpriority="imageLoading === 'eager' ? 'high' : 'auto'"
                 class="max-h-32 rounded-2xl sm:rounded-3xl"
             />
         </div>
