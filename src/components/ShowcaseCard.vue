@@ -8,7 +8,7 @@
         title: string;
         description: string;
         points?: string[];
-        imgLoading?: 'eager' | 'lazy';
+        imageLoading?: 'eager' | 'lazy';
     }
 
     withDefaults(defineProps<Props>(), {

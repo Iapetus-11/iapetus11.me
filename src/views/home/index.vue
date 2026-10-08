@@ -121,7 +121,6 @@
         <div class="flex flex-col items-center lg:flex-row lg:gap-x-32 xl:gap-x-48">
             <!-- top-* and h-[calc(...)] here must match the y padding in <DefaultLayout> -->
             <div
-                ref="sticky-container"
                 class="flex flex-col gap-y-5 self-start pb-8 max-lg:h-fit! md:top-10 md:h-[calc(100vh-2.5rem)] md:pb-12 lg:sticky lg:-mb-100 lg:w-[40%] xl:top-16 xl:h-[calc(100vh-4rem)] 2xl:top-22 2xl:h-[calc(100vh-5.5rem)]"
             >
                 <div class="xs:max-lg:w-full flex items-center max-lg:mx-auto lg:-ml-1">
@@ -188,7 +187,7 @@
                 <PicturesSection id="pictures" class="-scroll-mt-48 max-lg:order-last lg:mt-10" />
                 <ProjectsSection
                     id="projects"
-                    class="-mt-10 scroll-mt-200 max-lg:-mt-7 lg:-mt-16 lg:scroll-mt-[26vh]"
+                    class="scroll-mt-200 lg:-mt-12 lg:scroll-mt-[26vh]"
                 />
                 <ResumeSection id="resume" class="scroll-mt-[30vh]" />
 
