@@ -13,5 +13,6 @@
         <SectionNavLink sttf-id="resume" icon="icon-[hugeicons--ai-content-generator-01]">
             Experience
         </SectionNavLink>
+        <SectionNavLink sttf-id="" icon="icon-[hugeicons--news]"> Blog </SectionNavLink>
     </div>
 </template>
