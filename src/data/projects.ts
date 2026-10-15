@@ -19,13 +19,14 @@ export type ProjectDefinition = {
 };
 
 export const PROJECTS: ProjectDefinition[] = [
-    {
-        name: 'Blog',
-        description: 'Miscellanous rants, link dump, etc.',
-        image: villagerBotWebp,
-        link: '/blog',
-        points: [],
-    },
+    // {
+    //     name: 'Blog',
+    //     description:
+    //         'I post about my interests, mostly technology and the occasional rant on lack of privacy. There is also a link dump.',
+    //     image: villagerBotWebp,
+    //     link: '/blog',
+    //     points: [],
+    // },
     {
         name: 'Villager Bot',
         description:

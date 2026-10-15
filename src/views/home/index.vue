@@ -187,7 +187,7 @@
                 <PicturesSection id="pictures" class="-scroll-mt-48 max-lg:order-last lg:mt-10" />
                 <ProjectsSection
                     id="projects"
-                    class="scroll-mt-200 lg:-mt-12 lg:scroll-mt-[26vh]"
+                    class="scroll-mt-200 lg:-mt-20 lg:scroll-mt-[30vh]"
                 />
                 <ResumeSection id="resume" class="scroll-mt-[30vh]" />
 
