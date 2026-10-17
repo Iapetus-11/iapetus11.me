@@ -15,11 +15,12 @@ export const RESUME_ITEMS: ResumeItemDefinition[] = [
             'Planned and led projects across two teams, ensuring timely success to meet customer expectations',
             'Met with B2B customers to determine project requirements and communicate updates',
             'Onboarded new engineers, as well as continued mentoring of interns and peers across multiple teams',
-            'Helped build a Shopify app enabling sales reps to place orders for customers, automatically calculating commission',
+            'Helped build Shopify app enabling easy territory mapping, sales reps ordering, and automatic commission for >100 businesses and 100k+ orders',
         ],
         skills: [
             'Django',
             'Django Rest Framework',
+            'React',
             'Vue',
             'JavaScript',
             'TypeScript',

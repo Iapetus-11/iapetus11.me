@@ -15,8 +15,13 @@ export function calculateScrollCardEffect(
     const elCenter = (rect.top + rect.bottom) / 2;
 
     let vectorFromCenter = Math.max(-1, Math.min(1, (elCenter - dividerLine) / dividerLine));
+    const sign = Math.sign(vectorFromCenter);
+    const smoothing = 1.6;
+    vectorFromCenter = Math.abs(vectorFromCenter);
     vectorFromCenter =
-        Math.abs(Math.pow(Math.pow(vectorFromCenter, 2), 1.25)) * Math.sign(vectorFromCenter);
+        Math.pow(vectorFromCenter, 2.5) /
+        Math.pow(1 + Math.pow(vectorFromCenter, 3 * smoothing), 0.5 / smoothing);
+    vectorFromCenter *= sign;
 
     if (vectorFromCenter < startEffectReductionCutoff) {
         vectorFromCenter /= startEffectReductionFactor;
