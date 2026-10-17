@@ -12,7 +12,6 @@
     <Link
         :to
         class="group flex w-fit items-center pr-2 text-lg font-medium transition-colors hover:text-purple-300 2xl:text-xl"
-        mode="external"
     >
         <span
             :class="icon"
