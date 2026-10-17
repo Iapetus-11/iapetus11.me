@@ -171,8 +171,7 @@
                         backroads in my Miata!
                     </span>
                     <span class="lg:hidden">
-                        Check out my <Link :to="{ name: 'blog' }">blog</Link> unless you're a
-                        scraper.
+                        Check out my <Link :to="{ name: 'blog' }">blog</Link> unless you're a robot.
                     </span>
                 </p>
 
@@ -191,7 +190,10 @@
                 id="sections-container"
                 class="flex flex-col gap-16 opacity-[0.0001] md:gap-20"
             >
-                <PicturesSection id="pictures" class="-scroll-mt-48 max-lg:order-last lg:mt-10" />
+                <PicturesSection
+                    id="pictures"
+                    class="-scroll-mt-48 max-lg:order-last sm:mt-24 lg:mt-10"
+                />
                 <ProjectsSection
                     id="projects"
                     class="scroll-mt-200 lg:-mt-20 lg:scroll-mt-[30vh]"
@@ -199,7 +201,7 @@
                 <ResumeSection id="resume" class="scroll-mt-[30vh]" />
 
                 <!-- Get last element to appear correctly with useScrollCardEffect -->
-                <div class="order-last h-32 lg:h-6"></div>
+                <div class="order-last max-sm:h-32 lg:h-6"></div>
             </div>
         </div>
     </BaseLayout>
