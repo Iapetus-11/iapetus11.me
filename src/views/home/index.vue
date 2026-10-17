@@ -12,6 +12,7 @@
     import { useHead } from '@unhead/vue';
     import petusWebp from '@/assets/images/petus.webp?no-inline';
     import SectionButtons from './nav/SectionButtons.vue';
+    import Link from '@/components/Link.vue';
 
     const STTF_SECTIONS = ['pictures', 'projects', 'resume'];
 
@@ -153,19 +154,25 @@
                     </div>
                 </div>
 
-                <p class="lg:text-md max-lg:order-last md:text-lg 2xl:text-lg">
-                    <span class="block">
+                <p
+                    class="lg:text-md [&>*>a]:text-link space-y-4 *:block max-lg:order-last md:text-lg 2xl:text-lg"
+                >
+                    <span>
                         I'm a {{ aliveForYears }} year-old full-stack developer who's been
                         programming for {{ programmingForYears }} years and loves to learn new
                         things!
                     </span>
-                    <span class="[&>a]:text-link mt-4 block">
-                        I'm currently learning Neovim, loving Rust, and working with Python + Vue.js
+                    <span>
+                        I'm currently learning Neovim, loving Rust, and working with Django + Vue.js
                         for
-                        <a href="https://medshift.com/" target="_blank" rel="noreferrer nofollow"
-                            >MedShift</a
+                        <a href="https://medshift.com/" target="_blank" rel="noreferrer nofollow">
+                            MedShift</a
                         >. If I'm not programming or bouldering, you'll find me zooming on mountain
                         backroads in my Miata!
+                    </span>
+                    <span class="lg:hidden">
+                        Check out my <Link :to="{ name: 'blog' }">blog</Link> unless you're a
+                        scraper.
                     </span>
                 </p>
 
