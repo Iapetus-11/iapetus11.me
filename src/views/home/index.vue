@@ -1,5 +1,4 @@
 <script setup lang="ts">
-    import BaseLayout from '@/components/layout/BaseLayout.vue';
     import { calculateYearsSince } from '@/utils/datetime';
     import ProjectsSection from './sections/ProjectsSection.vue';
     import ResumeSection from './sections/ResumeSection.vue';
