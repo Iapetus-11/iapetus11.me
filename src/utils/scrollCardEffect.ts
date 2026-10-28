@@ -12,6 +12,14 @@ export function calculateScrollCardEffect(
     perspectiveHeight: number
 ): Partial<CSSStyleDeclaration> {
     const rect = el.getBoundingClientRect();
+
+    // Skip math for elements not on screen
+    const viewportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight);
+    const viewportBuffer = 300;
+    if (rect.bottom < -viewportBuffer || rect.top - viewportHeight - viewportBuffer >= 0) {
+        return {};
+    }
+
     const elCenter = (rect.top + rect.bottom) / 2;
 
     let vectorFromCenter = Math.max(-1, Math.min(1, (elCenter - dividerLine) / dividerLine));
