@@ -18,7 +18,7 @@
                 <slot name="sticky" />
             </div>
 
-            <div class="flex-grow">
+            <div class="grow">
                 <slot name="scrollable" />
             </div>
         </div>

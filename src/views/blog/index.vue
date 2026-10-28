@@ -2,6 +2,9 @@
     import ShowcaseCard from '@/components/ShowcaseCard.vue';
     import villagerBotWebp from '@/assets/images/projects/villager-bot.webp';
     import StickyLayout from '@/components/layout/StickyLayout.vue';
+    import Link from '@/components/Link.vue';
+    import SectionButtons from '@/views/home/nav/SectionButtons.vue';
+    import SocialButtons from '@/views/home/social/SocialButtons.vue';
     import { computed, useTemplateRef } from 'vue';
     import { useScrollCardEffect } from '@/utils/scrollCardEffect';
 
