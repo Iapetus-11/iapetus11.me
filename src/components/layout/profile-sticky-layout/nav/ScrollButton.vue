@@ -11,15 +11,20 @@
     }>();
 
     const sttf = computed(() => `#${props.sttfId}`);
+
+    const linkTarget = computed(() =>
+        route.name === 'home'
+            ? { mode: 'external' as const, to: sttf.value }
+            : { to: { name: 'home', hash: sttf.value } }
+    );
     const active = computed(() => route.hash === sttf.value);
 </script>
 
 <template>
     <Link
-        :to="sttf"
+        v-bind="linkTarget"
         class="group flex w-fit items-center pr-2 text-lg font-medium transition-colors hover:text-purple-300 2xl:text-xl"
         :class="{ 'text-slate-300': active }"
-        mode="external"
     >
         <span
             :class="[icon, { 'scale-110 opacity-75': active }]"
