@@ -44,8 +44,12 @@
         // Also no I cannot use vue-router's scrollBehavior, because that does not respect scroll margin.
         const sttfId = route.hash.slice(1);
         if (STTF_SECTIONS.includes(sttfId)) {
-            sectionsContainer.value!.classList.add('fade-in');
-            document.getElementById(sttfId)!.scrollIntoView({ behavior: 'instant' });
+            // Scroll before animating, otherwise scrollIntoView scrolls horizontally to the
+            // translated-off-screen container.
+            const sttfElement = document.getElementById(sttfId)!;
+            sttfElement.scrollIntoView({ behavior: 'instant' });
+
+            sectionsContainer.value!.classList.add('slide-in');
         }
     });
 
@@ -118,25 +122,20 @@
 <template>
     <ProfileStickyLayout>
         <noscript v-html="SECTIONS_CONTAINER_NOSCRIPT_HTML"></noscript>
-        <Transition appear name="slide">
-            <div
-                ref="sections-container"
-                id="sections-container"
-                class="flex flex-col gap-16 opacity-[0.0001] md:gap-20"
-            >
-                <PicturesSection
-                    id="pictures"
-                    class="-scroll-mt-48 max-lg:order-last sm:mt-24 lg:mt-10"
-                />
-                <ProjectsSection
-                    id="projects"
-                    class="scroll-mt-200 lg:-mt-20 lg:scroll-mt-[30vh]"
-                />
-                <ResumeSection id="resume" class="scroll-mt-[30vh]" />
+        <div
+            ref="sections-container"
+            id="sections-container"
+            class="flex flex-col gap-16 opacity-[0.0001] md:gap-20"
+        >
+            <PicturesSection
+                id="pictures"
+                class="-scroll-mt-48 max-lg:order-last sm:mt-24 lg:mt-10"
+            />
+            <ProjectsSection id="projects" class="scroll-mt-200 lg:-mt-20 lg:scroll-mt-[30vh]" />
+            <ResumeSection id="resume" class="scroll-mt-[26vh]" />
 
-                <!-- Get last element to appear correctly with useScrollCardEffect -->
-                <div class="order-last max-sm:h-32 lg:h-6"></div>
-            </div>
-        </Transition>
+            <!-- Get last element to appear correctly with useScrollCardEffect -->
+            <div class="order-last max-sm:h-32 lg:h-6"></div>
+        </div>
     </ProfileStickyLayout>
 </template>

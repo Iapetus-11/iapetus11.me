@@ -6,7 +6,7 @@
     @reference '@/assets/main.css';
 
     .sticky-container {
-        @apply flex flex-col gap-y-5 self-start pb-8 max-lg:h-fit! md:top-10 md:h-[calc(100vh-2.5rem)] md:pb-12 lg:sticky lg:-mb-100 xl:top-16 xl:h-[calc(100vh-4rem)] xl:w-[32%] xl:shrink-0 2xl:top-22 2xl:h-[calc(100vh-5.5rem)];
+        @apply flex flex-col gap-y-5 self-start pb-8 max-lg:h-fit! md:top-10 md:h-[calc(100vh-2.5rem)] md:pb-12 lg:sticky lg:-mb-100 lg:w-[32%] lg:shrink-0 xl:top-16 xl:h-[calc(100vh-4rem)] xl:w-[32%] 2xl:top-22 2xl:h-[calc(100vh-5.5rem)];
     }
 </style>
 
@@ -18,7 +18,7 @@
                 <slot name="sticky" />
             </div>
 
-            <div class="grow">
+            <div class="w-full">
                 <slot name="scrollable" />
             </div>
         </div>
