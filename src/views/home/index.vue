@@ -4,7 +4,7 @@
     import ResumeSection from './sections/ResumeSection.vue';
     import { useActiveSTTFSection } from '@/utils/sttfs';
     import { useRoute, useRouter } from 'vue-router';
-    import { onMounted, useTemplateRef, watch } from 'vue';
+    import { nextTick, onMounted, useTemplateRef, watch } from 'vue';
     import PicturesSection from './sections/PicturesSection.vue';
     import { SITE_URL, useSeo } from '@/utils/head';
     import { useHead } from '@unhead/vue';
@@ -49,7 +49,7 @@
             const sttfElement = document.getElementById(sttfId)!;
             sttfElement.scrollIntoView({ behavior: 'instant' });
 
-            sectionsContainer.value!.classList.add('slide-in');
+            nextTick(() => sectionsContainer.value!.classList.add('slide-in'));
         }
     });
 

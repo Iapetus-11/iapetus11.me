@@ -64,7 +64,7 @@
         transform: translateX(100%);
         opacity: 0;
     }
-    70% {
+    60% {
         transform: translateX(-2%);
     }
     100% {
@@ -74,7 +74,7 @@
 }
 
 @utility slide-in {
-    animation: slide-in 250ms ease-out both;
+    animation: slide-in 200ms ease-out both;
 }
 
 /* Vue transitions ---- */
