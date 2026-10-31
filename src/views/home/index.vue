@@ -118,20 +118,25 @@
 <template>
     <ProfileStickyLayout>
         <noscript v-html="SECTIONS_CONTAINER_NOSCRIPT_HTML"></noscript>
-        <div
-            ref="sections-container"
-            id="sections-container"
-            class="flex flex-col gap-16 opacity-[0.0001] md:gap-20"
-        >
-            <PicturesSection
-                id="pictures"
-                class="-scroll-mt-48 max-lg:order-last sm:mt-24 lg:mt-10"
-            />
-            <ProjectsSection id="projects" class="scroll-mt-200 lg:-mt-20 lg:scroll-mt-[30vh]" />
-            <ResumeSection id="resume" class="scroll-mt-[30vh]" />
+        <Transition appear name="slide">
+            <div
+                ref="sections-container"
+                id="sections-container"
+                class="flex flex-col gap-16 opacity-[0.0001] md:gap-20"
+            >
+                <PicturesSection
+                    id="pictures"
+                    class="-scroll-mt-48 max-lg:order-last sm:mt-24 lg:mt-10"
+                />
+                <ProjectsSection
+                    id="projects"
+                    class="scroll-mt-200 lg:-mt-20 lg:scroll-mt-[30vh]"
+                />
+                <ResumeSection id="resume" class="scroll-mt-[30vh]" />
 
-            <!-- Get last element to appear correctly with useScrollCardEffect -->
-            <div class="order-last max-sm:h-32 lg:h-6"></div>
-        </div>
+                <!-- Get last element to appear correctly with useScrollCardEffect -->
+                <div class="order-last max-sm:h-32 lg:h-6"></div>
+            </div>
+        </Transition>
     </ProfileStickyLayout>
 </template>

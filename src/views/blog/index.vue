@@ -14,7 +14,7 @@
 <template>
     <ProfileStickyLayout>
         <!-- TODO: Fade in bad -->
-        <ul ref="posts-list" class="fade-in flex w-full flex-col gap-6">
+        <ul ref="posts-list" class="slide-in flex w-full flex-col gap-6">
             <template v-for="i in 5" :key="i">
                 <ShowcaseCard
                     title="Link Dump"
