@@ -17,7 +17,7 @@
             ? { mode: 'external' as const, to: sttf.value }
             : { to: { name: 'home', hash: sttf.value } }
     );
-    const active = computed(() => route.hash === sttf.value);
+    const active = computed(() => route.name === 'home' && route.hash === sttf.value);
 </script>
 
 <template>

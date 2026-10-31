@@ -59,6 +59,24 @@
     image-rendering: crisp-edges;
 }
 
+@keyframes slide-in {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    70% {
+        transform: translateX(-2%);
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@utility slide-in {
+    animation: slide-in 250ms ease-out both;
+}
+
 /* Vue transitions ---- */
 .scale-enter-active,
 .scale-leave-active {
