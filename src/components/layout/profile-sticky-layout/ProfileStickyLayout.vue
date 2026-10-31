@@ -59,7 +59,7 @@
                     >. If I'm not programming or rock climbing, you'll find me zooming on mountain
                     backroads in my Miata!
                 </span>
-                <span class="lg:hidden">
+                <span class="lg:hidden" v-show="$route.name !== 'blog'">
                     Check out my <Link :to="{ name: 'blog' }">blog</Link> unless you're a robot.
                 </span>
             </p>
