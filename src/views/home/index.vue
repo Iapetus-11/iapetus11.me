@@ -49,7 +49,7 @@
             const sttfElement = document.getElementById(sttfId)!;
             sttfElement.scrollIntoView({ behavior: 'instant' });
 
-            nextTick(() => sectionsContainer.value!.classList.add('slide-in'));
+            nextTick(() => sectionsContainer.value!.classList.add('max-lg:fade-in', 'lg:slide-in'));
         }
     });
 
