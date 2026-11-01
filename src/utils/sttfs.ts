@@ -37,7 +37,7 @@ export function useActiveSTTFSection<SectionId extends string>(
         viewableSections.sort(([, aDelta], [, bDelta]) => aDelta - bDelta);
 
         activeSection.value = viewableSections[0]?.[0];
-    }, 50);
+    }, 20);
 
     useWindowEvent('scroll', updateActiveSTTF);
     useWindowEvent('resize', updateActiveSTTF);

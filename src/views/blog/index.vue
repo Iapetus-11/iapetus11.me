@@ -29,6 +29,9 @@
                     :image="villagerBotWebp"
                 />
             </template>
+
+            <!-- Get last element to appear correctly with useScrollCardEffect -->
+            <div class="order-last max-sm:h-32 lg:h-32"></div>
         </ul>
     </ProfileStickyLayout>
 </template>
