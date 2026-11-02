@@ -1,4 +1,7 @@
 import type { RouterOptions } from 'vite-ssg';
+import { ref } from 'vue';
+
+export const navigationCount = ref(0);
 
 export default {
     scrollBehavior: (to, from) => {
