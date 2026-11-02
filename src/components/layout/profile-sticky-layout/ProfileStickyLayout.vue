@@ -4,6 +4,7 @@
     import { DATE_BECAME_ALIVE, DATE_BECAME_PROGRAMMER_NERD } from '@/data/me';
     import SocialButtons from './social/SocialButtons.vue';
     import SectionButtons from './nav/SectionButtons.vue';
+    import Link from '@/components/Link.vue';
 
     const aliveForYears = calculateYearsSince(DATE_BECAME_ALIVE);
     const programmingForYears = calculateYearsSince(DATE_BECAME_PROGRAMMER_NERD);
