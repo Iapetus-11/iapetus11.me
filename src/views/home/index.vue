@@ -4,13 +4,14 @@
     import ResumeSection from './sections/ResumeSection.vue';
     import { useActiveSTTFSection } from '@/utils/sttfs';
     import { useRoute, useRouter } from 'vue-router';
-    import { nextTick, onMounted, useTemplateRef, watch } from 'vue';
+    import { onMounted, useTemplateRef, watch } from 'vue';
     import PicturesSection from './sections/PicturesSection.vue';
     import { SITE_URL, useSeo } from '@/utils/head';
     import { useHead } from '@unhead/vue';
     import petusWebp from '@/assets/images/petus.webp?no-inline';
     import { DATE_BECAME_PROGRAMMER_NERD, DATE_BECAME_ALIVE } from '@/data/me';
     import ProfileStickyLayout from '@/components/layout/profile-sticky-layout/ProfileStickyLayout.vue';
+    import { navigationCount } from '@/router';
 
     const STTF_SECTIONS = ['pictures', 'projects', 'resume'];
 
@@ -49,7 +50,11 @@
             const sttfElement = document.getElementById(sttfId)!;
             sttfElement.scrollIntoView({ behavior: 'instant' });
 
-            nextTick(() => sectionsContainer.value!.classList.add('max-lg:fade-in', 'lg:slide-in'));
+            if (navigationCount.value > 2) {
+                sectionsContainer.value!.classList.add('max-lg:fade-in', 'lg:slide-in');
+            } else {
+                sectionsContainer.value!.classList.add('fade-in');
+            }
         }
     });
 
