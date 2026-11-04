@@ -1,38 +1,34 @@
 <script setup lang="ts">
     import ShowcaseCard from '@/components/ShowcaseCard.vue';
     import villagerBotWebp from '@/assets/images/projects/villager-bot.webp';
-    import { computed, useTemplateRef } from 'vue';
-    import { useScrollCardEffect } from '@/utils/scrollCardEffect';
     import ProfileStickyLayout from '@/components/layout/profile-sticky-layout/ProfileStickyLayout.vue';
-
-    const container = useTemplateRef('posts-list');
-    const postElements = computed(() => [...((container.value?.children ?? []) as HTMLElement[])]);
-
-    useScrollCardEffect(postElements);
 </script>
 
 <template>
     <ProfileStickyLayout>
-        <ul ref="posts-list" class="lg:slide-in flex w-full flex-col gap-6">
+        <ul class="lg:slide-in flex w-full flex-col gap-6">
             <ShowcaseCard
                 title="Link Dump"
-                description="A collection of links to places or people I find interesting, useful, or nice."
+                description="A collection of links to places or people I find interesting, useful, or nice"
                 link="/blog/links"
                 :image="villagerBotWebp"
+                small
             />
 
             <ShowcaseCard
                 title="Miata"
-                description="Pictures of my Miata & my "
+                description="My most biggest & most expensive toy"
                 link="/blog/miata"
                 :image="villagerBotWebp"
+                small
             />
 
             <ShowcaseCard
                 title="Good Code & Engineering"
-                description="Some thoughts, tips, and ideas from my experience and reading."
+                description="Some thoughts, tips, and ideas from my experience and reading"
                 link="/blog/miata"
                 :image="villagerBotWebp"
+                small
             />
 
             <!-- Get last element to appear correctly with useScrollCardEffect -->
