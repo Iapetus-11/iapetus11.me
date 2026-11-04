@@ -9,6 +9,7 @@
         description: string;
         points?: string[];
         imageLoading?: 'eager' | 'lazy';
+        small?: boolean;
     }
 
     withDefaults(defineProps<Props>(), {
@@ -21,11 +22,12 @@
     <Link
         :to="link"
         :target="link.startsWith('/') ? '_self' : '_blank'"
-        class="group outlined-actionable relative flex min-h-43 rounded-xl p-4 lg:p-5"
+        class="group outlined-actionable relative flex rounded-xl p-4 lg:p-5"
+        :class="[small ? 'min-h-36' : 'min-h-43']"
     >
         <div class="self-center sm:max-w-[calc(100%-10rem)]">
             <div
-                class="mb-1 flex items-center font-mono text-xl font-semibold whitespace-nowrap text-white md:text-2xl"
+                class="mb-1 flex max-w-[calc(100%-3rem)] items-center font-mono text-xl font-semibold text-white md:text-2xl md:whitespace-nowrap"
             >
                 <h3>{{ title }}</h3>
 
@@ -41,7 +43,7 @@
                 {{ description }}
             </p>
 
-            <BadgeList :badges="points" class="mt-3" />
+            <BadgeList v-if="points.length" :badges="points" class="mt-3" />
         </div>
 
         <div
@@ -52,7 +54,8 @@
                 :alt="title"
                 :loading="imageLoading"
                 :fetchpriority="imageLoading === 'eager' ? 'high' : 'auto'"
-                class="max-h-32 rounded-2xl sm:rounded-3xl"
+                class="rounded-2xl sm:rounded-3xl"
+                :class="[small ? 'max-h-24' : 'max-h-32']"
             />
         </div>
     </Link>
