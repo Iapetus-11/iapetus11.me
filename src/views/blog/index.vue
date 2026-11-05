@@ -2,10 +2,20 @@
     import ShowcaseCard from '@/components/ShowcaseCard.vue';
     import villagerBotWebp from '@/assets/images/projects/villager-bot.webp';
     import ProfileStickyLayout from '@/components/layout/profile-sticky-layout/ProfileStickyLayout.vue';
+    import { navigationHistory } from '@/router';
+
+    const cameFromHome = navigationHistory.value[0]?.name === 'home';
 </script>
 
 <template>
     <ProfileStickyLayout>
+        <template #description>
+            <span :class="{ 'lg:fade-in': cameFromHome }">
+                I don't really use social media, but I still want to share with my friends and
+                others. I hope any content I share is found to be educative, entertaining, or cool.
+            </span>
+        </template>
+
         <ul class="lg:slide-in flex w-full flex-col gap-6">
             <ShowcaseCard
                 title="Link Dump"
@@ -30,9 +40,6 @@
                 :image="villagerBotWebp"
                 small
             />
-
-            <!-- Get last element to appear correctly with useScrollCardEffect -->
-            <div class="order-last max-sm:h-32 lg:h-32"></div>
         </ul>
     </ProfileStickyLayout>
 </template>

@@ -1,7 +1,16 @@
 import type { RouterOptions } from 'vite-ssg';
 import { ref } from 'vue';
+import type { RouteLocationNormalizedLoaded } from 'vue-router';
 
-export const navigationCount = ref(0);
+export const navigationHistory = ref<RouteLocationNormalizedLoaded[]>([]);
+
+export function afterEach(to: RouteLocationNormalizedLoaded, from: RouteLocationNormalizedLoaded) {
+    if (to.name !== from.name && from.name) {
+        navigationHistory.value.unshift(from);
+    }
+
+    navigationHistory.value = navigationHistory.value.slice(0, 10);
+}
 
 export default {
     scrollBehavior: (to, from) => {
