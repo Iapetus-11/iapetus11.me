@@ -12,7 +12,8 @@
         <template #description>
             <span :class="{ 'lg:fade-in': cameFromHome }">
                 I don't really use social media, but I still want to share with my friends and
-                others. I hope any content I share is found to be educative, entertaining, or cool.
+                others. I hope you find my content to be educative, entertaining, or otherwise
+                interesting.
             </span>
         </template>
 
