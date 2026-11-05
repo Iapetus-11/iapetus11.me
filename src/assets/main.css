@@ -19,7 +19,7 @@
 
 @layer base {
     html {
-        @apply scroll-smooth;
+        @apply scrollbar-gutter-stable scroll-smooth;
     }
 
     body {

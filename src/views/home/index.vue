@@ -11,7 +11,8 @@
     import petusWebp from '@/assets/images/petus.webp?no-inline';
     import { DATE_BECAME_PROGRAMMER_NERD, DATE_BECAME_ALIVE } from '@/data/me';
     import ProfileStickyLayout from '@/components/layout/profile-sticky-layout/ProfileStickyLayout.vue';
-    import { navigationCount } from '@/router';
+    import { navigationHistory } from '@/router';
+    import Link from '@/components/Link.vue';
 
     const STTF_SECTIONS = ['pictures', 'projects', 'resume'];
 
@@ -35,6 +36,8 @@
         router.replace({ hash: activeSTTFSectionId ? `#${activeSTTFSectionId}` : '' });
     });
 
+    const cameFromBlog = navigationHistory.value[0]?.name === 'blog';
+
     const sectionsContainer = useTemplateRef('sections-container');
 
     onMounted(async () => {
@@ -50,7 +53,7 @@
             const sttfElement = document.getElementById(sttfId)!;
             sttfElement.scrollIntoView({ behavior: 'instant' });
 
-            if (navigationCount.value > 2) {
+            if (cameFromBlog) {
                 sectionsContainer.value!.classList.add('max-lg:fade-in', 'lg:slide-in');
             } else {
                 sectionsContainer.value!.classList.add('fade-in');
@@ -126,6 +129,19 @@
 
 <template>
     <ProfileStickyLayout>
+        <template #description>
+            <span :class="{ 'lg:fade-in': cameFromBlog }">
+                I'm currently learning Neovim, loving Rust, and working with Django + Vue.js for
+                <a href="https://medshift.com/" target="_blank" rel="noreferrer nofollow">
+                    MedShift</a
+                >. If I'm not programming or rock climbing, you'll find me zooming on mountain
+                backroads in my Miata!
+            </span>
+            <span class="lg:hidden">
+                Check out my <Link :to="{ name: 'blog' }">blog</Link> unless you're a robot.
+            </span>
+        </template>
+
         <noscript v-html="SECTIONS_CONTAINER_NOSCRIPT_HTML"></noscript>
         <div
             ref="sections-container"

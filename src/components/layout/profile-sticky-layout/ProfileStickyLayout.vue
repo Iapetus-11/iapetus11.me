@@ -4,7 +4,6 @@
     import { DATE_BECAME_ALIVE, DATE_BECAME_PROGRAMMER_NERD } from '@/data/me';
     import SocialButtons from './social/SocialButtons.vue';
     import SectionButtons from './nav/SectionButtons.vue';
-    import Link from '@/components/Link.vue';
 
     const aliveForYears = calculateYearsSince(DATE_BECAME_ALIVE);
     const programmingForYears = calculateYearsSince(DATE_BECAME_PROGRAMMER_NERD);
@@ -13,7 +12,7 @@
 <template>
     <StickyLayout>
         <template #sticky>
-            <div class="xs:max-lg:w-full flex items-center max-lg:mx-auto lg:-ml-1">
+            <div class="xs:max-lg:w-full flex items-center max-lg:mx-auto lg:-ml-1 xl:-ml-2">
                 <RouterLink
                     :to="$route.name === 'home' ? $route : { name: 'home' }"
                     class="shrink-0"
@@ -47,22 +46,13 @@
             </div>
 
             <p
-                class="lg:text-md [&>*>a]:text-link space-y-4 *:block max-lg:order-last md:text-lg 2xl:text-lg"
+                class="lg:text-md [&>*>a]:text-link space-y-4 *:block max-lg:order-last md:text-lg lg:min-h-[244px] xl:min-h-[220px] 2xl:min-h-[200px] 2xl:text-lg"
             >
                 <span>
                     I'm a {{ aliveForYears }} year-old full-stack developer who's been programming
                     for {{ programmingForYears }} years and loves to learn new things!
                 </span>
-                <span>
-                    I'm currently learning Neovim, loving Rust, and working with Django + Vue.js for
-                    <a href="https://medshift.com/" target="_blank" rel="noreferrer nofollow">
-                        MedShift</a
-                    >. If I'm not programming or rock climbing, you'll find me zooming on mountain
-                    backroads in my Miata!
-                </span>
-                <span class="lg:hidden" v-show="$route.name !== 'blog'">
-                    Check out my <Link :to="{ name: 'blog' }">blog</Link> unless you're a robot.
-                </span>
+                <slot name="description" />
             </p>
 
             <SectionButtons class="my-auto max-lg:hidden" />
