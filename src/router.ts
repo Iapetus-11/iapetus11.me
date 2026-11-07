@@ -49,6 +49,11 @@ export default {
                     name: 'blog-miata',
                     component: () => import('@/views/blog/posts/miata/index.vue'),
                 },
+                {
+                    path: 'good-engineering',
+                    name: 'blog-good-engineering',
+                    component: () => import('@/views/blog/posts/good-engineering/index.vue'),
+                },
             ],
         },
         {

@@ -37,7 +37,7 @@
             <ShowcaseCard
                 title="Good Code & Engineering"
                 description="Some thoughts, tips, and ideas from my experience and reading"
-                link="/blog/miata"
+                link="/blog/good-engineering"
                 :image="villagerBotWebp"
                 small
             />
