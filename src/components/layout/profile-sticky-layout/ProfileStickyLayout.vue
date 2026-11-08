@@ -20,7 +20,7 @@
                     <img
                         src="@/assets/images/petus.webp"
                         alt="Iapetus11's Profile Picture"
-                        class="outline-primary-400/30 hover:outline-primary-400/70 xs:size-15 pixel-image mr-3.5 size-14 rounded-full! outline-1 outline-offset-3 transition-[colors,scale] hover:scale-105 sm:size-16 md:mr-5 md:size-18 xl:size-20"
+                        class="outline-primary-400/30 hover:outline-primary-400/70 xs:size-15 pixel-image -mt-1 mr-3.5 size-14 rounded-full! outline-1 outline-offset-3 transition-[colors,scale] hover:scale-105 sm:size-16 md:mr-5 md:size-18 xl:size-20"
                         width="128"
                         height="128"
                         fetchpriority="high"
