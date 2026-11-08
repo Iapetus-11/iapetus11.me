@@ -130,14 +130,14 @@
 <template>
     <ProfileStickyLayout>
         <template #description>
-            <span :class="{ 'lg:fade-in': cameFromBlog }">
+            <span :class="{ 'fade-in': cameFromBlog }">
                 I'm currently learning Neovim, loving Rust, and working with Django + Vue.js for
                 <a href="https://medshift.com/" target="_blank" rel="noreferrer nofollow">
                     MedShift</a
                 >. If I'm not programming or rock climbing, you'll find me zooming on mountain
                 backroads in my Miata!
             </span>
-            <span class="lg:hidden">
+            <span class="lg:hidden" :class="{ 'fade-in': cameFromBlog }">
                 Check out my <Link :to="{ name: 'blog' }">blog</Link> unless you're a robot.
             </span>
         </template>

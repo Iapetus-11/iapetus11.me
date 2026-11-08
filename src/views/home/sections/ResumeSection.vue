@@ -8,11 +8,7 @@
     const resumeElements = computed(() => [
         ...(container.value?.querySelectorAll('div').values() ?? []),
     ]);
-
-    useScrollCardEffect(resumeElements, {
-        scaleModifier: 0.125,
-        angleModifier: 30 * 1.125,
-    });
+    useScrollCardEffect(resumeElements);
 </script>
 
 <template>
