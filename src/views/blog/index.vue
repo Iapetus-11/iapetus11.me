@@ -23,7 +23,10 @@
             </span>
         </template>
 
-        <ul class="max-lg:fade-in lg:slide-in flex w-full flex-col gap-6">
+        <ul
+            class="flex w-full flex-col gap-6"
+            :class="[cameFromHome ? 'max-lg:fade-in lg:slide-in' : 'fade-in']"
+        >
             <ShowcaseCard
                 title="Link Dump"
                 description="A collection of links to places or people I find interesting, useful, or nice"
