@@ -19,7 +19,7 @@
                 >
                     <span class="block h-full">
                         <span
-                            class="icon-[hugeicons--arrow-left-01] w-0 -translate-y-0.5 transition-[width] group-hover:w-12 hover:w-12"
+                            class="icon-[hugeicons--arrow-left-01] w-0 transition-[width] group-hover:w-12 hover:w-12"
                         ></span>
                     </span>
 
