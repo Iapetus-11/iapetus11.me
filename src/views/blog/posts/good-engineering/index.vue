@@ -3,5 +3,7 @@
 </script>
 
 <template>
-    <PostLayout title="Good Code & Engineering"> Hello, world! </PostLayout>
+    <PostLayout title="Good Code & Engineering">
+        <template #subheading> Throughout my (so far short) career, </template>
+    </PostLayout>
 </template>
