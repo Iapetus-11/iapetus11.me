@@ -4,6 +4,7 @@
     import { DATE_BECAME_ALIVE, DATE_BECAME_PROGRAMMER_NERD } from '@/data/me';
     import SocialButtons from './social/SocialButtons.vue';
     import SectionButtons from './nav/SectionButtons.vue';
+    import Link from '@/components/Link.vue';
 
     const aliveForYears = calculateYearsSince(DATE_BECAME_ALIVE);
     const programmingForYears = calculateYearsSince(DATE_BECAME_PROGRAMMER_NERD);
@@ -12,7 +13,7 @@
 <template>
     <StickyLayout>
         <template #sticky>
-            <div class="xs:max-lg:w-full flex items-center max-lg:mx-auto lg:-ml-1 xl:-ml-2">
+            <div class="flex items-center max-lg:mx-auto sm:max-lg:w-full lg:-ml-1 xl:-ml-2">
                 <RouterLink
                     :to="$route.name === 'home' ? $route : { name: 'home' }"
                     class="shrink-0"
@@ -29,7 +30,7 @@
 
                 <div>
                     <h1
-                        class="font-mono text-3xl font-bold whitespace-nowrap sm:text-4xl xl:text-5xl"
+                        class="xs:text-4xl font-mono text-3xl font-bold whitespace-nowrap xl:text-5xl"
                     >
                         Milo<span class="text-primary-400 mx-2 xl:mx-4">/</span>Iapetus11
                     </h1>
@@ -40,13 +41,33 @@
                     </h2>
                 </div>
 
-                <div class="xs:max-lg:grid ml-auto hidden grid-cols-2 justify-items-center gap-1">
-                    <SocialButtons />
+                <div
+                    class="mr-3 ml-auto flex flex-col-reverse items-center gap-3 text-lg max-sm:hidden md:mr-4 lg:hidden"
+                >
+                    <div class="font-mono lg:hidden">
+                        <Link
+                            :to="{ name: 'home' }"
+                            class="text-link tracking-wide underline-offset-2"
+                            :class="{ 'decoration-primary-300': $route.name === 'home' }"
+                            >Home</Link
+                        >
+                        |
+                        <Link
+                            :to="{ name: 'blog' }"
+                            class="text-link tracking-wide underline-offset-2"
+                            :class="{ 'decoration-primary-300': $route.name === 'blog' }"
+                            >Blog</Link
+                        >
+                    </div>
+
+                    <div class="flex items-center gap-2">
+                        <SocialButtons />
+                    </div>
                 </div>
             </div>
 
             <p
-                class="lg:text-md [&>*>a]:text-link space-y-4 *:block max-lg:order-last md:text-lg lg:min-h-[244px] xl:min-h-[220px] 2xl:min-h-[200px] 2xl:text-lg"
+                class="lg:text-md [&>*>a]:text-link space-y-4 *:block max-lg:order-last md:text-lg lg:min-h-[244px] lg:max-xl:w-[110%] xl:min-h-[220px] 2xl:min-h-[200px] 2xl:text-lg"
             >
                 <span>
                     I'm a {{ aliveForYears }} year-old full-stack developer who's been programming
@@ -57,8 +78,26 @@
 
             <SectionButtons class="my-auto max-lg:hidden" />
 
-            <div class="xs:max-lg:hidden flex gap-3 max-lg:mx-auto max-lg:mt-1 md:gap-2 lg:mt-auto">
-                <SocialButtons />
+            <div class="flex items-center gap-10 max-lg:mx-auto sm:max-lg:hidden lg:mt-auto">
+                <div class="font-mono text-lg lg:hidden">
+                    <Link
+                        :to="{ name: 'home' }"
+                        class="text-link tracking-wide underline-offset-2"
+                        :class="{ 'decoration-primary-300': $route.name === 'home' }"
+                        >Home</Link
+                    >
+                    |
+                    <Link
+                        :to="{ name: 'blog' }"
+                        class="text-link tracking-wide underline-offset-2"
+                        :class="{ 'decoration-primary-300': $route.name === 'blog' }"
+                        >Blog</Link
+                    >
+                </div>
+
+                <div class="xs:gap-3 flex items-center gap-2 md:gap-2">
+                    <SocialButtons />
+                </div>
             </div>
         </template>
 

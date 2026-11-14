@@ -3,7 +3,6 @@
     import villagerBotWebp from '@/assets/images/projects/villager-bot.webp';
     import ProfileStickyLayout from '@/components/layout/profile-sticky-layout/ProfileStickyLayout.vue';
     import { navigationHistory } from '@/router';
-    import Link from '@/components/Link.vue';
 
     const cameFromHome = navigationHistory.value[0]?.name === 'home';
 </script>
@@ -15,11 +14,6 @@
                 I don't really use social media, but I still want to share with my friends and
                 others. I hope you find my content to be educative, entertaining, or otherwise
                 interesting.
-            </span>
-
-            <span class="lg:hidden" :class="{ 'fade-in': cameFromHome }">
-                Check out my <Link :to="{ name: 'home' }">home page</Link> if you're more interested
-                in my projects or experience.
             </span>
         </template>
 

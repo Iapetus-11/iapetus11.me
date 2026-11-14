@@ -23,7 +23,7 @@
 <template>
     <Link
         v-bind="linkTarget"
-        class="group flex w-fit items-center pr-2 text-lg font-medium transition-colors hover:text-purple-300 2xl:text-xl"
+        class="group flex w-fit items-center pr-2 text-xl font-medium transition-colors hover:text-purple-300"
         :class="{ 'text-slate-300': active }"
     >
         <span
