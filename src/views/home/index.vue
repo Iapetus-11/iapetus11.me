@@ -137,9 +137,6 @@
                 >. If I'm not programming or rock climbing, you'll find me zooming on mountain
                 backroads in my Miata!
             </span>
-            <span class="lg:hidden" :class="{ 'fade-in': cameFromBlog }">
-                Check out my <Link :to="{ name: 'blog' }">blog</Link> unless you're a robot.
-            </span>
         </template>
 
         <noscript v-html="SECTIONS_CONTAINER_NOSCRIPT_HTML"></noscript>
