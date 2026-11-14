@@ -12,7 +12,6 @@
     import { DATE_BECAME_PROGRAMMER_NERD, DATE_BECAME_ALIVE } from '@/data/me';
     import ProfileStickyLayout from '@/components/layout/profile-sticky-layout/ProfileStickyLayout.vue';
     import { navigationHistory } from '@/router';
-    import Link from '@/components/Link.vue';
 
     const STTF_SECTIONS = ['pictures', 'projects', 'resume'];
 

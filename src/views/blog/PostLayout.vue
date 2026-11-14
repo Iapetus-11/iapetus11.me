@@ -37,7 +37,7 @@
         <template #subheading>
             <RouterLink
                 :to="{ name: 'blog' }"
-                class="group -mt-1 block text-lg text-white/75 transition hover:text-white lg:hidden"
+                class="group -mt-1 block text-lg text-white/75 transition hover:text-white md:-mt-2 md:mb-2 lg:hidden"
             >
                 <span
                     class="icon-[hugeicons--arrow-left-01] -mr-1 translate-y-0.75 transition group-hover:-translate-x-0.5"
