@@ -77,7 +77,7 @@ export function useScrollCardEffect(
             startEffectReductionFactor = Math.max(window.innerHeight / 0.75 / window.scrollY, 1);
         }
         const startEffectReductionCutoff =
-            window.innerWidth <= BREAKPOINTS.md ? dividerLine / 100 : 0;
+            window.innerWidth <= BREAKPOINTS.lg ? dividerLine / 100 : 0;
 
         const perspectiveHeight = Math.max(800, window.innerHeight);
 

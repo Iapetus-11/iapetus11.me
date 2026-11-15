@@ -14,6 +14,14 @@
 
 <template>
     <div ref="projects-container" class="flex flex-col gap-6">
+        <div class="lg:mb-2">
+            <h2
+                class="text-right font-mono text-2xl font-bold text-white/75 max-lg:text-center lg:-translate-x-10 lg:text-3xl"
+            >
+                Projects
+            </h2>
+        </div>
+
         <ShowcaseCard
             ref="project-components"
             v-for="(project, idx) in PROJECTS"
