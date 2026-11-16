@@ -35,17 +35,21 @@
         </template>
 
         <template #subheading>
-            <RouterLink
-                :to="{ name: 'blog' }"
-                class="group -mt-1 block text-lg text-white/75 transition hover:text-white md:-mt-2 md:mb-2 lg:hidden"
-            >
-                <span
-                    class="icon-[hugeicons--arrow-left-01] -mr-1 translate-y-0.75 transition group-hover:-translate-x-0.5"
-                ></span>
-                Back to posts
-            </RouterLink>
+            <div class="space-y-2">
+                <RouterLink
+                    :to="{ name: 'blog' }"
+                    class="group -mt-1 block text-lg text-white/75 transition hover:text-white lg:hidden"
+                >
+                    <span
+                        class="icon-[hugeicons--arrow-left-01] -mr-1 translate-y-0.75 transition group-hover:-translate-x-0.5"
+                    ></span>
+                    Back to posts
+                </RouterLink>
 
-            <slot name="subheading" />
+                <div class="mt-2 text-gray-200 md:max-w-4/5">
+                    <slot name="subheading" />
+                </div>
+            </div>
         </template>
 
         <slot />

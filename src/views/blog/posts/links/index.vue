@@ -14,7 +14,7 @@
 <template>
     <PostLayout title="Link Dump">
         <template #subheading>
-            <p class="mt-2 text-gray-200 md:max-w-4/5">
+            <p>
                 Here's a dump of links to places or people I find interesting, useful, or nice. I
                 got the idea from a colleague, and as he referenced:
                 <a
