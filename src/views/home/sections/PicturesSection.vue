@@ -26,23 +26,23 @@
     >
         <div class="z-15">
             <img
-                src="@/assets/images/me/milo-crowders-mtn.webp"
-                alt="Me at Crowder's Mountain"
+                src="@/assets/images/me/trinity-late-night-jenis.webp"
+                alt="Trinity & I at Jeni's around 10pm"
                 loading="lazy"
                 fetchpriority="low"
-                class="translate-x-5"
+                class="-mt-17 translate-x-5 scale-90"
                 @load="updateScrollCardEffect"
-                width="1024"
-                height="770"
+                width="886"
+                height="1024"
             />
         </div>
-        <div class="-z-10">
+        <div class="z-20">
             <img
                 src="@/assets/images/miata/grandfather-mtn-oct2025-sq.webp"
                 alt="Miata in fall at grandfather mountain"
                 loading="lazy"
                 fetchpriority="low"
-                class="-mt-20 translate-x-7 translate-y-2 scale-110"
+                class="-translate-x-4 translate-y-2 scale-110"
                 @load="updateScrollCardEffect"
                 width="901"
                 height="734"
