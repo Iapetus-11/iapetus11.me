@@ -19,20 +19,12 @@ export type ProjectDefinition = {
 };
 
 export const PROJECTS: ProjectDefinition[] = [
-    // {
-    //     name: 'Blog',
-    //     description:
-    //         'I post about my interests, mostly technology and the occasional rant on lack of privacy. There is also a link dump.',
-    //     image: villagerBotWebp,
-    //     link: '/blog',
-    //     points: [],
-    // },
     {
         name: 'Villager Bot',
         description:
             'A Minecraft-themed utility, moderation, and economy Discord bot used by tens of thousands.',
         image: villagerBotWebp,
-        link: 'https://villagerbot.com',
+        link: 'https://github.com/Iapetus-11/Villager-Bot',
         points: [
             '100,000+ Users',
             'Python',
@@ -92,6 +84,14 @@ export const PROJECTS: ProjectDefinition[] = [
         image: tacoTapperLogoWebp,
         link: 'https://tacos.iapetus11.me/',
         points: ['Vue', 'TypeScript', 'Cloudflare Pages'],
+    },
+    {
+        name: 'Immich S3 Backup',
+        description:
+            'Automatic, configurable, scheduled backups for your Immich (self-hosted photos app/management).',
+        image: tacoTapperLogoWebp,
+        link: 'https://github.com/Iapetus-11/immich-s3-backup',
+        points: ['Rust', 'Docker', 'AWS S3', 'Tokio', 'SQLite'],
     },
     {
         name: 'Emoji Leaderboard',
