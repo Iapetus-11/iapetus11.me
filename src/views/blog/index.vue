@@ -3,6 +3,13 @@
     import villagerBotWebp from '@/assets/images/projects/villager-bot.webp';
     import ProfileStickyLayout from '@/components/layout/profile-sticky-layout/ProfileStickyLayout.vue';
     import { navigationHistory } from '@/router';
+    import { SITE_URL, useSeo } from '@/utils/head';
+
+    useSeo({
+        title: 'Milo | Blog',
+        description: 'Thoughts, pictures, ideas, and more that I want to share',
+        url: `${SITE_URL}blog`,
+    });
 
     const cameFromHome = navigationHistory.value[0]?.name === 'home';
 </script>

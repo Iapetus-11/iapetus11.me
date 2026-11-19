@@ -6,7 +6,7 @@
 
     useSeo({
         title: 'Milo | Miata',
-        url: `${SITE_URL}miata`,
+        url: `${SITE_URL}blog/miata`,
         description: 'A page dedicated to my beloved 2023 ND Miata',
     });
 </script>

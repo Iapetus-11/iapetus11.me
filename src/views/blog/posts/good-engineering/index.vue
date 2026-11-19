@@ -1,5 +1,12 @@
 <script setup lang="ts">
     import PostLayout from '../../PostLayout.vue';
+    import { SITE_URL, useSeo } from '@/utils/head';
+
+    useSeo({
+        title: 'Milo | Good Code & Engineering',
+        description: 'Some learnings from my (so far short) software engineering career',
+        url: `${SITE_URL}blog/good-engineering`,
+    });
 </script>
 
 <template>

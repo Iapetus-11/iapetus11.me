@@ -6,8 +6,8 @@
 
     useSeo({
         title: 'Milo | Links',
-        description: 'Dump of links to places or people I find interesting, useful, or nice.',
-        url: `${SITE_URL}links`,
+        description: 'Dump of links to places or people I find interesting, useful, or nice',
+        url: `${SITE_URL}blog/links`,
     });
 </script>
 
